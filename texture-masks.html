@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Texture Masks | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html" class="active" aria-current="page">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Scatter</div>
+    <h1>Texture Masks</h1>
+    <p>Shape a scatter layer with natural patches, rows, grids, or an image mask</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#noise">Noise</a>
+    <a href="#lines">Lines</a>
+    <a href="#tiles">Tiles</a>
+    <a href="#image">Image</a>
+    <a href="#transform">Transform</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">Texture masks apply a pattern across the scatter surface to control where instances appear and how they scale near boundaries. Each mask has its own checkbox, and multiple masks can be combined.</p>
+  </div>
+</section>
+
+<section id="noise">
+  <div class="wrap">
+    <h2>Noise</h2>
+    <p class="lead">Creates irregular patches with gaps between them. Use it for vegetation that should form natural clusters rather than cover the surface uniformly.</p>
+
+    <article class="card" id="falloff-min-and-max">
+      <div class="clip"><video src="videos/noise-falloff.mp4" poster="videos/noise-falloff.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Falloff: Min and Max</h3>
+        <ul class="facts"><li><b>Min</b> 0.4</li><li><b>Max</b> 0.6</li></ul>
+        <p>The noise pattern has a value from 0 to 1 at each point. Instances are excluded below <code>Min</code>, reach full size above <code>Max</code>, and scale gradually between the two.</p>
+        <p>Raise both thresholds to reduce coverage, or lower them to fill more of the surface. Bring the values closer for sharper boundaries; separate them for a wider scale transition.</p>
+      </div>
+    </article>
+
+    <article class="card" id="seed-and-scale">
+      <div class="clip"><video src="videos/noise-pattern.mp4" poster="videos/noise-pattern.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Seed and Scale</h3>
+        <ul class="facts"><li><b>Seed</b> 0</li><li><b>Scale</b> 1.0</li></ul>
+        <p><code>Seed</code> changes the arrangement of patches while preserving the other pattern settings.</p>
+        <p><code>Scale</code> controls pattern frequency. Lower values create fewer, larger patches; higher values create more, smaller patches. Values around 0.1–0.3 are a useful starting point for a large terrain.</p>
+      </div>
+    </article>
+
+    <article class="card" id="detail-roughness-lacunarity-and-distortion">
+      <div class="clip"><video src="videos/noise-detail.mp4" poster="videos/noise-detail.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Detail, Roughness, Lacunarity and Distortion</h3>
+        <ul class="facts"><li><b>Detail</b> 2</li><li><b>Roughness</b> 0.5</li><li><b>Lacunarity</b> 2</li><li><b>Distortion</b> 0</li></ul>
+        <p><code>Detail</code> adds smaller-scale patterns to the main noise. At 0, patch boundaries are smooth and rounded. Higher values create more irregular edges.</p>
+        <p><code>Roughness</code> sets the strength of the finer patterns. <code>Lacunarity</code> controls how much smaller each successive pattern becomes. Both depend on Detail being above 0.</p>
+        <p><code>Distortion</code> warps the noise into swirls and elongated shapes.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="lines">
+  <div class="wrap">
+    <h2>Lines</h2>
+    <p class="lead">Creates parallel bands. Use it for crop rows, vineyards, ploughed fields, or planted borders.</p>
+
+    <article class="card" id="falloff-min-and-max-2">
+      <div class="clip"><video src="videos/lines-falloff.mp4" poster="videos/lines-falloff.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Falloff: Min and Max</h3>
+        <ul class="facts"><li><b>Min</b> 0.3</li><li><b>Max</b> 0.6</li></ul>
+        <p>These thresholds work as they do for Noise. Increasing <code>Min</code> narrows the planted bands and widens the gaps. <code>Max</code> controls the transition to full-size instances along their edges.</p>
+      </div>
+    </article>
+
+    <article class="card" id="scale-and-phase-offset">
+      <div class="clip"><video src="videos/lines-pattern.mp4" poster="videos/lines-pattern.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Scale and Phase Offset</h3>
+        <ul class="facts"><li><b>Scale</b> 0.6</li><li><b>Phase Offset</b> 0</li></ul>
+        <p><code>Scale</code> controls the number of rows. Lower values produce fewer, wider rows; higher values produce more, narrower rows.</p>
+        <p><code>Phase Offset</code> shifts the rows sideways without changing their spacing. Use it to align them with a fence, path, or another layer.</p>
+      </div>
+    </article>
+
+    <article class="card" id="distortion-and-its-detail">
+      <div class="clip"><video src="videos/lines-distortion.mp4" poster="videos/lines-distortion.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Distortion and its detail</h3>
+        <ul class="facts"><li><b>Distortion</b> 0</li><li><b>Detail</b> 2</li><li><b>Detail Scale</b> 1</li><li><b>Detail Roughness</b> 0.5</li></ul>
+        <p><code>Distortion</code> bends the rows away from straight lines, creating less regular planting patterns.</p>
+        <p>The other settings shape this variation and have no effect when Distortion is 0. <code>Detail</code> adds finer variations, <code>Detail Scale</code> controls their size, and <code>Detail Roughness</code> controls the strength of the finest changes.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="tiles">
+  <div class="wrap">
+    <h2>Tiles</h2>
+    <p class="lead">Creates a rectangular grid separated by gaps. Use it for planting beds, garden plots, paving, or other regularly spaced arrangements.</p>
+
+    <article class="card" id="scale-and-gap-size">
+      <div class="clip"><video src="videos/tiles-pattern.mp4" poster="videos/tiles-pattern.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Scale and Gap Size</h3>
+        <ul class="facts"><li><b>Scale</b> 2.0</li><li><b>Gap Size</b> 0.05</li></ul>
+        <p><code>Scale</code> controls the number of tiles. Lower values create fewer, larger tiles; higher values create more, smaller tiles. The default of 2 produces very small tiles on most surfaces, so lower it first if the pattern is difficult to see.</p>
+        <p><code>Gap Size</code> sets the width of the empty strips between tiles, from nearly zero to 0.125.</p>
+      </div>
+    </article>
+
+    <article class="card" id="width-and-height">
+      <div class="clip"><video src="videos/tiles-size.mp4" poster="videos/tiles-size.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Width and Height</h3>
+        <ul class="facts"><li><b>Width</b> 0.5</li><li><b>Height</b> 0.5</li></ul>
+        <p>Set the proportions of each tile. Equal values produce squares. Increase <code>Width</code> for elongated beds, or decrease <code>Height</code> for narrow strips.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="image">
+  <div class="wrap">
+    <h2>Image</h2>
+    <p class="lead">Uses an image as the mask. White areas retain instances, and black areas exclude them. Create a mask in an image editor or use a graphic, such as a logo, to define the scatter pattern.</p>
+
+    <article class="card" id="image-and-bounds">
+      <div class="clip"><video src="videos/image-mask.mp4" poster="videos/image-mask.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Image and Bounds</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Bounds</b> Clip</li></ul>
+        <p>Enable <code>Image</code>, click the folder button, and choose an image file. The layer remains empty until an image is selected.</p>
+        <p><code>Bounds</code> controls what happens outside the image. <code>Clip</code> displays it once and leaves the rest of the surface empty. <code>Repeat</code> tiles it across the surface.</p>
+        <div class="note"><strong>Use small instances and sufficient density for detailed shapes.</strong>
+        Increase Density and reduce Uniform Scale if the image outline looks coarse.</div>
+      </div>
+    </article>
+
+    <article class="card" id="min-max-sharpen-and-invert">
+      <div class="clip"><video src="videos/image-falloff.mp4" poster="videos/image-falloff.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Min, Max, Sharpen and Invert</h3>
+        <ul class="facts"><li><b>Min</b> 0</li><li><b>Max</b> 1</li><li><b>Sharpen</b> off</li><li><b>Invert</b> off</li></ul>
+        <p><code>Invert</code> reverses the mask, filling the areas that would otherwise be empty.</p>
+        <p><code>Min</code> and <code>Max</code> control grayscale transitions. Instances are excluded below Min, full size above Max, and scaled between them. <code>Sharpen</code> makes soft boundaries more distinct.</p>
+        <p>These three controls have little effect on a purely black-and-white image because it has no intermediate grayscale values. Use them with gradients, photographs, or softly painted masks.</p>
+      </div>
+    </article>
+
+    <article class="card" id="location-rotation-and-scale">
+      <div class="clip"><video src="videos/image-transform.mp4" poster="videos/image-transform.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Location, Rotation and Scale</h3>
+        <ul class="facts"><li><b>Scale</b> 1 / 1 / 1</li></ul>
+        <p><code>Location</code> moves the image across the surface in metres. <code>Rotation</code> changes its orientation; adjust Z to rotate it across the ground.</p>
+        <p><code>Scale</code> works in reverse: increasing the value makes the image smaller, while decreasing it makes the image larger. At 1, the image is approximately 10 m wide. Different X and Y values stretch the mask independently.</p>
+        <p>The image retains its original aspect ratio unless you stretch it with separate axis values.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="transform">
+  <div class="wrap">
+    <h2>Transform</h2>
+    <p class="lead">Noise, Lines, and Tiles each include transform controls for positioning and orienting their patterns.</p>
+
+    <article class="card" id="location-rotation-and-scale-2">
+      <div class="clip"><video src="videos/noise-transform.mp4" poster="videos/noise-transform.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Location, Rotation and Scale</h3>
+        <p><code>Location</code> moves the pattern across the surface. It shifts the mask, not the underlying instance positions.</p>
+        <p><code>Scale</code> stretches the pattern along individual axes. Stretching noise along X, for example, turns rounded patches into elongated bands.</p>
+        <p><code>Rotation</code> changes the pattern's orientation. Use Z to rotate it across the ground.</p>
+      </div>
+    </article>
+
+    <article class="card" id="on-lines">
+      <div class="clip"><video src="videos/lines-transform.mp4" poster="videos/lines-transform.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>On Lines</h3>
+        <p>Use Rotation to set the direction of the rows. Location shifts their position, similarly to Phase Offset.</p>
+      </div>
+    </article>
+
+    <article class="card" id="on-tiles">
+      <div class="clip"><video src="videos/tiles-transform.mp4" poster="videos/tiles-transform.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>On Tiles</h3>
+        <p>Use Location to align the grid with the surface boundaries and Rotation to change its angle.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="group-texture-masks">
+      <div>
+        <h3>Group Texture Masks</h3>
+        <p>Select a group to access Group Texture Masks. The same pattern is applied to every layer in the group, allowing them to share patches, rows, or a grid.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the assets bundled with the add-on.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

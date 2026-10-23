@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surface, Instances and Scattering | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html" class="active" aria-current="page">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Scatter</div>
+    <h1>Surface, Instances and Scattering</h1>
+    <p>Control where a layer scatters, which objects it uses, and how densely they are placed</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#surface">Surface</a>
+    <a href="#instances">Instances</a>
+    <a href="#scattering">Scattering</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">Surface, Instances, and Scattering are the first three sections below the System List. All three apply to the selected layer.</p>
+  </div>
+</section>
+
+<section id="surface">
+  <div class="wrap">
+    <h2>Surface</h2>
+    <p class="lead">Choose the geometry that receives the layer's instances. This can be the emitter itself, another object, or a collection of objects.</p>
+
+    <article class="card" id="type">
+      <div class="clip"><video src="videos/surface-type.mp4" poster="videos/surface-type.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Type</h3>
+        <ul class="facts"><li><b>Default</b> Emitter Object</li></ul>
+        <p><code>Emitter Object</code> scatters on the current emitter. Its name appears below the setting as a read-only reference.</p>
+        <p><code>Single Surface</code> scatters on another object selected in the field below. Use it to place a layer on a specific surface, such as one boulder, without changing its emitter.</p>
+        <p><code>Multiple Surfaces</code> scatters on all objects in the selected collection. For example, select a collection of boulders to cover every rock while leaving the surrounding terrain clear.</p>
+        <p>The layer remains in its emitter's System List regardless of which surface it uses.</p>
+        <div class="note"><strong>Collection missing from the picker?</strong>
+        Multiple Surfaces lists collections directly beneath the Scene Collection. Move a nested collection to that level to make it available.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="instances">
+  <div class="wrap">
+    <h2>Instances</h2>
+    <p class="lead">Choose the objects the layer places on its surface.</p>
+
+    <article class="card" id="single-instance">
+      <div class="clip"><video src="videos/instances-single.mp4" poster="videos/instances-single.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Single Instance</h3>
+        <p>Scatters one source object. Select it in the field below <code>Type</code>, or use the eyedropper.</p>
+        <p>Replacing the source object preserves the scatter positions. Use this to compare a tree, rock, or bush in the same layout without changing the distribution.</p>
+      </div>
+    </article>
+
+    <article class="card" id="multiple-instances">
+      <div class="clip"><video src="videos/instances-multiple.mp4" poster="videos/instances-multiple.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Multiple Instances</h3>
+        <p>Scatters a mix of objects from a collection. Set <code>Type</code> to Multiple Instances and select the collection; each scatter point uses one of its objects.</p>
+        <p>Add or remove objects in the collection to change the available mix. The layer updates automatically.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="scattering">
+  <div class="wrap">
+    <h2>Scattering</h2>
+    <p class="lead">Control the placement method, instance density, and spacing.</p>
+
+    <article class="card" id="type-procedural-or-manual">
+      <div class="clip"><video src="videos/scatter-type.mp4" poster="videos/scatter-type.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Type: Procedural or Manual</h3>
+        <ul class="facts"><li><b>Default</b> Procedural</li></ul>
+        <p><code>Procedural</code> distributes instances across the surface according to settings such as Density and masks. Changing a setting updates the scatter automatically.</p>
+        <p><code>Manual</code> starts with an empty layer and lets you place instances with brushes. It replaces Density and the Factor buttons with a <code>Manual Mode</code> section containing <code>Start Placing</code>. See <a href="manual.html">Manual Mode</a> for the available brushes.</p>
+        <p>Use Procedural for coverage that should respond to changes in your setup. Use Manual for deliberate placement, such as a hero tree or a carefully arranged path edge. Both approaches can be combined by creating one layer of each with the same source objects.</p>
+        <div class="note"><strong>Switching modes preserves manual placements.</strong>
+        Returning to Procedural restores the automatic scatter. Switching back to Manual restores your hand-placed instances.</div>
+      </div>
+    </article>
+
+<article class="card" id="density-m">
+      <div class="clip"><video src="videos/scatter-density.mp4" poster="videos/scatter-density.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Density / m&sup2;</h3>
+        <p>Sets the number of instances per square metre of surface. A value of 1 on a 40 m × 40 m surface produces approximately 1,600 instances before masks remove any.</p>
+        <p>Use higher densities for small plants and lower densities for trees. Adjust Density to compare sparse and dense coverage.</p>
+      </div>
+    </article>
+
+    <article class="card" id="seed">
+      <div class="clip"><video src="videos/scatter-seed.mp4" poster="videos/scatter-seed.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Seed</h3>
+        <ul class="facts"><li><b>Default</b> 0</li></ul>
+        <p>Changes the random arrangement without changing the number of instances.</p>
+        <p>Enter a value or click the dice button to choose a random seed. Different seeds help prevent separate layers from placing instances at matching positions.</p>
+      </div>
+    </article>
+
+    <article class="card" id="factor">
+      <div class="clip"><video src="videos/scatter-factor.mp4" poster="videos/scatter-factor.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Factor</h3>
+        <ul class="facts"><li><b>Default</b> 2.00</li></ul>
+        <p>Controls the amount used by the four Density adjustment buttons: multiply, divide, add, and subtract.</p>
+        <p>With <code>Factor</code> set to 2, <code>*</code> doubles Density and <code>/</code> halves it. The <code>+</code> and <code>−</code> buttons add or subtract the Factor value itself. For sparse layers, use a smaller Factor, such as 0.1, before adding or subtracting.</p>
+      </div>
+    </article>
+
+    <article class="card" id="limit-self-collision">
+      <div class="clip"><video src="videos/scatter-self-collision.mp4" poster="videos/scatter-self-collision.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Limit Self-Collision</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Minimum Distance</b> 0 m</li></ul>
+        <p>Enforces minimum spacing between instances in the same layer. Enable the option and set <code>Minimum Distance</code> to the closest allowed spacing.</p>
+        <p>Instances that violate the spacing are removed. Increasing Minimum Distance therefore reduces the number of instances, and at larger values spacing becomes the limiting factor rather than Density.</p>
+        <p>This setting only checks the current layer. To control spacing between different layers, use Ecosystem.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the assets bundled with the add-on.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

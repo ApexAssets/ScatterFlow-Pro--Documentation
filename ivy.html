@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ivy | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html" class="active" aria-current="page">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Ivy tab</div>
+    <h1>Ivy</h1>
+    <p>Draw climbing plants on surfaces and control their stems, leaves, flowers, and growth</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#add">Adding ivy</a>
+    <a href="#mode">Ivy Mode</a>
+    <a href="#visibility">Visibility and the Ivy List</a>
+    <a href="#sources">Changing leaves and flowers</a>
+    <a href="#growth">Growth</a>
+    <a href="#leaves">Leaves</a>
+    <a href="#flowers">Flowers</a>
+    <a href="#wind">Wind</a>
+    <a href="#optimization">Optimization</a>
+    <a href="#bake">Ivy Bake</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">The <code>Ivy</code> tab creates climbing plants on objects such as walls, trunks, and rocks. Draw the main stems, and ScatterFlow generates vines, branches, leaves, and flowers along the surface. Use <code>Ivy Properties</code> to refine the result afterward.</p>
+  </div>
+</section>
+
+<section id="add">
+  <div class="wrap">
+    <h2>Adding ivy</h2>
+
+    <article class="card" id="choose-a-preset">
+      <div class="clip win"><video src="videos/ivy-preset.mp4" poster="videos/ivy-preset.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Choose a preset</h3>
+        <p>Presets include a plant's leaves, flowers, and growth settings. The content pack provides options ranging from green climbers to flowering clematis.</p>
+        <p><b>1.</b> Open an Asset Browser and select <code>ScatterFlow_Pro_ContentPack</code>.</p>
+        <p><b>2.</b> Open <code>Ivy &gt; Presets</code>.</p>
+        <p><b>3.</b> Select the preset you want to use.</p>
+        <p><b>4.</b> Select the target wall, click <code>Add Ivy</code>, and draw the stems. The new ivy uses the selected preset's assets and settings.</p>
+        <div class="note"><strong>A preset is optional.</strong>
+        Without one, Add Ivy creates bare stems until you assign leaves. Select a preset first to start with a complete plant. If presets are missing, see <a href="content-pack.html#library">Adding the library</a>.</div>
+      </div>
+    </article>
+
+    <article class="card" id="add-ivy-and-draw">
+      <div class="clip"><video src="videos/ivy-add.mp4" poster="videos/ivy-add.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Add Ivy and draw</h3>
+        <p><b>1.</b> Select the target object. You can select multiple objects for the ivy to grow across.</p>
+        <p><b>2.</b> Position the 3D Cursor at the plant's starting point with <code>Shift + Right Click</code>.</p>
+        <p><b>3.</b> Click <code>Add Ivy</code> to activate the drawing tool.</p>
+        <p><b>4.</b> Draw the main stems on the surface. Each stroke creates one stem, and you can add multiple strokes.</p>
+        <p><b>5.</b> Press <code>Tab</code> to finish and generate the ivy.</p>
+        <div class="note"><strong>Start with a few simple strokes.</strong>
+        The strokes define the main stems, not every vine. Branches and vines spread from them automatically, so dense drawing is often unnecessary.</div>
+      </div>
+    </article>
+
+    <article class="card" id="edit-ivy">
+      <div class="clip"><video src="videos/ivy-edit.mp4" poster="videos/ivy-edit.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Edit Ivy</h3>
+        <p>Select an entry in the Ivy List and click <code>Edit Ivy</code> to edit its strokes. Add stems to extend coverage, or select and delete unwanted strokes. Press <code>Tab</code> to regenerate the plant.</p>
+      </div>
+    </article>
+
+    <article class="card" id="swap-the-preset">
+      <div class="clip win"><video src="videos/ivy-swap.mp4" poster="videos/ivy-swap.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Swap the preset</h3>
+        <p>Select another preset in the Asset Browser, then click <code>Swap Preset</code>, the circular-arrow button between Leaf Visibility and Flower Visibility. The drawn stems stay in place, while leaves, flowers, and growth settings are replaced.</p>
+        <p>To replace only the leaves or flowers, use the controls described under <a href="#sources">Changing leaves and flowers</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="mode">
+  <div class="wrap">
+    <h2>Ivy Mode</h2>
+
+    <article class="card" id="fast-mode-and-realistic-mode">
+      <div class="clip"><video src="videos/ivy-mode.mp4" poster="videos/ivy-mode.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Fast Mode and Realistic Mode</h3>
+        <ul class="facts">
+          <li><b>Type</b> Two buttons</li>
+          <li><b>Default</b> Realistic Mode</li>
+        </ul>
+        <p><code>Realistic Mode</code> generates stems along the surface from your strokes, with attached vines, branches, leaves, and flowers. Use it when the plant will be viewed closely.</p>
+        <p><code>Fast Mode</code> skips the stems and covers the target with leaves and flowers. It has a lower processing cost and suits distant surfaces or large areas.</p>
+        <div class="note"><strong>The available settings depend on the mode.</strong>
+        Switching modes changes Ivy Properties. Ivy Bake is available only in Realistic Mode.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="visibility">
+  <div class="wrap">
+    <h2>Visibility and the Ivy List</h2>
+
+    <article class="card" id="leaf-visibility-flower-visibility-and-the-list">
+      <div class="clip"><video src="videos/ivy-visibility.mp4" poster="videos/ivy-visibility.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Leaf Visibility, Flower Visibility and the list</h3>
+        <p><code>Leaf Visibility</code> and <code>Flower Visibility</code> toggle those parts of the selected ivy. Hide flowers for a non-flowering plant, or hide both leaves and flowers while shaping the stems.</p>
+        <p>The <code>Ivy List</code> contains one entry per ivy in the scene. Select an entry to edit it. Each row includes:</p>
+        <p><code>Eye</code>: toggles viewport visibility.<br>
+        <code>Camera</code>: toggles render visibility.<br>
+        <code>Bin</code>: deletes the ivy, including its stems and collections.</p>
+        <p>Hover over the <code>i</code> above the list for a brief workflow reminder.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="wrap">
+    <h2>Changing leaves and flowers</h2>
+    <p class="lead">The two <code>+</code> buttons replace leaf or flower meshes without changing the drawn stems or growth settings. The left button, beside Leaf Visibility, changes the leaves. The right button, beside Flower Visibility, changes the flowers. Replacing one does not change the other.</p>
+
+    <article class="card" id="leaves-and-flowers-from-the-content-pack">
+      <div class="clip win"><video src="videos/ivy-sources.mp4" poster="videos/ivy-sources.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Leaves and flowers from the content pack</h3>
+        <p><b>1.</b> Select the ivy in the Ivy List.</p>
+        <p><b>2.</b> Open <code>Ivy &gt; Leafs</code> in the Asset Browser and select a leaf set.</p>
+        <p><b>3.</b> Click the left <code>+</code> to replace the leaves.</p>
+        <p><b>4.</b> Open <code>Ivy &gt; Flowers</code>, select a flower set, and click the right <code>+</code> to replace the flowers.</p>
+        <p>You can combine sets from different plants, such as Akebia leaves and Beaumontia flowers on a clematis setup.</p>
+        <div class="note"><strong>Use the correct replacement button.</strong>
+        Either <code>+</code> accepts the selected asset. A leaf set can therefore be assigned as flowers, or a flower set as leaves.</div>
+      </div>
+    </article>
+
+    <article class="card" id="your-own-leaves-and-flowers">
+      <div class="clip win"><video src="videos/ivy-custom-sources.mp4" poster="videos/ivy-custom-sources.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Your own leaves and flowers</h3>
+        <p>Place your leaf or flower objects in a collection. If the collection contains several objects, the ivy uses a mix of them.</p>
+        <p><b>1.</b> Clear the Asset Browser selection by clicking an empty area.</p>
+        <p><b>2.</b> Select your collection in the Outliner, or select an object within it.</p>
+        <p><b>3.</b> Click the left <code>+</code> for leaves or the right <code>+</code> for flowers.</p>
+        <p>For example, a My Leaves collection can contain multiple custom leaf shapes, while My Flowers supplies a separate flower mesh. Replacing these sources preserves the ivy's overall shape.</p>
+        <p>You can also assign a collection directly in <code>Ivy Properties</code>: use <code>Leaf Source</code> in the <a href="#leaves">Leafs</a> panel or <code>Flower Source</code> in the <a href="#flowers">Flowers</a> panel.</p>
+        <div class="note"><strong>Asset Browser selection takes priority.</strong>
+        If an asset remains selected there, the <code>+</code> button uses it instead of your selected collection. Clear the Asset Browser selection before assigning scene objects.</div>
+        <div class="note"><strong>Place origins at the attachment point.</strong>
+        Model each leaf or flower at its intended size, with its origin where it joins the stem. Use <code>Leaf Size</code>, <code>Flower Size</code>, and rotation settings to refine its placement on the vine.</div>
+      </div>
+    </article>
+  </div>
+</section>
+<section id="growth">
+  <div class="wrap">
+    <h2>Growth</h2>
+    <p class="lead">Expand <code>Ivy Properties</code> to access the selected plant's settings. The <code>ivy Growth</code> panel controls its stems and branching.</p>
+
+    <article class="card" id="vines-and-branches">
+      <div class="clip"><video src="videos/ivy-growth.mp4" poster="videos/ivy-growth.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Vines and branches</h3>
+        <p><code>Vines Spread</code>: how far vines extend from the drawn stems. Increase it to cover more surface without adding strokes.</p>
+        <p><code>Branch Spread</code>: how far smaller branches extend from the vines.</p>
+        <p><code>Overall Vine Size</code>: the overall stem thickness.</p>
+        <p><code>Vines Surface Offset</code>: the distance between stems and the target surface.</p>
+        <p>Under <code>Vines</code>, use <code>Vine Density</code> for the number of vines, <code>Vine Size</code> for thickness, and <code>Vine Seed</code> for a different arrangement.</p>
+        <p>Under <code>Branches</code>, <code>Branch Density</code>, <code>Branch Size</code>, and <code>Branch Seed</code> provide equivalent controls for branches. Leaves and flowers grow on branches, so increasing branch density produces a fuller plant.</p>
+        <div class="note"><strong>Use seeds to try different growth patterns.</strong>
+        Changing a seed preserves the other settings while regenerating the arrangement. This is useful when a vine grows into an unwanted position.</div>
+      </div>
+    </article>
+
+    <article class="card" id="growth-in-fast-mode">
+      <div class="clip"><video src="videos/ivy-fast.mp4" poster="videos/ivy-fast.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Growth in Fast Mode</h3>
+        <p><a href="#mode">Fast Mode</a> has no drawn stems to edit. Its <code>ivy Growth</code> panel instead provides:</p>
+        <p><code>Spread</code>: coverage distance across the target, in metres.</p>
+        <p><code>Density</code>: the amount of surface coverage.</p>
+        <p><code>Max Scale</code> and <code>Min Scale</code>: the random size range for the generated pieces.</p>
+        <p><code>Seed</code>: a different arrangement using the same settings.</p>
+        <p>The Leafs, Flowers, Wind, and Optimization panels are available in both modes.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="leaves">
+  <div class="wrap">
+    <h2>Leaves</h2>
+
+    <article class="card" id="leafs">
+      <div class="clip"><video src="videos/ivy-leaves.mp4" poster="videos/ivy-leaves.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Leafs</h3>
+        <p>The <code>Leafs</code> checkbox toggles leaves, like Leaf Visibility. <code>Leaf Source</code> selects the collection used for their meshes.</p>
+        <p><code>Leaf Density</code>: the number of leaves along the stems.</p>
+        <p><code>Leaf Spacing</code>: the minimum gap between leaves.</p>
+        <p><code>Leaf Seed</code>: a different arrangement using the same leaf sources.</p>
+        <p><code>Leaf Size Min</code> and <code>Leaf Size Max</code>: the range of leaf sizes.</p>
+        <p><code>Leaf Rotation</code> and <code>Leaf Rotation2</code>: random rotation amounts.</p>
+        <p><code>Leaf Downward Tilt Min</code> and <code>Max</code>: the range of downward leaf tilt.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="flowers">
+  <div class="wrap">
+    <h2>Flowers</h2>
+
+    <article class="card" id="flowers-2">
+      <div class="clip"><video src="videos/ivy-flowers.mp4" poster="videos/ivy-flowers.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Flowers</h3>
+        <p>The <code>Flowers</code> panel follows the same pattern as Leafs: the <code>Flowers</code> checkbox enables them, <code>Flower Source</code> selects their collection, and <code>Flower Density</code>, <code>Flower Spacing</code>, <code>Flower Seed</code>, <code>Flower Size Min</code>, and <code>Max</code> control their placement and variation.</p>
+        <p>Under <code>Flower Rotation</code>, <code>Flowers Rotation</code> adds random rotation. <code>Flowers Min</code> and <code>Max Upward Tilt</code> control how far flowers face upward and away from the surface.</p>
+        <div class="note"><strong>Adjust Flower Density gradually.</strong>
+        Presets use values around 0.01; a value of 0.05 can already produce dense flowering.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="wind">
+  <div class="wrap">
+    <h2>Wind</h2>
+
+    <article class="card" id="wind-2">
+      <div class="clip"><video src="videos/ivy-wind.mp4" poster="videos/ivy-wind.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Wind</h3>
+        <p>Enable <code>Wind</code> and play the timeline to preview leaf and flower movement.</p>
+        <p><code>Global/Wind Strength</code>: how far the leaves and flowers move.</p>
+        <p><code>Global/Wind Speed</code>: how quickly the leaves and flowers move.</p>
+        <p><code>Global/Wind Scale</code>: the gust size. Smaller values create variation between neighbouring leaves; larger values make broader areas move together.</p>
+        <div class="note"><strong>Keep ivy wind subtle.</strong>
+        Use low strength to move the leaves without making the whole plant appear to sway away from the wall.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="optimization">
+  <div class="wrap">
+    <h2>Optimization</h2>
+
+    <article class="card" id="viewport-density-levels-and-advanced">
+      <div class="clip"><video src="videos/ivy-optimization.mp4" poster="videos/ivy-optimization.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Viewport Density, levels and Advanced</h3>
+        <p><code>Viewport Density</code>: the proportion of leaves and flowers shown in the viewport, from 0 to 1. Lower it to keep a heavy scene responsive while editing.</p>
+        <p><code>Viewport Level</code> and <code>Render Level</code>: how many times growth expands from itself. Higher levels produce substantially more coverage and require more processing. Separate values let you work at viewport level 1 while rendering a more detailed plant.</p>
+        <p>Under <code>Advanced</code>, <code>Decimate Vines</code> and <code>Decimate Branches</code> simplify the stems, while <code>Vines Resolution</code> controls their roundness. Higher decimation values reduce processing cost but also change the growth pattern, so set them before refining the plant.</p>
+        <div class="note"><strong>Increase levels one step at a time.</strong>
+        Level 3 can generate a very dense plant on a large wall.</div>
+      </div>
+    </article>
+
+    <article class="card text" id="misc-and-sources">
+      <div>
+        <h3>Misc and Sources</h3>
+        <p><code>Misc</code> contains finer controls for stem variation, including <code>Noise Scale</code>, <code>Noise Strength</code>, and <code>Branch Offset</code>. <code>Sources</code> identifies the drawn curve, target objects, and <code>Vines Material</code> used for the stems.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="bake">
+  <div class="wrap">
+    <h2>Ivy Bake</h2>
+
+    <article class="card" id="bake-ivy">
+      <div class="clip"><video src="videos/ivy-bake.mp4" poster="videos/ivy-bake.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Bake Ivy</h3>
+        <p>Ivy updates when something it depends on changes. Baking stores the finished plant to improve playback in heavy scenes. The bake controls are at the bottom of Ivy Properties in Realistic Mode.</p>
+        <p><code>Still</code>: caches the current frame. Use it for ivy without animation.</p>
+        <p><code>Animation</code>: caches the full scene frame range, including wind.</p>
+        <p><code>Bake Ivy</code>: starts the bake.</p>
+        <p><code>Bin</code>: deletes the cache so the ivy can respond to edits again.</p>
+        <div class="note"><strong>Save before baking, and bake after final edits.</strong>
+        A baked ivy does not respond to setting changes until you delete its bake.</div>
+      </div>
+    </article>
+  </div>
+</section>
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the ScatterFlow content pack.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

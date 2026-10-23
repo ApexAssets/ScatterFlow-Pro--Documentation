@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decals | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html" class="active" aria-current="page">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Decals tab</div>
+    <h1>Decals</h1>
+    <p>Place logos, markings, stains, and other images on surfaces without changing their materials</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#add">Adding a decal</a>
+    <a href="#pbr">PBR maps</a>
+    <a href="#list">Decal Objects list</a>
+    <a href="#snap">Surface Snap</a>
+    <a href="#properties">Decal Properties</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">The <code>Decals</code> tab adds an image as a separate object on a surface. Use decals for road markings, signs, cracks, dirt, or other localized details.</p>
+    <p class="lead">Each decal remains editable after placement. You can move it, resize it, change its appearance, or hide it without modifying the underlying surface material.</p>
+  </div>
+</section>
+
+<section id="add">
+  <div class="wrap">
+    <h2>Adding a decal</h2>
+
+    <article class="card" id="choose-an-image-then-place-it">
+      <div class="clip win"><video src="videos/decal-add.mp4" poster="videos/decal-add.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Choose an image, then place it</h3>
+        <p><b>1.</b> Click <code>+</code> beside <code>Decal Objects</code> to open the file browser.</p>
+        <p><b>2.</b> Select an image and click <code>Add New Decal</code>. Supported formats are PNG, JPG, TIFF, EXR, TGA, and WebP. Images with transparent backgrounds provide clean outlines around the visible artwork.</p>
+        <p><b>3.</b> Move the cursor over the target surface. The preview arrow shows the placement position and orientation. Left-click to confirm the position.</p>
+        <p><b>4.</b> Move the mouse vertically to set the size, then left-click.</p>
+        <p><b>5.</b> Move the mouse horizontally to set the rotation, then left-click to finish.</p>
+        <p>The lower-left corner of the viewport shows the current step. Press <code>Esc</code> or right-click to cancel.</p>
+        <div class="note"><strong>Decals preserve the image's proportions.</strong>
+        A wide image produces a wide decal. The decal faces outward from the surface where it is placed, including walls, floors, and rocks.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="pbr">
+  <div class="wrap">
+    <h2>PBR maps</h2>
+
+    <article class="card" id="a-decal-with-normal-and-roughness-maps">
+      <div class="clip win"><video src="videos/decal-pbr.mp4" poster="videos/decal-pbr.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>A decal with normal and roughness maps</h3>
+        <p>Select multiple texture maps for the same material with <code>Ctrl</code>-click in the file browser. ScatterFlow connects them to the decal automatically, allowing effects such as a rust stain with colour, normal, and roughness detail.</p>
+        <p>Map types are identified by their filename endings:</p>
+        <p><code>_color</code>, <code>_albedo</code>, <code>_diffuse</code>, or <code>_basecolor</code>: colour.<br>
+        <code>_n</code>, <code>_nrm</code>, or <code>_normal</code>: normal.<br>
+        <code>_rough</code> or <code>_roughness</code>: roughness.<br>
+        <code>_metal</code> or <code>_metallic</code>: metallic.<br>
+        <code>_alpha</code>, <code>_opacity</code>, or <code>_mask</code>: transparency.<br>
+        <code>_emit</code> or <code>_emissive</code>: emission.</p>
+        <div class="note"><strong>Map not recognized?</strong>
+        Rename it using one of the supported endings above.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="list">
+  <div class="wrap">
+    <h2>Decal Objects list</h2>
+
+    <article class="card" id="select-and-hide">
+      <div class="clip win"><video src="videos/decal-list.mp4" poster="videos/decal-list.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Select and hide</h3>
+        <p>The list contains every decal in the scene, named after its image. Select a row to display that decal's settings in <a href="#properties">Decal Properties</a>.</p>
+        <p><code>Arrow</code>: selects the decal in the viewport so you can move it with <code>G</code>.</p>
+        <p><code>Eye</code>: toggles visibility in both the viewport and renders.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="snap">
+  <div class="wrap">
+    <h2>Surface Snap</h2>
+
+    <article class="card" id="slide-decals-over-surfaces">
+      <div class="clip win"><video src="videos/decal-snap.mp4" poster="videos/decal-snap.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Slide decals over surfaces</h3>
+        <p>Click the magnet button below <code>+</code> to enable Surface Snap. While active, moving a decal with <code>G</code> keeps it attached to the surface under the cursor and aligns it to face outward.</p>
+        <p>Use it to move a decal between differently oriented surfaces, such as from the ground onto a wall, without manually adjusting its rotation.</p>
+        <div class="note"><strong>Surface Snap also affects other objects.</strong>
+        It enables Blender's face snapping. Click the magnet again when finished to avoid snapping other objects unintentionally.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="properties">
+  <div class="wrap">
+    <h2>Decal Properties</h2>
+    <p class="lead">Select a decal and expand <code>Decal Properties</code>. Its target surface is shown at the top.</p>
+
+    <article class="card" id="surface-settings">
+      <div class="clip win"><video src="videos/decal-properties.mp4" poster="videos/decal-properties.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Surface settings</h3>
+        <p><code>Opacity</code>: how visible the decal is over the surface. Lower it for faded or worn markings.</p>
+        <p><code>Emission</code>: adds glow for details such as illuminated signs or screens.</p>
+        <p><code>Metallic</code> and <code>Roughness</code>: adjust the surface appearance. Low Roughness produces sharper reflections suitable for stickers or wet paint.</p>
+        <p><code>Alpha</code>: the transparency supplied by the image.</p>
+      </div>
+    </article>
+
+    <article class="card" id="color-adjustment-damage-dirt-and-blur">
+      <div class="clip win"><video src="videos/decal-adjust.mp4" poster="videos/decal-adjust.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Color Adjustment, Damage, Dirt and Blur</h3>
+        <p><code>Color Adjustment</code>: <code>Hue</code> shifts colours, with 0.5 leaving them unchanged. <code>Saturation</code> controls colour intensity, and <code>Value</code> controls brightness. Use these to recolor a decal without editing its source image.</p>
+        <p><code>Damage</code>: removes areas of the decal for a chipped or peeling appearance. <code>Damage Amount</code> is sensitive: values from 0.01 to 0.04 range from small chips to substantial removal. <code>Scale</code> controls chip size, while <code>Detail</code>, <code>Roughness</code>, and <code>Lacunarity</code> shape their edges. <code>Damage Position</code> shifts the pattern.</p>
+        <p><code>Dirt</code>: adds a grime tint. <code>Dirt Amount</code> and <code>Dirt Color</code> set its strength and colour, while <code>Wetness</code> and <code>Bump</code> control gloss and apparent surface depth. The effect can be subtle on small decals.</p>
+        <p><code>Blur</code>: softens the image. At 1, it becomes a diffuse patch, useful for faint stains or shadow-like details.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

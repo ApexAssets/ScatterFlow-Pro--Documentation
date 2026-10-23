@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unreal: Sky | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html" class="active" aria-current="page">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Unreal plugin</div>
+    <h1>Unreal: Sky</h1>
+    <p>Control time of day, lighting, clouds, and fog with one sky actor</p>
+    <div class="beta"><strong>Beta</strong>
+        The ScatterFlow plugin for Unreal Engine is in early development. Features, settings, and interface elements may change between releases.</div>
+  </div>
+</header>
+
+
+<section id="sky">
+  <div class="wrap">
+    <h2>Sky</h2>
+    <p class="lead">ScatterFlow Sky combines the sun, moon, stars, volumetric clouds, fog, and exposure in one actor. It also responds to ScatterFlow weather, adjusting cloud cover and lighting for rain or snow.</p>
+    <p class="lead">Add the sky from the panel, then use its <code>Sky</code> section to configure the environment.</p>
+
+    <article class="card" id="add-the-sky">
+      <div class="clip wide"><video src="videos/ue-sky-add.mp4" poster="videos/ue-sky-add.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Add the sky</h3>
+        <p>Deselect any layer and click the sun icon beside <code>Select a layer to edit it</code>. On first use, ScatterFlow creates the required materials and textures. The sky is then added and its settings open.</p>
+        <p>Existing sun, sky light, atmosphere, clouds, fog, and sky dome actors are disabled to avoid overlapping sky systems. <code>Remove Sky</code> restores them.</p>
+        <div class="note"><strong>Enable Realtime to preview cloud movement.</strong>
+        The setting is available in the viewport menu.</div>
+      </div>
+    </article>
+
+    <article class="card" id="time-of-day">
+      <div class="clip wide"><video src="videos/ue-sky-time.mp4" poster="videos/ue-sky-time.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Time of Day</h3>
+        <p><code>Time</code> sets the hour. Drag the value or enter a time such as <code>6:30 PM</code> or <code>18.5</code>.</p>
+        <p>Changing it updates the sun's position, sky colour, lighting, shadows, and cloud illumination. The sky transitions through dawn, daylight, sunset, twilight, and night, with the moon and stars visible after dark.</p>
+      </div>
+    </article>
+
+    <article class="card" id="sun-direction">
+      <div class="clip wide"><video src="videos/ue-sky-sun-direction.mp4" poster="videos/ue-sky-sun-direction.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Sun Direction</h3>
+        <p>Rotates the sun's path around the scene, changing where it rises and sets without changing the time of day. The moon and stars rotate with it.</p>
+        <p>Use it to choose the direction of the lighting and shadows independently of the time setting.</p>
+      </div>
+    </article>
+
+    <article class="card" id="latitude">
+      <div class="clip wide"><video src="videos/ue-sky-latitude.mp4" poster="videos/ue-sky-latitude.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Latitude</h3>
+        <p>Sets the latitude used by the sky, affecting sun height, day length, and twilight. Adjust it to change the sun's path through the scene.</p>
+        <p>Watch the sun and shadows while adjusting Latitude to judge the change in lighting.</p>
+      </div>
+    </article>
+
+    <article class="card" id="animate-while-playing-and-day-length">
+      <div class="clip wide"><video src="videos/ue-sky-animate.mp4" poster="videos/ue-sky-animate.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Animate While Playing and Day Length</h3>
+        <p><code>Animate While Playing</code>: advances time during gameplay. Disable it to keep the selected time fixed.</p>
+        <p><code>Day Length (min)</code>: the real-time duration of a complete day cycle. A value of 2 produces a fast cycle useful for previewing changes from afternoon to sunset.</p>
+      </div>
+    </article>
+
+    <article class="card" id="sky-presets">
+      <div class="clip wide"><video src="videos/ue-sky-presets.mp4" poster="videos/ue-sky-presets.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Sky Presets</h3>
+        <p>Choose <code>Clear</code>, <code>Partly Cloudy</code>, <code>Cloudy</code>, <code>Overcast</code>, or <code>Foggy</code> to set clouds, lighting, and fog together. These presets describe dry conditions; configure precipitation on the <a href="unreal-weather.html">Weather</a> page.</p>
+      </div>
+    </article>
+
+    <article class="card" id="clouds-density-and-scale">
+      <div class="clip wide"><video src="videos/ue-sky-clouds.mp4" poster="videos/ue-sky-clouds.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Clouds: Density and Scale</h3>
+        <p><code>Density</code>: cloud thickness and opacity. Lower values allow more light through; higher values create denser clouds with darker interiors.</p>
+        <p><code>Scale</code>: cloud size. Lower values create smaller formations, while higher values create broader clouds.</p>
+      </div>
+    </article>
+
+    <article class="card" id="base-altitude">
+      <div class="clip wide"><video src="videos/ue-sky-cloud-altitude.mp4" poster="videos/ue-sky-cloud-altitude.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Base Altitude</h3>
+        <p>Sets the height of the cloud layer's underside in kilometres. Lower clouds appear closer and occupy more of the view; higher clouds appear further away.</p>
+      </div>
+    </article>
+
+    <article class="card" id="speed">
+      <div class="clip wide"><video src="videos/ue-sky-cloud-speed.mp4" poster="videos/ue-sky-cloud-speed.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Speed</h3>
+        <p>Sets cloud movement in metres per second. At 0, clouds stop drifting. They move in the direction of the level's wind.</p>
+      </div>
+    </article>
+
+    <article class="card" id="cloud-shadows">
+      <div class="clip wide"><video src="videos/ue-sky-cloud-shadows.mp4" poster="videos/ue-sky-cloud-shadows.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Cloud Shadows</h3>
+        <p>Enables moving shadows from clouds on the terrain. Disable it to remove their influence on direct lighting below.</p>
+      </div>
+    </article>
+
+    <article class="card" id="sun-intensity">
+      <div class="clip wide"><video src="videos/ue-sky-sun-intensity.mp4" poster="videos/ue-sky-sun-intensity.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Sun Intensity</h3>
+        <p>Controls sunlight strength. Automatic exposure compensates for lighting changes, so increasing intensity does not necessarily brighten the entire image. It can instead produce stronger contrast and more pronounced shadows.</p>
+      </div>
+    </article>
+
+    <article class="card" id="fog-density">
+      <div class="clip wide"><video src="videos/ue-sky-fog.mp4" poster="videos/ue-sky-fog.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Fog Density</h3>
+        <p>Controls distance haze. Higher values obscure distant objects first and progressively affect nearer areas. The fog colour follows the sky and sun.</p>
+      </div>
+    </article>
+
+    <article class="card" id="volumetric-fog">
+      <div class="clip wide"><video src="videos/ue-sky-volumetric-fog.mp4" poster="videos/ue-sky-volumetric-fog.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Volumetric Fog</h3>
+        <p>Allows sunlight to illuminate the fog itself, creating visible light and depth in the atmosphere. It is especially apparent with a low sun shining through the haze.</p>
+        <p>This option is disabled by default because it adds rendering cost.</p>
+      </div>
+    </article>
+
+    <article class="card" id="moon-and-stars">
+      <div class="clip wide"><video src="videos/ue-sky-night.mp4" poster="videos/ue-sky-night.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Moon and Stars</h3>
+        <p><code>Moon Intensity (lux)</code>: moonlight strength. A value of 0 produces very dark nights; increase it to improve nighttime visibility.</p>
+        <p><code>Stars</code>: the brightness of the stars and Milky Way. They become visible after sunset and are obscured by clouds.</p>
+      </div>
+    </article>
+
+    <article class="card" id="select-sky-and-remove-sky">
+      <div class="clip wide"><video src="videos/ue-sky-select-remove.mp4" poster="videos/ue-sky-select-remove.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Select Sky and Remove Sky</h3>
+        <p><code>Select Sky</code>: selects the sky actor so you can access its full <code>Details</code> panel. Additional controls include day and night length, day of year, moon phase, cloud colours, and exposure.</p>
+        <p><code>Remove Sky</code>: deletes the ScatterFlow sky and restores the level's previous sky setup.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<footer>
+  <div class="wrap">Recorded with ScatterFlow Unreal Sync 2.20 (Sky and Weather: 2.23) in Unreal Engine 5.8, linked to ScatterFlow 1.0.9 in Blender 5.2.2.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

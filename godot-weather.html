@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Godot: Weather | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html" class="active" aria-current="page">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Godot plugin</div>
+    <h1>Godot: Weather</h1>
+    <p>Add rain and snow, wet surfaces, puddles, and snow cover</p>
+    <div class="beta"><strong>Beta</strong>
+        ScatterFlow Link for Godot is in early development. Features, settings, and interface elements may change between releases.</div>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#how">How the weather works</a>
+    <a href="#start">Starting and stopping the weather</a>
+    <a href="#general">General</a>
+    <a href="#rain">Rain</a>
+    <a href="#snow">Snow</a>
+  </div>
+</nav>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How the weather works</h2>
+    <p class="lead">SF Weather adds rain or snow around the camera and changes the surfaces of the scene to match: wet, darker ground and puddles in rain, settled snow in snowfall. Surface effects apply to the materials ScatterFlow brings over from Blender, so no material needs editing by hand.</p>
+    <p class="lead">With an <a href="godot-sky.html">SF Sky</a> in the scene, the sky responds to the weather: clouds thicken, the light dims, fog comes in, and thunderstorms add lightning. See <a href="godot-sky.html#weather-link">Weather Link</a> for how strongly the sky follows.</p>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap">
+    <h2>Starting and stopping the weather</h2>
+
+    <article class="card" id="add-weather">
+      <div class="clip wide"><video src="videos/gd-weather-add.mp4" poster="videos/gd-weather-add.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Add Weather</h3>
+        <p>Click the rain-cloud icon at the top of the ScatterFlow Pro dock. An <code>SF Weather</code> node is added to the open scene and rain starts falling around the camera.</p>
+        <p>The dock shows a <code>Weather</code> section with the presets and settings. Choose <code>None</code> to stop the rain or snow; the SF Weather node is removed and the sky returns to its Sky Preset.</p>
+        <p>Only one SF Weather drives a scene's surfaces at a time.</p>
+      </div>
+    </article>
+
+    <article class="card" id="weather-presets">
+      <div class="clip wide"><video src="videos/gd-weather-presets.mp4" poster="videos/gd-weather-presets.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Weather presets</h3>
+        <p>Choose <code>None</code>, <code>Light Rain</code>, <code>Rain</code>, <code>Thunderstorm</code>, <code>Light Snow</code>, <code>Snow</code>, or <code>Blizzard</code>. Each preset sets the type of precipitation, its intensity and wind, and whether snow settles. Start with the closest preset, then refine it.</p>
+        <p><code>Light Rain</code>: light rain under a closing sky.<br>
+        <code>Rain</code>: steady rain under a low, dark cloud deck.<br>
+        <code>Thunderstorm</code>: heavy rain, strong wind, and lightning.<br>
+        <code>Light Snow</code>: light snowfall.<br>
+        <code>Snow</code>: steady snowfall with snow building up.<br>
+        <code>Blizzard</code>: heavy snow and wind, close to a white-out.</p>
+        <p>The settings below the presets change with the weather: rain settings while it rains, snow settings while it snows.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="general">
+  <div class="wrap">
+    <h2>General</h2>
+
+    <article class="card" id="weather-general">
+      <div class="clip wide"><video src="videos/gd-weather-general.mp4" poster="videos/gd-weather-general.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Intensity, Wind, and Area</h3>
+        <ul class="facts"><li><b>Intensity</b> 0.7, 0 to 1</li><li><b>Wind</b> 0.25, 0 to 1</li><li><b>Wind Direction</b> 0°, -180° to 180°</li><li><b>Area</b> 36 m, 8 to 200 m</li></ul>
+        <p><code>Intensity</code>: overall strength of the rain or snow. It scales the amount of falling precipitation, and in rain also how wet surfaces become and how often drops ring the puddles.</p>
+        <p><code>Wind</code>: how strongly the wind drives the precipitation. At 0, drops and flakes fall straight down; higher values slant them and carry them sideways.</p>
+        <p><code>Wind Direction</code>: the direction the wind carries the precipitation, in degrees. At 0°, it blows toward +X.</p>
+        <p><code>Area</code>: the size of the region around the camera where rain or snow falls. A smaller area concentrates the particles near the camera; a larger one fills more of a wide view at the same particle count.</p>
+        <p><code>Preview in Editor</code>: shows the falling rain or snow in the editor viewport. Disable it to work without the particles; wet surfaces, puddles, and snow cover remain visible, and the precipitation still falls in the running game.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="rain">
+  <div class="wrap">
+    <h2>Rain</h2>
+
+    <article class="card" id="falling-rain">
+      <div class="clip wide"><video src="videos/gd-weather-rain.mp4" poster="videos/gd-weather-rain.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Falling rain</h3>
+        <ul class="facts"><li><b>Fall Speed</b> 9.5 m/s</li><li><b>Drop Length</b> 0.15 m</li><li><b>Drop Width</b> 0.009 m</li><li><b>Opacity</b> 0.42</li><li><b>Amount</b> 20,000 drops</li></ul>
+        <p>Use a dark background, such as a wall or a forest edge, to inspect the drops.</p>
+        <p><code>Fall Speed</code>: how quickly drops descend, up to 20 m/s. Lower values produce slower motion.<br>
+        <code>Drop Length</code> and <code>Drop Width</code>: the dimensions of each streak.<br>
+        <code>Opacity</code>: how visible the drops are.<br>
+        <code>Amount (drops)</code>: the number of drops around the camera at full intensity, from 1,000 to 100,000.<br>
+        <code>Color</code>: tints the drops. Their brightness also follows the light of the sky, so rain stays dim at night.</p>
+      </div>
+    </article>
+
+    <article class="card" id="splashes">
+      <div class="clip wide"><video src="videos/gd-weather-splashes.mp4" poster="videos/gd-weather-splashes.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Splashes</h3>
+        <ul class="facts"><li><b>Default</b> on</li><li><b>Amount</b> 0.8, 0 to 1</li></ul>
+        <p><code>Splashes</code> adds small bursts where raindrops hit the ground. Disable it to remove the bursts while keeping the rain rings on puddles. <code>Amount</code> controls how many splashes appear.</p>
+      </div>
+    </article>
+
+    <article class="card" id="wet-surfaces">
+      <div class="clip wide"><video src="videos/gd-weather-wet.mp4" poster="videos/gd-weather-wet.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Wet Surfaces</h3>
+        <ul class="facts"><li><b>Default</b> on</li><li><b>Wetness</b> 0.75, 0 to 1</li><li><b>Darkening</b> 0.4, 0 to 1</li></ul>
+        <p><code>Wet Surfaces</code>: makes ScatterFlow materials darker and glossier in the rain and fills puddles on flat ground. Disable it to keep the ground dry while rain continues to fall.</p>
+        <p><code>Wetness</code>: how wet surfaces become. At 0, they stay dry; at 1, they are fully soaked and glossy.</p>
+        <p><code>Darkening</code>: how much wet surfaces darken. At 0, wetness changes only the gloss; at 1, the surface takes on a strongly soaked appearance.</p>
+      </div>
+    </article>
+
+    <article class="card" id="puddles">
+      <div class="clip wide"><video src="videos/gd-weather-puddles.mp4" poster="videos/gd-weather-puddles.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Puddles</h3>
+        <ul class="facts"><li><b>Amount</b> 0.5</li><li><b>Waves</b> 0.07</li><li><b>Wave Size</b> 1</li><li><b>Wave Speed</b> 1</li><li><b>Rain Rings</b> 1</li></ul>
+        <p>Puddles are level, mirror-like water that reflects the sky and the scene. They fill the low spots of a material first, such as the gaps between paving stones, then grow and join as the amount rises. Each puddle has a damp, darker rim.</p>
+        <p><code>Amount</code>: how much of the flat ground the puddles cover. At 0, no puddles form.</p>
+        <p><code>Waves</code>: strength of the wind-driven waves on the puddles, up to 2. At 0, the water is glass-still.<br>
+        <code>Wave Size</code>: the size of the waves. 2 makes them twice as large.<br>
+        <code>Wave Speed</code>: how fast the waves travel. At 0, they stop.</p>
+        <p><code>Rain Rings</code>: the expanding rings where drops hit the puddles, up to 2. At 0, the rings are disabled. Light rain produces fewer rings than heavy rain.</p>
+        <div class="note"><strong>Reflections need screen-space reflections.</strong>
+        Puddles reflect the scene when the environment has screen-space reflections (SSR) enabled. Without them, puddles reflect only the sky.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="snow">
+  <div class="wrap">
+    <h2>Snow</h2>
+
+    <article class="card" id="falling-snow">
+      <div class="clip wide"><video src="videos/gd-weather-snow.mp4" poster="videos/gd-weather-snow.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Falling snow</h3>
+        <ul class="facts"><li><b>Fall Speed</b> 1.1 m/s</li><li><b>Flake Size</b> 0.016 m</li><li><b>Drift</b> 0.6</li><li><b>Opacity</b> 0.9</li><li><b>Amount</b> 20,000 flakes</li></ul>
+        <p><code>Fall Speed</code>: how quickly flakes fall, up to 5 m/s. Higher values give faster, heavier-looking snowfall.<br>
+        <code>Flake Size</code>: the size of each flake.<br>
+        <code>Drift</code>: the side-to-side swirl of the flakes as they fall, up to 3. At 0, they fall straight down.<br>
+        <code>Opacity</code>: how visible the flakes are.<br>
+        <code>Amount (flakes)</code>: the number of flakes around the camera at full intensity, from 1,000 to 100,000.<br>
+        <code>Color</code>: tints the flakes.</p>
+        <p>In strong wind, fast flakes are drawn as short streaks along their motion, and flakes that leave the area around the camera re-enter on the opposite side, so the snowfall stays full in a blizzard.</p>
+      </div>
+    </article>
+
+    <article class="card" id="snow-cover">
+      <div class="clip wide"><video src="videos/gd-weather-snow-cover.mp4" poster="videos/gd-weather-snow-cover.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Snow Cover</h3>
+        <ul class="facts"><li><b>Amount</b> 0.8</li><li><b>Max Coverage</b> 1</li><li><b>Patch Size</b> 1</li><li><b>Edge Detail</b> 2</li></ul>
+        <p><code>Snow Cover</code>: settles snow on upward-facing ScatterFlow surfaces. The snow presets enable it. Disable it to show falling snow without accumulation.</p>
+        <p><code>Amount</code>: how much snow has settled, from a light dusting to full cover.</p>
+        <p><code>Max Coverage</code>: the largest share of the ground that snow can cover. Lower values leave bare patches; 1 allows full coverage.</p>
+        <p><code>Patch Size</code>: the size of the snow patches, from 0.2 to 5. 2 makes them twice as large.</p>
+        <p><code>Edge Detail</code>: how ragged the edges of the snow are, up to 3. At 0, the outlines are smooth.</p>
+        <p>Use partial coverage, such as Max Coverage 0.35, to see the effect of Patch Size and Edge Detail.</p>
+      </div>
+    </article>
+
+    <article class="card" id="max-slope">
+      <div class="clip wide"><video src="videos/gd-weather-snow-slope.mp4" poster="videos/gd-weather-snow-slope.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Max Slope</h3>
+        <ul class="facts"><li><b>Default</b> 60°</li><li><b>Range</b> 5° to 85°</li></ul>
+        <p>Sets the steepest surface that holds snow. Lower values clear the snow from steep hillsides while keeping it on flatter ground.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<footer>
+  <div class="wrap">Recorded with ScatterFlow Link for Godot 1.10.2 in Godot 4.7.2.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

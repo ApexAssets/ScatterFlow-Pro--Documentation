@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Godot: Scatter Layers | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html" class="active" aria-current="page">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Godot plugin</div>
+    <h1>Godot: Scatter Layers</h1>
+    <p>Adjust imported layers or regenerate their placement directly in Godot</p>
+    <div class="beta"><strong>Beta</strong>
+        ScatterFlow Link for Godot is in early development. Features, settings, and interface elements may change between releases.</div>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#layers">Editing scatter layers</a>
+    <a href="#procedural">Procedural settings</a>
+    <a href="#masking">Masking: where a layer may grow</a>
+    <a href="#meshes">Meshes</a>
+  </div>
+</nav>
+
+<section id="layers">
+  <div class="wrap">
+    <h2>Editing scatter layers</h2>
+    <p class="lead">Each imported scatter layer is a node beneath its <code>SF Terrain</code> in the Scene tree. Use <b>Blender Exact</b> to preserve the imported placement, or <b>Procedural</b> to generate the layer in Godot using editable distribution settings.</p>
+
+    <article class="card" id="selecting-a-layer">
+      <div class="clip wide"><video src="videos/gd-select-layer.mp4" poster="videos/gd-select-layer.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Selecting a layer</h3>
+        <p>Select the layer in the Scene tree, such as <code>Field Trees</code> beneath <code>SF Terrain - Field</code>. The dock switches to its controls and displays a label such as <code>Editing Field Trees</code>.</p>
+        <p>Ctrl+click to select multiple layers. Setting changes apply to every selected layer.</p>
+      </div>
+    </article>
+
+    <article class="card" id="mode-blender-exact-or-procedural">
+      <div class="clip wide"><video src="videos/gd-mode.mp4" poster="videos/gd-mode.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Mode: Blender Exact or Procedural</h3>
+        <p>The <code>Mode</code> panel displays the instance count and active mode. Click <code>Blender Exact</code> or <code>Procedural</code> to switch.</p>
+        <p><code>Blender Exact</code> is the default. It preserves Blender's exported positions and provides adjustments for thinning, scale, rotation, and height. Use it when placement needs to match Blender.</p>
+        <p><code>Procedural</code> regenerates the layer in Godot and provides the full scatter and mask controls below. Its starting values approximate the Blender setup, so the initial appearance is similar rather than an exact match.</p>
+        <p>Each mode retains its settings when you switch, allowing you to compare them without losing adjustments.</p>
+      </div>
+    </article>
+
+    <p class="lead"><b>Blender Exact settings.</b> The following four panels adjust imported instances without generating new positions.</p>
+
+    <article class="card" id="density-keep-ratio">
+      <div class="clip wide"><video src="videos/gd-exact-density.mp4" poster="videos/gd-exact-density.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Density: Keep Ratio</h3>
+        <p><code>Keep Ratio</code> sets the proportion of imported instances retained. At 1, every instance remains; 0.5 keeps approximately half; 0 hides them all.</p>
+        <p>Thinning is consistent: reducing and restoring the value does not shuffle the layer's positions or randomly choose a new subset each time.</p>
+      </div>
+    </article>
+
+    <article class="card" id="scale">
+      <div class="clip wide"><video src="videos/gd-exact-scale.mp4" poster="videos/gd-exact-scale.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Scale</h3>
+        <p><code>Scale Multiplier</code> scales every instance relative to its imported size. A value of 1 preserves the Blender result.</p>
+        <p>Under <code>Random Scale</code>, <code>Min</code> and <code>Max</code> add random size variation on top of the multiplier. Set both to 1 for no additional variation.</p>
+        <p>For example, a range of 0.3–2.5 produces a much wider mix of small and large instances than the original sizes.</p>
+      </div>
+    </article>
+
+    <article class="card" id="rotation">
+      <div class="clip wide"><video src="videos/gd-exact-rotation.mp4" poster="videos/gd-exact-rotation.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Rotation</h3>
+        <p><code>Offset</code> <code>X</code>, <code>Y</code>, and <code>Z</code> rotate every instance by the specified angles. These ScatterFlow controls use Z as up, matching Blender. Use an X or Y offset to lean an entire layer.</p>
+        <p><code>Random Yaw</code> adds random rotation around the upright axis, up to the specified angle in either direction.</p>
+        <p>Combining a fixed tilt with Random Yaw varies the direction in which tilted instances face.</p>
+      </div>
+    </article>
+
+    <article class="card" id="location-z-offset">
+      <div class="clip wide"><video src="videos/gd-exact-location.mp4" poster="videos/gd-exact-location.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Location: Z Offset</h3>
+        <p><code>Z Offset</code> moves every instance vertically in metres. Positive values raise instances; negative values embed them in the ground.</p>
+        <p>Use it to correct floating bases, lift plants that sit too low, or make rocks appear embedded.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="procedural">
+  <div class="wrap">
+    <h2>Procedural settings</h2>
+    <p class="lead">Switch to <code>Procedural</code> to generate the layer in Godot. Changes update in the 3D view immediately. Click panel titles to expand the settings you need.</p>
+
+    <article class="card" id="surface-what-to-scatter-on">
+      <div class="clip wide"><video src="videos/gd-surface.mp4" poster="videos/gd-surface.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Surface: what to scatter on</h3>
+        <p><code>Scatter On:</code> lists the target meshes. When the list is empty, the layer uses its own terrain.</p>
+        <p>To use other surfaces, select their meshes together with the layer in the Scene tree or 3D view, then click <code>Add Selected</code>. Keeping the layer selected leaves its controls visible. Use this to move coverage onto a roof, boulder, or another mesh.</p>
+        <p><code>Select</code> beside a target selects it in the scene. <code>✕</code> removes it from the target list. Clearing the list restores scattering on the layer's terrain.</p>
+        <p><code>Pick…</code> opens <code>Select a Node</code>. Filter by name, choose the node, and click <code>OK</code> to add it.</p>
+        <div class="note"><strong>Target surfaces require collision.</strong>
+        Imported terrains already include it. For your own meshes, add a <code>StaticBody3D</code> with a collision shape.</div>
+      </div>
+    </article>
+
+    <article class="card" id="scattering-density-m-and-density-multiplier">
+      <div class="clip wide"><video src="videos/gd-distribution.mp4" poster="videos/gd-distribution.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Scattering: Density / m² and Density Multiplier</h3>
+        <p><code>Density / m²</code>: the number of instances per square metre. A value of 0.03 is approximately one instance per 33 square metres. Grass and flowers often use values of 1 or higher.</p>
+        <p><code>Density Multiplier</code>: adjusts the overall density without replacing the base value imported from Blender.</p>
+        <p>Use a top-down view to compare coverage and identify crowded or sparse areas.</p>
+      </div>
+    </article>
+
+    <article class="card" id="seed">
+      <div class="clip wide"><video src="videos/gd-seed.mp4" poster="videos/gd-seed.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Seed</h3>
+        <p><code>Seed</code> selects a different random arrangement. With the same settings, the same seed reproduces the same layout. Change it to try new placements without changing density or other controls.</p>
+      </div>
+    </article>
+
+    <article class="card" id="minimum-distance">
+      <div class="clip wide"><video src="videos/gd-min-distance.mp4" poster="videos/gd-min-distance.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Minimum Distance</h3>
+        <p><code>Minimum Distance</code> sets the minimum spacing between instances in metres. Instances that would be too close to another are excluded.</p>
+        <p>Increase it to reduce clustering. For example, changing it from 0 to 4 m spreads a dense tree layer into a more evenly spaced arrangement.</p>
+      </div>
+    </article>
+
+    <article class="card" id="max-instances">
+      <div class="clip wide"><video src="videos/gd-max-instances.mp4" poster="videos/gd-max-instances.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Max Instances</h3>
+        <p><code>Max Instances</code> caps the final instance count regardless of Density. Use it to limit very large or dense layers. For example, a value of 1000 allows no more than 1000 instances.</p>
+      </div>
+    </article>
+
+    <article class="card" id="scale-uniform-and-non-uniform">
+      <div class="clip wide"><video src="videos/gd-proc-scale.mp4" poster="videos/gd-proc-scale.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Scale: Uniform and Non-Uniform</h3>
+        <p><code>Uniform Scale</code>: the overall instance size. A value of 1 uses the source mesh's size.</p>
+        <p><code>Non-Uniform Scale</code> <code>X</code>, <code>Y</code>, and <code>Z</code>: scales each axis independently. These controls use Z for height, so increase Z for taller instances and X or Y for greater width.</p>
+      </div>
+    </article>
+
+    <article class="card" id="random-scale">
+      <div class="clip wide"><video src="videos/gd-random-scale.mp4" poster="videos/gd-random-scale.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Random Scale</h3>
+        <p>Enable <code>Random Scale</code> to assign each instance a factor between <code>Min</code> and <code>Max</code>. A wider range produces stronger size variation; for example, 0.4–2 creates a mix of much smaller and larger trees.</p>
+      </div>
+    </article>
+
+    <article class="card" id="align-to-surface">
+      <div class="clip wide"><video src="videos/gd-proc-rotation.mp4" poster="videos/gd-proc-rotation.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Align to Surface</h3>
+        <p><code>Align to Surface</code> makes each instance stand perpendicular to the ground beneath it. Disable it to keep instances vertical on slopes.</p>
+        <p>Use surface alignment for rocks, grass, and ground cover. Keep it disabled for trees that should grow upright rather than lean with the terrain.</p>
+      </div>
+    </article>
+
+    <article class="card" id="random-rotation">
+      <div class="clip wide"><video src="videos/gd-random-rotation.mp4" poster="videos/gd-random-rotation.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Random Rotation</h3>
+        <p><code>Random Rotation</code> varies instance orientation. <code>Amount</code> <code>X</code>, <code>Y</code>, and <code>Z</code> set the rotation ranges in degrees. The default varies headings around the upright axis to reduce repetition.</p>
+        <p>Add X or Y variation for random tilt. Toggle the setting to compare the varied result with the original orientations.</p>
+      </div>
+    </article>
+
+    <article class="card" id="z-offset">
+      <div class="clip wide"><video src="videos/gd-proc-zoffset.mp4" poster="videos/gd-proc-zoffset.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Z Offset</h3>
+        <p><code>Z Offset</code> in the Rotation panel moves instances by the specified distance in metres. With Align to Surface disabled, movement is vertical. With it enabled, the offset follows the surface-aligned upright direction.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="masking">
+  <div class="wrap">
+    <h2>Masking: where a layer may grow</h2>
+    <p class="lead">Masks restrict placement by slope, height, patterns, or proximity to objects and paths. Enable a mask with the checkbox in its title and expand the title to edit it. Multiple masks can be combined.</p>
+
+    <article class="card" id="slope-mask-abiotic-panel">
+      <div class="clip wide"><video src="videos/gd-mask-slope.mp4" poster="videos/gd-mask-slope.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Slope Mask (Abiotic panel)</h3>
+        <p><code>Max Angle</code>: the steepest allowed slope, in degrees. Lower it to clear steep faces and retain instances on flatter ground.</p>
+        <p><code>Smooth Transition</code>: softens the slope boundary. <code>Transition</code> sets the width of the fade in degrees.</p>
+        <p><code>Invert</code>: keeps instances on steep surfaces instead of flat areas.</p>
+      </div>
+    </article>
+
+    <article class="card" id="elevation-mask-abiotic-panel">
+      <div class="clip wide"><video src="videos/gd-mask-elevation.mp4" poster="videos/gd-mask-elevation.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Elevation Mask (Abiotic panel)</h3>
+        <p><code>Height</code>: the upper placement limit in metres above the terrain's origin. Lower it to remove instances from the upper parts of a hill.</p>
+        <p><code>Smooth Transition</code> and <code>Transition</code>: soften the height boundary over the specified distance in metres.</p>
+        <p><code>Invert</code>: keeps instances above the height limit instead of below it.</p>
+      </div>
+    </article>
+
+    <article class="card" id="noise-mask">
+      <div class="clip wide"><video src="videos/gd-mask-noise.mp4" poster="videos/gd-mask-noise.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Noise Mask</h3>
+        <p>Breaks coverage into irregular patches, useful for vegetation that grows in clusters.</p>
+        <p><code>Scale</code>: pattern frequency. Lower values produce larger patches.<br>
+        <code>Detail</code>: adds finer patterns within the main pattern.<br>
+        <code>Roughness</code>: the strength of that finer detail.<br>
+        <code>Lacunarity</code>: the change in scale between successive detail levels.<br>
+        <code>Distortion</code>: warps the pattern into less rounded shapes.<br>
+        <code>Seed</code>: a different pattern using the same settings.</p>
+        <p><code>Min</code> and <code>Max</code> under Range control the transition between populated areas and gaps. Values close together give sharper boundaries; a wider interval produces softer transitions.</p>
+        <p><code>Invert</code>: exchanges the populated areas and gaps.</p>
+      </div>
+    </article>
+
+    <article class="card" id="geometry-proximity-proximity-panel">
+      <div class="clip wide"><video src="videos/gd-mask-geo.mp4" poster="videos/gd-mask-geo.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Geometry Proximity (Proximity panel)</h3>
+        <p>Controls placement near selected objects. Select the targets together with the layer and click <code>Add Selected</code> under <code>Objects</code>, or use <code>Pick…</code>.</p>
+        <p><code>Distance</code>: the affected distance from the objects, in metres.</p>
+        <p><code>Smooth Transition</code> and <code>Transition</code>: soften the boundary.</p>
+        <p><code>Behaviour</code>: <code>Repel</code> clears instances near the targets, while <code>Attract</code> keeps instances only near them. Use Repel for clearance around a house or Attract for plants along its walls.</p>
+      </div>
+    </article>
+
+    <article class="card" id="curve-proximity-proximity-panel">
+      <div class="clip wide"><video src="videos/gd-mask-curve.mp4" poster="videos/gd-mask-curve.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Curve Proximity (Proximity panel)</h3>
+        <p>Uses a path to define a continuous region, such as a footpath or roadside planting. Add a <code>Path3D</code> through Add Node &gt; Path3D, draw its points in the 3D view, and select it together with the layer. Click <code>Add Selected</code> under <code>Curves</code>.</p>
+        <p><code>Distance</code>, <code>Smooth Transition</code>, <code>Transition</code>, and <code>Behaviour</code> work as they do for Geometry Proximity, with distance measured from the path.</p>
+        <p><code>Infinite Height</code> ignores the path's vertical distance and measures only sideways. Enable it to keep a consistent exclusion strip when a path is raised above the terrain. Without it, moving the path upward can narrow or remove its influence.</p>
+        <div class="note"><strong>Paths remain editable.</strong>
+        Move their points to update the layer's distribution.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="meshes">
+  <div class="wrap">
+    <h2>Meshes</h2>
+
+    <article class="card" id="choosing-what-the-layer-scatters">
+      <div class="clip wide"><video src="videos/gd-meshes.mp4" poster="videos/gd-meshes.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Choosing what the layer scatters</h3>
+        <p>The <code>Meshes</code> panel lists the layer's source meshes. Blender Exact displays each mesh's instance count. Procedural mode allows changes to the mesh list.</p>
+        <p><code>Weight</code>: how often a mesh is chosen relative to the others. Set it to 0 to exclude a mesh from placement.</p>
+        <p><code>+ Selected Nodes</code>: adds meshes from nodes selected in the Scene tree or 3D view, including material assignments on those nodes.</p>
+        <p><code>+ FileSystem</code>: adds selected mesh resources or model files from the FileSystem dock. Supported sources include <code>.glb</code>, <code>.gltf</code>, <code>.fbx</code>, <code>.obj</code>, and <code>.tscn</code> scenes.</p>
+        <p><code>✕</code>: removes a mesh from the layer.</p>
+        <div class="note"><strong>Re-exporting replaces the mesh list.</strong>
+        A new export from Blender restores the source list from Blender.</div>
+      </div>
+    </article>
+  </div>
+</section>
+<footer>
+  <div class="wrap">Recorded with ScatterFlow Link 1.8.0 in Godot 4.7.2, linked to ScatterFlow 1.0.9 in Blender 5.2.2.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

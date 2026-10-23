@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Godot Plugin | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html" class="active" aria-current="page">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Godot plugin</div>
+    <h1>Godot Plugin</h1>
+    <p>Install the plugin, connect Blender, and continue building your environment in Godot</p>
+    <div class="beta"><strong>Beta</strong>
+        ScatterFlow Link for Godot is in early development. Features, settings, and interface elements may change between releases.</div>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#how">How it works</a>
+    <a href="#install">Install the plugin</a>
+    <a href="#open">Step 1: Open the ScatterFlow Pro dock</a>
+    <a href="#link">Step 2: Connect to Blender</a>
+    <a href="#receive">Step 3: Bring your scene over</a>
+    <a href="#export">Export to Blender</a>
+  </div>
+</nav>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="lead">ScatterFlow Link adds the <code>ScatterFlow Pro</code> dock to the Godot editor for scene transfer, scatter editing, and environment tools.</p>
+    <p class="lead"><b>Connect Blender and Godot.</b> Export supported objects, materials, lights, and scatter layers from Blender directly into the open Godot scene, without manually importing files.</p>
+    <p class="lead"><b>Edit scatter layers in Godot.</b> Each Blender layer arrives as a ScatterFlow layer node beneath its terrain. Select it to adjust density, scale, meshes, or procedural placement without returning to Blender.</p>
+    <p class="lead"><b>Add environment tools.</b> Configure wind, water, ivy, sky, and weather. Use Play to explore the scene with the supplied character.</p>
+    <div class="note"><strong>Set up both sides of the connection.</strong>
+        <a href="#install">Install the plugin</a> in the Godot project as described below. In Blender, use ScatterFlow's <a href="export.html">Export</a> tab; see Export.</div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2>Install the plugin</h2>
+    <p class="lead">The plugin requires Godot 4.7, a Godot project, and ScatterFlow for Blender. Install it separately in each project's <code>addons</code> folder.</p>
+
+    <article class="card text" id="install-into-your-godot-project">
+      <div>
+        <h3>Install into your project</h3>
+        <p><b>1.</b> Extract <code>ScatterFlow_Godot Plugin_V1.0.zip</code>. It contains an <code>addons</code> folder with <code>scatterflow</code> inside.</p>
+        <p><b>2.</b> Copy <code>addons</code> into the project folder containing <code>project.godot</code>. If the project already has an addons folder, place scatterflow inside it beside your other add-ons. Confirm that <code>addons\scatterflow\plugin.cfg</code> exists directly within the project.</p>
+        <p><b>3.</b> Open the project in Godot and allow the plugin files to import.</p>
+        <p><b>4.</b> Open <code>Project &gt; Project Settings &gt; Plugins</code> and enable <code>ScatterFlow Link</code> using its <code>Enable</code> checkbox.</p>
+        <p><b>5.</b> Confirm that the <code>ScatterFlow Pro</code> dock appears beside the Inspector.</p>
+        <p><b>6.</b> The Output panel reports that ScatterFlow increased <code>Global Shader Variables &gt; Buffer Size</code>, a project setting needed for large scatter scenes. Apply the change by restarting once with <code>Project &gt; Reload Current Project</code>.</p>
+        <p><b>7.</b> Open a 3D scene and save it before exporting from Blender. The plugin needs a saved scene to receive content. Continue to <a href="#open">Step 1</a>.</p>
+        <div class="note"><strong>Use Forward+ or Mobile for ScatterFlow water.</strong>
+        The water effect relies on scene depth and is not displayed correctly with the Compatibility renderer. New projects use Forward+ by default; check the active renderer in the editor's upper-right corner.</div>
+      </div>
+    </article>
+
+    <article class="card text" id="updating-the-godot-plugin">
+      <div>
+        <h3>Updating to a new version</h3>
+        <p>Close Godot, delete the project's <code>addons\scatterflow</code> folder, and replace it using steps 1–2. Reopen the project. ScatterFlow rebuilds materials once when required by the new version.</p>
+        <p>Update the Blender add-on at the same time to keep both sides on the same release.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="if-the-godot-plugin-does-not-load">
+      <div>
+        <h3>If the plugin does not load</h3>
+        <p><b>ScatterFlow Link is missing from the Plugins list.</b> Check that the path is <code>addons\scatterflow</code> directly inside the project, not <code>addons\addons\scatterflow</code> or an extra folder named after the download.</p>
+        <p><b>The dock does not appear.</b> Confirm that <code>Enable</code> is selected for the plugin, then reload the project.</p>
+        <p><b>Blender cannot connect.</b> Both applications must be open, and Blender's connection address must match Plugin Settings. See <a href="#link">Step 2</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="open">
+  <div class="wrap">
+    <h2>Step 1: Open the ScatterFlow Pro dock</h2>
+
+    <article class="card" id="the-scatterflow-pro-tab">
+      <div class="clip wide"><video src="videos/gd-open.mp4" poster="videos/gd-open.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>The ScatterFlow Pro tab</h3>
+        <p>Click <code>ScatterFlow Pro</code> beside the <code>Inspector</code> to display the dock.</p>
+        <p>With no ScatterFlow node selected, the dock reads <code>Select a scatter layer to edit it.</code> and shows the scene tools. Click a section title to expand or collapse it.</p>
+        <p><code>Global Wind</code>: wind settings for ScatterFlow plants throughout the project.<br>
+        <code>Play</code>: starts a walkthrough with the ScatterFlow character.<br>
+        <code>Export</code>: sends selected nodes back to Blender.<br>
+        <code>Plugin Settings</code>: configures the Blender connection.</p>
+        <p>The four icons in the upper-right corner add <a href="godot-water.html">water</a>, <a href="godot-ivy.html">ivy</a>, <a href="godot-sky.html">sky</a>, or <a href="godot-weather.html">rain</a>. Water and ivy are placed where the 3D view is looking. See the Water, Ivy, Sky, Weather, <a href="godot-wind.html">Wind</a>, and <a href="godot-play.html">Play</a> pages for their workflows.</p>
+        <p><code>Sky</code> appears when the scene contains an SF Sky. <code>Weather</code> appears when rain or snow is active, or when a sky is present.</p>
+        <div class="note"><strong>The dock follows your selection.</strong>
+        Select a ScatterFlow layer, water, or ivy node to show its controls. Click empty space or a non-ScatterFlow node to return to the scene tools.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="link">
+  <div class="wrap">
+    <h2>Step 2: Connect to Blender</h2>
+    <p class="lead">The plugin starts its connection service with the Godot editor. In Blender's Export tab, select <code>Godot</code> and click <code>Connect</code>. The dock reports <code>Linked to Blender</code> when connected.</p>
+
+    <article class="card" id="plugin-settings">
+      <div class="clip wide"><video src="videos/gd-plugin-settings.mp4" poster="videos/gd-plugin-settings.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Plugin Settings</h3>
+        <p>Expand <code>Plugin Settings</code> at the bottom of the dock. It contains connection controls and options for linked objects.</p>
+        <p><b>Blender Link</b></p>
+        <p>The status shows a green indicator and <code>Linked to Blender</code> while connected. <code>Waiting for Blender</code> means the service is running but no Blender connection is active.</p>
+        <p>The displayed address must match Godot's <code>Link URL</code> in Blender under ScatterFlow preferences &gt; <code>Settings &gt; Export &gt; Godot</code>. The defaults match. Use <code>Copy</code> to transfer a changed address to Blender.</p>
+        <p><code>Port</code>: the network port, 18778 by default. Change it only when another program uses the same port. Click <code>Restart</code> afterward and update Blender's Link URL to use the new port.</p>
+        <p><b>Objects</b></p>
+        <p><code>Live Sync Edits to Blender</code>: sends position, rotation, and scale changes for linked nodes back to Blender. It also synchronizes edits to linked lights and cameras.</p>
+        <p><code>Deleting Here Deletes in Blender</code>: removes the linked Blender object when its Godot node is deleted. This is disabled by default to protect Blender content from unintended deletion.</p>
+        <p>The final status line reports the connection's most recent activity.</p>
+      </div>
+    </article>
+
+    <article class="card" id="restarting-the-link">
+      <div class="clip wide"><video src="videos/gd-link-restart.mp4" poster="videos/gd-link-restart.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Restarting the link</h3>
+        <p><code>Restart</code> closes and reopens the service on the displayed port. The existing Blender connection is dropped, and the status returns to <code>Waiting for Blender</code>.</p>
+        <p>Blender does not reconnect automatically. Click <code>Connect</code> in its Export tab again to restore the link.</p>
+        <div class="note"><strong>Restart only when needed.</strong>
+        Use it after changing the port or when the connection stops responding. The service starts automatically with the editor during normal use.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="receive">
+  <div class="wrap">
+    <h2>Step 3: Bring your scene over</h2>
+
+    <article class="card" id="exporting-from-blender">
+      <div class="clip wide"><video src="videos/gd-receive.mp4" poster="videos/gd-receive.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Exporting from Blender</h3>
+        <p>With the connection active, click <code>Export to Godot</code> in Blender's ScatterFlow Export tab. Godot builds the scene in two passes, each shown in a viewport progress card.</p>
+        <p><code>Importing from Blender</code>: imports objects, meshes, and materials beneath a node named after the Blender scene.</p>
+        <p><code>Importing Scatter System from Blender</code>: creates an <code>SF Terrain</code> node for each terrain, with collision, and adds its scatter layers beneath it.</p>
+        <p>When both progress cards reach 100%, save the Godot scene.</p>
+        <div class="note"><strong>Re-export to update the scene.</strong>
+        Existing objects are updated in place instead of duplicated. Scatter layers are rebuilt using the new Blender result.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="export">
+  <div class="wrap">
+    <h2>Export to Blender</h2>
+
+    <article class="card" id="sending-nodes-back-to-blender">
+      <div class="clip wide"><video src="videos/gd-export.mp4" poster="videos/gd-export.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Sending nodes back to Blender</h3>
+        <p>Select the nodes to send, including meshes, lights, cameras, or empty nodes. Expand <code>Export</code> and click <code>Export to Blender</code>.</p>
+        <p>Linked nodes update their existing Blender objects. New nodes create Blender objects and become linked for subsequent exports and live edits.</p>
+      </div>
+    </article>
+
+    <article class="card" id="live-sync-and-deleting">
+      <div class="clip wide"><video src="videos/gd-live-sync.mp4" poster="videos/gd-live-sync.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Live sync and deleting</h3>
+        <p>Enable <code>Live Sync Edits to Blender</code> under Plugin Settings &gt; Objects to synchronize edits immediately. Moving a linked object in Godot also moves its Blender counterpart.</p>
+        <p>Enable <code>Deleting Here Deletes in Blender</code> only when deleting a Godot node should also remove its Blender object.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<footer>
+  <div class="wrap">Recorded with ScatterFlow Link 1.8.0 in Godot 4.7.2, linked to ScatterFlow 1.0.9 in Blender 5.2.2.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

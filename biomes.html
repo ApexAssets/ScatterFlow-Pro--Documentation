@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biomes | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html" class="active" aria-current="page">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Scatter</div>
+    <h1>Biomes</h1>
+    <p>Populate a surface with a ready-made set of editable scatter layers</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#browser">Biome Browser</a>
+    <a href="#find">Finding a biome</a>
+    <a href="#import">Importing</a>
+    <a href="#large">Large biomes</a>
+    <a href="#own">Your own biomes</a>
+    <a href="#gscatter">GScatter environments</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">A biome combines multiple scatter layers with their assets, densities, and masks already configured. Importing a biome adds its layers to the current emitter as a group.</p>
+    <p class="lead">After importing, you can adjust each layer, modify the group, or combine layers from different biomes to build your own environment.</p>
+  </div>
+</section>
+
+<section id="browser">
+  <div class="wrap">
+    <h2>Biome Browser</h2>
+
+    <article class="card" id="opening-the-browser">
+      <div class="clip win"><video src="videos/biome-browser.mp4" poster="videos/biome-browser.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Opening the browser</h3>
+        <p>Choose an emitter and click <code>Open Biome Browser</code>. Move the cursor over the editor you want to use; it highlights blue. Click to replace that editor with the browser, or press <code>Esc</code> or right-click to cancel.</p>
+        <p>A tall area beside the viewport keeps the browser, scene, and ScatterFlow controls accessible together. Allow enough width to view multiple previews comfortably.</p>
+        <p><code>Size</code> adjusts preview size from 3 to 14.</p>
+      </div>
+    </article>
+
+    <article class="card" id="closing-it">
+      <div class="clip win"><video src="videos/biome-exit.mp4" poster="videos/biome-exit.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Closing it</h3>
+        <p>Click <code>Exit Biome Panel</code> or the red cross beside Size. The editor returns to its previous view.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="find">
+  <div class="wrap">
+    <h2>Finding a biome</h2>
+
+    <article class="card" id="search-categories-and-favorites">
+      <div class="clip win"><video src="videos/biome-find.mp4" poster="videos/biome-find.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Search, Categories and Favorites</h3>
+        <p><code>Search</code> filters biomes by name as you type. For example, enter “meadow” to find matching biomes.</p>
+        <p>Under <code>Categories</code>, expand <code>ScatterFlow</code> to browse Desert, Forest, Lawn, Meadow, Trash, Tropical, Wasteland, and Wetland. Select a category to filter the results, or choose <code>ALL</code> to show everything. Other installed packs have their own folders.</p>
+        <p>Click a biome's star to mark it as a favourite, then select <code>Favorites</code> to view starred biomes. Favorites are saved between sessions.</p>
+        <p>The refresh arrows beside Size reload the biome folder. Use them after installing or exporting a biome.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="import">
+  <div class="wrap">
+    <h2>Importing</h2>
+
+    <article class="card" id="a-whole-biome">
+      <div class="clip win"><video src="videos/biome-import.mp4" poster="videos/biome-import.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>A whole biome</h3>
+        <p>Click a biome's name to add all its layers to the current emitter. They arrive in a group named after the biome. For example, Forest Floor_V1 adds ten layers, including flowering plants, leaf litter, and fallen sticks.</p>
+        <p>Use the group's controls to hide, duplicate, or adjust the biome as a whole. Select individual layers for more specific changes, or select the group to use <a href="layers.html#group-scattering">Group Scattering</a>.</p>
+        <p>Importing the biome onto another emitter reuses its plants already present in the file.</p>
+      </div>
+    </article>
+
+    <article class="card" id="single-layers">
+      <div class="clip win"><video src="videos/biome-layers.mp4" poster="videos/biome-layers.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Single layers</h3>
+        <p>Click the arrow beside a biome's name to display its <code>Individual Layers</code>, then click <code>+</code> beside the layer you want to import.</p>
+        <p>Individually imported layers are not grouped. Use this to take a particular plant from a biome or combine selected layers from several biomes.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="large">
+  <div class="wrap">
+    <h2>Large biomes</h2>
+
+    <article class="card" id="the-large-biome-import-prompt">
+      <div class="clip win"><video src="videos/biome-large.mp4" poster="videos/biome-large.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>The Large Biome Import prompt</h3>
+        <p>ScatterFlow estimates the number of instances before importing. If the estimate exceeds 100,000, it asks how to handle viewport density. For example, Dandelion Meadow produces approximately 115,000 instances on a 25 m square emitter.</p>
+        <p><code>Yes, use adaptive safety</code> imports the layers hidden in the viewport and enables <a href="optimization.html#viewport">Decrease Viewport Density</a> at the displayed percentage. Render density remains unchanged.</p>
+        <p><code>No, keep full viewport density</code> imports the biome without these viewport reductions. Use it when your system can handle the estimated instance count.</p>
+        <p>After an adaptive-safety import, enable the layers' visibility to view the biome. Adjust Viewport Density as needed to balance coverage and responsiveness.</p>
+        <div class="note"><strong>Nothing visible after importing?</strong>
+        Adaptive safety starts layers hidden. Use each layer's monitor icon or the group's eye icon to show them. If the result looks too sparse, increase Viewport Density in Optimization.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="own">
+  <div class="wrap">
+    <h2>Your own biomes</h2>
+    <p class="lead">Save your scatter setups as biomes to reuse them in other files.</p>
+
+    <article class="card" id="export-biome">
+      <div class="clip win"><video src="videos/biome-export.mp4" poster="videos/biome-export.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Export Biome</h3>
+        <p>Open the arrow menu below the System List buttons and choose <code>Export Biome</code>. The command is available when the emitter contains at least one layer. It exports every layer in that emitter's list, including its settings.</p>
+        <p><code>Name</code> sets the biome's display name in the Biome Browser. It initially uses the scene name.</p>
+        <p><code>Category</code> determines its folder in the browser's Categories list.</p>
+        <p><code>Export Path</code> sets the save location. The export contains a .blend file with the assets and a matching .json file describing the layers. Save them in your biomes folder to make the biome available in the browser.</p>
+        <p><code>Preview Image</code> optionally supplies the browser thumbnail. It is copied alongside the other files.</p>
+        <p>Click <code>OK</code> to export.</p>
+        <div class="note"><strong>Refresh after exporting.</strong>
+        Click the Biome Browser's refresh arrows to display the new biome.</div>
+      </div>
+    </article>
+  </div>
+</section>
+<section id="gscatter">
+  <div class="wrap">
+    <h2>GScatter environments</h2>
+    <p class="lead">ScatterFlow can import Graswald GScatter environments (.gscatter files) as biomes without the GScatter add-on. Imported environments become ordinary ScatterFlow layers that you can edit with ScatterFlow's controls.</p>
+    <p class="lead">Download the environment, install its file once through the Content Installer, then import it from the Biome Browser whenever needed.</p>
+
+    <article class="card text" id="where-to-get-gscatter-environments">
+      <div>
+        <h3>Where to get GScatter environments</h3>
+        <p>GScatter environments are available from the Gscatter store at <a href="https://store.gscatter.com">store.gscatter.com</a>. Sign in with a Graswald account and download an environment. The download is a .gscatter file, such as <code>BeeMeadow_x441g_DryCloverField.gscatter</code>.</p>
+        <p>Each file includes the environment's scatter setup, plants, and textures. Files are often 250 MB–1 GB. Keep the original download to reinstall it or use it on another computer.</p>
+        <p>Environments from other stores use the same workflow when supplied as .gscatter files.</p>
+        <p>Check the licence supplied with each environment before using its assets commercially.</p>
+        <div class="note"><strong>The Biome Browser requires an environment, not a single plant.</strong>
+        A .gscatter file containing only a plant can install successfully but has no scatter layers to display as a biome.</div>
+      </div>
+    </article>
+
+    <article class="card" id="installing-a-gscatter-file">
+      <div class="clip win"><video src="videos/gscatter-install.mp4" poster="videos/gscatter-install.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Installing a .gscatter file</h3>
+        <p><b>1.</b> Open <code>Edit &gt; Preferences &gt; Add-ons</code>, find ScatterFlow, and expand its preferences.</p>
+        <p><b>2.</b> Check <code>Content Library Folder</code> in the <code>Content Installer</code>. Use the same folder as your existing ScatterFlow content. If no folder is set, choose one with sufficient disk space; installation remains disabled until a location is selected.</p>
+        <p><b>3.</b> Click <code>Install Content Files</code>, select the .gscatter download, and click <code>Install ScatterFlow / GScatter Content</code>. You can select multiple files and combine .gscatter, .zip, .rar, and .blend files in one installation.</p>
+        <p><b>4.</b> Follow the status bar while installation runs. Large files are extracted in the background, leaving Blender usable. Press <code>Esc</code> to cancel. The completion message reports the result, for example <code>Installed 1 content file(s): 30 new file(s), 0 existing file(s) kept.</code></p>
+        <p><b>5.</b> Check the <code>GScatter</code> entry in the Content Installer. It reports the installed pack count, such as <code>1 pack(s)</code>.</p>
+        <p>Files are extracted into <code>ScatterFlow_GScatter\GScatterPacks</code> within the Content Library Folder, in a subfolder named after the download. Reinstalling the same file keeps existing content and restores missing files.</p>
+      </div>
+    </article>
+
+    <article class="card" id="importing-a-gscatter-environment">
+      <div class="clip win"><video src="videos/gscatter-import.mp4" poster="videos/gscatter-import.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Importing a GScatter environment</h3>
+        <p>Choose an emitter and open the <a href="#browser">Biome Browser</a>. Select <code>GScatter</code> under <code>Categories</code> to display installed environments. They share one category without subcategories. Search and Favorites work as they do for other biomes.</p>
+        <p>Expand an environment's <code>Individual Layers</code> to import selected layers with <code>+</code>. Each original GScatter scatter system becomes one layer; Dry Clover Field, for example, contains six.</p>
+        <p>Click the environment's name to import the full setup. A progress window reports the layers being added, and the resulting layers are grouped under the environment's name.</p>
+        <p>Large imports use the same instance estimate and adaptive-safety prompt as <a href="#large">other biomes</a>.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="what-carries-over-from-gscatter">
+      <div>
+        <h3>What carries over, and what is approximated</h3>
+        <p>GScatter builds scatter systems from stacks of effects. ScatterFlow converts those effects to the closest available ScatterFlow settings. The result resembles the original environment but may not match it exactly.</p>
+        <p><b>Carried over:</b> plants and their variations, density, seed, base scale, random scale, random rotation, and surface alignment.</p>
+        <p><b>Approximated:</b> multiple GScatter noise masks are represented by one noise mask using the same detail and seed, with density reduced to account for the original masked areas. GScatter's percentage-based alignment becomes enabled surface alignment when the original value is at least halfway.</p>
+        <p><b>Not imported:</b> the GScatter terrain generator and effects without a ScatterFlow equivalent.</p>
+        <p>Once imported, the layers no longer depend on GScatter. Adjust them using ScatterFlow's density, masks, slope and height rules, and other controls.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="gscatter-troubleshooting">
+      <div>
+        <h3>When something goes wrong</h3>
+        <p><b>The Install button is disabled.</b> Choose a <code>Content Library Folder</code> first.</p>
+        <p><b>“GScatter package has no product.json content.”</b> The file may not be a GScatter package, or the download may be incomplete. Download it again and compare its size with the store listing.</p>
+        <p><b>“The selected archive is not ZIP-compatible.”</b> The file is damaged or incomplete. Download it again.</p>
+        <p><b>The environment is missing from the Biome Browser.</b> Refresh the browser and select the <code>GScatter</code> category. Check that the Content Installer reports at least one GScatter pack and that the file contains an environment rather than a single plant.</p>
+        <p><b>“N missing collection(s)” after importing.</b> Required plants were not found, so their layers were skipped. Reinstall the file to restore missing content. If the environment depends on another Graswald product, install that product's .gscatter file as well.</p>
+        <p><b>“Choose an OpenScatter emitter before importing the GScatter environment.”</b> Select an Emitter at the top of the ScatterFlow panel.</p>
+        <p><b>Import or viewport performance is slow.</b> GScatter environments can be dense. Try a smaller emitter, accept adaptive safety, or reduce density on the heaviest layers. See <a href="optimization.html">Optimization</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the ScatterFlow content pack.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

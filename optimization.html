@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optimization | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html" class="active" aria-current="page">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Scatter</div>
+    <h1>Optimization</h1>
+    <p>Improve scene responsiveness and control which optimizations affect the final render</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#viewport">Viewport Density</a>
+    <a href="#mesh">Optimized Mesh</a>
+    <a href="#camera">Camera Culling</a>
+    <a href="#occlusion">Occlusion Culling</a>
+    <a href="#decimator">Decimator</a>
+    <a href="#nano">ScatterFlow Nano</a>
+  </div>
+</nav>
+
+<section id="viewport">
+  <div class="wrap">
+    <h2>Display in the viewport</h2>
+    <p class="lead">These settings simplify viewport display while you work with heavy layers.</p>
+
+    <article class="card" id="decrease-viewport-density">
+      <div class="clip"><video src="videos/opt-viewport-density.mp4" poster="videos/opt-viewport-density.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Decrease Viewport Density</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Viewport Density</b> 10%</li></ul>
+        <p>Displays a percentage of the layer's instances in the viewport. At <code>Viewport Density</code> 10%, approximately one in ten instances is shown.</p>
+        <p>Use it for dense layers such as grass, where a reduced preview is enough to evaluate placement.</p>
+      </div>
+    </article>
+
+    <article class="card" id="mesh">
+      <div class="clip"><video src="videos/opt-optimized-mesh.mp4" poster="videos/opt-optimized-mesh.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Optimized Mesh</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Type</b> Bounding Box</li></ul>
+        <p>Replaces detailed viewport meshes with simpler representations. Choose the representation under <code>Type</code>.</p>
+        <p><code>Bounding Box</code>: displays a box matching each object's bounds.<br>
+        <code>Convex Hull</code>: displays a simplified shell that follows the object's outline more closely.<br>
+        <code>Proxy Object</code>: uses a chosen mesh, such as a cone, cube, or icosphere. Select it under <code>Proxy Object</code> and adjust its size with <code>Proxy Scale</code>.<br>
+        <code>Points</code>: represents each object as a point cloud. <code>Point Radius</code> controls point size, and <code>Point Density</code> controls the number of points.</p>
+        <p>Enable Bounding Box in the add-on preferences to start new layers with this optimization active.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="camera">
+  <div class="wrap">
+    <h2>Camera Culling</h2>
+    <p class="lead">Excludes instances outside the scene camera's view. The retained region follows the camera as it moves or rotates.</p>
+
+    <article class="card" id="fov-and-clipping">
+      <div class="clip"><video src="videos/opt-camera-culling.mp4" poster="videos/opt-camera-culling.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>FOV and Clipping</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Width / Height</b> 1.2</li><li><b>Clip Start</b> 5 m</li><li><b>Clip End</b> 100 m</li></ul>
+        <p>Enable <code>Camera Culling</code> to restrict the layer to the camera's view and clipping range.</p>
+        <p><code>Width</code> and <code>Height</code> adjust the retained region relative to the camera frame. A value of 1 matches the frame. The default of 1.2 adds a margin to help retain instances and shadows near its edges.</p>
+        <p><code>Clip End</code> excludes instances beyond the specified distance. <code>Clip Start</code> excludes instances closer than the specified distance.</p>
+        <div class="note"><strong>Camera Culling also affects renders.</strong>
+        Excluded instances are absent from the final render, not just the viewport. Use a generous margin, especially with a moving camera.</div>
+      </div>
+    </article>
+
+    <article class="card" id="distance-culling">
+      <div class="clip"><video src="videos/opt-distance-culling.mp4" poster="videos/opt-distance-culling.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Distance Culling</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Reduction Rate</b> 1.0</li><li><b>Seed</b> 0</li></ul>
+        <p>Reduces instance density with distance from the camera. This option is part of Camera Culling.</p>
+        <p><code>Reduction Rate</code> controls the amount of thinning. <code>Seed</code> changes which instances are excluded. The effect can be subtle and is most visible in distant areas of the layer.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="occlusion">
+  <div class="wrap">
+    <h2>Occlusion Culling</h2>
+
+    <article class="card" id="occlusion-culling">
+      <div class="clip"><video src="videos/opt-occlusion-culling.mp4" poster="videos/opt-occlusion-culling.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Occlusion Culling</h3>
+        <ul class="facts"><li><b>Default</b> off</li></ul>
+        <p>Excludes instances hidden behind other objects from the scene camera's viewpoint. Enable the option and select a <code>Collection</code> containing occluding objects, such as buildings, walls, rocks, or hills.</p>
+        <p>The excluded area updates as the occluding objects move. For example, moving a wall changes which trees behind it are culled.</p>
+        <div class="note"><strong>Camera Culling may also be required.</strong>
+        In the documented tests, Occlusion Culling only affected the layer when Camera Culling was enabled. If it has no visible effect, enable Camera Culling as well.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="decimator">
+  <div class="wrap">
+    <h2>Decimator</h2>
+    <p class="lead">Reduces polygon counts on the source objects in a collection. Because instances share those source meshes, the reduction applies throughout the scatter.</p>
+
+    <article class="card" id="decimator-2">
+      <div class="clip"><video src="videos/opt-decimator.mp4" poster="videos/opt-decimator.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Decimator</h3>
+        <p>Expand <code>Decimator</code>, select the source <code>Collection</code>, and click <code>Add To All</code> to add a Decimate modifier to each object.</p>
+        <p><code>Master Ratio</code> sets the proportion of geometry retained across the collection. A value of 1 keeps the original detail; 0.2 keeps one fifth. The <code>25%</code>, <code>50%</code>, and <code>75%</code> buttons provide preset ratios. Wireframe display can help you inspect the reduction.</p>
+        <p>The buttons beside Global Decimation control viewport visibility, render visibility, permanent application with the checkmark, and removal with the cross. To simplify editing without reducing final detail, enable the reduction in the viewport and disable it for renders.</p>
+        <p><code>Collection Objects</code> lists the source objects, their polygon counts, and individual Ratio controls. Use these to retain more detail on assets that need it.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="nano">
+  <div class="wrap">
+    <h2>ScatterFlow Nano</h2>
+    <div class="beta"><strong>Beta</strong>
+        ScatterFlow Nano and the ScatterFlow build of Blender are in beta. Keep backup copies of your .blend files before opening them in this build and while working with it.</div>
+    <p class="lead">Nano is available in the ScatterFlow build of Blender. It adjusts the viewport detail of scatter instances according to their size on screen, reducing the geometry drawn for dense scenes. It works on ScatterFlow layers in Solid shading, with or without textures, and does not affect renders.</p>
+    <p class="lead">The recorded comparison uses Desert_V2 on a 30 m square surface, with approximately 920,000 instances and 17 billion polygons.</p>
+
+    <article class="card" id="before-and-after">
+      <div class="clip win"><video src="videos/nano-performance.mp4" poster="videos/nano-performance.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Before and after</h3>
+        <p>The comparison shows the same scene with Nano disabled and enabled. Frame duration reflects the actual viewport redraw time, and the on-screen readout reports performance.</p>
+        <p>Without Nano, redraws took approximately 1.9 seconds, or about 0.5 frames per second. With Nano enabled using the button at the right end of the viewport header, redraws took approximately 55 milliseconds, or 18 frames per second: about 35 times faster in this test.</p>
+        <p>Performance depends on the scene and hardware. Treat these measurements as an example rather than an expected speedup for every project.</p>
+      </div>
+    </article>
+
+    <article class="card" id="the-nano-panel">
+      <div class="clip win"><video src="videos/nano-panel.mp4" poster="videos/nano-panel.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>The Nano panel</h3>
+        <p>Click the arrow beside the Nano button to open its panel. The main button toggles Nano and displays <code>Nano: Activated</code> or <code>Nano: Deactivated</code>. Other settings are disabled while Nano is off. The enabled state is remembered between sessions.</p>
+        <p><code>Visualizer</code> displays diagnostic colours. <code>Clusters</code> shows the triangle groups used to draw each object, <code>Detail</code> shows the chosen detail levels, and <code>Instances</code> gives each instance a separate colour. Return it to <code>Off</code> for normal display.</p>
+      </div>
+    </article>
+
+    <article class="card" id="detail-level">
+      <div class="clip win"><video src="videos/nano-detail.mp4" poster="videos/nano-detail.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Detail Level</h3>
+        <ul class="facts"><li><b>Default</b> 1 px</li><li><b>Range</b> 0.25 to 8 px</li></ul>
+        <p>Sets the maximum allowed difference from the full mesh, measured on screen in pixels. Lower values retain more detail. Higher values reduce detail and improve performance.</p>
+        <p>Higher values can remove fine details such as leaves, making branches more prominent. Use the Clusters visualizer to inspect how the detail changes.</p>
+      </div>
+    </article>
+
+    <article class="card" id="reduce-small-objects">
+      <div class="clip win"><video src="videos/nano-reduce-small.mp4" poster="videos/nano-reduce-small.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Reduce Small Objects</h3>
+        <ul class="facts"><li><b>Default</b> 0 px</li><li><b>Range</b> 0 to 16 px</li></ul>
+        <p>Reduces the number of instances drawn below the specified screen size. Smaller instances are reduced more strongly. At 0, all instances are drawn.</p>
+        <p>Increase this value to reduce distant pebbles and small plants that contribute little visible detail.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the assets bundled with the add-on.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

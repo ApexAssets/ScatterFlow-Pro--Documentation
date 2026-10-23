@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual Mode | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html" class="active" aria-current="page">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Scatter</div>
+    <h1>Manual Mode</h1>
+    <p>Place and edit instances directly with nine brushes</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#start">Starting</a>
+    <a href="#assets">Scatter Manager</a>
+    <a href="#controls">Controls</a>
+    <a href="#placing">Placing brushes</a>
+    <a href="#editing">Editing brushes</a>
+    <a href="#groups">Groups</a>
+  </div>
+</nav>
+
+<section id="start">
+  <div class="wrap">
+    <h2>Starting Manual Mode</h2>
+    <p class="lead">Use Manual Mode for placements that need direct control, such as a hero tree, vegetation along a path, or the edge of a clearing. Set the layer's Scattering <code>Type</code> to Manual to display the <code>Manual Mode</code> section. See <a href="scatter-setup.html#scattering">Scattering Type</a> for a comparison with Procedural mode.</p>
+
+    <article class="card" id="start-placing-and-the-mode-dials">
+      <div class="clip"><video src="videos/manual-start.mp4" poster="videos/manual-start.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Start Placing and the mode dials</h3>
+        <p>Click <code>Start Placing</code> to display the numbered brush dials on the left of the viewport. A shortcut card appears beneath them.</p>
+        <p>Select a brush by clicking its dial or pressing its number, 1–9. The selected dial remains visible with its settings, while the other dials collapse. Click the active dial again to display the full brush list. No instances are placed until a brush is selected.</p>
+        <p>Press <code>Esc</code>, <code>Enter</code>, or the right mouse button to leave Manual Mode. Your placements remain on the layer.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="assets">
+  <div class="wrap">
+    <h2>Scatter Manager</h2>
+    <p class="lead">Control which source objects the placement brushes can use.</p>
+
+    <article class="card" id="scatter-manager">
+      <div class="clip"><video src="videos/manual-scatter-manager.mp4" poster="videos/manual-scatter-manager.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Scatter Manager</h3>
+        <p>The list shows the objects assigned in the layer's Instances section, along with their polygon counts. Disable an object's checkbox to exclude it from new placements. For example, disable rocks and bushes to paint only the trees in a mixed collection.</p>
+        <p><code>All</code> enables every object; <code>None</code> disables them all.</p>
+        <div class="note"><strong>Enable at least one object.</strong>
+        Start Placing cannot begin when every object is disabled.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="controls">
+  <div class="wrap">
+    <h2>Controls shared by every brush</h2>
+
+    <article class="card" id="erase-and-brush-size">
+      <div class="clip"><video src="videos/manual-erase-resize.mp4" poster="videos/manual-erase-resize.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Erase and brush size</h3>
+        <p>Hold <code>Ctrl</code> and drag to erase instances. The brush ring turns red while erasing. There are two exceptions: with Scale, <code>Ctrl</code> shrinks instances; with Attract, it pushes them away.</p>
+        <p>Hold <code>F</code> and move the mouse horizontally to adjust the brush size. This changes the same value as the <code>Radius</code> dial.</p>
+        <p>Viewport navigation with the middle mouse button and mouse wheel remains available while painting.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="using-the-setting-dials">
+      <div>
+        <h3>Using the setting dials</h3>
+        <p>Drag a dial horizontally to change its value. Hold <code>Shift</code> for finer adjustments, or use the mouse wheel while hovering over the dial.</p>
+        <p><code>Ctrl</code>+click or double-click resets a dial to its default. Click an on/off dial to toggle it.</p>
+        <p>Every brush has a <code>Radius</code> control. The default is 2.0, except for Precision, which uses 0.7.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="placing">
+  <div class="wrap">
+    <h2>Placing brushes</h2>
+
+    <article class="card" id="1-area">
+      <div class="clip"><video src="videos/manual-area.mp4" poster="videos/manual-area.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>1 &nbsp;Area</h3>
+        <ul class="facts"><li><b>Density</b> 1</li><li><b>Delay</b> 1.00</li><li><b>Surface Rotation</b> on</li></ul>
+        <p>Places random instances within the brush area as you drag.</p>
+        <p><code>Density</code> sets how many instances each step of the stroke adds. Increase it for denser coverage.</p>
+        <p><code>Delay</code> controls the distance between placement steps, not the time between them. Lower values create a continuous band; higher values produce separated clusters.</p>
+        <p><code>Surface Rotation</code> aligns new instances to the slope beneath them. Disable it to keep them upright.</p>
+      </div>
+    </article>
+
+    <article class="card" id="2-precision">
+      <div class="clip"><video src="videos/manual-precision.mp4" poster="videos/manual-precision.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>2 &nbsp;Precision</h3>
+        <ul class="facts"><li><b>Scale</b> 1.00</li><li><b>Mesh Preview</b> on</li></ul>
+        <p>Places one instance at a time. A transparent preview follows the cursor. Press and drag to position the instance, then release to place it.</p>
+        <p><code>Scale</code> sets the size of the next instance.</p>
+        <p><code>Swap Preview</code>, or <code>F8</code>, switches to another enabled object from the layer. This is available when the layer uses a collection with more than one object enabled in Scatter Manager.</p>
+        <p><code>Mesh Preview</code> toggles the transparent object preview. When disabled, the cursor shows a simple ring.</p>
+      </div>
+    </article>
+
+    <article class="card" id="3-align">
+      <div class="clip"><video src="videos/manual-align.mp4" poster="videos/manual-align.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>3 &nbsp;Align</h3>
+        <ul class="facts"><li><b>Density</b> 1</li><li><b>Delay</b> 1.00</li><li><b>Surface Rotation</b> on</li></ul>
+        <p>Places instances like Area, but rotates each one to face along the brush stroke. Use it for directional arrangements such as fences, logs, hedges, or crop rows.</p>
+        <p><code>Density</code>, <code>Delay</code>, and <code>Surface Rotation</code> work as they do for Area. Their values are stored separately for Align.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="editing">
+  <div class="wrap">
+    <h2>Editing brushes</h2>
+    <p class="lead">These brushes modify existing hand-placed instances on the active layer. They do not affect instances on other layers.</p>
+
+    <article class="card" id="4-move">
+      <div class="clip"><video src="videos/manual-move.mp4" poster="videos/manual-move.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>4 &nbsp;Move</h3>
+        <ul class="facts"><li><b>Adjust Normals</b> off</li></ul>
+        <p>Press over a group of instances and drag to move them across the surface. The brush picks up the instances inside its radius at the start of the drag.</p>
+        <p>Set <code>Radius</code> large enough to include the entire group before moving it.</p>
+        <p><code>Adjust Normals</code> realigns moved instances to the slope at their new position.</p>
+      </div>
+    </article>
+
+    <article class="card" id="5-scale">
+      <div class="clip"><video src="videos/manual-scale.mp4" poster="videos/manual-scale.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>5 &nbsp;Scale</h3>
+        <ul class="facts"><li><b>Scale Speed</b> 0.05</li></ul>
+        <p>Hold the mouse button over instances to enlarge them. Hold <code>Ctrl</code> to shrink them instead. Scaling continues while the button is held, so use short presses for controlled adjustments.</p>
+        <p><code>Scale Speed</code> controls how quickly instances grow or shrink.</p>
+      </div>
+    </article>
+
+    <article class="card" id="6-rotate">
+      <div class="clip"><video src="videos/manual-rotate.mp4" poster="videos/manual-rotate.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>6 &nbsp;Rotate</h3>
+        <ul class="facts"><li><b>Jitter</b> 0.10</li></ul>
+        <p>Adds random tilt to instances under the brush. The effect builds while the brush remains over them. Use it to break up an arrangement that looks too uniform.</p>
+        <p><code>Jitter</code> sets the amount of tilt added at each step.</p>
+      </div>
+    </article>
+
+    <article class="card" id="7-dilute">
+      <div class="clip"><video src="videos/manual-dilute.mp4" poster="videos/manual-dilute.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>7 &nbsp;Dilute</h3>
+        <ul class="facts"><li><b>Probability</b> 0.10</li><li><b>Min Distance</b> 0.70</li></ul>
+        <p>Thins crowded areas by removing instances that are too close to their neighbours.</p>
+        <p><code>Min Distance</code> sets the target spacing. Instances closer together than this may be removed.</p>
+        <p><code>Probability</code> sets the chance of removing each eligible instance on a brush pass. Lower values thin the layer gradually over repeated strokes; higher values remove more at once.</p>
+      </div>
+    </article>
+
+    <article class="card" id="8-attract">
+      <div class="clip"><video src="videos/manual-attract.mp4" poster="videos/manual-attract.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>8 &nbsp;Attract</h3>
+        <ul class="facts"><li><b>Pull Speed</b> 0.03</li><li><b>Adjust Normals</b> off</li></ul>
+        <p>Hold the mouse button to pull instances inside the brush toward the cursor. Holding longer forms a tighter cluster; eventually, all affected instances can converge on the same point.</p>
+        <p>Hold <code>Ctrl</code> to push instances away instead. They move toward the edge of the brush and stop there, making this useful for opening a clearing. Increase <code>Radius</code> to affect a larger area.</p>
+        <p><code>Pull Speed</code> controls how quickly instances move.</p>
+        <p><code>Adjust Normals</code> realigns instances to the surface as they move.</p>
+      </div>
+    </article>
+
+    <article class="card" id="9-comb">
+      <div class="clip"><video src="videos/manual-comb.mp4" poster="videos/manual-comb.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>9 &nbsp;Comb</h3>
+        <ul class="facts"><li><b>Rotate Speed</b> 0.015</li></ul>
+        <p>Leans instances in the direction of the brush stroke. Use it to flatten grass or give trees a directional, wind-blown appearance.</p>
+        <p><code>Rotate Speed</code> controls how strongly each brush movement changes their lean.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="groups">
+  <div class="wrap">
+    <h2>Manual Mode on a group</h2>
+    <p class="lead">Select a group and set its Type to Manual to paint its layers together. Group painting adds a <code>Group Spread</code> control for the spacing between layers around the brush. See <a href="layers.html#group-scattering">Group Scattering</a> for details.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the assets bundled with the add-on.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

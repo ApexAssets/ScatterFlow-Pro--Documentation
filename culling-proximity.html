@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Culling and Proximity | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html" class="active" aria-current="page">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Scatter</div>
+    <h1>Culling and Proximity</h1>
+    <p>Control placement with painted masks, nearby objects, and curves</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#culling">Culling</a>
+    <a href="#geometry">Geometry Proximity</a>
+    <a href="#curve">Curve Proximity</a>
+  </div>
+</nav>
+
+<section id="culling">
+  <div class="wrap">
+    <h2>Culling: Vertex Group</h2>
+    <p class="lead">Use a vertex group on the scatter surface to define where instances appear. The layer is kept in painted areas and excluded from unpainted areas.</p>
+
+    <article class="card" id="vertex-group">
+      <div class="clip"><video src="videos/culling-vertex-group.mp4" poster="videos/culling-vertex-group.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Vertex Group</h3>
+        <ul class="facts"><li><b>Default</b> off</li></ul>
+        <p>Enable <code>Vertex Group</code> and select a group from the field. Use different groups to switch between layouts such as a winding strip or isolated groves.</p>
+        <p>The picker shows vertex groups from the surface the layer uses: its emitter or its Single Surface object.</p>
+        <div class="note"><strong>Mask detail depends on the surface mesh.</strong>
+        Weights are stored per vertex. A coarse mesh produces a less detailed boundary; subdivide the relevant area when you need finer control.</div>
+      </div>
+    </article>
+
+    <article class="card" id="painting-the-mask">
+      <div class="clip"><video src="videos/culling-paint.mp4" poster="videos/culling-paint.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Painting the mask</h3>
+        <p>Select the surface object, then click the brush button at the end of the row to enter Weight Paint mode. Paint the areas where the layer should appear.</p>
+        <p>Click the button again to return to Object Mode and view the updated scatter.</p>
+      </div>
+    </article>
+
+    <article class="card" id="smooth-transition">
+      <div class="clip"><video src="videos/culling-transition.mp4" poster="videos/culling-transition.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Smooth Transition</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Transition</b> 1.0</li></ul>
+        <p>Without Smooth Transition, instances are either kept or excluded. With it enabled, instance scale follows the painted weight, creating smaller instances near the mask boundary.</p>
+        <p><code>Transition</code> sets the weight needed for full-size instances. Lower values reach full size in lightly painted areas; higher values require stronger weights.</p>
+      </div>
+    </article>
+
+    <article class="card" id="invert">
+      <div class="clip"><video src="videos/culling-invert.mp4" poster="videos/culling-invert.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Invert</h3>
+        <ul class="facts"><li><b>Default</b> off</li></ul>
+        <p>Reverses the mask so the layer appears outside the painted area. The arrow button beside the vertex group field performs the same action.</p>
+        <p>For example, paint a path once, use the mask normally for gravel or flowers, and invert it on a tree layer to keep trees off the path.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="geometry">
+  <div class="wrap">
+    <h2>Geometry Proximity</h2>
+    <p class="lead">Use nearby objects to exclude a layer from an area or restrict it to that area. This is useful for clear space around boulders, vegetation near walls, or plants around tree stumps.</p>
+
+    <article class="card" id="object-and-distance">
+      <div class="clip"><video src="videos/proximity-geometry-distance.mp4" poster="videos/proximity-geometry-distance.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Object and Distance</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Distance</b> 0 m</li></ul>
+        <p>Enable <code>Geometry Proximity</code>, choose an <code>Object</code>, and set <code>Distance</code>. With the default Avoid behaviour, instances within that distance are removed.</p>
+        <p>Distance is measured from the object's surface rather than its centre, so the cleared area follows its shape.</p>
+      </div>
+    </article>
+
+    <article class="card" id="smooth-transition-2">
+      <div class="clip"><video src="videos/proximity-geometry-transition.mp4" poster="videos/proximity-geometry-transition.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Smooth Transition</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Transition</b> 1 m</li></ul>
+        <p>Softens the boundary around the excluded area. Instances grow from zero size at the Distance boundary to full size <code>Transition</code> metres further away.</p>
+      </div>
+    </article>
+
+    <article class="card" id="behaviour">
+      <div class="clip"><video src="videos/proximity-geometry-behaviour.mp4" poster="videos/proximity-geometry-behaviour.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Behaviour</h3>
+        <ul class="facts"><li><b>Default</b> Avoid</li></ul>
+        <p><code>Avoid</code> excludes instances within the specified Distance of the object.</p>
+        <p><code>Seek</code> keeps instances only within that Distance. Use it to concentrate vegetation around a target, such as weeds at the base of a wall or ferns around a stump.</p>
+      </div>
+    </article>
+
+    <article class="card" id="type-single-object-or-multiple-objects">
+      <div class="clip"><video src="videos/proximity-geometry-multiple.mp4" poster="videos/proximity-geometry-multiple.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Type: Single Object or Multiple Objects</h3>
+        <ul class="facts"><li><b>Default</b> Single Object</li></ul>
+        <p><code>Single Object</code> uses one target. <code>Multiple Objects</code> replaces the object field with a collection picker and applies the same settings to every object in that collection.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="curve">
+  <div class="wrap">
+    <h2>Curve Proximity</h2>
+    <p class="lead">Use a curve to define a path, road, stream, fence line, or other continuous boundary. The scatter responds when you edit the curve.</p>
+
+    <article class="card" id="curve-and-distance">
+      <div class="clip"><video src="videos/proximity-curve-distance.mp4" poster="videos/proximity-curve-distance.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Curve and Distance</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Distance</b> 1 m</li></ul>
+        <p>Enable <code>Curve Proximity</code> and select a <code>Curve</code>. With Avoid behaviour, <code>Distance</code> sets the clearance on each side, so use half your intended path width.</p>
+      </div>
+    </article>
+
+    <article class="card" id="smooth-transition-3">
+      <div class="clip"><video src="videos/proximity-curve-transition.mp4" poster="videos/proximity-curve-transition.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Smooth Transition</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Transition</b> 2</li></ul>
+        <p>Creates a gradual boundary along the path. Instances increase to full size over the <code>Transition</code> distance rather than ending abruptly.</p>
+      </div>
+    </article>
+
+    <article class="card" id="infinite-z">
+      <div class="clip"><video src="videos/proximity-curve-infinite-z.mp4" poster="videos/proximity-curve-infinite-z.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Infinite Z</h3>
+        <ul class="facts"><li><b>Default</b> off</li></ul>
+        <p>By default, distance is measured in 3D. Moving a curve far enough above the terrain can reduce or remove its effect. This can close the cleared path even though the curve has not moved sideways.</p>
+        <p>Enable <code>Infinite Z</code> to ignore height and apply the curve's influence vertically to the terrain below. Use it to control a path on uneven terrain with a flat curve positioned above the ground.</p>
+      </div>
+    </article>
+
+    <article class="card" id="behaviour-2">
+      <div class="clip"><video src="videos/proximity-curve-behaviour.mp4" poster="videos/proximity-curve-behaviour.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Behaviour</h3>
+        <ul class="facts"><li><b>Default</b> Avoid</li></ul>
+        <p><code>Avoid</code> clears instances along the curve. <code>Seek</code> keeps them only near the curve, useful for hedges, avenues of trees, or reeds beside a stream.</p>
+      </div>
+    </article>
+
+    <article class="card" id="type-single-curve-or-multiple-curves">
+      <div class="clip"><video src="videos/proximity-curve-multiple.mp4" poster="videos/proximity-curve-multiple.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Type: Single Curve or Multiple Curves</h3>
+        <ul class="facts"><li><b>Default</b> Single Curve</li></ul>
+        <p><code>Single Curve</code> uses one curve object. <code>Multiple Curves</code> uses a collection, allowing one set of proximity settings to control an entire path network.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the assets bundled with the add-on.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamics | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html" class="active" aria-current="page">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Scatter</div>
+    <h1>Dynamics</h1>
+    <p>Animate layers with wind, transition effects, and object interaction</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#wind">Wind</a>
+    <a href="#transition">Transition Effects</a>
+    <a href="#collision">Collision</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">Dynamics controls movement over time. Play Blender's timeline to preview these effects.</p>
+  </div>
+</section>
+
+<section id="wind">
+  <div class="wrap">
+    <h2>Wind</h2>
+    <p class="lead">Adds swaying motion to a layer's instances. Wind is disabled on new layers.</p>
+
+    <article class="card" id="wind-type">
+      <div class="clip"><video src="videos/wind-type.mp4" poster="videos/wind-type.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Wind Type</h3>
+        <ul class="facts"><li><b>Default</b> No Wind</li></ul>
+        <p><code>Wind-Performance</code> has the lowest processing cost. It tilts and rocks each instance as a whole.</p>
+        <p><code>Wind-Semi-Realistic</code> adds waves of wind moving across the layer, providing a balance between motion detail and performance.</p>
+        <p><code>Wind-Realistic</code> bends plants along their height and adds finer flutter. It provides the most detailed motion and has the highest processing cost, indicated by a warning in the menu. Reserve it for layers that need close-up detail.</p>
+        <p>Select a type to display its settings.</p>
+        <div class="note"><strong>Adjust Strength to the scale of your assets.</strong>
+        Wind moves instances by a distance in the scene, so a value that suits a 10 m tree may bend small plants too far. Lower Strength if plants bend excessively or collapse flat.</div>
+      </div>
+    </article>
+
+    <article class="card" id="main-settings">
+      <div class="clip"><video src="videos/wind-main.mp4" poster="videos/wind-main.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Main settings</h3>
+        <ul class="facts"><li><b>Direction</b> 0&deg;</li><li><b>Strength</b> 2</li><li><b>Speed</b> 1</li><li><b>Scale</b> 2</li></ul>
+        <p><code>Direction</code> sets the compass direction the wind blows toward.</p>
+        <p><code>Strength</code> controls how far instances are pushed.</p>
+        <p><code>Speed</code> controls how quickly instances sway.</p>
+        <p><code>Scale</code> controls gust size. Lower values make larger areas move together; higher values create more variation between neighbouring instances.</p>
+        <p>Wind-Performance also includes <code>Smoothness</code> to soften the motion.</p>
+      </div>
+    </article>
+
+    <article class="card" id="wind-realistic-extras">
+      <div class="clip"><video src="videos/wind-realistic.mp4" poster="videos/wind-realistic.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Wind-Realistic extras</h3>
+        <ul class="facts"><li><b>Bending</b> 1</li><li><b>Minor Wind</b> on, 1</li></ul>
+        <p><code>Bending</code> controls how much a plant curves along its height rather than tilting as a rigid object.</p>
+        <p><code>Enable Minor Wind</code> adds finer motion on top of the main sway. Adjust <code>Minor Wind Strength</code> to control its intensity.</p>
+        <p>The <code>Advanced</code> panel contains <code>Height Falloff</code> and <code>Width Falloff</code>, which control the effect from base to tip and from centre to outer edges. A <code>Vertex Group</code> can limit the effect to part of the mesh.</p>
+      </div>
+    </article>
+
+    <article class="card" id="presets">
+      <div class="clip"><video src="videos/wind-presets.mp4" poster="videos/wind-presets.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Presets</h3>
+        <ul class="facts"><li><b>Presets</b> Gentle Breeze, Windy, Storm</li></ul>
+        <p>Choose a <code>Preset</code> and click <code>Apply Preset</code> to set Strength, Speed, and Scale for the selected Wind Type. Use the result as a starting point, then refine it for your assets.</p>
+        <p>Gentle Breeze provides light swaying, Windy creates stronger continuous movement, and Storm produces pronounced leaning and gusts.</p>
+        <p>Preset values differ between Wind Types. Apply the preset again after changing the type.</p>
+      </div>
+    </article>
+
+    <article class="card" id="wind-bake-before-and-after">
+      <div class="clip"><video src="videos/wind-bake.mp4" poster="videos/wind-bake.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Wind Bake: before and after</h3>
+        <p>Wind is recalculated on every frame, which can slow playback on dense layers. <code>Bake Wind</code> stores the animation so Blender can play the cached result rather than calculate it again.</p>
+        <p>In the recorded test, approximately 7,000 trees using Wind-Realistic played a 48-frame sequence at about 3 frames per second before baking and 30 frames per second afterward. The bake took 16 seconds. These figures describe that test, not a guaranteed playback speed.</p>
+        <p>Choose <code>Animation</code> to bake the scene's full frame range, or <code>Still</code> to bake only the current frame. The button changes to <code>Baked</code> when complete. Click the bin icon to delete the bake.</p>
+        <div class="note"><strong>Save first and bake after final adjustments.</strong>
+        Blender stores the bake beside the .blend file. Changes to wind settings, density, or the frame range require you to delete the existing bake and bake again.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="transition">
+  <div class="wrap">
+    <h2>Transition Effects</h2>
+    <p class="lead">Animate a layer appearing or disappearing over a frame range. Twenty presets are available, each using the same basic Animation controls.</p>
+
+    <article class="card" id="preset">
+      <div class="clip"><video src="videos/transition-presets.mp4" poster="videos/transition-presets.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Preset</h3>
+        <ul class="facts"><li><b>Default</b> No Effect</li></ul>
+        <p>Choose an effect under <code>Preset</code> and play the timeline. Examples include:</p>
+        <p><code>Popup</code>: instances appear in a wave across the layer.<br>
+        <code>Radial</code>: the layer grows outward from its centre.<br>
+        <code>Vortex</code>: instances spin down into position.<br>
+        <code>Rain</code>: instances fall into position from above.</p>
+        <p>The remaining presets are Aurora Front, Ripple, Geyser, Popcorn, Corkscrew, Spinup, Jelly Pop, Card Cascade, Orbit Assemble, Shutters, Seedling Timelapse, Sun Chase, Verdant, Pop Bounce, Meteor, and Bloom.</p>
+      </div>
+    </article>
+
+    <article class="card" id="animation-settings">
+      <div class="clip"><video src="videos/transition-animation.mp4" poster="videos/transition-animation.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Animation settings</h3>
+        <ul class="facts"><li><b>Start Frame</b> 1</li><li><b>End Frame</b> 60 to 90</li><li><b>Reverse</b> off</li><li><b>Seed</b> 0</li></ul>
+        <p><code>Start Frame</code> and <code>End Frame</code> define when the transition begins and when the layer is fully visible. Shorten the range to speed up the effect, or increase Start Frame to delay it.</p>
+        <p><code>Reverse</code> plays the transition backward, starting with the complete layer and animating it out.</p>
+        <p><code>Seed</code> changes the random order in which instances appear.</p>
+        <p>Each preset also includes an <code>Effect Settings</code> panel with its own controls, such as Edge Width for Radial or Spin and Drop Height for Vortex.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="collision">
+  <div class="wrap">
+    <h2>Collision</h2>
+    <p class="lead">Flattens instances near an object, useful for grass reacting to a ball, foot, or wheel.</p>
+
+    <article class="card" id="collision-object-and-distance">
+      <div class="clip"><video src="videos/collision.mp4" poster="videos/collision.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Collision Object and Distance</h3>
+        <ul class="facts"><li><b>Default</b> off</li><li><b>Min</b> 0</li><li><b>Max</b> 0.2</li></ul>
+        <p>Enable <code>Collision</code> and select a <code>Collision Object</code>. Nearby instances bend down and return to their original state when the object moves away.</p>
+        <p><code>Max</code> sets how far the effect reaches from the object. The default of 0.2 affects the immediate contact area. Increase it to flatten a wider area.</p>
+        <p><code>Min</code> defines the distance within which instances are completely flat. Between Min and Max, the flattening is partial.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="group-dynamics">
+      <div>
+        <h3>Group Dynamics</h3>
+        <p>Select a group to access Group Dynamics. Its settings apply to every layer in the group, allowing a complete planting to share the same motion settings.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the assets bundled with the add-on.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

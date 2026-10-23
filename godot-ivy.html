@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Godot: Ivy | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html" class="active" aria-current="page">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Godot plugin</div>
+    <h1>Godot: Ivy</h1>
+    <p>Grow climbing plants directly on scene geometry</p>
+    <div class="beta"><strong>Beta</strong>
+        ScatterFlow Link for Godot is in early development. Features, settings, and interface elements may change between releases.</div>
+  </div>
+</header>
+
+
+<section id="ivy">
+  <div class="wrap">
+    <h2>Ivy</h2>
+    <p class="lead">Generate ivy over walls, rocks, trees, and ground surfaces. Target geometry needs collision for the plant to climb it.</p>
+
+    <article class="card" id="growing-ivy">
+      <div class="clip wide"><video src="videos/gd-ivy-add.mp4" poster="videos/gd-ivy-add.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Growing ivy</h3>
+        <p>Point the 3D view at a surface and click the ivy icon at the top of the dock. An <code>SF Ivy</code> node is created at the target location, grows over the surface, and is selected for editing.</p>
+        <p>Select a mesh before adding ivy to give it collision automatically if it has none.</p>
+        <p>Move the ivy node to change its starting location. Growth follows the node's up direction, so rotate it to aim the plant.</p>
+      </div>
+    </article>
+
+    <article class="card" id="regrow-and-randomize-seed">
+      <div class="clip wide"><video src="videos/gd-ivy-buttons.mp4" poster="videos/gd-ivy-buttons.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Regrow and Randomize Seed</h3>
+        <p><code>Randomize Seed</code>: generates a different arrangement with the same settings. <code>Random Seed</code> displays the value; enter a previous value to reproduce that arrangement.</p>
+        <p><code>Regrow</code>: recalculates growth against the current surroundings. Use it after adding or moving nearby geometry, such as placing a crate against the wall that the ivy should climb.</p>
+        <p>Generated ivy is saved with the scene. It does not regenerate automatically when the scene opens.</p>
+      </div>
+    </article>
+
+    <article class="card" id="growth-size-and-spread">
+      <div class="clip wide"><video src="videos/gd-ivy-growth.mp4" poster="videos/gd-ivy-growth.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Growth: size and spread</h3>
+        <p><code>Growth</code>: how much of the plant is visible, progressing outward from the root.</p>
+        <p><code>Vine Length</code>: the reach of each main vine, in metres.<br>
+        <code>Main Vines</code>: the number of vines starting at the root.<br>
+        <code>Branching</code>: side branches per metre, controlling the density of coverage.</p>
+      </div>
+    </article>
+
+    <article class="card" id="growth-shape">
+      <div class="clip wide"><video src="videos/gd-ivy-shape.mp4" poster="videos/gd-ivy-shape.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Growth: shape</h3>
+        <p><code>Climb</code>: the upward growth bias. At 1, growth is directed upward; at 0, it spreads in all directions; negative values direct it downward.</p>
+        <p><code>Gravity</code>: downward influence on growth, producing a lower, wider plant.</p>
+        <p><code>Adhesion</code>: how strongly vines follow the surface. Higher values help them wrap around edges; lower values allow them to lift away and hang.</p>
+        <p><code>Wander</code>: variation in vine paths. At 0, vines are straight; higher values produce more winding, tangled growth.</p>
+      </div>
+    </article>
+
+    <article class="card" id="growth-finer-settings">
+      <div class="clip wide"><video src="videos/gd-ivy-more.mp4" poster="videos/gd-ivy-more.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Growth: finer settings</h3>
+        <p><code>Branch Depth</code>: repeated levels of branching. <code>Branch Length</code>: the length of side branches.</p>
+        <p><code>Twigs</code>: short leafy shoots per metre of vine. <code>Twig Length</code>: their length.</p>
+        <p><code>Vine Lift</code>: spacing above the surface for later vines, in metres. Use it to build a layered appearance over earlier growth.</p>
+        <p><code>Spacing</code>: the separation between vines from different branches, in metres. At 0, they can overlap.</p>
+        <p><code>Hang Length</code>: the maximum unsupported distance a vine can extend before stopping.</p>
+        <p><code>Step Length</code>: the distance covered by each growth step. Shorter steps follow surface details more closely.</p>
+        <p><code>Search Radius</code>: how far from the node the plant searches for an initial surface.</p>
+        <p><code>Max Points</code>: a limit on generated growth. When the limit is reached, side branches and twigs are omitted first.</p>
+      </div>
+    </article>
+
+    <article class="card" id="vines">
+      <div class="clip wide"><video src="videos/gd-ivy-vines.mp4" poster="videos/gd-ivy-vines.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Vines</h3>
+        <p><code>Vine Thickness</code>: the radius of a main vine at its root, in centimetres. <code>Tip Thickness</code>: its size near the end.</p>
+        <p><code>Vine Color</code>: the stem colour.</p>
+        <p><code>Vine Sides</code>: the number of sides used to draw vines. A value of 3 is angular and inexpensive; 12 produces a smoother result.</p>
+        <p>Hide the leaves temporarily to inspect stem shape and detail.</p>
+      </div>
+    </article>
+
+    <article class="card" id="leaves">
+      <div class="clip wide"><video src="videos/gd-ivy-leaves.mp4" poster="videos/gd-ivy-leaves.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Leaves</h3>
+        <p><code>Leaves</code>: toggles leaf visibility.</p>
+        <p><code>Leaf Density</code>: leaves per metre of vine.<br>
+        <code>Leaf Scale</code>: overall leaf size. <code>Leaf Scale Variation</code>: size differences between leaves.<br>
+        <code>Tip Leaf Scale</code>: relative size of leaves near vine tips.<br>
+        <code>Bare Trunk</code>: the proportion of each vine that remains leafless from the root upward.</p>
+      </div>
+    </article>
+
+    <article class="card" id="leaves-how-they-sit">
+      <div class="clip wide"><video src="videos/gd-ivy-leaf-shape.mp4" poster="videos/gd-ivy-leaf-shape.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Leaves: how they sit</h3>
+        <p><code>Leaf Rotation Random</code>: how much each leaf is randomly rotated.<br>
+        <code>Leaf Droop</code>: downward leaf tilt.<br>
+        <code>Leaf Tilt</code> and <code>Leaf Tilt Random</code>: how far leaf tips lift away from the surface and how much that angle varies.<br>
+        <code>Leaf Spread</code>: sideways distance from the vine, in metres.<br>
+        <code>Leaf Offset</code>: distance away from the surface, in metres.<br>
+        <code>Leaf Shadows</code>: enables leaf shadows. Disable it to reduce rendering cost.</p>
+      </div>
+    </article>
+
+    <article class="card" id="flowers">
+      <div class="clip wide"><video src="videos/gd-ivy-flowers.mp4" poster="videos/gd-ivy-flowers.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Flowers</h3>
+        <p>Enable <code>Flowers</code> to add them along the vines.</p>
+        <p><code>Flower Density</code>: flowers per metre in flowering regions.<br>
+        <code>Flower Coverage</code>: the proportion of the vine that produces flowers.<br>
+        <code>Flower Scale</code> and <code>Flower Scale Variation</code>: overall size and variation between flowers.<br>
+        <code>Flower Tilt Random</code>: variation in the angle away from the surface.<br>
+        <code>Flower Offset</code>: distance from the surface, in metres.</p>
+      </div>
+    </article>
+
+    <article class="card" id="wind-2">
+      <div class="clip wide"><video src="videos/gd-ivy-wind.mp4" poster="videos/gd-ivy-wind.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Wind</h3>
+        <p><code>Wind Strength</code>: the response of leaves and flowers to global wind. At 0, they remain still.<br>
+        <code>Wind Speed</code>: motion speed relative to global wind speed.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<footer>
+  <div class="wrap">Recorded with ScatterFlow Link 1.8.0 in Godot 4.7.2, linked to ScatterFlow 1.0.9 in Blender 5.2.2.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

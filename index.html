@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScatterFlow documentation</title>
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home active" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="kicker">Natural environments for Blender</p>
+    <h1><b>ScatterFlow</b> Documentation</h1>
+    <p>Every setting of ScatterFlow, explained and shown in a short video: scattering, weather, ivy, rivers, physics, and the plugins for Unreal Engine and Godot.</p>
+    <button class="search-open big" type="button"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Ask or search, e.g. "trees on steep slopes"</span><kbd>Ctrl K</kbd></button>
+    <div class="hero-links">
+      <a class="btn primary" href="getting-started.html">Get Started <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn" href="export.html">Export to Unreal and Godot</a>
+    </div>
+  </div>
+</section>
+<section class="topics">
+  <h2>Browse by Topic</h2>
+  <p class="sub">Pick a topic to see all its pages.</p>
+  <div class="topic-grid">
+    <a class="topic" href="#start">
+      <img src="videos/content-browse.jpg" alt="">
+      <div>
+        <h3><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg>Getting Started<svg class="icon go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></h3>
+        <p>Install ScatterFlow, configure its content libraries, and start using assets.</p>
+        <span class="count">3 pages &middot; 10 videos</span>
+      </div>
+    </a>
+    <a class="topic" href="#scatter">
+      <img src="videos/group-create.jpg" alt="">
+      <div>
+        <h3><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg>Scattering<svg class="icon go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></h3>
+        <p>Build scatter layers, control placement and variation, and work with masks, materials, and biomes.</p>
+        <span class="count">13 pages &middot; 116 videos</span>
+      </div>
+    </a>
+    <a class="topic" href="#environment">
+      <img src="videos/atmos-leaves.jpg" alt="">
+      <div>
+        <h3><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Environment Tools<svg class="icon go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></h3>
+        <p>Add weather, atmosphere, ivy, rivers, decals, and physics-based placement to Blender scenes.</p>
+        <span class="count">5 pages &middot; 61 videos</span>
+      </div>
+    </a>
+    <a class="topic" href="#engines">
+      <img src="videos/export-run.jpg" alt="">
+      <div>
+        <h3><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg>Game Engines<svg class="icon go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></h3>
+        <p>Transfer supported Blender scene content to Unreal Engine or Godot.</p>
+        <span class="count">1 pages &middot; 6 videos</span>
+      </div>
+    </a>
+    <a class="topic" href="#unreal">
+      <img src="videos/ue-water-presets.jpg" alt="">
+      <div>
+        <h3><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg>Unreal Engine<svg class="icon go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></h3>
+        <p>Set up the Unreal plugin, import Blender scenes, and configure scattering, wind, sky, weather, water, and ivy.</p>
+        <span class="count">8 pages &middot; 86 videos</span>
+      </div>
+    </a>
+    <a class="topic" href="#godot">
+      <img src="videos/gd-water-presets.jpg" alt="">
+      <div>
+        <h3><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg>Godot<svg class="icon go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></h3>
+        <p>Set up the Godot plugin, import Blender scenes, and configure scattering, wind, sky, weather, water, and ivy.</p>
+        <span class="count">8 pages &middot; 68 videos</span>
+      </div>
+    </a>
+  </div>
+</section>
+<section class="topic-pages" id="start">
+  <h2><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg>Getting Started</h2>
+  <div class="tiles">
+    <a class="tile" href="getting-started.html">
+      <img src="videos/install-addon.jpg" alt="Blender&#x27;s Preferences showing ScatterFlow installed">
+      <div>
+        <h3>Installation and preferences</h3>
+        <p>Install the add-on and its content, and set the defaults for new layers.</p>
+        <span class="count">3 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="content-pack.html">
+      <img src="videos/content-browse.jpg" alt="The ScatterFlow content pack in Blender&#x27;s Asset Browser">
+      <div>
+        <h3>Content pack and the Asset Browser</h3>
+        <p>Browse the ScatterFlow assets, drop them into a scene and scatter them.</p>
+        <span class="count">4 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="megascans.html">
+      <img src="videos/megascans-use.jpg" alt="A scanned Roman column in the viewport with its material nodes below">
+      <div>
+        <h3>Megascans installer</h3>
+        <p>Install a Megascans download as a ready-to-use asset with its material set up.</p>
+        <span class="count">3 videos</span>
+      </div>
+    </a>
+  </div>
+</section>
+<section class="topic-pages" id="scatter">
+  <h2><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg>Scattering</h2>
+  <div class="tiles">
+    <a class="tile" href="layers.html">
+      <img src="videos/group-create.jpg" alt="A meadow of trees, bushes and rocks beside the System List">
+      <div>
+        <h3>Emitter, layers and groups</h3>
+        <p>Choose an emitter, then add, duplicate, hide and group scatter layers.</p>
+        <span class="count">11 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="scatter-setup.html">
+      <img src="videos/surface-type.jpg" alt="Ground cover scattered across a meadow around large boulders">
+      <div>
+        <h3>Surface, Instances and Scattering</h3>
+        <p>Where a layer scatters, what it scatters and how much.</p>
+        <span class="count">8 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="manual.html">
+      <img src="videos/manual-area.jpg" alt="Trees painted in bands across a meadow with the brush dials on the left">
+      <div>
+        <h3>Manual Mode</h3>
+        <p>Paint instances by hand with nine brushes: place, move, scale, thin and comb.</p>
+        <span class="count">12 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="scale-rotation.html">
+      <img src="videos/scale-random.jpg" alt="A wood with trees of many different sizes">
+      <div>
+        <h3>Scale and Rotation</h3>
+        <p>Size, stretch and random variation; turning, snapping and aligning to the ground.</p>
+        <span class="count">7 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="culling-proximity.html">
+      <img src="videos/proximity-curve-distance.jpg" alt="A path cleared through a wood along a curve">
+      <div>
+        <h3>Culling and Proximity</h3>
+        <p>Painted vertex-group masks, and clearing or gathering around objects and curves.</p>
+        <span class="count">13 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="ecosystem.html">
+      <img src="videos/ecosystem-ring.jpg" alt="Bushes growing in bands around boulders">
+      <div>
+        <h3>Ecosystem</h3>
+        <p>Make one layer grow near another, or keep away from it.</p>
+        <span class="count">5 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="abiotic.html">
+      <img src="videos/elevation-height.jpg" alt="A forest stopping at the tree line of a mountain">
+      <div>
+        <h3>Abiotic masks</h3>
+        <p>Slope, Elevation and Angle: place a layer by the shape of the ground.</p>
+        <span class="count">10 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="texture-masks.html">
+      <img src="videos/image-falloff.jpg" alt="The ScatterFlow logo spelled out in plants on a field">
+      <div>
+        <h3>Texture Masks</h3>
+        <p>Noise, Lines, Tiles and Image: break a layer into patches, rows, a grid or any shape.</p>
+        <span class="count">14 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="dynamics.html">
+      <img src="videos/collision.jpg" alt="A ball pressing a hollow into a field of grass">
+      <div>
+        <h3>Dynamics</h3>
+        <p>Wind, animated transition effects and collision with moving objects.</p>
+        <span class="count">8 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="materials.html">
+      <img src="videos/materials-seasons.jpg" alt="A meadow in autumn colours">
+      <div>
+        <h3>Materials</h3>
+        <p>Seasons, snow, dry patches and lawn stripes for ScatterFlow plants.</p>
+        <span class="count">5 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="biomes.html">
+      <img src="videos/biome-find.jpg" alt="The Biome Browser showing preview pictures of biomes">
+      <div>
+        <h3>Biomes</h3>
+        <p>The Biome Browser: find a ready-made planting, import it whole or layer by layer, and export your own.</p>
+        <span class="count">9 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="optimization.html">
+      <img src="videos/nano-performance.jpg" alt="A desert of Joshua trees drawn with ScatterFlow Nano">
+      <div>
+        <h3>Optimization</h3>
+        <p>Viewport density, stand-in meshes, culling, the Decimator and ScatterFlow Nano.</p>
+        <span class="count">10 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="quick-tools.html">
+      <img src="videos/randomize-options.jpg" alt="Trees and rocks at random sizes and angles on a hillside">
+      <div>
+        <h3>Quick Tools</h3>
+        <p>Randomize Transform and Snap to Ground, for objects you place by hand.</p>
+        <span class="count">4 videos</span>
+      </div>
+    </a>
+  </div>
+</section>
+<section class="topic-pages" id="environment">
+  <h2><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Environment Tools</h2>
+  <div class="tiles">
+    <a class="tile" href="weather.html">
+      <img src="videos/atmos-leaves.jpg" alt="Autumn leaves falling across a meadow">
+      <div>
+        <h3>Weather and Atmosphere</h3>
+        <p>Rain, snow, wind, falling leaves, embers and dust from the content pack.</p>
+        <span class="count">9 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="ivy.html">
+      <img src="videos/ivy-visibility.jpg" alt="A flowering climber growing up a wall">
+      <div>
+        <h3>Ivy</h3>
+        <p>Draw climbing plants onto walls and shape their vines, leaves and flowers.</p>
+        <span class="count">15 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="river.html">
+      <img src="videos/river-material.jpg" alt="A river winding through a green valley">
+      <div>
+        <h3>River</h3>
+        <p>Draw a river on a terrain, shape its water and scatter rocks along its banks.</p>
+        <span class="count">11 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="decals.html">
+      <img src="videos/decal-list.jpg" alt="A logo, a stain and hazard stripes placed on a wall and floor">
+      <div>
+        <h3>Decals</h3>
+        <p>Place logos, stains and markings on any surface and adjust their look.</p>
+        <span class="count">6 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="physics.html">
+      <img src="videos/physics-push.jpg" alt="Barrels and tyres piled against a wall">
+      <div>
+        <h3>Physics</h3>
+        <p>Drop, pile and push objects with real collisions, then convert them to a scatter.</p>
+        <span class="count">20 videos</span>
+      </div>
+    </a>
+  </div>
+</section>
+<section class="topic-pages" id="engines">
+  <h2><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg>Game Engines</h2>
+  <div class="tiles">
+    <a class="tile" href="export.html">
+      <img src="videos/export-run.jpg" alt="The Game Engine Bridge panel connected to Unreal">
+      <div>
+        <h3>Export</h3>
+        <p>Send objects and scatter layers to Unreal Engine or Godot.</p>
+        <span class="count">6 videos</span>
+      </div>
+    </a>
+  </div>
+</section>
+<section class="topic-pages" id="unreal">
+  <h2><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg>Unreal Engine</h2>
+  <div class="tiles">
+    <a class="tile" href="unreal.html">
+      <img src="videos/ue-water-presets.jpg" alt="Setup and Sync">
+      <div>
+        <h3>Setup and Sync</h3>
+        <p>Install the plugin, link Unreal to Blender, receive scenes and send edits back.</p>
+        <span class="count">8 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="unreal-scatter.html">
+      <img src="videos/ue-mode.jpg" alt="Scatter Layers">
+      <div>
+        <h3>Scatter Layers</h3>
+        <p>Edit layers in Unreal: exact or procedural placement, scale, rotation and masks.</p>
+        <span class="count">23 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="unreal-wind.html">
+      <img src="videos/ue-wind.jpg" alt="Wind">
+      <div>
+        <h3>Wind</h3>
+        <p>Global wind and per-layer wind for ScatterFlow plants.</p>
+        <span class="count">2 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="unreal-play.html">
+      <img src="videos/ue-play.jpg" alt="Play">
+      <div>
+        <h3>Play</h3>
+        <p>Walk or fly through your level with a ready-made character.</p>
+        <span class="count">3 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="unreal-sky.html">
+      <img src="videos/ue-sky-presets.jpg" alt="Sky">
+      <div>
+        <h3>Sky</h3>
+        <p>Time of day, sun path, clouds, fog and night sky.</p>
+        <span class="count">15 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="unreal-weather.html">
+      <img src="videos/ue-weather-rain.jpg" alt="Weather">
+      <div>
+        <h3>Weather</h3>
+        <p>Rain and snow presets, wet surfaces, puddles and snow cover.</p>
+        <span class="count">17 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="unreal-water.html">
+      <img src="videos/ue-water-presets.jpg" alt="Water">
+      <div>
+        <h3>Water</h3>
+        <p>Add a body of water and set its waves, colour and foam.</p>
+        <span class="count">8 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="unreal-ivy.html">
+      <img src="videos/ue-ivy-growth.jpg" alt="Ivy">
+      <div>
+        <h3>Ivy</h3>
+        <p>Grow procedural ivy and set its vines, leaves and flowers.</p>
+        <span class="count">10 videos</span>
+      </div>
+    </a>
+  </div>
+</section>
+<section class="topic-pages" id="godot">
+  <h2><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg>Godot</h2>
+  <div class="tiles">
+    <a class="tile" href="godot.html">
+      <img src="videos/gd-water-presets.jpg" alt="Setup and Sync">
+      <div>
+        <h3>Setup and Sync</h3>
+        <p>Install the plugin, link Godot to Blender, receive scenes and send edits back.</p>
+        <span class="count">6 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="godot-scatter.html">
+      <img src="videos/gd-mode.jpg" alt="Scatter Layers">
+      <div>
+        <h3>Scatter Layers</h3>
+        <p>Edit layers in Godot: exact or procedural placement, masks and meshes.</p>
+        <span class="count">22 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="godot-wind.html">
+      <img src="videos/gd-global-wind.jpg" alt="Wind">
+      <div>
+        <h3>Wind</h3>
+        <p>Global wind and per-layer wind for ScatterFlow plants.</p>
+        <span class="count">2 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="godot-play.html">
+      <img src="videos/gd-play.jpg" alt="Play">
+      <div>
+        <h3>Play</h3>
+        <p>Walk or fly through your scene with a ready-made character.</p>
+        <span class="count">3 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="godot-sky.html">
+      <img src="videos/gd-sky-presets.jpg" alt="Sky">
+      <div>
+        <h3>Sky</h3>
+        <p>Time of day, sun path, moon, clouds, fog and the weather link.</p>
+        <span class="count">11 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="godot-weather.html">
+      <img src="videos/gd-weather-presets.jpg" alt="Weather">
+      <div>
+        <h3>Weather</h3>
+        <p>Rain and snow presets, wet surfaces, puddles, and snow cover.</p>
+        <span class="count">10 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="godot-water.html">
+      <img src="videos/gd-water-presets.jpg" alt="Water">
+      <div>
+        <h3>Water</h3>
+        <p>Add a body of water and set its waves, colour and foam.</p>
+        <span class="count">4 videos</span>
+      </div>
+    </a>
+    <a class="tile" href="godot-ivy.html">
+      <img src="videos/gd-ivy-growth.jpg" alt="Ivy">
+      <div>
+        <h3>Ivy</h3>
+        <p>Grow procedural ivy and set its vines, leaves and flowers.</p>
+        <span class="count">10 videos</span>
+      </div>
+    </a>
+  </div>
+</section>
+<footer><div class="wrap">Recorded with ScatterFlow 1.0.9 in Blender 5.2, the ScatterFlow plugin for Unreal Engine 5.8 and ScatterFlow Link for Godot 4.7.</div></footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

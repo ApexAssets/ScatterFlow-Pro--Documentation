@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>River | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html" class="active" aria-current="page">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / River tab</div>
+    <h1>River</h1>
+    <p>Draw editable rivers, shape their banks, and add flowing water and shoreline assets</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#draw">Drawing a river</a>
+    <a href="#size">Size</a>
+    <a href="#water">Water</a>
+    <a href="#collision">Extra Collision Objects</a>
+    <a href="#scatter">Scatter System</a>
+    <a href="#material">SF_River Material</a>
+    <a href="#layers">Rivers and scatter layers</a>
+    <a href="#optimization">Optimization</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">The <code>River</code> tab creates a river from a stroke drawn on terrain. ScatterFlow shapes the riverbed in the terrain, adds animated water, and can scatter rocks or other assets along its banks.</p>
+    <p class="lead">The result remains editable. Change the course, width, water settings, or bank scatter as your scene develops.</p>
+  </div>
+</section>
+
+<section id="draw">
+  <div class="wrap">
+    <h2>Drawing a river</h2>
+
+    <article class="card" id="draw-river">
+      <div class="clip"><video src="videos/river-draw.mp4" poster="videos/river-draw.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Draw River</h3>
+        <p><b>1.</b> Select the terrain.</p>
+        <p><b>2.</b> Click <code>Draw River</code> to activate the drawing tool.</p>
+        <p><b>3.</b> Draw the river's course across the terrain in one stroke.</p>
+        <p><b>4.</b> Press <code>Tab</code> to finish and generate the river.</p>
+        <p>The terrain's name appears beside <code>River System</code> at the top of the panel. Hover over the <code>i</code> for a summary of the workflow.</p>
+        <div class="note"><strong>Prepare the terrain first.</strong>
+        Apply its scale and rotation with <code>Ctrl + A</code> and provide enough geometry to shape the riverbed. A coarse terrain mesh produces rough banks and a less detailed channel.</div>
+      </div>
+    </article>
+
+    <article class="card" id="edit-river">
+      <div class="clip"><video src="videos/river-edit.mp4" poster="videos/river-edit.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Edit River</h3>
+        <p>Click <code>Edit River</code> to modify the strokes. Add another stroke to create a tributary, or select and delete strokes you no longer need. Press <code>Tab</code> to update the river.</p>
+      </div>
+    </article>
+
+    <article class="card" id="reverse-the-flow">
+      <div class="clip"><video src="videos/river-direction.mp4" poster="videos/river-direction.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Reverse the flow</h3>
+        <p>Water follows the direction of the drawn stroke, from its starting point to its endpoint. Reverse the stroke when the flow runs the wrong way; you do not need to redraw the river.</p>
+        <p><b>1.</b> Click <code>Edit River</code>.</p>
+        <p><b>2.</b> Select the stroke to reverse. Press <code>A</code> for all strokes, or hover over one and press <code>L</code> to select it.</p>
+        <p><b>3.</b> Right-click and choose <code>Switch Direction</code>, also available in the viewport header's <code>Segments</code> menu.</p>
+        <p><b>4.</b> Press <code>Tab</code> to apply the change. The river keeps its course and flows in the opposite direction.</p>
+        <p>Increase Flow Speed temporarily if you need to make the direction easier to inspect.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="size">
+  <div class="wrap">
+    <h2>Size</h2>
+    <p class="lead">Open <code>River Properties &gt; River &gt; Size</code>.</p>
+
+    <article class="card" id="river-width-river-height-and-terrain-falloff">
+      <div class="clip"><video src="videos/river-size.mp4" poster="videos/river-size.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>River Width, River Height and Terrain Falloff</h3>
+        <p><code>River Width</code>: the width of the river.</p>
+        <p><code>River Height</code>: the water level within the riverbed. Raising it fills more of the channel and increases the area covered by water.</p>
+        <p><code>Terrain Falloff</code>: how far terrain reshaping extends from the river. Lower values create steeper banks; higher values produce a broader, gentler valley.</p>
+        <p><code>Control Curves</code>, at the top of the River panel, identifies the collection containing the drawn strokes.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="water">
+  <div class="wrap">
+    <h2>Water</h2>
+    <p class="lead">These controls shape the animated water surface. Play the timeline to preview the result. Solid shading makes the surface geometry easier to inspect without the water material.</p>
+
+    <article class="card" id="waves-and-flow">
+      <div class="clip"><video src="videos/river-water.mp4" poster="videos/river-water.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Waves and flow</h3>
+        <p><code>Wave Strength</code>: wave height. For example, increasing it from 0.07 to 0.5 changes a calm stream into visibly rougher water.</p>
+        <p><code>Wave Speed</code>: how quickly the waves change.</p>
+        <p><code>Flow Speed</code>: how fast the water moves downstream.</p>
+        <p><code>Flow Strength</code>: the strength of the streaking along the flow direction.</p>
+        <p><code>Foam Spread</code>: how far <a href="#material">foam</a> extends from banks and objects in the water. See Foam.</p>
+        <div class="note"><strong>Separate motion adjustments from material adjustments.</strong>
+        Use Solid shading to tune waves and ripples, then switch to Material Preview or Rendered shading to evaluate the water's appearance.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="collision">
+  <div class="wrap">
+    <h2>Extra Collision Objects</h2>
+
+    <article class="card" id="ripples-around-objects">
+      <div class="clip"><video src="videos/river-collision.mp4" poster="videos/river-collision.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Ripples around objects</h3>
+        <p>Add collision objects to create disturbances around rocks or other objects in the river.</p>
+        <p><b>1.</b> Put the objects in a collection, such as River Boulders.</p>
+        <p><b>2.</b> Expand <code>Extra Collision Objects</code> and select the collection in <code>Collider</code>.</p>
+        <p>The <code>Water</code> panel contains two controls for these disturbances:</p>
+        <p><code>Collision Ripples Strength</code>: how high the ripples are. Increase it for more pronounced ripples around collision objects.</p>
+        <p><code>Collision Ripples Falloff</code>: the distance the ripples extend from each object. Increasing it from 0.1 m to 1 m spreads the effect over a wider area.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="scatter">
+  <div class="wrap">
+    <h2>Scatter System</h2>
+
+    <article class="card" id="rocks-along-the-river">
+      <div class="clip"><video src="videos/river-scatter.mp4" poster="videos/river-scatter.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Rocks along the river</h3>
+        <p>The river includes a separate scatter system for assets that should follow its course, such as rocks, pebbles, or reeds.</p>
+        <p><code>Scatter Collection</code>: the source objects. For example, use Temperate Rocks from the <a href="content-pack.html">content pack</a>.</p>
+        <p><code>Scatter Amount</code>: the number of instances placed.</p>
+        <p><code>Min Distance</code>: the minimum spacing between instances.</p>
+        <p><code>Scatter Width</code>: how far placement extends from the river. Lower values concentrate assets near the water; higher values spread them further up the banks.</p>
+        <p><code>Scatter Falloff</code>: how quickly coverage decreases toward the edge of the scatter band.</p>
+        <p><code>Seed</code>: a different arrangement with the same settings.</p>
+        <p><code>Scale</code>: <code>Uniform Scale</code> adjusts all instances, while <code>Scale Min</code> and <code>Scale Max</code> define random size variation.</p>
+        <p><code>Rotation</code>: <code>Align To Surface</code> follows the terrain slope, while <code>Rotation</code> and <code>Random Rotation</code> control orientation.</p>
+        <p><code>Offset</code>: shifts the scattered instances, for example to embed them slightly in the ground.</p>
+        <div class="note"><strong>Foam around scattered objects requires Realize All Instances.</strong>
+        Keep this enabled when you need that interaction. It increases processing cost, so use a modest Scatter Amount while editing a long river.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="material">
+  <div class="wrap">
+    <h2>SF_River Material</h2>
+    <p class="lead">Open <code>SF_River Material</code> below River Properties to adjust the water's appearance. These changes are visible in Material Preview and Rendered shading.</p>
+
+    <article class="card" id="water-material">
+      <div class="clip"><video src="videos/river-material.mp4" poster="videos/river-material.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Water Material</h3>
+        <p><code>Water Color</code>: the water tint. Use it to change the overall colour, such as from the pale default to blue.</p>
+        <p><code>Water Density</code>: how quickly colour builds through the water. Lower values produce lighter, clearer water; higher values produce a darker, deeper appearance.</p>
+        <p><code>Murkiness Color</code> and <code>Water Murkiness</code>: add a cloudy tint that obscures the bottom. A brown tint can create muddy water.</p>
+        <p><code>Wave Bump</code> adds fine surface detail with <code>Scale</code>, <code>Detail</code>, <code>Distance</code>, and <code>Strength</code>. <code>Depth</code> controls darkening in deeper areas.</p>
+      </div>
+    </article>
+
+    <article class="card" id="foam-and-caustics">
+      <div class="clip"><video src="videos/river-foam.mp4" poster="videos/river-foam.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Foam and Caustics</h3>
+        <p>Foam appears along the banks and around objects in the water.</p>
+        <p><code>Foam Color</code> and <code>Foam Amount</code>: its colour and coverage.</p>
+        <p><code>Foam Scale</code> and <code>Foam Detail</code>: the size and complexity of its pattern.</p>
+        <p><code>Foam Bump Strength</code> and <code>Foam Bump Distance</code>: the apparent surface depth of the foam.</p>
+        <p><code>Caustics</code> adds moving light patterns in shallow water. Adjust them with <code>Caustic Amount</code>, <code>Caustic Strength</code>, <code>Caustic Speed</code>, and <code>Caustic Scale</code>.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="layers">
+  <div class="wrap">
+    <h2>Rivers and scatter layers</h2>
+    <p class="lead">River tools and ordinary scatter layers can use the same terrain. The layers follow the reshaped ground, but do not automatically avoid the water.</p>
+
+    <article class="card" id="scattering-on-a-terrain-with-a-river">
+      <div class="clip"><video src="videos/river-scatter-problem.mp4" poster="videos/river-scatter-problem.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Scattering on a terrain with a river</h3>
+        <p>Use the terrain as the <code>Emitter</code> and <a href="layers.html">create layers</a> normally. Instances follow the riverbed and banks because the river modifies the terrain itself.</p>
+        <p>Without a mask, the layer also scatters inside the channel. Use Curve Proximity to keep vegetation out of the water.</p>
+        <div class="note"><strong>Use the appropriate <a href="#scatter">scatter system</a>.</strong>
+        The river's Scatter System handles assets that belong in or near the water. Use ordinary scatter layers for the rest of the terrain.</div>
+      </div>
+    </article>
+
+    <article class="card" id="keep-a-layer-out-of-the-river-with-curve-proximity">
+      <div class="clip"><video src="videos/river-scatter-proximity.mp4" poster="videos/river-scatter-proximity.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Keep a layer out of the river with Curve Proximity</h3>
+        <p>The river's control curve can also define an exclusion area for scatter layers.</p>
+        <p><b>1.</b> Select the layer in the System List and expand <code>Proximity</code>.</p>
+        <p><b>2.</b> Enable <code>Curve Proximity</code> and keep <code>Type</code> set to <code>Single Curve</code>.</p>
+        <p><b>3.</b> Set <code>Curve</code> to <code>SF_River Curve</code>, located in the Outliner's <code>SF_RiverCurves</code> collection.</p>
+        <p><b>4.</b> Keep <code>Behaviour</code> set to <code>Avoid</code> and increase <code>Distance</code> until the channel is clear. Distance is measured from the river's centreline, so use at least half the river width. Add more clearance to keep plants off wet banks.</p>
+        <p><b>5.</b> Enable <code>Smooth Transition</code> and adjust <code>Transition</code> to create a gradual boundary along the water.</p>
+        <p>Repeat this for every layer that should avoid the river. Tributaries added with Edit River remain part of the same curve and are included automatically. For a second, separate river, use <code>Multiple Curves</code> and select a collection containing both curves.</p>
+        <p>See <a href="culling-proximity.html">Culling and Proximity</a> for more detail on these controls.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<section id="optimization">
+  <div class="wrap">
+    <h2>Optimization</h2>
+
+    <article class="card text" id="river-resolution-and-subdivide-level">
+      <div>
+        <h3>River Resolution and Subdivide Level</h3>
+        <p><code>River Resolution</code>: the detail of the generated river geometry. Lower it to reduce processing cost on long rivers.</p>
+        <p><code>Subdivide Level</code>: adds geometry to the terrain around the river, from 0 to 6. Increase it when banks appear blocky and you cannot add detail to the terrain mesh directly. Each additional level increases the processing cost substantially.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the ScatterFlow content pack.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

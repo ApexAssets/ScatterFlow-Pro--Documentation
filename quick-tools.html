@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quick Tools | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html" class="active" aria-current="page">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Scatter</div>
+    <h1>Quick Tools</h1>
+    <p>Vary manually placed objects and position them on the ground</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#randomize">Randomize Transform</a>
+    <a href="#snap">Snap to Ground</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">Quick Tools are the two buttons at the top of the Scatter tab. They operate on selected mesh objects, not scatter layers, and remain disabled until a mesh is selected.</p>
+    <p class="lead">After using a tool, adjust its options in Blender's <code>Adjust Last Operation</code> panel at the lower left of the viewport, or press F9. Changing an option immediately updates the result.</p>
+  </div>
+</section>
+
+<section id="randomize">
+  <div class="wrap">
+    <h2>Randomize Transform</h2>
+    <p class="lead">Adds variation to the scale, heading, and tilt of selected objects. Use it to make repeated props look less uniform.</p>
+
+    <article class="card" id="randomize-transform">
+      <div class="clip"><video src="videos/randomize-transform.mp4" poster="videos/randomize-transform.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Randomize Transform</h3>
+        <p>Select the objects and click the button. Click again to generate another result.</p>
+        <p>Each operation starts from the stored original scale and rotation rather than the previous randomized result. Repeated clicks therefore do not continually shrink or tilt the objects.</p>
+        <div class="note"><strong>Original transforms are stored for the current session.</strong>
+        Manually scaling or rotating an object after randomizing establishes a new starting transform.</div>
+      </div>
+    </article>
+
+    <article class="card" id="options">
+      <div class="clip"><video src="videos/randomize-options.mp4" poster="videos/randomize-options.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Options</h3>
+        <ul class="facts"><li><b>Scale Min</b> 0.5</li><li><b>Scale Max</b> 1.0</li><li><b>Max Tilt</b> 15&deg;</li><li><b>Random Yaw</b> on</li></ul>
+        <p><code>Scale Min</code> and <code>Scale Max</code> define the random scale range. The defaults produce objects between half and full size. Set Scale Max above 1 to allow larger variations.</p>
+        <p><code>Max Tilt</code> sets the maximum lean away from vertical, up to 90°. Use 0 to keep objects upright.</p>
+        <p><code>Random Yaw</code> rotates each object randomly around its vertical axis. Disable it to preserve the original heading.</p>
+        <p><code>Seed</code> controls the random result. Each button click chooses a new seed; enter a specific value to reproduce a result.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="snap">
+  <div class="wrap">
+    <h2>Snap to Ground</h2>
+    <p class="lead">Moves objects vertically until their lowest point rests on the surface beneath them. Objects above the ground move down; objects embedded in it can move up.</p>
+
+    <article class="card" id="snap-to-ground">
+      <div class="clip"><video src="videos/snap-to-ground.mp4" poster="videos/snap-to-ground.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Snap to Ground</h3>
+        <p>Select the objects and click the button. Each object is positioned on the surface beneath it.</p>
+        <p>The tool changes vertical position only. It does not rotate objects to match the slope.</p>
+        <p>Selected objects are excluded from one another's ground checks, so they land on the terrain rather than stacking on each other. Objects with no detected surface below them remain unchanged.</p>
+      </div>
+    </article>
+
+    <article class="card" id="options-2">
+      <div class="clip"><video src="videos/snap-options.mp4" poster="videos/snap-options.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Options</h3>
+        <ul class="facts"><li><b>Search Distance</b> 250 m</li><li><b>Ground Offset</b> 0 m</li><li><b>Use Footprint</b> on</li></ul>
+        <p><code>Ground Offset</code> adds vertical clearance. At 0, objects rest on the surface; a value of 2 m leaves a 2 m gap. Negative values embed the base slightly, useful for rocks and tree trunks.</p>
+        <p><code>Use Footprint</code> checks the ground below the object's centre and four corners, then uses the highest detected point to reduce sinking on slopes. Disable it to check only the centre.</p>
+        <p><code>Search Distance</code> sets how far below each object the tool searches for a surface.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the assets bundled with the add-on.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

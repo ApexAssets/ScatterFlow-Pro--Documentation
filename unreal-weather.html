@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unreal: Weather | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html" class="active" aria-current="page">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Unreal plugin</div>
+    <h1>Unreal: Weather</h1>
+    <p>Add precipitation, wet surfaces, puddles, and snow cover</p>
+    <div class="beta"><strong>Beta</strong>
+        The ScatterFlow plugin for Unreal Engine is in early development. Features, settings, and interface elements may change between releases.</div>
+  </div>
+</header>
+
+
+<section id="weather">
+  <div class="wrap">
+    <h2>Weather</h2>
+    <p class="lead">ScatterFlow Weather creates rain or snow around the camera and applies wetness, puddles, or snow cover across scene materials without configuring each material individually.</p>
+    <p class="lead">When ScatterFlow Sky is present, it responds to the weather: rain darkens the lighting and increases cloud cover, snow adds pale clouds and haze, and thunderstorms add lightning.</p>
+
+    <article class="card" id="start-and-stop-the-weather">
+      <div class="clip wide"><video src="videos/ue-weather-add.mp4" poster="videos/ue-weather-add.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Start and stop the weather</h3>
+        <p>Click the rain-cloud icon beside <code>Select a layer to edit it</code> to start rain. On first use, ScatterFlow builds the required weather assets.</p>
+        <p>Choose <code>None</code> in the <code>Weather</code> section to stop precipitation and return the sky to its Sky Preset.</p>
+      </div>
+    </article>
+
+    <article class="card" id="weather-presets">
+      <div class="clip wide"><video src="videos/ue-weather-presets.mp4" poster="videos/ue-weather-presets.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Weather Presets</h3>
+        <p>Choose <code>None</code>, <code>Light Rain</code>, <code>Rain</code>, <code>Thunderstorm</code>, <code>Light Snow</code>, <code>Snow</code>, or <code>Blizzard</code>. Each preset configures precipitation, surface effects, and sky conditions together. Start with the closest preset, then refine it.</p>
+        <p>The visible controls change with the selected weather: rain settings for rain and snow settings for snow.</p>
+      </div>
+    </article>
+
+    <article class="card" id="weather-influence">
+      <div class="clip wide"><video src="videos/ue-weather-influence.mp4" poster="videos/ue-weather-influence.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Weather Influence</h3>
+        <p>Controls how strongly the weather changes the sky. At 1, the normal weather response is applied. At 0, precipitation continues without changing the fair-weather sky. A value of 2 intensifies the sky response.</p>
+        <p>At 0, cloud coverage comes from <code>Fair Weather Clouds</code> in the Sky section's Clouds panel. This defines the dry-sky conditions before and after the weather.</p>
+      </div>
+    </article>
+
+    <article class="card" id="transition">
+      <div class="clip wide"><video src="videos/ue-weather-transition.mp4" poster="videos/ue-weather-transition.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Transition</h3>
+        <p><code>Transition (s)</code> sets how long a weather change takes during gameplay. In the editor, changes normally appear immediately.</p>
+        <p>For example, an 8-second transition gradually increases cloud cover and surface wetness when switching to Rain. Selecting None transitions back to dry conditions.</p>
+      </div>
+    </article>
+
+    <article class="card" id="falling-rain">
+      <div class="clip wide"><video src="videos/ue-weather-rain.mp4" poster="videos/ue-weather-rain.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Falling rain</h3>
+        <p>Use a dark background to inspect raindrop shape and visibility.</p>
+        <p><code>Opacity</code>: drop visibility.<br>
+        <code>Drop Width</code> and <code>Drop Length</code>: the dimensions of the rain streaks.<br>
+        <code>Fall Speed</code>: how quickly drops descend. Lower values produce slower motion.<br>
+        <code>Particle Count</code>: the number of drops around the camera at full intensity, up to 100,000.<br>
+        <code>Intensity</code>: overall rainfall strength, affecting both falling drops and surface wetness.</p>
+      </div>
+    </article>
+
+    <article class="card" id="follow-wind">
+      <div class="clip wide"><video src="videos/ue-weather-follow-wind.mp4" poster="videos/ue-weather-follow-wind.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Follow Wind</h3>
+        <p>Controls how strongly precipitation follows the level's <code>Wind</code>. At 0, rain and snow fall vertically regardless of wind. A value of 2 doubles the directional response.</p>
+      </div>
+    </article>
+
+    <article class="card" id="splashes">
+      <div class="clip wide"><video src="videos/ue-weather-splashes.mp4" poster="videos/ue-weather-splashes.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Splashes</h3>
+        <p><code>Splashes</code> adds small crown-shaped impacts where raindrops hit the ground. Disabling it removes these impacts but leaves puddle ripple rings. <code>Splash Amount</code> controls their number.</p>
+      </div>
+    </article>
+
+    <article class="card" id="wet-surfaces-and-darkening">
+      <div class="clip wide"><video src="videos/ue-weather-wet.mp4" poster="videos/ue-weather-wet.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Wet Surfaces and Darkening</h3>
+        <p><code>Wet Surfaces</code>: enables darker, glossier surfaces and puddles in flat areas without editing the underlying materials. Disable it to keep the ground dry while rain continues.</p>
+        <p><code>Darkening</code>: how much wet surfaces darken. At 0, wetness changes gloss without darkening; at 1, the surface has a strongly soaked appearance.</p>
+      </div>
+    </article>
+
+    <article class="card" id="puddles">
+      <div class="clip wide"><video src="videos/ue-weather-puddles.mp4" poster="videos/ue-weather-puddles.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Puddles</h3>
+        <p><code>Puddles</code> controls water coverage on flat ground. At 0, no puddles appear. Increase it to create larger pools.</p>
+      </div>
+    </article>
+
+    <article class="card" id="puddle-waves">
+      <div class="clip wide"><video src="videos/ue-weather-puddle-waves.mp4" poster="videos/ue-weather-puddle-waves.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Puddle waves</h3>
+        <p>Puddle waves add wind-driven surface motion. To inspect them separately, temporarily disable falling rain and impact rings and view reflections at a low angle.</p>
+        <p><code>Puddle Waves</code>: wave strength. At 0, the surface remains still; higher values disturb the reflections.<br>
+        <code>Wave Scale</code>: the size of the waves, from smaller ripples to broader swells.<br>
+        <code>Wave Speed</code>: how quickly waves move. At 0, their motion stops.</p>
+      </div>
+    </article>
+
+    <article class="card" id="puddle-ripples">
+      <div class="clip wide"><video src="videos/ue-weather-puddle-ripples.mp4" poster="videos/ue-weather-puddle-ripples.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Puddle Ripples</h3>
+        <p>Controls the rings created by raindrop impacts. At 0, the rings are disabled. Increase it for a stronger effect. Disable puddle waves when you need to inspect the rings on their own.</p>
+      </div>
+    </article>
+
+    <article class="card" id="falling-snow">
+      <div class="clip wide"><video src="videos/ue-weather-snow.mp4" poster="videos/ue-weather-snow.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Falling snow</h3>
+        <p><code>Flake Size</code>: the size of individual flakes.<br>
+        <code>Fall Speed</code>: how quickly snowflakes fall. Increase it for faster, heavier-looking snowfall.<br>
+        <code>Drift</code>: swirling motion during descent. At 0, flakes fall straight down.<br>
+        <code>Particle Count</code> and <code>Opacity</code>: the number and visibility of flakes.</p>
+      </div>
+    </article>
+
+    <article class="card" id="snow-cover">
+      <div class="clip wide"><video src="videos/ue-weather-snow-cover.mp4" poster="videos/ue-weather-snow-cover.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Snow Cover</h3>
+        <p><code>Snow Cover</code>: applies settled snow to upward-facing surfaces. Disable it to show falling snow without accumulation on the environment.</p>
+        <p><code>Max Coverage</code>: the proportion covered. Lower values leave patches; 1 creates full coverage.</p>
+      </div>
+    </article>
+
+    <article class="card" id="max-slope">
+      <div class="clip wide"><video src="videos/ue-weather-snow-slope.mp4" poster="videos/ue-weather-snow-slope.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Max Slope</h3>
+        <p>Sets the steepest surface that can retain snow. Lower values remove snow from steep hillsides while preserving it on flatter areas.</p>
+      </div>
+    </article>
+
+    <article class="card" id="snow-patches">
+      <div class="clip wide"><video src="videos/ue-weather-snow-patches.mp4" poster="videos/ue-weather-snow-patches.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Snow patches</h3>
+        <p>Use partial coverage, such as Max Coverage 0.35, to expose the patch pattern.</p>
+        <p><code>Cover Noise Scale</code>: patch frequency. Lower values create broader drifts; higher values create smaller patches.<br>
+        <code>Cover Edge Detail</code>: boundary irregularity. At 0, edges are smooth; higher values add fine detail.</p>
+      </div>
+    </article>
+
+    <article class="card" id="dry-under-cover">
+      <div class="clip wide"><video src="videos/ue-weather-cover.mp4" poster="videos/ue-weather-cover.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Dry Under Cover</h3>
+        <p><code>Dry Under Cover</code>: excludes precipitation, wetness, and snow beneath roofs, bridges, and dense tree cover. Disable it to apply weather effects in those areas as well.</p>
+        <p><code>Cover Area</code>: the distance around the camera over which shelter is evaluated, in centimetres. Shelters beyond this range are not included.</p>
+      </div>
+    </article>
+
+    <article class="card" id="instant-in-editor">
+      <div class="clip wide"><video src="videos/ue-weather-instant.mp4" poster="videos/ue-weather-instant.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Instant In Editor</h3>
+        <p>Enabled by default, this shows the completed weather state immediately in the editor. Disable it to preview the gradual changes used during gameplay, such as wet ground slowly becoming snow-covered.</p>
+      </div>
+    </article>
+
+    <!-- Weather On Player: held back, the snow / wetness barely shows on the player character (clip frames/ue-weather-player). -->
+  </div>
+</section>
+<footer>
+  <div class="wrap">Recorded with ScatterFlow Unreal Sync 2.20 (Sky and Weather: 2.23) in Unreal Engine 5.8, linked to ScatterFlow 1.0.9 in Blender 5.2.2.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

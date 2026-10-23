@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Megascans installer | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html" class="active" aria-current="page">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Getting started</div>
+    <h1>Megascans installer</h1>
+    <p>Convert downloaded Megascans assets into a reusable Blender asset library</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#location">Install location</a>
+    <a href="#settings">The settings</a>
+    <a href="#install">Install an asset</a>
+    <a href="#use">Use it in a scene</a>
+    <a href="#what">What an install makes</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">ScatterFlow extracts Megascans downloads, imports their models, builds materials from the included textures, and saves the results in the <code>Megascans_SF</code> asset library. Once installed, these assets are available through the Asset Browser in any Blender file.</p>
+  </div>
+</section>
+
+<section id="location">
+  <div class="wrap">
+    <h2>Install location</h2>
+    <p class="lead">Choose a library location before installing your first asset.</p>
+
+    <article class="card" id="megascans-preferences">
+      <div class="clip win"><video src="videos/megascans-setup.mp4" poster="videos/megascans-setup.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Megascans preferences</h3>
+        <p><b>1.</b> Open <code>Edit &gt; Preferences</code>, select <code>Add-ons</code>, and expand ScatterFlow.</p>
+        <p><b>2.</b> Expand <code>Settings</code>, then <code>Megascans</code>.</p>
+        <p><b>3.</b> Set <code>Folder</code> to the location where you want to store Megascans assets. Allow room for both the extracted source files and the finished Blender assets.</p>
+        <p><b>4.</b> Click <code>Register / Refresh Asset Library</code>. ScatterFlow creates the folder if needed and registers it as <code>Megascans_SF</code> in Blender.</p>
+        <p>See <a href="#settings">The settings, one by one</a> for details about each option.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="settings">
+  <div class="wrap">
+    <h2>The settings, one by one</h2>
+    <p class="lead">The Megascans panel contains two settings and one library registration button.</p>
+
+    <article class="card text" id="megascans-folder">
+      <div>
+        <h3>Folder</h3>
+        <p>Sets the location for all installed Megascans content. Until you choose a folder, the panel displays <code>Choose a folder before installing Megascans assets.</code> and disables the button below it.</p>
+        <p>The folder contains three items:</p>
+        <p><code>Assets</code>: one .blend file per asset, organized by type, such as 3D Assets, 3D Plants, and Surfaces. These files appear in the Asset Browser.<br>
+        <code>SourceFiles</code>: the extracted downloads, including their models and full-resolution textures. Asset materials reference textures here, so do not delete this folder.<br>
+        <code>blender_assets.cats.txt</code>: the catalog definitions used to organize the Asset Browser.</p>
+        <p>A single extracted download can occupy several hundred megabytes. To relocate the library, move the entire folder, update <code>Folder</code>, and click <code>Register / Refresh Asset Library</code>.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="install-lod-versions">
+      <div>
+        <h3>Install LOD Versions</h3>
+        <ul class="facts"><li><b>Default</b> Off</li></ul>
+        <p>Some Megascans downloads include multiple levels of detail (LODs). LOD0 is the most detailed model; LOD1, LOD2, and subsequent versions use progressively fewer polygons.</p>
+        <p><b>Off:</b> installs only the most detailed version of each model. Use this when you need the full-detail asset for Blender rendering. Omitting the additional LODs keeps the installed files smaller than installing all versions.</p>
+        <p><b>On:</b> installs every available LOD into the same asset. Its description lists the included versions, for example <code>Included LODs: LOD0, LOD1, LOD2.</code> Use this when you also need lighter models for distant scattering or game engine use.</p>
+        <p>This option applies during installation. Changing it does not alter existing assets; reinstall a download to change which LODs it includes.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="register-refresh-asset-library">
+      <div>
+        <h3>Register / Refresh Asset Library</h3>
+        <p>Registers the selected folder with Blender and refreshes its library setup:</p>
+        <p><b>1.</b> Creates the folder if it does not exist.</p>
+        <p><b>2.</b> Adds <code>Megascans_SF</code> under <code>Edit &gt; Preferences &gt; Asset Libraries</code> with the import method set to <code>Append</code>. Assets added to a scene become editable copies.</p>
+        <p><b>3.</b> Creates the Megascans catalogs: 3D Assets, 3D Plants, Surfaces, Decals, Atlases, Imperfections, and Brushes.</p>
+        <p><b>4.</b> Refreshes open Asset Browsers and saves the preferences so the library remains registered after restarting Blender.</p>
+        <p>When complete, the status bar displays <code>Megascans_SF ready</code> and the library location. Installing an asset also performs these steps. Use the button during initial setup, after changing <code>Folder</code>, or when the library is missing from the Asset Browser.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2>Install an asset</h2>
+
+    <article class="card" id="install-megascans">
+      <div class="clip win"><video src="videos/megascans-install.mp4" poster="videos/megascans-install.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Install Megascans</h3>
+        <p><b>1.</b> Open an Asset Browser. You can change an existing editor, such as the Timeline, to an Asset Browser.</p>
+        <p><b>2.</b> Click <code>Install Megascans</code> on the right side of its header.</p>
+        <p><b>3.</b> Select a downloaded Megascans .zip and confirm. You can select multiple zip files, or browse into an already extracted Megascans folder.</p>
+        <p><b>4.</b> Choose <code>Megascans_SF</code> from the library menu. The installed asset appears with a preview in its matching <code>Megascans</code> catalog.</p>
+        <div class="note"><strong>Asset not visible?</strong>
+        Click the refresh arrows beside the library menu.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="use">
+  <div class="wrap">
+    <h2>Use it in a scene</h2>
+
+    <article class="card" id="drag-and-drop">
+      <div class="clip win"><video src="videos/megascans-use.mp4" poster="videos/megascans-use.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Drag and drop</h3>
+        <p>Drag an asset from the Asset Browser into the 3D viewport. It becomes an ordinary object that you can move, edit, or scatter.</p>
+        <p>Its material is already configured with the available colour, roughness, normal, and displacement textures. Inspect the connections in the Shader Editor, or use Material Preview or Rendered shading to view the result.</p>
+        <p>Assets are appended rather than linked, so editing an imported object does not change the library copy.</p>
+        <p>To scatter an object, select it in a layer's <a href="scatter-setup.html#instances">Instances</a> section.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="what">
+  <div class="wrap">
+    <h2>What an install makes</h2>
+
+    <article class="card text" id="models-plants-and-surfaces">
+      <div>
+        <h3>Models, plants and surfaces</h3>
+        <p>The installer reads the download's metadata to identify its asset type and select the matching catalog.</p>
+        <p><b>3D assets and 3D plants</b> become model assets. A download containing several variations becomes one asset containing all of them, with a description such as <code>Contains 3 variations.</code> Dragging it into a scene imports every variation, ready to use together in a scatter layer.</p>
+        <p><b>Surfaces, decals, imperfections, atlases, and brushes</b> contain textures rather than models and become material assets. Drag one onto an object to apply the material.</p>
+        <p>Supported model formats are FBX, OBJ, glTF, USD, Alembic, PLY, and STL. Supported texture formats are JPG, PNG, TIFF, EXR, TGA, BMP, WebP, and HDR.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="the-material">
+      <div>
+        <h3>The material</h3>
+        <p>Materials are assembled from textures identified by filename. Supported inputs include colour, ambient occlusion, roughness, gloss, metalness, specular, normal, bump, displacement, opacity, and translucency. Ambient occlusion is multiplied into the colour, and gloss maps are converted to roughness. The highest-resolution version of each texture is used.</p>
+        <p>Opacity maps configure cutout materials for assets such as leaves and grass. Displacement maps set the material to <code>Displacement and Bump</code>: in Cycles, displacement moves the surface when the mesh has sufficient geometry; otherwise, it contributes bump detail.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="installing-the-same-asset-again">
+      <div>
+        <h3>Installing the same asset again</h3>
+        <p>Reinstalling an asset replaces its .blend file and its extracted copy in <code>SourceFiles</code>. Use this to change the included LODs or repair an asset.</p>
+        <p>Objects already imported into Blender scenes are separate copies and are not replaced by the reinstall.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="megascans-install-problems">
+      <div>
+        <h3>When an install fails</h3>
+        <p><b>“Choose an Asset Library folder first.”</b> Set <code>Folder</code> in the Megascans preferences. See <a href="#location">Install location</a>.</p>
+        <p><b>“Select a Megascans ZIP, or browse into a Megascans folder.”</b> Select the zip files themselves, or open an extracted Megascans folder and click <code>Install Megascans</code> without selecting an individual file.</p>
+        <p><b>“No supported mesh or Megascans texture maps were found in that source.”</b> The selected source contains no recognized model or texture files. Check that it is a supported Megascans download.</p>
+        <p><b>“Installed 2 of 3 source(s). 1 failed; see System Console.”</b> One or more downloads failed during a batch installation. Open <code>Window &gt; Toggle System Console</code> to see the reason for each failure.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

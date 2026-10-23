@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unreal: Scatter Layers | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html" class="active" aria-current="page">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Unreal plugin</div>
+    <h1>Unreal: Scatter Layers</h1>
+    <p>Adjust imported layers or regenerate their placement directly in Unreal</p>
+    <div class="beta"><strong>Beta</strong>
+        The ScatterFlow plugin for Unreal Engine is in early development. Features, settings, and interface elements may change between releases.</div>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#layers">Editing layers</a>
+    <a href="#procedural">Procedural settings</a>
+    <a href="#masking">Masking</a>
+  </div>
+</nav>
+
+<section id="layers">
+  <div class="wrap">
+    <h2>Editing layers</h2>
+    <p class="lead">Modified settings display a round-arrow button labeled <b>Reset to the value from Blender</b>. Click it to restore that setting's imported value.</p>
+
+    <article class="card" id="mode-blender-exact-or-procedural">
+      <div class="clip wide"><video src="videos/ue-mode.mp4" poster="videos/ue-mode.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Mode: Blender Exact or Procedural</h3>
+        <p>Use the two mode buttons to choose how the layer is placed.</p>
+        <p><code>Blender Exact</code> preserves the instance positions exported from Blender. Use it when placement must match the original, especially for manually arranged layers.</p>
+        <p><code>Procedural</code> regenerates the scatter in Unreal using its PCG system. It provides density, spacing, and mask controls, and lets the layer respond to changes in the ground.</p>
+        <p>The panel displays the settings available for the selected mode. You can switch back to Blender Exact to return to the imported placement.</p>
+      </div>
+    </article>
+
+    <article class="card" id="exact-adjustments">
+      <div class="clip wide"><video src="videos/ue-exact-adjust.mp4" poster="videos/ue-exact-adjust.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Exact Adjustments</h3>
+        <p>These controls modify the imported instances without generating a new layout.</p>
+        <p><code>Z Offset (cm)</code>: moves every instance vertically. Positive values raise it; negative values embed it in the ground. Use it to correct floating bases or exposed roots.</p>
+        <p><code>Keep Ratio (thinning)</code>: sets the proportion retained. A value of 1 keeps every instance, while 0.5 keeps half at random. Use it to reduce density without regenerating positions.</p>
+      </div>
+    </article>
+
+    <article class="card" id="scale">
+      <div class="clip wide"><video src="videos/ue-exact-scale.mp4" poster="videos/ue-exact-scale.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Scale</h3>
+        <p>Expand <code>Scale</code> to access the size controls.</p>
+        <p><code>Scale Multiplier</code>: scales all instances relative to their Blender sizes. A value of 1 leaves them unchanged.</p>
+        <p><code>Random Scale Min</code> and <code>Random Scale Max</code>: add a random scale factor between the two values. Set both to 1 for no additional variation.</p>
+      </div>
+    </article>
+
+    <article class="card" id="rotation">
+      <div class="clip wide"><video src="videos/ue-exact-rotation.mp4" poster="videos/ue-exact-rotation.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Rotation</h3>
+        <p><code>Rotation X / Y / Z (deg)</code>: rotates all instances by the specified angles. Use X or Y to lean a layer and Z to change its heading.</p>
+        <p><code>Random Spin (+/- deg)</code>: adds random rotation around each instance's up axis, within the specified angle in either direction.</p>
+      </div>
+    </article>
+
+    <article class="card" id="meshes">
+      <div class="clip wide"><video src="videos/ue-meshes-swap.mp4" poster="videos/ue-meshes-swap.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Meshes</h3>
+        <p>The <code>Meshes</code> section lists each source mesh, such as <code>Mesh 1</code> and <code>Mesh 2</code>, with its instance count.</p>
+        <p>Use the controls beside a mesh to replace it or locate its asset:</p>
+        <p><b>1.</b> Click the mesh name to open the asset picker. Search for and select a replacement.<br>
+        <b>2.</b> Select a mesh in the Content Browser or <code>Content Drawer</code>, then click the arrow beside the mesh name to assign it.<br>
+        <b>3.</b> Click the folder button to locate the current mesh in the Content Browser. This does not replace it.</p>
+        <p>Replacing a source mesh updates every instance that uses that slot.</p>
+        <div class="note"><strong>Re-exporting replaces the mesh list.</strong>
+        The next Blender export restores Blender's list. Make lasting source-mesh changes in Blender.</div>
+      </div>
+    </article>
+
+    <article class="card" id="adding-and-removing-meshes">
+      <div class="clip wide"><video src="videos/ue-meshes-add.mp4" poster="videos/ue-meshes-add.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Adding and removing meshes</h3>
+        <p>In <code>Procedural</code> mode, you can add meshes to the layer:</p>
+        <p><code>Add Mesh</code>: opens the asset picker and adds the chosen mesh.<br>
+        <code>Add Selected from Content Browser</code>: adds all selected static meshes from the Content Browser or Content Drawer.</p>
+        <p><code>Weight</code>: controls how often a mesh is selected relative to others. For example, set a bush's weight to 3 and a rock's to 1 to use the bush three times as often.</p>
+        <p>Meshes added in Unreal have an x button for removal. Meshes imported from Blender cannot be removed here.</p>
+      </div>
+    </article>
+
+    <article class="card" id="editing-several-layers-at-once">
+      <div class="clip wide"><video src="videos/ue-multi-edit.mp4" poster="videos/ue-multi-edit.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Editing several layers at once</h3>
+        <p>Ctrl+click instances or layer actors in the Outliner to select multiple layers. The panel reports the number selected, such as <code>Editing 2 layers</code>, and changes apply to all of them.</p>
+        <p>Use this to adjust the scale of trees and bushes together, then reset the modified settings when comparing results.</p>
+      </div>
+    </article>
+
+    <article class="card" id="advanced-actions">
+      <div class="clip wide"><video src="videos/ue-actions.mp4" poster="videos/ue-actions.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Advanced: Actions</h3>
+        <p><code>Regenerate</code>: recalculates placement using the current ground. Use it after sculpting a Landscape or changing a surface's collision.</p>
+        <p><code>Select in Level</code>: selects the layer actors in the level and Outliner.</p>
+        <p><code>Open PCG Graph</code>: opens the graph Unreal uses to generate the layer. This is intended for users who need to inspect or work with the underlying PCG setup.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="procedural">
+  <div class="wrap">
+    <h2>Procedural settings</h2>
+    <p class="lead">These controls appear in <code>Procedural</code> mode. Changing a setting regenerates the layer and updates the viewport.</p>
+
+    <article class="card" id="surface-what-the-layer-grows-on">
+      <div class="clip wide"><video src="videos/ue-surface.mp4" poster="videos/ue-surface.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Surface: what the layer grows on</h3>
+        <p><code>Terrain + Landscape</code> is the default. It restricts placement to the layer's imported terrain and Unreal Landscapes, leaving objects on top of the terrain clear.</p>
+        <p><code>Any Geometry</code> allows placement on geometry beneath the scatter points.</p>
+        <p>Use Any Geometry when assets should also cover surfaces such as roofs or boulders. Return to Terrain + Landscape to keep those surfaces excluded.</p>
+      </div>
+    </article>
+
+    <article class="card" id="use-selected-actor-as-surface">
+      <div class="clip wide"><video src="videos/ue-surface-actor.mp4" poster="videos/ue-surface-actor.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Use Selected Actor as Surface</h3>
+        <p>To add one specific object as a surface without allowing all geometry:</p>
+        <p><b>1.</b> Select the target object, such as a boulder.<br>
+        <b>2.</b> Ctrl+click an instance from the layer so both the object and layer are selected.<br>
+        <b>3.</b> Expand <code>Surface</code> and click <code>Use Selected Actor as Surface</code>.</p>
+        <p>The selected object receives instances while unrelated objects remain excluded.</p>
+      </div>
+    </article>
+
+    <article class="card" id="z-offset">
+      <div class="clip wide"><video src="videos/ue-surface-zoffset.mp4" poster="videos/ue-surface-zoffset.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Z Offset</h3>
+        <p><code>Z Offset (cm)</code> raises or lowers all instances. Use small positive values for bases that sit too low, or negative values to embed them slightly. Inspect the result from ground level to judge contact with the surface.</p>
+      </div>
+    </article>
+
+    <article class="card" id="density-and-density-multiplier">
+      <div class="clip wide"><video src="videos/ue-distribution.mp4" poster="videos/ue-distribution.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Density and Density Multiplier</h3>
+        <p>Use a top-down view to evaluate changes in coverage and spacing.</p>
+        <p><code>Density / m²</code>: the number of instances per square metre, initially taken from Blender. Increasing it from 0.03 to 0.15 multiplies the base density by five.</p>
+        <p><code>Density Multiplier</code>: scales the density without replacing the base value. Use it to compare denser or sparser versions of the layer.</p>
+      </div>
+    </article>
+
+    <article class="card" id="seed">
+      <div class="clip wide"><video src="videos/ue-seed.mp4" poster="videos/ue-seed.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Seed</h3>
+        <p>Changes the random layout while retaining the other settings and instance count. Try different seeds to adjust the arrangement without rebuilding the setup.</p>
+      </div>
+    </article>
+
+    <article class="card" id="min-distance">
+      <div class="clip wide"><video src="videos/ue-min-distance.mp4" poster="videos/ue-min-distance.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Min Distance</h3>
+        <p><code>Min Distance (cm)</code> sets the minimum spacing between instances. Instances that are too close to one another are removed.</p>
+        <p>Increase it to reduce clustering and produce more even spacing. Higher values can reduce the final count even when Density remains unchanged.</p>
+      </div>
+    </article>
+
+    <article class="card" id="uniform-and-non-uniform-scale">
+      <div class="clip wide"><video src="videos/ue-proc-scale.mp4" poster="videos/ue-proc-scale.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Uniform and Non-Uniform Scale</h3>
+        <p><code>Uniform Scale</code>: adjusts the size of every instance.</p>
+        <p><code>Non-Uniform</code>: scales X, Y, and Z independently. Use Z to change height and X or Y to change width.</p>
+      </div>
+    </article>
+
+    <article class="card" id="random-scale">
+      <div class="clip wide"><video src="videos/ue-random-scale.mp4" poster="videos/ue-random-scale.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Random Scale</h3>
+        <p>Enable <code>Random Scale</code> to assign each instance a factor between <code>Min Scale</code> and <code>Max Scale</code>, multiplied by Uniform Scale. Wider ranges create stronger size variation; 0.4–2.0, for example, mixes substantially smaller and larger trees.</p>
+      </div>
+    </article>
+
+    <article class="card" id="align-to-surface-and-tilt">
+      <div class="clip wide"><video src="videos/ue-proc-rotation.mp4" poster="videos/ue-proc-rotation.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Align to Surface and tilt</h3>
+        <p>Use a hillside, such as a 30° slope, to inspect alignment clearly.</p>
+        <p><code>Align to Surface</code>: makes instances stand perpendicular to the ground beneath them. This suits rocks, grass, and ground cover. Leave it disabled for trees that should remain vertical on slopes.</p>
+        <p><code>Range X / Y / Z (deg)</code>: the X and Y controls add random tilt up to the specified angles. Values around 5–15° can break up uniformly upright placement.</p>
+      </div>
+    </article>
+
+    <article class="card" id="random-rotation">
+      <div class="clip wide"><video src="videos/ue-random-rotation.mp4" poster="videos/ue-random-rotation.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Random Rotation</h3>
+        <p>Enable <code>Random Rotation</code> to vary instance orientation and reduce visible repetition. Disable it to preserve matching orientations.</p>
+        <p>The Z value in <code>Range X / Y / Z</code> limits the heading variation. At 360°, instances can face any direction. Lower values restrict the range; 0 removes the variation.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="masking">
+  <div class="wrap">
+    <h2>Masking</h2>
+    <p class="lead">Masks restrict procedural placement to selected parts of the surface. Each has an <code>Enabled</code> control, and <code>Invert</code> reverses its affected region. Masks are available in Procedural mode.</p>
+
+    <article class="card" id="slope">
+      <div class="clip wide"><video src="videos/ue-mask-slope.mp4" poster="videos/ue-mask-slope.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Slope</h3>
+        <p>Use this mask to keep vegetation on flatter ground or restrict assets to steep surfaces.</p>
+        <p><code>Max Slope</code>: the steepest allowed surface angle, in degrees. Lowering it from 76 to 15 clears steep banks while retaining flatter terraces.</p>
+        <p><code>Falloff (deg)</code>: softens the transition at the slope boundary.</p>
+        <p><code>Invert</code>: reverses the mask to keep instances on steep ground instead of flat areas.</p>
+      </div>
+    </article>
+
+    <article class="card" id="elevation">
+      <div class="clip wide"><video src="videos/ue-mask-elevation.mp4" poster="videos/ue-mask-elevation.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Elevation</h3>
+        <p>Use this mask for height-based boundaries such as a tree line.</p>
+        <p><code>Height (cm)</code>: the upper placement limit. On a 10 m hill, changing the limit between 1.5 m and 7 m substantially changes the covered area; enter the corresponding values in centimetres.</p>
+        <p><code>Falloff (cm)</code>: the height range over which the layer fades at the boundary.</p>
+        <p><code>Invert</code>: keeps instances above the height limit instead of below it.</p>
+      </div>
+    </article>
+
+    <article class="card" id="noise">
+      <div class="clip wide"><video src="videos/ue-mask-noise.mp4" poster="videos/ue-mask-noise.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Noise</h3>
+        <p>Breaks the layer into irregular patches rather than uniform coverage.</p>
+        <p><code>Scale (lower = bigger patches)</code>: controls pattern size. Decrease it for broader patches.<br>
+        <code>Threshold Min</code> and <code>Threshold Max</code>: control coverage and the transition between patches and gaps. A wider interval creates softer boundaries.<br>
+        <code>Detail</code>: adds finer irregularity to patch edges.<br>
+        <code>Seed</code>: rearranges the pattern without changing its other settings.<br>
+        <code>Invert</code>: exchanges the populated areas and gaps.</p>
+      </div>
+    </article>
+
+    <article class="card" id="geometry-proximity">
+      <div class="clip wide"><video src="videos/ue-mask-geo.mp4" poster="videos/ue-mask-geo.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Geometry Proximity</h3>
+        <p>Restricts placement around target objects, such as keeping plants away from a house.</p>
+        <p><b>1.</b> Select the target object, then Ctrl+click an instance to include the layer in the selection.<br>
+        <b>2.</b> Click <code>Add Selected</code> under Geometry Proximity. The object is added to the list and the mask is enabled.<br>
+        <b>3.</b> Set <code>Distance (cm)</code> to define the affected area around the object.<br>
+        <b>4.</b> Set <code>Transition (cm)</code> to soften the boundary.<br>
+        <b>5.</b> Choose <code>Behaviour</code>: <code>Repel</code> excludes nearby instances, while <code>Attract</code> keeps instances only near the target.</p>
+        <p>Click an object's x to remove it. <code>Clear</code> removes all targets added in Unreal. Targets imported from Blender remain and are counted separately above the list.</p>
+      </div>
+    </article>
+
+    <article class="card" id="curve-proximity">
+      <div class="clip wide"><video src="videos/ue-mask-curve.mp4" poster="videos/ue-mask-curve.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Curve Proximity</h3>
+        <p>Uses a spline to define a path, road, river margin, or other continuous region.</p>
+        <p><b>1.</b> Select the layer and click <code>Draw New Spline</code>. A short, selected spline appears where the viewport is looking.<br>
+        <b>2.</b> Shape the spline by moving its points. Alt+drag an endpoint to add more points.<br>
+        <b>3.</b> Select the layer again and set <code>Distance (cm)</code>. With Repel behaviour, this clears the specified distance on each side of the spline. At 0, nothing is cleared; 400 creates 4 m of clearance per side.<br>
+        <b>4.</b> Adjust <code>Transition (cm)</code> to soften the outer boundaries.<br>
+        <b>5.</b> Choose <code>Behaviour</code>: <code>Attract</code> keeps instances along the spline, while <code>Repel</code> clears them away from it.</p>
+        <p>To use an existing actor with a Spline component, select it together with the layer and click <code>Add Selected</code> under Curve Proximity. Editing the spline updates the scatter when you release the point.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<footer>
+  <div class="wrap">Recorded with ScatterFlow Unreal Sync 2.20 (Sky and Weather: 2.23) in Unreal Engine 5.8, linked to ScatterFlow 1.0.9 in Blender 5.2.2.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

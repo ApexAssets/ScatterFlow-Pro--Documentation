@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Materials | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html" class="active" aria-current="page">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Scatter</div>
+    <h1>Materials</h1>
+    <p>Adjust seasons, snow, dryness, and lawn stripes from the ScatterFlow panel</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#seasons">Seasons</a>
+    <a href="#snow">Snow</a>
+    <a href="#dryness">Dryness Control</a>
+    <a href="#stripes">Lawn Stripes</a>
+    <a href="#list">Material List</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">The Materials section controls compatible materials on the layer selected in the System List. It is located at the bottom of the Scatter tab.</p>
+    <p class="lead">Plants in the ScatterFlow content pack are configured for these controls. For your own assets, the available settings depend on what their materials support.</p>
+  </div>
+</section>
+
+<section id="seasons">
+  <div class="wrap">
+    <h2>Seasons</h2>
+
+    <article class="card" id="season-stage">
+      <div class="clip"><video src="videos/materials-seasons.mp4" poster="videos/materials-seasons.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Season Stage</h3>
+        <p>Moves the planting through Spring, Summer, Autumn, and Winter. The labels below the slider identify the seasons, while the header shows the current season and progress through it.</p>
+        <p>For example, the meadow transitions from fresh spring green through pale summer straw and autumn orange to winter brown.</p>
+        <p><code>Season Amount</code> controls the strength of the seasonal colour adjustment. At 0, plants retain their original colours.</p>
+      </div>
+    </article>
+
+    <article class="card" id="season-settings">
+      <div class="clip"><video src="videos/materials-season-settings.mp4" poster="videos/materials-season-settings.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Season Settings</h3>
+        <ul class="facts"><li><b>Seasons Blend</b> 0.5</li><li><b>Color Variation Blend</b> 5</li><li><b>Color Variation Seed</b> 0</li></ul>
+        <p>These controls vary the seasonal effect across the planting so every plant does not change colour together.</p>
+        <p><code>Seasons Blend</code> controls differences in seasonal progress between plants. Lower values produce a more uniform change; higher values let some plants appear further through the season than others.</p>
+        <p><code>Color Variation Blend</code> controls the size of areas that change together. <code>Color Variation Seed</code> rearranges those areas.</p>
+        <p><code>Leaf Randomness</code> adds variation between individual leaves. <code>Season Colors</code> sets the colours used for each season.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="snow">
+  <div class="wrap">
+    <h2>Snow</h2>
+
+    <article class="card" id="leaf-snow-amount">
+      <div class="clip"><video src="videos/materials-snow.mp4" poster="videos/materials-snow.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Leaf Snow Amount</h3>
+        <ul class="facts"><li><b>Default</b> 0</li></ul>
+        <p>Controls snow coverage on leaves. At 0, no snow is applied; at 1, the leaves are white. A value around 0.3 produces a light dusting.</p>
+        <p>This setting is in the Seasons panel below Season Colors. Content pack trees also include <code>Trunk Snow Amount</code> for snow on their bark.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="dryness">
+  <div class="wrap">
+    <h2>Dryness Control</h2>
+
+    <article class="card" id="dry-patches">
+      <div class="clip"><video src="videos/materials-dryness.mp4" poster="videos/materials-dryness.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Dry patches</h3>
+        <ul class="facts"><li><b>Dry Mask</b> off</li><li><b>Spread</b> 0.6</li><li><b>Scale</b> 0.15</li><li><b>Position</b> 0</li></ul>
+        <p>Creates uneven areas of dry, yellow vegetation. Set <code>Dry Mask OFF/ON</code> to 1 to enable the effect.</p>
+        <p><code>Dryness Spread</code> controls how much of the planting is affected. <code>Dryness Scale</code> controls patch size, and <code>Dryness Position</code> moves the pattern across the surface.</p>
+        <p><code>Dry/Height Amount</code> and <code>Dryness Height</code> control how far the dry colouration extends up each plant. <code>Dryness Color</code> sets its colour.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="stripes">
+  <div class="wrap">
+    <h2>Lawn Stripes</h2>
+
+    <article class="card" id="mowing-stripes">
+      <div class="clip"><video src="videos/materials-lawn-stripes.mp4" poster="videos/materials-lawn-stripes.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Mowing stripes</h3>
+        <ul class="facts"><li><b>Stripe Scale</b> 0.23</li><li><b>Angle</b> 0&deg;</li><li><b>Distortion</b> 0</li></ul>
+        <p>Creates alternating light and dark bands for a mown lawn. Lawn biomes have the effect enabled by default. Use <code>Stripes ON/OFF</code> to toggle it and <code>Stripe Brightness</code> to adjust the contrast.</p>
+        <p><code>Stripe Scale</code> controls band width. <code>Angle</code> rotates the pattern, and <code>Position Offset</code> shifts it sideways.</p>
+        <p><code>Distortion</code> makes the boundaries less regular, useful for mowing patterns that should not look perfectly straight.</p>
+        <p><code>Stripe Spread Min</code> and <code>Max</code> control the sharpness of the transition between light and dark bands.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="list">
+  <div class="wrap">
+    <h2>Material List</h2>
+
+    <article class="card text" id="material-list-and-the-link-button">
+      <div>
+        <h3>Material List and the link button</h3>
+        <p>The list at the top shows the ScatterFlow materials used by the selected layer. Select a material to display its <code>Main</code>, <code>Translucency</code>, and <code>Wetness</code> settings. These control colour adjustments, light passing through leaves, and the appearance of a wet surface.</p>
+        <p>The link button beside the Materials heading applies the same adjustments to all listed materials. Unlink them to edit a material individually.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the ScatterFlow content pack.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

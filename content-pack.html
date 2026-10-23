@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content pack and the Asset Browser | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html" class="active" aria-current="page">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Getting started</div>
+    <h1>Content pack and the Asset Browser</h1>
+    <p>Browse ScatterFlow plants, rocks, and props, then place them directly or use them in scatter layers</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#library">Adding the library</a>
+    <a href="#browse">Browsing the pack</a>
+    <a href="#drop">Dropping assets in</a>
+    <a href="#scatter">Scattering an asset</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">The ScatterFlow content pack includes plants, rocks, props, and effects. Its assets are used by the bundled <a href="biomes.html">biomes</a>, but you can also add them individually through Blender's Asset Browser.</p>
+    <p class="lead">After installing the content, register its folder as an asset library so Blender can display it.</p>
+  </div>
+</section>
+
+<section id="library">
+  <div class="wrap">
+    <h2>Adding the library</h2>
+    <p class="lead">Register the library once in Blender's Asset Libraries preferences. This is a separate step from installing the files with ScatterFlow's <a href="getting-started.html#content">Content Installer</a>.</p>
+
+    <article class="card" id="set-the-asset-library-path">
+      <div class="clip win"><video src="videos/content-library-path.mp4" poster="videos/content-library-path.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Set the asset library path</h3>
+        <p><b>1.</b> Open <code>Edit &gt; Preferences</code> and select <code>Asset Libraries</code>.</p>
+        <p><b>2.</b> Click <code>+</code> beside the library list and select the <code>ScatterFlow_Pro_ContentPack</code> folder. Select the folder itself, not a file inside it.</p>
+        <p><b>3.</b> Select the new library entry and check that its <code>Path</code> ends with ScatterFlow_Pro_ContentPack.</p>
+        <p><b>4.</b> Set <code>Import Method</code> to <code>Append</code>. Assets added to a scene will become editable copies in that file.</p>
+        <p><b>5.</b> Close Preferences. The library is now available in the menu at the upper left of any Asset Browser.</p>
+        <div class="note"><strong>Update the path after moving the library.</strong>
+        If the assets disappear after you move the folder, return to these preferences and set <code>Path</code> to its new location.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="browse">
+  <div class="wrap">
+    <h2>Browsing the pack</h2>
+
+    <article class="card" id="library-catalogs-and-search">
+      <div class="clip win"><video src="videos/content-browse.mp4" poster="videos/content-browse.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Library, catalogs and search</h3>
+        <p>Open an Asset Browser. You can change an existing editor, such as the Timeline, to an Asset Browser and resize it to show more assets.</p>
+        <p>Choose <code>ScatterFlow_Pro_ContentPack</code> from the library menu. The catalogs organize the assets into the following groups:</p>
+        <p><code>Foliage</code>: Bushes, Cactus, Grass, Ground Debris, Moss, Mushrooms, Plants, Rocks, Sticks, and Trees.<br>
+        <code>Ivy</code>: leaves, flowers, and presets for the Ivy tools.<br>
+        <code>Trash &amp; Debris</code>: barrels, boxes, construction debris, bins, food and drink, glass, set pieces, and loose trash.<br>
+        <code>Water</code>, <code>Weather</code>, and <code>Atmosphere</code>: water presets, rain, snow, wind, and effects such as dust, embers, and falling leaves.</p>
+        <p>Select a catalog to filter the assets, or expand its arrow to browse subcategories. Use <code>Search</code> to find assets by name, such as “fern.”</p>
+        <div class="note"><strong>Initial loading may take longer.</strong>
+        The library is large, and asset previews may take a moment to appear the first time you open it.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="drop">
+  <div class="wrap">
+    <h2>Dropping assets in</h2>
+
+    <article class="card" id="drag-and-drop">
+      <div class="clip win"><video src="videos/content-drop.mp4" poster="videos/content-drop.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Drag and drop</h3>
+        <p>Drag an asset into the 3D viewport and release it over the target surface. The asset snaps to the surface beneath the cursor.</p>
+        <p>Most assets contain several variations rather than a single object. For example, Ferns includes four ferns, while Desert Rocks2 includes sixteen rocks. The variations arrive in a row, grouped in a collection named after the asset. Reposition them or remove variations you do not need.</p>
+        <p>Materials are included. Switch to Material Preview or Rendered shading to see the textures.</p>
+        <p>For manually placed props, use <a href="quick-tools.html">Randomize Transform</a> to vary their appearance and <a href="quick-tools.html">Snap to Ground</a> to position them on the terrain.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="scatter">
+  <div class="wrap">
+    <h2>Scattering an asset</h2>
+
+    <article class="card" id="from-an-asset-to-a-scatter-layer">
+      <div class="clip win"><video src="videos/content-scatter.mp4" poster="videos/content-scatter.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>From an asset to a scatter layer</h3>
+        <p>An imported asset's collection of variations can be used directly as the source for a scatter layer.</p>
+        <p><b>1.</b> Drag the asset into the scene.</p>
+        <p><b>2.</b> Choose an <code>Emitter</code> in the ScatterFlow panel and click <code>+</code> to add a layer.</p>
+        <p><b>3.</b> Under <code>Instances</code>, set <code>Type</code> to <code>Multiple Instances</code> and select the asset's collection, such as Ferns.</p>
+        <p><b>4.</b> Increase <code>Density / m²</code> to populate the surface. The layer uses the variations in the collection.</p>
+        <p>You can now adjust the layer with the Scatter tab's controls, including <a href="scale-rotation.html">Scale, Rotation</a>, <a href="abiotic.html">masks</a>, and <a href="dynamics.html">Wind</a>. Supported content pack <a href="materials.html">materials</a> also respond to the Materials section's season, snow, and dryness settings.</p>
+        <p>After setup, you can hide the original objects or move them out of view. Keep them in the file: the scatter layer uses them as its source objects.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2, using the ScatterFlow content pack.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics | ScatterFlow documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="style.css?v=75872aee">
+</head>
+<body>
+<!-- sf:layout -->
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Show the page list"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <a class="brand" href="index.html"><img src="images/logo.png" alt="ScatterFlow"><span>Documentation</span></a>
+  <button class="search-open" type="button" aria-label="Search the documentation"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search documentation...</span><kbd>Ctrl K</kbd></button>
+</header>
+<nav class="sidebar" aria-label="Documentation pages">
+  <a class="side-home" href="index.html"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Getting Started</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="getting-started.html">Installation and preferences</a>
+    <a href="content-pack.html">Content pack and the Asset Browser</a>
+    <a href="megascans.html">Megascans installer</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="layers.html">Emitter, layers and groups</a>
+    <a href="scatter-setup.html">Surface, Instances and Scattering</a>
+    <a href="manual.html">Manual Mode</a>
+    <a href="scale-rotation.html">Scale and Rotation</a>
+    <a href="culling-proximity.html">Culling and Proximity</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="abiotic.html">Abiotic masks</a>
+    <a href="texture-masks.html">Texture Masks</a>
+    <a href="dynamics.html">Dynamics</a>
+    <a href="materials.html">Materials</a>
+    <a href="biomes.html">Biomes</a>
+    <a href="optimization.html">Optimization</a>
+    <a href="quick-tools.html">Quick Tools</a>
+  </details>
+  <details class="side-group" open>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg><span>Environment Tools</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="weather.html">Weather and Atmosphere</a>
+    <a href="ivy.html">Ivy</a>
+    <a href="river.html">River</a>
+    <a href="decals.html">Decals</a>
+    <a href="physics.html" class="active" aria-current="page">Physics</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="export.html">Export</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 7.5v6a3 3 0 0 0 6 0v-6"/></svg><span>Unreal Engine</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="unreal.html">Setup and Sync</a>
+    <a href="unreal-scatter.html">Scatter Layers</a>
+    <a href="unreal-wind.html">Wind</a>
+    <a href="unreal-play.html">Play</a>
+    <a href="unreal-sky.html">Sky</a>
+    <a href="unreal-weather.html">Weather</a>
+    <a href="unreal-water.html">Water</a>
+    <a href="unreal-ivy.html">Ivy</a>
+  </details>
+  <details class="side-group">
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="5"/><circle cx="9" cy="11.5" r="1.6"/><circle cx="15" cy="11.5" r="1.6"/><path d="M9 16h6"/></svg><span>Godot</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <a href="godot.html">Setup and Sync</a>
+    <a href="godot-scatter.html">Scatter Layers</a>
+    <a href="godot-wind.html">Wind</a>
+    <a href="godot-play.html">Play</a>
+    <a href="godot-sky.html">Sky</a>
+    <a href="godot-weather.html">Weather</a>
+    <a href="godot-water.html">Water</a>
+    <a href="godot-ivy.html">Ivy</a>
+  </details>
+</nav>
+<!-- /sf:layout -->
+<main class="content" id="content"><!-- sf:main -->
+<header class="top">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">ScatterFlow documentation</a> / Physics tab</div>
+    <h1>Physics</h1>
+    <p>Arrange objects with collisions, then convert the settled result into a scatter layer</p>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="wrap">
+    <a href="#sources">Sources</a>
+    <a href="#quick">Quick Physics</a>
+    <a href="#modes">Start Scattering</a>
+    <a href="#area">Area</a>
+    <a href="#precision">Precision</a>
+    <a href="#push">Push, Grab and Move</a>
+    <a href="#array">Array</a>
+    <a href="#collections">Collection list</a>
+    <a href="#convert">Convert to Scatter</a>
+    <a href="#advanced">Advanced Settings</a>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="lead">The <code>Physics</code> tab uses simulated falling and collisions to place objects. Use it for arrangements such as rolling barrels, stacked tyres, or rocks settled into corners that would be time-consuming to position individually.</p>
+    <p class="lead">You can add physics to existing objects or place new objects with brushes that simulate them as you work.</p>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <p class="lead">Placement brushes use objects from a <code>Source Collection</code> in the current file.</p>
+
+    <article class="card" id="source-collection">
+      <div class="clip"><video src="videos/physics-sources.mp4" poster="videos/physics-sources.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Source Collection</h3>
+        <p><code>Source Collection</code>: selects the available assets. For example, a Debris collection can contain barrels, tyres, and rocks.</p>
+        <p><code>Arrow</code>: expands the collection's object list.</p>
+        <p><code>Tick boxes</code>: enable or exclude individual objects from new placements. Disable an asset temporarily without removing it from the collection.</p>
+        <p><code>All</code> and <code>None</code>: enable or disable every listed object.</p>
+        <p><code>+</code>: adds selected scene objects or Asset Browser assets to the source collection.</p>
+        <div class="note"><strong>Keep the source objects in the scene.</strong>
+        The brushes place copies of them. Move the originals out of the camera's view rather than deleting them.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="quick">
+  <div class="wrap">
+    <h2>Quick Physics</h2>
+    <p class="lead">These four controls apply to selected objects, including objects you have positioned manually.</p>
+
+    <article class="card" id="set-passive-and-add-physics">
+      <div class="clip"><video src="videos/physics-quick.mp4" poster="videos/physics-quick.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Set Passive and Add Physics</h3>
+        <p><code>Set Passive</code>: makes objects participate in collisions without moving. Apply it to the ground, walls, ramps, and other supporting surfaces before dropping objects onto them.</p>
+        <p><code>Add Physics</code>: enables simulated falling and collisions on the selection. Apply it to the objects you want to move, then play the timeline.</p>
+        <div class="note"><strong>Objects falling through the floor?</strong>
+        Select the floor and apply Set Passive so it can receive collisions.</div>
+      </div>
+    </article>
+
+    <article class="card" id="freeze-and-remove">
+      <div class="clip"><video src="videos/physics-freeze.mp4" poster="videos/physics-freeze.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Freeze and Remove</h3>
+        <p><code>Freeze</code>: holds selected objects at their current positions while keeping them solid for collisions.</p>
+        <p>Use Freeze to lock a completed part of a pile before adding more objects. Newly dropped objects can still land on the frozen ones.</p>
+        <p><code>Remove</code>: removes physics and leaves the objects at their settled positions as ordinary scene objects.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="modes">
+  <div class="wrap">
+    <h2>Start Scattering</h2>
+    <p class="lead">The placement brushes are called modes. They use the Source Collection and simulate objects live without requiring timeline playback.</p>
+
+    <article class="card" id="the-dials">
+      <div class="clip win"><video src="videos/physics-start.mp4" poster="videos/physics-start.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>The dials</h3>
+        <p>Click <code>Start Scattering</code> to display six mode dials on the left of the viewport. The button changes to <code>Stop Scattering</code> while the controls are active.</p>
+        <p>Click a mode or press its number, <code>1</code>–<code>6</code>, to display its settings. A shortcut card appears in the lower-left corner.</p>
+        <p>Drag a setting dial horizontally to adjust it. Click an On/Off dial to toggle it.</p>
+        <p>Press <code>Esc</code> or right-click to leave the active mode and return to the mode list. Press <code>Esc</code> again, or click <code>Stop Scattering</code>, to close the controls.</p>
+        <p>The modes are <a href="#area">Area</a>, <a href="#precision">Precision</a>, <a href="#push">Push</a>, <a href="#array">Array</a>, <a href="#push">Grab</a>, and <a href="#push">Move</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <h2>1 Area</h2>
+    <p class="lead">Hold the left mouse button to place objects within the brush circle. Objects continue spawning while the button is held.</p>
+
+    <article class="card" id="pouring-objects-in">
+      <div class="clip win"><video src="videos/physics-area.mp4" poster="videos/physics-area.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Pouring objects in</h3>
+        <p>Hold the cursor in one place to build a pile, or drag to distribute objects along a path. They fall and settle as they are added.</p>
+        <div class="note"><strong>Use short presses for controlled placement.</strong>
+        A long press can generate many objects quickly.</div>
+      </div>
+    </article>
+
+    <article class="card" id="count">
+      <div class="clip win"><video src="videos/physics-area-count.mp4" poster="videos/physics-area-count.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Count</h3>
+        <p>Sets the number of objects added at each brush step. For example, Count 6 adds six objects per step instead of one at Count 1, producing a denser result over the same press duration.</p>
+      </div>
+    </article>
+
+    <article class="card" id="radius">
+      <div class="clip win"><video src="videos/physics-area-radius.mp4" poster="videos/physics-area-radius.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Radius</h3>
+        <p>Sets the area within which objects appear. A radius of 0.6 creates a compact pile, while 2.5 spreads the same number over a wider region. Hold <code>F</code> and move the mouse to adjust it interactively.</p>
+      </div>
+    </article>
+
+    <article class="card" id="scale-min-and-scale-max">
+      <div class="clip win"><video src="videos/physics-area-scale.mp4" poster="videos/physics-area-scale.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Scale Min and Scale Max</h3>
+        <p>Define the random size range. Set both to 1 to preserve every source object's size. A range of 0.4–2.0 produces a mix of smaller and larger copies.</p>
+      </div>
+    </article>
+
+    <article class="card" id="height-offset">
+      <div class="clip win"><video src="videos/physics-area-height.mp4" poster="videos/physics-area-height.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Height Offset</h3>
+        <p>Sets how far above the target surface objects spawn. At 0 they are placed at the ground; a value of 4 drops them from above, allowing more falling, bouncing, and rolling before they settle.</p>
+        <p><code>Align to Surface</code> tilts the brush circle to match the surface beneath it.</p>
+      </div>
+    </article>
+
+    <article class="card" id="random-rotation">
+      <div class="clip win"><video src="videos/physics-area-rotation.mp4" poster="videos/physics-area-rotation.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Random Rotation</h3>
+        <p>When disabled, objects spawn upright. Enable it to start each object at a random orientation, allowing it to settle on a different side or end.</p>
+      </div>
+    </article>
+
+    <article class="card" id="erasing-and-randomize">
+      <div class="clip win"><video src="videos/physics-area-erase.mp4" poster="videos/physics-area-erase.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Erasing and Randomize</h3>
+        <p>Hold <code>Ctrl</code> and drag to remove objects under the brush.</p>
+        <p><code>Randomize</code> generates a new variation for objects placed by the brushes. <code>Randomize Selected</code> limits that action to the current selection.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="precision">
+  <div class="wrap">
+    <h2>2 Precision</h2>
+
+    <article class="card" id="one-object-at-a-time">
+      <div class="clip win"><video src="videos/physics-precision.mp4" poster="videos/physics-precision.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>One object at a time</h3>
+        <p>Click to place one object under the cursor.</p>
+        <p><code>Q</code>, or the <code>Next Asset</code> dial, selects the next object in the Source Collection.</p>
+        <p><code>Shift</code> + click places another copy of the same object.</p>
+        <p><code>Scale Min</code>, <code>Scale Max</code>, <code>Height Offset</code>, <code>Align to Surface</code>, and <code>Random Rotation</code> work as they do in Area mode.</p>
+        <p><code>Skip Rigid Body</code> places objects without physics. They remain where you put them, including when Height Offset places them above the ground.</p>
+        <p>Hold <code>Ctrl</code> and drag to erase. Use <code>F</code> to adjust the eraser radius.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="push">
+  <div class="wrap">
+    <h2>3 Push, 5 Grab and 6 Move</h2>
+    <p class="lead">Use these modes to rearrange objects already placed in the scene.</p>
+
+    <article class="card" id="push-2">
+      <div class="clip win"><video src="videos/physics-push.mp4" poster="videos/physics-push.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Push</h3>
+        <p>Hold the left mouse button and drag to move a plane through the objects, pushing them like a broom.</p>
+        <p><code>Push Width</code> sets the plane's width. A value of 0.8 affects a narrow strip; 3.0 covers a broader area. Hold <code>F</code> and move the mouse to adjust it.</p>
+      </div>
+    </article>
+
+    <article class="card" id="grab-attract">
+      <div class="clip win"><video src="videos/physics-grab.mp4" poster="videos/physics-grab.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Grab: attract</h3>
+        <p>Hold the left mouse button to pull objects inside the brush toward its centre. Drag to carry them together, useful for gathering scattered objects into a pile.</p>
+        <p><code>Grab Radius</code> sets the affected area.</p>
+        <p><code>Strength</code>: negative values attract objects.</p>
+      </div>
+    </article>
+
+    <article class="card" id="grab-repel">
+      <div class="clip win"><video src="videos/physics-grab-repel.mp4" poster="videos/physics-grab-repel.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Grab: repel</h3>
+        <p>Positive <code>Strength</code> pushes objects away from the brush centre. Increase it gradually for a stronger push rather than starting with a large value.</p>
+        <p><code>Damping</code> reduces object motion. Lower values allow objects to travel further after being pushed.</p>
+        <div class="note"><strong>Adjust Strength gradually.</strong>
+        High positive values can throw objects a long distance.</div>
+      </div>
+    </article>
+
+    <article class="card" id="move">
+      <div class="clip win"><video src="videos/physics-move.mp4" poster="videos/physics-move.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Move</h3>
+        <p>Click and drag an object to reposition it. Release the mouse button to return it to the simulation at its new location.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="array">
+  <div class="wrap">
+    <h2>4 Array</h2>
+
+    <article class="card" id="rows-stacks-and-rings">
+      <div class="clip win"><video src="videos/physics-array.mp4" poster="videos/physics-array.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Rows, stacks and rings</h3>
+        <p>Array repeats one object in a regular pattern, such as stacked crates, a pallet of blocks, or a ring of tyres. Its settings appear in the sidebar under Modes rather than on dials.</p>
+        <p><b>1.</b> Select the source object and choose <code>Array</code>.</p>
+        <p><b>2.</b> Click <code>Add Array</code>.</p>
+        <p><code>Array Type</code>: choose <code>Grid</code> for rows and stacks or <code>Radial</code> for rings.</p>
+        <p><code>Count</code>: Grid uses <code>X Count</code>, <code>Y Count</code>, and <code>Z Count</code>. Radial uses <code>Radial Count</code> around each ring, <code>Radial Rings</code> for the number of rings, and <code>Z Count</code> for vertical layers.</p>
+        <p><code>Spacing</code>: sets the gaps along each grid axis. Radial arrangements use <code>Ring Spacing</code> and <code>Start Radius</code>.</p>
+        <p><code>Scale</code>: <code>Base Scale</code> sets overall size, while <code>Random Scale Min</code> and <code>Max</code> add variation.</p>
+        <p><code>Rotation</code>: <code>Base Rotation</code> sets the starting orientation, and <code>Random Rotation</code> adds variation.</p>
+        <p><code>Advanced</code>: <code>Realize Instances</code> converts the generated instances into geometry.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="collections">
+  <div class="wrap">
+    <h2>Collection list</h2>
+
+    <article class="card" id="select-and-hide-by-group">
+      <div class="clip win"><video src="videos/physics-collections.mp4" poster="videos/physics-collections.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Select and hide by group</h3>
+        <p>ScatterFlow organizes physics objects into collections listed under Sources, with a count for each:</p>
+        <p><code>Quick Spawn</code>: objects placed with the brushes.<br>
+        <code>Active Rigid Bodies</code>: objects assigned physics with Add Physics.<br>
+        <code>Passive Rigid Bodies</code>: objects assigned Set Passive, such as the ground.<br>
+        <code>Frozen Objects</code>: objects held in place with Freeze.</p>
+        <p><code>Arrow</code>: selects every object in the collection for actions such as Freeze, Remove, or Randomize Selected.</p>
+        <p><code>Eye</code>: toggles collection visibility.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="convert">
+  <div class="wrap">
+    <h2>Convert to Scatter</h2>
+
+    <article class="card" id="from-loose-objects-to-a-scatter-layer">
+      <div class="clip win"><video src="videos/physics-convert.mp4" poster="videos/physics-convert.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>From loose objects to a scatter layer</h3>
+        <p><code>Convert to Scatter</code> replaces placed objects with instances in a layer named Physics Scatter. It preserves their positions, rotations, and scales while reducing the overhead of many separate objects.</p>
+        <p><b>1.</b> Select an <code>Emitter</code> in the <a href="layers.html">Scatter tab</a>. The new layer needs an emitter to belong to.</p>
+        <p><b>2.</b> Click <code>Convert to Scatter</code> and confirm.</p>
+        <p>Physics Scatter appears in the System List as a <a href="manual.html">Manual</a> layer. You can continue refining its instances with the Manual Mode brushes.</p>
+        <p>To convert only part of the arrangement, select those objects before running the command.</p>
+        <div class="note"><strong>Conversion ends their physics simulation.</strong>
+        Finish settling and rearranging the objects before converting them.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="advanced">
+  <div class="wrap">
+    <h2>Advanced Settings</h2>
+
+    <article class="card" id="collision-settings">
+      <div class="clip"><video src="videos/physics-advanced.mp4" poster="videos/physics-advanced.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Collision Settings</h3>
+        <p>Control how objects respond when they contact one another.</p>
+        <p><code>Collision Type</code>: the shape used for collision calculations. <code>Convex Hull</code> approximates the outer shape and suits many objects. <code>Box</code>, <code>Sphere</code>, <code>Capsule</code>, and <code>Cylinder</code> are simpler options with lower processing cost. <code>Mesh</code> follows the surface more closely, useful for hollow objects that other objects need to enter.</p>
+        <p><code>Friction</code>: resistance to sliding. Lower values allow surfaces to slide more freely.</p>
+        <p><code>Bounce</code>: how strongly objects rebound after contact. Increase it for more bounce or reduce it for less.</p>
+        <p><code>Collision Margin</code>: an additional collision boundary around the object.</p>
+        <p><code>Rolling</code> and <code>Spinning</code>: resistance to those types of motion. Increase Rolling to help barrels settle rather than continue rolling.</p>
+        <p><code>Friction Anchor</code>: helps stabilize stacks that gradually slide apart.</p>
+        <p><code>Set as Default</code>: uses the current values for objects assigned physics afterward.</p>
+        <p><code>Apply to Selected</code>: applies the values to selected objects.</p>
+        <div class="note"><strong>Contact behaviour depends on both surfaces.</strong>
+        Apply Bounce and Friction settings to the ground as well as to falling objects.</div>
+      </div>
+    </article>
+
+    <article class="card text" id="split-impulse-pybullet-solver-and-origin-tools">
+      <div>
+        <h3>Split Impulse, PyBullet Solver and Origin Tools</h3>
+        <p><code>Split Impulse</code> reduces the tendency of initially overlapping objects to be pushed violently apart. Leave <code>Enable Split Impulse</code> enabled. <code>Rigid Body Cache</code> defines the frame range for timeline-based simulation.</p>
+        <p><code>PyBullet Solver</code> balances accuracy and processing cost. Increase <code>Iterations</code> and <code>Substeps</code> when small or fast objects pass through surfaces or stacks remain unstable. Other solver controls provide finer adjustments for difficult contacts.</p>
+        <p><code>Origin Tools</code>: <code>Center of Mass (Vol)</code> moves object origins to their volume-based centre of mass for more natural tumbling. <code>Bottom Center</code> places origins at the centre of each base for easier surface placement.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Recorded in ScatterFlow 1.0.9 on the ScatterFlow build of Blender 5.2.2.</div>
+</footer>
+
+<!-- /sf:main --></main>
+
+<script src="app.js?v=6f286b24"></script>
+<script type="module" src="search.js?v=86d615e8"></script>
+</body>
+</html>
