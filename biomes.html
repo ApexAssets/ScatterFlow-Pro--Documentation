@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="icon" href="images/favicon.png">
-<link rel="stylesheet" href="style.css?v=75872aee">
+<link rel="stylesheet" href="style.css?v=bb84e0d8">
 </head>
 <body>
 <!-- sf:layout -->
@@ -24,6 +24,7 @@
     <a href="getting-started.html">Installation and preferences</a>
     <a href="content-pack.html">Content pack and the Asset Browser</a>
     <a href="megascans.html">Megascans installer</a>
+    <a href="license.html">License</a>
   </details>
   <details class="side-group" open>
     <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
@@ -88,6 +89,7 @@
 
 <nav class="jump">
   <div class="wrap">
+    <a href="#install">Installing biome packs</a>
     <a href="#browser">Biome Browser</a>
     <a href="#find">Finding a biome</a>
     <a href="#import">Importing</a>
@@ -101,6 +103,31 @@
   <div class="wrap">
     <p class="lead">A biome combines multiple scatter layers with their assets, densities, and masks already configured. Importing a biome adds its layers to the current emitter as a group.</p>
     <p class="lead">After importing, you can adjust each layer, modify the group, or combine layers from different biomes to build your own environment.</p>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2>Installing biome packs</h2>
+    <p class="lead">Biomes come as <code>.flow</code> files. A biome file holds the layers and their settings and refers to the plants and rocks in your installed asset libraries, so biome packs stay small. Install the assets first, then the biomes that use them.</p>
+
+    <article class="card" id="install-a-biome-pack">
+      <div class="clip win"><video src="videos/biome-install.mp4" poster="videos/biome-install.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Install a biome pack</h3>
+        <p><b>1.</b> Open <code>Edit &gt; Preferences &gt; Add-ons</code>, expand ScatterFlow, and find the <code>Content Installer</code>. <code>ScatterFlow Assets &amp; Textures</code> should already show <code>Installed</code>; see <a href="getting-started.html#content">Install the content</a>.</p>
+        <p><b>2.</b> Click <code>Install Content Files</code>, select <code>ScatterFlow_ProBiomes.flow</code>, and click <code>Install ScatterFlow / GScatter Content</code>. Leave the file as it is; the installer unpacks it.</p>
+        <p><b>3.</b> <code>ScatterFlow Biomes</code> changes to <code>Installed</code>. The 31 ScatterFlow biomes now appear in the <a href="#browser">Biome Browser</a>, grouped into Desert, Forest, Lawn, Meadow, Trash, Tropical, Wasteland, and Wetland.</p>
+        <p>The biomes are stored in <code>ScatterFlow_Pro\ScatterFlow_ProBiomes</code> inside your Content Library Folder. Reinstalling the pack adds missing biomes and keeps the ones already there.</p>
+      </div>
+    </article>
+
+    <article class="card text" id="older-biomes">
+      <div>
+        <h3>Biomes from older versions</h3>
+        <p>Biomes exported with earlier versions of ScatterFlow are a .json file with a .blend file beside it. They still appear in the Biome Browser and import as before. New exports always use the .flow format.</p>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -198,12 +225,15 @@
       <div class="clip win"><video src="videos/biome-export.mp4" poster="videos/biome-export.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Export Biome</h3>
-        <p>Open the arrow menu below the System List buttons and choose <code>Export Biome</code>. The command is available when the emitter contains at least one layer. It exports every layer in that emitter's list, including its settings.</p>
+        <p>Open the arrow menu below the System List buttons and choose <code>Export Biome</code>. The command is available when the emitter contains at least one layer. It exports every layer in that emitter's list, including its settings and groups.</p>
         <p><code>Name</code> sets the biome's display name in the Biome Browser. It initially uses the scene name.</p>
         <p><code>Category</code> determines its folder in the browser's Categories list.</p>
-        <p><code>Export Path</code> sets the save location. The export contains a .blend file with the assets and a matching .json file describing the layers. Save them in your biomes folder to make the biome available in the browser.</p>
-        <p><code>Preview Image</code> optionally supplies the browser thumbnail. It is copied alongside the other files.</p>
-        <p>Click <code>OK</code> to export.</p>
+        <p><code>Partner</code> can be left empty.</p>
+        <p><code>Export Path</code> sets the .flow file to write. Save it in a folder inside <code>ScatterFlow_ProBiomes</code> to make the biome available in the browser; the example saves <code>Forest Mix.flow</code> in a <code>My Biomes</code> folder there.</p>
+        <p><code>Preview Image</code> optionally supplies the browser thumbnail. It is copied beside the .flow file.</p>
+        <p>Click <code>OK</code> to export. The status bar confirms the number of layers and library assets, for example <code>Biome exported (10 layers, 9 library assets)</code>.</p>
+        <div class="note"><strong>Assets must come from an installed library.</strong>
+        The .flow file does not store models. It records where each plant, rock, and collection is found in the installed ScatterFlow assets. If a layer uses an object that is not in one of those libraries, the export stops with <code>Export stopped: N asset(s) are not in the asset library</code> and lists them. Add those objects to a library .blend, or replace them with library assets, then export again.</div>
         <div class="note"><strong>Refresh after exporting.</strong>
         Click the Biome Browser's refresh arrows to display the new biome.</div>
       </div>
@@ -237,7 +267,7 @@
         <p><b>3.</b> Click <code>Install Content Files</code>, select the .gscatter download, and click <code>Install ScatterFlow / GScatter Content</code>. You can select multiple files and combine .gscatter, .zip, .rar, and .blend files in one installation.</p>
         <p><b>4.</b> Follow the status bar while installation runs. Large files are extracted in the background, leaving Blender usable. Press <code>Esc</code> to cancel. The completion message reports the result, for example <code>Installed 1 content file(s): 30 new file(s), 0 existing file(s) kept.</code></p>
         <p><b>5.</b> Check the <code>GScatter</code> entry in the Content Installer. It reports the installed pack count, such as <code>1 pack(s)</code>.</p>
-        <p>Files are extracted into <code>ScatterFlow_GScatter\GScatterPacks</code> within the Content Library Folder, in a subfolder named after the download. Reinstalling the same file keeps existing content and restores missing files.</p>
+        <p>Files are extracted into <code>ScatterFlow_Partners\GScatterPacks</code> within the Content Library Folder, in a subfolder named after the download. Reinstalling the same file keeps existing content and restores missing files.</p>
       </div>
     </article>
 

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="icon" href="images/favicon.png">
-<link rel="stylesheet" href="style.css?v=75872aee">
+<link rel="stylesheet" href="style.css?v=bb84e0d8">
 </head>
 <body>
 <!-- sf:layout -->
@@ -24,6 +24,7 @@
     <a href="getting-started.html">Installation and preferences</a>
     <a href="content-pack.html">Content pack and the Asset Browser</a>
     <a href="megascans.html">Megascans installer</a>
+    <a href="license.html">License</a>
   </details>
   <details class="side-group" open>
     <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
@@ -199,16 +200,35 @@
     <h2>ScatterFlow Nano</h2>
     <div class="beta"><strong>Beta</strong>
         ScatterFlow Nano and the ScatterFlow build of Blender are in beta. Keep backup copies of your .blend files before opening them in this build and while working with it.</div>
-    <p class="lead">Nano is available in the ScatterFlow build of Blender. It adjusts the viewport detail of scatter instances according to their size on screen, reducing the geometry drawn for dense scenes. It works on ScatterFlow layers in Solid shading, with or without textures, and does not affect renders.</p>
+    <p class="lead">Nano is available in the ScatterFlow build of Blender. It adjusts the viewport detail of scatter instances according to their size on screen, reducing the geometry drawn for dense scenes. It works on ScatterFlow layers in Solid shading (with or without textures), Material Preview, and EEVEE Rendered mode, and does not affect final renders.</p>
     <p class="lead">The recorded comparison uses Desert_V2 on a 30 m square surface, with approximately 920,000 instances and 17 billion polygons.</p>
 
     <article class="card" id="before-and-after">
       <div class="clip win"><video src="videos/nano-performance.mp4" poster="videos/nano-performance.jpg" muted loop playsinline preload="none"></video></div>
       <div>
-        <h3>Before and after</h3>
+        <h3>Before and after (Solid)</h3>
         <p>The comparison shows the same scene with Nano disabled and enabled. Frame duration reflects the actual viewport redraw time, and the on-screen readout reports performance.</p>
         <p>Without Nano, redraws took approximately 1.9 seconds, or about 0.5 frames per second. With Nano enabled using the button at the right end of the viewport header, redraws took approximately 55 milliseconds, or 18 frames per second: about 35 times faster in this test.</p>
         <p>Performance depends on the scene and hardware. Treat these measurements as an example rather than an expected speedup for every project.</p>
+      </div>
+    </article>
+
+    <article class="card" id="nano-material-preview">
+      <div class="clip win"><video src="videos/nano-material.mp4" poster="videos/nano-material.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Material Preview</h3>
+        <p>Nano also draws scatter layers in Material Preview, with their full materials, including materials with displacement.</p>
+        <p>In the recorded test on the same desert, redraws took approximately 6.3 seconds without Nano and 178 milliseconds with it: from about 0.2 to 5.5 frames per second.</p>
+        <p>Material Preview with Nano also uses less memory: images keep only their copy on the graphics card once they are loaded there.</p>
+      </div>
+    </article>
+
+    <article class="card" id="nano-eevee-rendered">
+      <div class="clip win"><video src="videos/nano-eevee.mp4" poster="videos/nano-eevee.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>EEVEE Rendered mode</h3>
+        <p>With EEVEE as the render engine, Nano also works in Rendered viewport shading, including shadows. In the recorded test, redraws took approximately 6.3 seconds without Nano and 144 milliseconds with it.</p>
+        <p>Final renders, and Cycles in Rendered viewport shading, always use the full meshes.</p>
       </div>
     </article>
 
@@ -218,6 +238,7 @@
         <h3>The Nano panel</h3>
         <p>Click the arrow beside the Nano button to open its panel. The main button toggles Nano and displays <code>Nano: Activated</code> or <code>Nano: Deactivated</code>. Other settings are disabled while Nano is off. The enabled state is remembered between sessions.</p>
         <p><code>Visualizer</code> displays diagnostic colours. <code>Clusters</code> shows the triangle groups used to draw each object, <code>Detail</code> shows the chosen detail levels, and <code>Instances</code> gives each instance a separate colour. Return it to <code>Off</code> for normal display.</p>
+        <p><code>Detail Level</code>, <code>Reduce Small Objects</code>, and the Visualizer work in Solid, Material Preview, and EEVEE Rendered mode. In Material Preview and Rendered mode, the Visualizer is shown while Viewport Overlays are on.</p>
       </div>
     </article>
 

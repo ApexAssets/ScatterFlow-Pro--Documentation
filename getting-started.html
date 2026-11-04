@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="icon" href="images/favicon.png">
-<link rel="stylesheet" href="style.css?v=75872aee">
+<link rel="stylesheet" href="style.css?v=bb84e0d8">
 </head>
 <body>
 <!-- sf:layout -->
@@ -24,6 +24,7 @@
     <a href="getting-started.html" class="active" aria-current="page">Installation and preferences</a>
     <a href="content-pack.html">Content pack and the Asset Browser</a>
     <a href="megascans.html">Megascans installer</a>
+    <a href="license.html">License</a>
   </details>
   <details class="side-group">
     <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 11C12 7 9.5 4 4 4c0 5 3 7 8 7z"/></svg><span>Scattering</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
@@ -130,12 +131,12 @@
         <h3>Content Installer</h3>
         <p>Plants, rocks, textures, and biomes are distributed separately from the add-on. Install them using the <code>Content Installer</code> at the top of ScatterFlow's preferences.</p>
         <p><code>ScatterFlow_Pro_ContentPack.part1.rar</code> and <code>ScatterFlow_Pro_ContentPack.part2.rar</code> contain the plants, rocks, and textures. They form one archive split into two parts, approximately 5.5 GB in total.<br>
-        <code>ScatterFlow_ProBiomes.zip</code> contains the biomes.</p>
+        <code>ScatterFlow_ProBiomes.flow</code> contains the biomes, packed in one file.</p>
         <p><b>1.</b> Download all three files into the same folder. Leave them compressed; the installer extracts them.</p>
         <p><b>2.</b> Set <code>Content Library Folder</code> to the location where you want to store the installed content. Allow approximately 6 GB for the extracted files. The installer remains disabled until you select a folder.</p>
-        <p><b>3.</b> Click <code>Install Content Files</code> and select the downloads. For the two-part archive, select either part; the installer finds the other in the same folder. You can select the archive and the biomes zip together. Supported content file formats are .zip, .rar, .gscatter, and .blend.</p>
+        <p><b>3.</b> Click <code>Install Content Files</code> and select the downloads. For the two-part archive, select either part; the installer finds the other in the same folder. You can select the archive and the biome pack together. Supported content file formats are .zip, .rar, .flow, .gscatter, .paq, and .blend.</p>
         <p><b>4.</b> Follow the installation progress in the status bar. Extracting the main archive can take several minutes. Blender remains usable during installation, and <code>Esc</code> cancels the operation.</p>
-        <p><b>5.</b> Check the installation list. Each entry changes from <code>Not installed</code> to a checkmark and <code>Installed</code> when ready. Once ScatterFlow Assets &amp; Textures and ScatterFlow Biomes are installed, the biomes appear in the <a href="biomes.html">Biome Browser</a>.</p>
+        <p><b>5.</b> Check the installation list. Each entry changes from <code>Not installed</code> to a checkmark and <code>Installed</code> when ready. Once ScatterFlow Assets &amp; Textures and ScatterFlow Biomes are installed, the biomes appear in the <a href="biomes.html">Biome Browser</a>. See <a href="biomes.html#install">Installing biome packs</a>.</p>
         <p>The same list also reports installed <a href="biomes.html#gscatter">GScatter</a> packs and compatibility asset libraries.</p>
         <div class="note"><strong>RAR extraction requires 7-Zip or WinRAR.</strong>
         Blender cannot extract .rar files directly. The installer uses either application if it is installed. If neither is available, it reports <code>Extracting multi-part .rar archives needs 7-Zip (free, 7-zip.org) or WinRAR.</code> Install 7-Zip from 7-zip.org, then run <code>Install Content Files</code> again.</div>
