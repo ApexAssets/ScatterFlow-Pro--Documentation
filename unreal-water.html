@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group" open>
@@ -93,15 +93,15 @@
 <section id="water">
   <div class="wrap">
     <h2>Water</h2>
-    <p class="lead">Add lakes, ponds, oceans, or pools with animated waves, depth-based colour, caustics, foam, and underwater effects. Start with a preset, then adjust it to suit the environment.</p>
+    <p class="lead">Add lakes, ponds, oceans, or pools with moving waves, foam, and underwater effects. Start from a preset, then adjust it to suit your scene.</p>
 
     <article class="card" id="add-water">
       <div class="clip wide"><video src="videos/ue-water-add.mp4" poster="videos/ue-water-add.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Add water</h3>
-        <p>Point the viewport at the target location and click the water-drop icon. A flat water body is created and selected, displaying its settings.</p>
-        <p>Move it to the intended water level so it intersects the terrain. Shoreline foam and depth colouration appear where the ground meets the water, allowing low areas of the terrain to form a lake.</p>
-        <p>Use <code>Add Water</code> in the Water section to create additional water bodies.</p>
+        <p>Point the viewport where you want the water and click the water-drop icon. A flat water body is added there.</p>
+        <p>Move it to the water level you want, so it cuts into the terrain. Foam and depth colour appear where the ground meets the water, so low parts of the terrain become a lake.</p>
+        <p>To add more water bodies, click the <code>Add Water</code> button in the Water section.</p>
       </div>
     </article>
 
@@ -109,7 +109,7 @@
       <div class="clip wide"><video src="videos/ue-water-presets.mp4" poster="videos/ue-water-presets.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Water Presets</h3>
-        <p><code>Lake</code>, <code>Pond</code>, <code>Ocean</code>, <code>Tropical</code>, <code>Pool</code>, and <code>Swamp</code> configure colour, waves, ripples, caustics, and foam together. Applying a preset preserves the water body's size and position.</p>
+        <p>Click a preset button, such as <code>Lake</code>, <code>Ocean</code>, or <code>Swamp</code>, to set the colour, waves, ripples, caustics, and foam in one step. The water keeps its size and position.</p>
       </div>
     </article>
 
@@ -117,10 +117,10 @@
       <div class="clip wide"><video src="videos/ue-water-look.mp4" poster="videos/ue-water-look.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Look</h3>
-        <p><code>Water Color</code>: the colour of deep water. Click the swatch to change it.<br>
-        <code>Clarity</code>: the visibility distance through the water in centimetres, before its colour obscures the view.<br>
-        <code>Turbidity</code>: the cloudy appearance of the water. At 0, it is clear and dark; at 1, it is milky.<br>
-        <code>Refraction</code>: how strongly waves distort the view beneath the surface.</p>
+        <p><code>Water Color</code> is the colour of deep water.<br>
+        <code>Clarity</code> is how far you can see into the water, in centimetres, before its colour takes over.<br>
+        <code>Turbidity</code> makes the water cloudy, from clear and dark at 0 to milky at 1.<br>
+        <code>Refraction</code> sets how much the waves distort what is below the surface.</p>
       </div>
     </article>
 
@@ -128,11 +128,11 @@
       <div class="clip wide"><video src="videos/ue-water-waves.mp4" poster="videos/ue-water-waves.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Waves</h3>
-        <p><code>Wave Height</code> and <code>Wave Length</code>: the height and spacing of large waves, in centimetres.<br>
-        <code>Wave Speed</code>: the speed of wave movement.<br>
-        <code>Choppiness</code>: the shape of the crests, from rounded swells at 0 to sharper peaks at 1.<br>
-        <code>Wave Direction</code>: the direction waves travel.<br>
-        <code>Follow Wind</code>: uses the level's wind direction for wave travel.</p>
+        <p><code>Wave Height</code> and <code>Wave Length</code> set the height and spacing of the large waves, in centimetres.<br>
+        <code>Wave Speed</code> sets how fast they move.<br>
+        <code>Choppiness</code> shapes the crests, from rounded swells at 0 to sharp peaks at 1.<br>
+        <code>Wave Direction</code> sets which way the waves travel.<br>
+        <code>Follow Wind</code> makes the waves travel with the level's wind.</p>
       </div>
     </article>
 
@@ -140,8 +140,8 @@
       <div class="clip wide"><video src="videos/ue-water-ripples.mp4" poster="videos/ue-water-ripples.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Ripples &amp; Caustics</h3>
-        <p><code>Ripple Strength</code>, <code>Ripple Size</code>, and <code>Ripple Speed</code>: the smaller-scale surface movement.</p>
-        <p><code>Caustic Strength</code>, <code>Caustic Size</code>, and <code>Caustic Speed</code>: the moving light patterns beneath the water.</p>
+        <p><code>Ripple Strength</code>, <code>Ripple Size</code>, and <code>Ripple Speed</code> control the small movement on the surface.</p>
+        <p><code>Caustic Strength</code>, <code>Caustic Size</code>, and <code>Caustic Speed</code> control the moving light patterns under the water.</p>
       </div>
     </article>
 
@@ -149,8 +149,8 @@
       <div class="clip wide"><video src="videos/ue-water-foam.mp4" poster="videos/ue-water-foam.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Foam</h3>
-        <p><code>Shore Foam</code> and <code>Shore Foam Width</code>: foam in shallow areas and around objects intersecting the water.</p>
-        <p><code>Crest Foam</code>: foam on steep wave crests. Increase wave height first when evaluating this effect.</p>
+        <p><code>Shore Foam</code> and <code>Shore Foam Width</code> add foam in shallow water and around objects that cut through the surface.</p>
+        <p><code>Crest Foam</code> adds foam to steep wave crests. If you cannot see it, raise the wave height first.</p>
       </div>
     </article>
 
@@ -158,9 +158,9 @@
       <div class="clip wide"><video src="videos/ue-water-underwater.mp4" poster="videos/ue-water-underwater.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Underwater</h3>
-        <p><code>Underwater Look</code>: enables coloured haze, light shafts, and caustics when the camera is below the surface.</p>
-        <p><code>Underwater Fog</code>: haze density. A value of 1 matches the Clarity setting used above the surface.<br>
-        <code>Light Shafts</code>: sunlight rays visible through the water.</p>
+        <p>Turn on the <code>Underwater Look</code> checkbox to add coloured haze, light shafts, and caustics when the camera is below the surface.</p>
+        <p><code>Underwater Fog</code> sets how thick the haze is. At 1, it matches the Clarity you see from above the surface.<br>
+        <code>Light Shafts</code> adds visible rays of sunlight through the water.</p>
       </div>
     </article>
 
@@ -168,10 +168,9 @@
       <div class="clip wide"><video src="videos/ue-water-character.mp4" poster="videos/ue-water-character.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Character</h3>
-        <p><code>Affects Character</code>: enables water interaction during Play. Wading slows movement, water carries the character, deeper water provides flotation, and movement creates surface ripples.</p>
-        <p><code>Wade Drag</code>: the strength of the slowdown, reaching its full effect at waist depth.<br>
-        <code>Character Ripples</code>: the strength of the rings and foam created by movement through the water.</p>
-        <p>Use Play to test the transition from walking on land to wading or floating, then back onto the shore.</p>
+        <p>Turn on the <code>Affects Character</code> checkbox to let your character interact with the water in Play. Wading slows you down, the water carries you, deep water makes you float, and moving leaves ripples on the surface.</p>
+        <p><code>Wade Drag</code> sets how much wading slows you down. It reaches full strength at waist depth.<br>
+        <code>Character Ripples</code> sets the strength of the rings and foam you leave as you move through the water.</p>
       </div>
     </article>
   </div>

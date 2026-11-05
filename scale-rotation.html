@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -97,15 +97,15 @@
 <section id="scale">
   <div class="wrap">
     <h2>Scale</h2>
-    <p class="lead">The Scale section combines three independently enabled controls: overall scale, per-axis scale, and random variation. Their values multiply together, so you can use them at the same time.</p>
+    <p class="lead">Scale has three controls that you turn on separately: overall size, size per axis, and random variation. Their values multiply, so you can use them together.</p>
 
     <article class="card" id="uniform-scale">
       <div class="clip"><video src="videos/scale-uniform.mp4" poster="videos/scale-uniform.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Uniform Scale</h3>
         <ul class="facts"><li><b>Default</b> on, 1.0</li></ul>
-        <p>Scales every instance by the same factor. A value of 1 preserves the source object's size, 2 doubles it, and 0.5 halves it.</p>
-        <p>Disable Uniform Scale to remove its effect without losing the stored value.</p>
+        <p>Scales every instance by the same amount. 1 keeps the object's original size, 2 doubles it, and 0.5 halves it.</p>
+        <p>Turn it off to remove its effect without losing the value.</p>
         <p>The starting value for new layers is set in the add-on preferences.</p>
       </div>
     </article>
@@ -115,8 +115,8 @@
       <div>
         <h3>Non-Uniform Scale</h3>
         <ul class="facts"><li><b>Default</b> off, 1 / 1 / 1</li></ul>
-        <p>Scales instances independently along X, Y, and Z. Increase Z to make objects taller, or adjust X and Y to change their width.</p>
-        <p>Use it to create variations such as taller grass or flatter rocks without modifying the source mesh.</p>
+        <p>Scales instances separately along X, Y, and Z. Raise Z to make objects taller, or change X and Y to change their width.</p>
+        <p>Use it for taller grass or flatter rocks without editing the original mesh.</p>
       </div>
     </article>
 
@@ -125,17 +125,17 @@
       <div>
         <h3>Random Scale</h3>
         <ul class="facts"><li><b>New layers</b> on</li><li><b>Min</b> 0.6</li><li><b>Max</b> 1</li><li><b>Seed</b> 0</li></ul>
-        <p>Assigns each instance a random scale between <code>Min</code> and <code>Max</code>.</p>
-        <p>New layers start with a range of 0.6 to 1 times the source size. Lower Min for stronger variation; values near 0 produce many very small instances. Set Max above 1 to allow instances larger than the source object.</p>
-        <p>Whether new layers start with Random Scale enabled is set by the <code>Random Scale</code> preference; see <a href="getting-started.html#defaults">Defaults</a>.</p>
-        <p><code>Seed</code> changes which instances receive each size without changing the range.</p>
+        <p>Gives each instance a random size between <code>Min</code> and <code>Max</code>, as a multiple of the original size.</p>
+        <p>Lower Min for more variation; values near 0 give many very small instances. Set Max above 1 to allow instances larger than the original.</p>
+        <p>The <code>Random Scale</code> checkbox in the preferences sets whether new layers start with it on; see <a href="getting-started.html#defaults">Defaults</a>.</p>
+        <p><code>Seed</code> changes which instances get which size, without changing the range.</p>
       </div>
     </article>
 
     <article class="card text" id="group-scale">
       <div>
         <h3>Group Scale</h3>
-        <p>When a group is selected, Group Scale replaces the layer's Scale section. Its <code>Uniform Scale</code> applies to every layer in the group.</p>
+        <p>When you select a group, Group Scale takes the place of the Scale section. Its <code>Uniform Scale</code> applies to every layer in the group.</p>
       </div>
     </article>
   </div>
@@ -144,15 +144,15 @@
 <section id="rotation">
   <div class="wrap">
     <h2>Rotation</h2>
-    <p class="lead">Rotation combines a fixed rotation, alignment to the surface, and random variation. These controls are available for individual layers, not groups.</p>
+    <p class="lead">Rotation combines a fixed rotation, alignment to the surface, and random variation. These controls work on single layers, not groups.</p>
 
     <article class="card" id="rotate">
       <div class="clip"><video src="videos/rotation-rotate.mp4" poster="videos/rotation-rotate.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Rotate</h3>
         <ul class="facts"><li><b>Default</b> off, 0&deg; / 0&deg; / 0&deg;</li></ul>
-        <p>Rotates every instance by the same amount around X, Y, and Z. Z changes its heading, while X and Y add tilt.</p>
-        <p>Use it to correct the orientation of a source object or lean an entire layer in one direction.</p>
+        <p>Rotates every instance by the same amount around X, Y, and Z. Z turns its heading; X and Y tilt it.</p>
+        <p>Use it to fix an object that faces the wrong way, or to lean a whole layer in one direction.</p>
       </div>
     </article>
 
@@ -161,10 +161,9 @@
       <div>
         <h3>Random Rotation</h3>
         <ul class="facts"><li><b>Default</b> Amount 0 / 0 / 1</li><li><b>Seed</b> 0</li></ul>
-        <p>Applies a different random rotation to each instance. The three <code>Amount</code> values control variation around X, Y, and Z.</p>
-        <p>The default allows free rotation around Z while keeping instances upright. This suits most plants. Add X and Y variation for objects such as rocks or debris that should tilt in several directions.</p>
-        <p><code>Seed</code> generates a different set of rotations.</p>
-        <p>Whether Random Rotation starts enabled on new layers is determined by the add-on preferences.</p>
+        <p>Gives each instance a different random rotation. The three <code>Amount</code> values set how much it varies around X, Y, and Z.</p>
+        <p>The default spins instances freely around Z and keeps them upright, which suits most plants. Add X and Y for rocks or debris that should tilt in any direction.</p>
+        <p><code>Seed</code> gives a different set of rotations. The add-on preferences set whether new layers start with Random Rotation on.</p>
       </div>
     </article>
 
@@ -173,8 +172,8 @@
       <div>
         <h3>Snap</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Max Angle</b> 90&deg;</li></ul>
-        <p>Restricts Random Rotation to increments of <code>Max Angle</code> while keeping the choice of direction random.</p>
-        <p>At 90°, instances face one of four directions; at 45°, one of eight; and at 180°, one of two. Use it for objects that should retain regular alignment, such as crates, paving, or planks.</p>
+        <p>Limits Random Rotation to steps of <code>Max Angle</code>. Which step each instance gets is still random.</p>
+        <p>At 90° instances face one of four directions, at 45° one of eight, and at 180° one of two. Use it for objects that should stay neatly lined up, such as crates, paving, or planks.</p>
       </div>
     </article>
 
@@ -183,8 +182,8 @@
       <div>
         <h3>Align to Surface</h3>
         <ul class="facts"><li><b>Default</b> set in preferences</li><li><b>Alignment Strength</b> 1.0</li></ul>
-        <p>Tilts each instance to stand perpendicular to the surface beneath it. On a slope, this makes the instance lean away from vertical to match the ground.</p>
-        <p><code>Alignment Strength</code> blends between upright at 0 and fully surface-aligned at 1. Values around 0–0.3 are useful for trees that should remain mostly vertical. A value of 1 suits grass, rocks, and objects that should follow the ground closely.</p>
+        <p>Tilts each instance to match the surface under it, so on a slope it leans with the ground.</p>
+        <p><code>Alignment Strength</code> blends from upright at 0 to fully aligned at 1. Around 0–0.3 suits trees that should stay mostly upright. 1 suits grass, rocks, and anything that should follow the ground closely.</p>
       </div>
     </article>
   </div>

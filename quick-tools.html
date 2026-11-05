@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -96,24 +96,23 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">Quick Tools are the two buttons at the top of the Scatter tab. They operate on selected mesh objects, not scatter layers, and remain disabled until a mesh is selected.</p>
-    <p class="lead">After using a tool, adjust its options in Blender's <code>Adjust Last Operation</code> panel at the lower left of the viewport, or press F9. Changing an option immediately updates the result.</p>
+    <p class="lead">Quick Tools are the two buttons at the top of the Scatter tab. They work on selected mesh objects, not scatter layers, and stay greyed out until you select a mesh.</p>
+    <p class="lead">After using a tool, change its options in Blender's <code>Adjust Last Operation</code> panel at the lower left of the viewport, or press F9. The result updates as you change them.</p>
   </div>
 </section>
 
 <section id="randomize">
   <div class="wrap">
     <h2>Randomize Transform</h2>
-    <p class="lead">Adds variation to the scale, heading, and tilt of selected objects. Use it to make repeated props look less uniform.</p>
+    <p class="lead">Adds random variation to the size, heading, and tilt of selected objects, so repeated props look less alike.</p>
 
     <article class="card" id="randomize-transform">
       <div class="clip"><video src="videos/randomize-transform.mp4" poster="videos/randomize-transform.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Randomize Transform</h3>
-        <p>Select the objects and click the button. Click again to generate another result.</p>
-        <p>Each operation starts from the stored original scale and rotation rather than the previous randomized result. Repeated clicks therefore do not continually shrink or tilt the objects.</p>
+        <p>Click the button again for a different result. Each click starts from the objects' original scale and rotation, not the last result, so repeated clicks do not keep shrinking or tilting them.</p>
         <div class="note"><strong>Original transforms are stored for the current session.</strong>
-        Manually scaling or rotating an object after randomizing establishes a new starting transform.</div>
+        If you scale or rotate an object yourself after randomizing, that becomes its new starting point.</div>
       </div>
     </article>
 
@@ -122,10 +121,10 @@
       <div>
         <h3>Options</h3>
         <ul class="facts"><li><b>Scale Min</b> 0.5</li><li><b>Scale Max</b> 1.0</li><li><b>Max Tilt</b> 15&deg;</li><li><b>Random Yaw</b> on</li></ul>
-        <p><code>Scale Min</code> and <code>Scale Max</code> define the random scale range. The defaults produce objects between half and full size. Set Scale Max above 1 to allow larger variations.</p>
-        <p><code>Max Tilt</code> sets the maximum lean away from vertical, up to 90°. Use 0 to keep objects upright.</p>
-        <p><code>Random Yaw</code> rotates each object randomly around its vertical axis. Disable it to preserve the original heading.</p>
-        <p><code>Seed</code> controls the random result. Each button click chooses a new seed; enter a specific value to reproduce a result.</p>
+        <p><code>Scale Min</code> and <code>Scale Max</code> set the size range. By default, objects end up between half and full size. Set Scale Max above 1 to allow larger objects.</p>
+        <p><code>Max Tilt</code> sets how far objects can lean from upright, up to 90°. Use 0 to keep them upright.</p>
+        <p><code>Random Yaw</code> turns each object randomly around its vertical axis. Turn it off to keep the original heading.</p>
+        <p><code>Seed</code> controls the random result. Each click picks a new seed; enter one yourself to repeat a result.</p>
       </div>
     </article>
   </div>
@@ -134,15 +133,14 @@
 <section id="snap">
   <div class="wrap">
     <h2>Snap to Ground</h2>
-    <p class="lead">Moves objects vertically until their lowest point rests on the surface beneath them. Objects above the ground move down; objects embedded in it can move up.</p>
+    <p class="lead">Moves objects straight up or down until their lowest point rests on the surface below. Objects above the ground move down, and objects sunk into it can move up.</p>
 
     <article class="card" id="snap-to-ground">
       <div class="clip"><video src="videos/snap-to-ground.mp4" poster="videos/snap-to-ground.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Snap to Ground</h3>
-        <p>Select the objects and click the button. Each object is positioned on the surface beneath it.</p>
-        <p>The tool changes vertical position only. It does not rotate objects to match the slope.</p>
-        <p>Selected objects are excluded from one another's ground checks, so they land on the terrain rather than stacking on each other. Objects with no detected surface below them remain unchanged.</p>
+        <p>The tool only changes height. It does not tilt objects to match the slope.</p>
+        <p>Selected objects ignore each other, so they land on the terrain instead of stacking on top of one another. Objects with no surface below them are left where they are.</p>
       </div>
     </article>
 
@@ -151,9 +149,9 @@
       <div>
         <h3>Options</h3>
         <ul class="facts"><li><b>Search Distance</b> 250 m</li><li><b>Ground Offset</b> 0 m</li><li><b>Use Footprint</b> on</li></ul>
-        <p><code>Ground Offset</code> adds vertical clearance. At 0, objects rest on the surface; a value of 2 m leaves a 2 m gap. Negative values embed the base slightly, useful for rocks and tree trunks.</p>
-        <p><code>Use Footprint</code> checks the ground below the object's centre and four corners, then uses the highest detected point to reduce sinking on slopes. Disable it to check only the centre.</p>
-        <p><code>Search Distance</code> sets how far below each object the tool searches for a surface.</p>
+        <p><code>Ground Offset</code> leaves a gap between objects and the surface. At 0 they rest on it. Negative values sink the base slightly, which suits rocks and tree trunks.</p>
+        <p><code>Use Footprint</code> checks the ground under the object's centre and four corners and uses the highest point, so objects sink less on slopes. Turn it off to check only the centre.</p>
+        <p><code>Search Distance</code> sets how far below each object the tool looks for a surface.</p>
       </div>
     </article>
   </div>

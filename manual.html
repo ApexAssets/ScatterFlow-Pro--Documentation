@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -101,15 +101,15 @@
 <section id="start">
   <div class="wrap">
     <h2>Starting Manual Mode</h2>
-    <p class="lead">Use Manual Mode for placements that need direct control, such as a hero tree, vegetation along a path, or the edge of a clearing. Set the layer's Scattering <code>Type</code> to Manual to display the <code>Manual Mode</code> section. See <a href="scatter-setup.html#scattering">Scattering Type</a> for a comparison with Procedural mode.</p>
+    <p class="lead">Manual Mode lets you place instances by hand, such as a hero tree, plants along a path, or the edge of a clearing. Set the layer's Scattering <code>Type</code> to Manual to open the <code>Manual Mode</code> section. See <a href="scatter-setup.html#scattering">Scattering Type</a> for how it compares with Procedural mode.</p>
 
     <article class="card" id="start-placing-and-the-mode-dials">
       <div class="clip"><video src="videos/manual-start.mp4" poster="videos/manual-start.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Start Placing and the mode dials</h3>
-        <p>Click <code>Start Placing</code> to display the numbered brush dials on the left of the viewport. A shortcut card appears beneath them.</p>
-        <p>Select a brush by clicking its dial or pressing its number, 1–9. The selected dial remains visible with its settings, while the other dials collapse. Click the active dial again to display the full brush list. No instances are placed until a brush is selected.</p>
-        <p>Press <code>Esc</code>, <code>Enter</code>, or the right mouse button to leave Manual Mode. Your placements remain on the layer.</p>
+        <p>Click <code>Start Placing</code> to show the brush dials in the viewport. Pick a brush by clicking its dial or pressing its number, 1–9. Nothing is placed until you pick one.</p>
+        <p>Click the active dial again to get back to the full brush list.</p>
+        <p>Press <code>Esc</code>, <code>Enter</code>, or right-click to leave Manual Mode. Your placements stay on the layer.</p>
       </div>
     </article>
   </div>
@@ -118,14 +118,14 @@
 <section id="assets">
   <div class="wrap">
     <h2>Scatter Manager</h2>
-    <p class="lead">Control which source objects the placement brushes can use.</p>
+    <p class="lead">Choose which objects the placement brushes can use.</p>
 
     <article class="card" id="scatter-manager">
       <div class="clip"><video src="videos/manual-scatter-manager.mp4" poster="videos/manual-scatter-manager.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Scatter Manager</h3>
-        <p>The list shows the objects assigned in the layer's Instances section, along with their polygon counts. Disable an object's checkbox to exclude it from new placements. For example, disable rocks and bushes to paint only the trees in a mixed collection.</p>
-        <p><code>All</code> enables every object; <code>None</code> disables them all.</p>
+        <p>The list shows the objects from the layer's Instances section. Untick an object to leave it out of new placements, for example to paint only the trees from a mixed collection.</p>
+        <p>The <code>All</code> button ticks every object; the <code>None</code> button unticks them all.</p>
         <div class="note"><strong>Enable at least one object.</strong>
         Start Placing cannot begin when every object is disabled.</div>
       </div>
@@ -141,18 +141,18 @@
       <div class="clip"><video src="videos/manual-erase-resize.mp4" poster="videos/manual-erase-resize.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Erase and brush size</h3>
-        <p>Hold <code>Ctrl</code> and drag to erase instances. The brush ring turns red while erasing. There are two exceptions: with Scale, <code>Ctrl</code> shrinks instances; with Attract, it pushes them away.</p>
-        <p>Hold <code>F</code> and move the mouse horizontally to adjust the brush size. This changes the same value as the <code>Radius</code> dial.</p>
-        <p>Viewport navigation with the middle mouse button and mouse wheel remains available while painting.</p>
+        <p>Hold <code>Ctrl</code> and drag to erase instances. The exceptions are Scale, where <code>Ctrl</code> shrinks instances, and Attract, where it pushes them away.</p>
+        <p>Hold <code>F</code> and move the mouse sideways to change the brush size. This is the same as the <code>Radius</code> dial.</p>
+        <p>You can still move around the viewport while painting.</p>
       </div>
     </article>
 
     <article class="card text" id="using-the-setting-dials">
       <div>
         <h3>Using the setting dials</h3>
-        <p>Drag a dial horizontally to change its value. Hold <code>Shift</code> for finer adjustments, or use the mouse wheel while hovering over the dial.</p>
-        <p><code>Ctrl</code>+click or double-click resets a dial to its default. Click an on/off dial to toggle it.</p>
-        <p>Every brush has a <code>Radius</code> control. The default is 2.0, except for Precision, which uses 0.7.</p>
+        <p>Drag a dial sideways to change its value. Hold <code>Shift</code> for finer control, or scroll the mouse wheel over the dial.</p>
+        <p><code>Ctrl</code>+click or double-click resets a dial. Click an on/off dial to toggle it.</p>
+        <p>Every brush has a <code>Radius</code> dial. It starts at 2.0, or 0.7 for Precision.</p>
       </div>
     </article>
   </div>
@@ -167,10 +167,10 @@
       <div>
         <h3>1 &nbsp;Area</h3>
         <ul class="facts"><li><b>Density</b> 1</li><li><b>Delay</b> 1.00</li><li><b>Surface Rotation</b> on</li></ul>
-        <p>Places random instances within the brush area as you drag.</p>
-        <p><code>Density</code> sets how many instances each step of the stroke adds. Increase it for denser coverage.</p>
-        <p><code>Delay</code> controls the distance between placement steps, not the time between them. Lower values create a continuous band; higher values produce separated clusters.</p>
-        <p><code>Surface Rotation</code> aligns new instances to the slope beneath them. Disable it to keep them upright.</p>
+        <p>Places random instances inside the brush as you drag.</p>
+        <p><code>Density</code> is how many instances each step of the stroke adds.</p>
+        <p><code>Delay</code> is the distance between steps, not a time. Low values give a continuous band; high values give separate clusters.</p>
+        <p><code>Surface Rotation</code> tilts new instances to match the slope. Turn it off to keep them upright.</p>
       </div>
     </article>
 
@@ -179,10 +179,10 @@
       <div>
         <h3>2 &nbsp;Precision</h3>
         <ul class="facts"><li><b>Scale</b> 1.00</li><li><b>Mesh Preview</b> on</li></ul>
-        <p>Places one instance at a time. A transparent preview follows the cursor. Press and drag to position the instance, then release to place it.</p>
+        <p>Places one instance at a time. Press and drag to position it, then release to place it.</p>
         <p><code>Scale</code> sets the size of the next instance.</p>
-        <p><code>Swap Preview</code>, or <code>F8</code>, switches to another enabled object from the layer. This is available when the layer uses a collection with more than one object enabled in Scatter Manager.</p>
-        <p><code>Mesh Preview</code> toggles the transparent object preview. When disabled, the cursor shows a simple ring.</p>
+        <p>Click the <code>Swap Preview</code> dial, or press <code>F8</code>, to switch to another object. It works when the layer uses a collection with more than one object ticked in Scatter Manager.</p>
+        <p><code>Mesh Preview</code> shows a see-through preview of the object at the cursor. Turn it off to show a simple ring instead.</p>
       </div>
     </article>
 
@@ -191,8 +191,8 @@
       <div>
         <h3>3 &nbsp;Align</h3>
         <ul class="facts"><li><b>Density</b> 1</li><li><b>Delay</b> 1.00</li><li><b>Surface Rotation</b> on</li></ul>
-        <p>Places instances like Area, but rotates each one to face along the brush stroke. Use it for directional arrangements such as fences, logs, hedges, or crop rows.</p>
-        <p><code>Density</code>, <code>Delay</code>, and <code>Surface Rotation</code> work as they do for Area. Their values are stored separately for Align.</p>
+        <p>Works like Area, but turns each instance to face along the stroke. Use it for fences, logs, hedges, or crop rows.</p>
+        <p><code>Density</code>, <code>Delay</code>, and <code>Surface Rotation</code> work as in Area, but Align keeps its own values.</p>
       </div>
     </article>
   </div>
@@ -201,16 +201,15 @@
 <section id="editing">
   <div class="wrap">
     <h2>Editing brushes</h2>
-    <p class="lead">These brushes modify existing hand-placed instances on the active layer. They do not affect instances on other layers.</p>
+    <p class="lead">These brushes change the instances you have placed by hand on the active layer. Other layers are not affected.</p>
 
     <article class="card" id="4-move">
       <div class="clip"><video src="videos/manual-move.mp4" poster="videos/manual-move.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>4 &nbsp;Move</h3>
         <ul class="facts"><li><b>Adjust Normals</b> off</li></ul>
-        <p>Press over a group of instances and drag to move them across the surface. The brush picks up the instances inside its radius at the start of the drag.</p>
-        <p>Set <code>Radius</code> large enough to include the entire group before moving it.</p>
-        <p><code>Adjust Normals</code> realigns moved instances to the slope at their new position.</p>
+        <p>Drag to move instances across the surface. The brush picks up whatever is inside it when you start dragging, so make <code>Radius</code> big enough to cover the whole group.</p>
+        <p>Turn on <code>Adjust Normals</code> to tilt moved instances to match the slope at their new spot.</p>
       </div>
     </article>
 
@@ -219,8 +218,8 @@
       <div>
         <h3>5 &nbsp;Scale</h3>
         <ul class="facts"><li><b>Scale Speed</b> 0.05</li></ul>
-        <p>Hold the mouse button over instances to enlarge them. Hold <code>Ctrl</code> to shrink them instead. Scaling continues while the button is held, so use short presses for controlled adjustments.</p>
-        <p><code>Scale Speed</code> controls how quickly instances grow or shrink.</p>
+        <p>Hold the mouse button over instances to grow them, or hold <code>Ctrl</code> to shrink them. Scaling keeps going while you hold the button, so use short presses for small changes.</p>
+        <p><code>Scale Speed</code> sets how fast they grow or shrink.</p>
       </div>
     </article>
 
@@ -229,8 +228,8 @@
       <div>
         <h3>6 &nbsp;Rotate</h3>
         <ul class="facts"><li><b>Jitter</b> 0.10</li></ul>
-        <p>Adds random tilt to instances under the brush. The effect builds while the brush remains over them. Use it to break up an arrangement that looks too uniform.</p>
-        <p><code>Jitter</code> sets the amount of tilt added at each step.</p>
+        <p>Adds random tilt to instances under the brush, building up the longer you stay over them. Use it to break up an arrangement that looks too even.</p>
+        <p><code>Jitter</code> sets how much tilt each step adds.</p>
       </div>
     </article>
 
@@ -239,9 +238,9 @@
       <div>
         <h3>7 &nbsp;Dilute</h3>
         <ul class="facts"><li><b>Probability</b> 0.10</li><li><b>Min Distance</b> 0.70</li></ul>
-        <p>Thins crowded areas by removing instances that are too close to their neighbours.</p>
-        <p><code>Min Distance</code> sets the target spacing. Instances closer together than this may be removed.</p>
-        <p><code>Probability</code> sets the chance of removing each eligible instance on a brush pass. Lower values thin the layer gradually over repeated strokes; higher values remove more at once.</p>
+        <p>Thins out crowded areas by removing instances that are too close together.</p>
+        <p><code>Min Distance</code> is the spacing you want. Instances closer than this may be removed.</p>
+        <p><code>Probability</code> is the chance that each of those instances is removed on a pass. Low values thin gradually over several strokes; high values remove more at once.</p>
       </div>
     </article>
 
@@ -250,10 +249,9 @@
       <div>
         <h3>8 &nbsp;Attract</h3>
         <ul class="facts"><li><b>Pull Speed</b> 0.03</li><li><b>Adjust Normals</b> off</li></ul>
-        <p>Hold the mouse button to pull instances inside the brush toward the cursor. Holding longer forms a tighter cluster; eventually, all affected instances can converge on the same point.</p>
-        <p>Hold <code>Ctrl</code> to push instances away instead. They move toward the edge of the brush and stop there, making this useful for opening a clearing. Increase <code>Radius</code> to affect a larger area.</p>
-        <p><code>Pull Speed</code> controls how quickly instances move.</p>
-        <p><code>Adjust Normals</code> realigns instances to the surface as they move.</p>
+        <p>Hold the mouse button to pull instances toward the cursor. The longer you hold, the tighter the cluster, until they can all end up on the same spot.</p>
+        <p>Hold <code>Ctrl</code> to push them out to the edge of the brush instead, which is handy for opening a clearing. Increase <code>Radius</code> to affect a larger area.</p>
+        <p><code>Pull Speed</code> sets how fast they move. Turn on <code>Adjust Normals</code> to keep them aligned to the surface as they move.</p>
       </div>
     </article>
 
@@ -262,8 +260,8 @@
       <div>
         <h3>9 &nbsp;Comb</h3>
         <ul class="facts"><li><b>Rotate Speed</b> 0.015</li></ul>
-        <p>Leans instances in the direction of the brush stroke. Use it to flatten grass or give trees a directional, wind-blown appearance.</p>
-        <p><code>Rotate Speed</code> controls how strongly each brush movement changes their lean.</p>
+        <p>Leans instances in the direction you stroke. Use it to flatten grass or give trees a wind-blown look.</p>
+        <p><code>Rotate Speed</code> sets how strongly each stroke changes the lean.</p>
       </div>
     </article>
   </div>
@@ -272,7 +270,7 @@
 <section id="groups">
   <div class="wrap">
     <h2>Manual Mode on a group</h2>
-    <p class="lead">Select a group and set its Type to Manual to paint its layers together. Group painting adds a <code>Group Spread</code> control for the spacing between layers around the brush. See <a href="layers.html#group-scattering">Group Scattering</a> for details.</p>
+    <p class="lead">Set a group's Type to Manual to paint all its layers together. <code>Group Spread</code> sets how far apart the layers are placed around the brush. See <a href="layers.html#group-scattering">Group Scattering</a>.</p>
   </div>
 </section>
 

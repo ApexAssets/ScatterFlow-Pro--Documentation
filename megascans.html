@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -99,7 +99,7 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">ScatterFlow extracts Megascans downloads, imports their models, builds materials from the included textures, and saves the results in the <code>Megascans_SF</code> asset library. Once installed, these assets are available through the Asset Browser in any Blender file.</p>
+    <p class="lead">ScatterFlow turns your Megascans downloads into ready-to-use Blender assets, with their materials already set up. They are saved in the <code>Megascans_SF</code> asset library, so you can use them from the Asset Browser in any Blender file.</p>
   </div>
 </section>
 
@@ -112,11 +112,9 @@
       <div class="clip win"><video src="videos/megascans-setup.mp4" poster="videos/megascans-setup.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Megascans preferences</h3>
-        <p><b>1.</b> Open <code>Edit &gt; Preferences</code>, select <code>Add-ons</code>, and expand ScatterFlow.</p>
-        <p><b>2.</b> Expand <code>Settings</code>, then <code>Megascans</code>.</p>
-        <p><b>3.</b> Set <code>Folder</code> to the location where you want to store Megascans assets. Allow room for both the extracted source files and the finished Blender assets.</p>
-        <p><b>4.</b> Click <code>Register / Refresh Asset Library</code>. ScatterFlow creates the folder if needed and registers it as <code>Megascans_SF</code> in Blender.</p>
-        <p>See <a href="#settings">The settings, one by one</a> for details about each option.</p>
+        <p>The Megascans settings are in ScatterFlow's add-on preferences, in the <code>Megascans</code> section of the <code>Settings</code> panel. Set the <code>Folder</code> field to where you want to keep your Megascans assets, then click the <code>Register / Refresh Asset Library</code> button.</p>
+        <p>Pick a location with room for both the extracted downloads and the finished Blender assets.</p>
+        <p>See <a href="#settings">The settings, one by one</a> for details on each option.</p>
       </div>
     </article>
   </div>
@@ -125,17 +123,14 @@
 <section id="settings">
   <div class="wrap">
     <h2>The settings, one by one</h2>
-    <p class="lead">The Megascans panel contains two settings and one library registration button.</p>
+    <p class="lead">The Megascans panel has two settings and a button that registers the library.</p>
 
     <article class="card text" id="megascans-folder">
       <div>
         <h3>Folder</h3>
-        <p>Sets the location for all installed Megascans content. Until you choose a folder, the panel displays <code>Choose a folder before installing Megascans assets.</code> and disables the button below it.</p>
-        <p>The folder contains three items:</p>
-        <p><code>Assets</code>: one .blend file per asset, organized by type, such as 3D Assets, 3D Plants, and Surfaces. These files appear in the Asset Browser.<br>
-        <code>SourceFiles</code>: the extracted downloads, including their models and full-resolution textures. Asset materials reference textures here, so do not delete this folder.<br>
-        <code>blender_assets.cats.txt</code>: the catalog definitions used to organize the Asset Browser.</p>
-        <p>A single extracted download can occupy several hundred megabytes. To relocate the library, move the entire folder, update <code>Folder</code>, and click <code>Register / Refresh Asset Library</code>.</p>
+        <p>Where all your installed Megascans content is kept. You need to choose a folder before you can install anything.</p>
+        <p>Inside it, the <code>Assets</code> folder holds one .blend file per asset, sorted by type. These are what the Asset Browser shows. <code>SourceFiles</code> holds the extracted downloads with their full-resolution textures. The materials use these textures, so do not delete this folder. <code>blender_assets.cats.txt</code> stores the Asset Browser catalogs.</p>
+        <p>One extracted download can take several hundred megabytes. To move the library, move the whole folder, update the <code>Folder</code> field, and click the <code>Register / Refresh Asset Library</code> button.</p>
       </div>
     </article>
 
@@ -143,22 +138,19 @@
       <div>
         <h3>Install LOD Versions</h3>
         <ul class="facts"><li><b>Default</b> Off</li></ul>
-        <p>Some Megascans downloads include multiple levels of detail (LODs). LOD0 is the most detailed model; LOD1, LOD2, and subsequent versions use progressively fewer polygons.</p>
-        <p><b>Off:</b> installs only the most detailed version of each model. Use this when you need the full-detail asset for Blender rendering. Omitting the additional LODs keeps the installed files smaller than installing all versions.</p>
-        <p><b>On:</b> installs every available LOD into the same asset. Its description lists the included versions, for example <code>Included LODs: LOD0, LOD1, LOD2.</code> Use this when you also need lighter models for distant scattering or game engine use.</p>
-        <p>This option applies during installation. Changing it does not alter existing assets; reinstall a download to change which LODs it includes.</p>
+        <p>Some Megascans downloads include several levels of detail (LODs). LOD0 is the most detailed model, and each higher number has fewer polygons.</p>
+        <p><b>Off:</b> installs only the most detailed model, which keeps the files smaller. Use it when you render in Blender.</p>
+        <p><b>On:</b> installs every LOD into the same asset, and the asset's description lists which ones it has. Use it when you also need lighter models for distant scattering or game engines.</p>
+        <p>The setting only applies when you install. It does not change existing assets, so install a download again to change its LODs.</p>
       </div>
     </article>
 
     <article class="card text" id="register-refresh-asset-library">
       <div>
         <h3>Register / Refresh Asset Library</h3>
-        <p>Registers the selected folder with Blender and refreshes its library setup:</p>
-        <p><b>1.</b> Creates the folder if it does not exist.</p>
-        <p><b>2.</b> Adds <code>Megascans_SF</code> under <code>Edit &gt; Preferences &gt; Asset Libraries</code> with the import method set to <code>Append</code>. Assets added to a scene become editable copies.</p>
-        <p><b>3.</b> Creates the Megascans catalogs: 3D Assets, 3D Plants, Surfaces, Decals, Atlases, Imperfections, and Brushes.</p>
-        <p><b>4.</b> Refreshes open Asset Browsers and saves the preferences so the library remains registered after restarting Blender.</p>
-        <p>When complete, the status bar displays <code>Megascans_SF ready</code> and the library location. Installing an asset also performs these steps. Use the button during initial setup, after changing <code>Folder</code>, or when the library is missing from the Asset Browser.</p>
+        <p>Registers your folder in Blender as the <code>Megascans_SF</code> asset library. It creates the folder and the Megascans catalogs if they are missing, and saves your preferences so the library is still there after you restart Blender.</p>
+        <p>The library uses the <code>Append</code> import method, so assets you add to a scene are editable copies.</p>
+        <p>Installing an asset does all of this too. Use the button when you first set up, after changing the <code>Folder</code> field, or if the library is missing from the Asset Browser.</p>
       </div>
     </article>
   </div>
@@ -172,10 +164,9 @@
       <div class="clip win"><video src="videos/megascans-install.mp4" poster="videos/megascans-install.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Install Megascans</h3>
-        <p><b>1.</b> Open an Asset Browser. You can change an existing editor, such as the Timeline, to an Asset Browser.</p>
-        <p><b>2.</b> Click <code>Install Megascans</code> on the right side of its header.</p>
-        <p><b>3.</b> Select a downloaded Megascans .zip and confirm. You can select multiple zip files, or browse into an already extracted Megascans folder.</p>
-        <p><b>4.</b> Choose <code>Megascans_SF</code> from the library menu. The installed asset appears with a preview in its matching <code>Megascans</code> catalog.</p>
+        <p>Click the <code>Install Megascans</code> button in the header of an Asset Browser and choose one or more downloaded Megascans .zip files. You can also browse into a Megascans folder you have already extracted.</p>
+        <p>Any editor, such as the Timeline, can be switched to an Asset Browser.</p>
+        <p>Installed assets are in the <code>Megascans_SF</code> library, sorted into its <code>Megascans</code> catalogs.</p>
         <div class="note"><strong>Asset not visible?</strong>
         Click the refresh arrows beside the library menu.</div>
       </div>
@@ -191,10 +182,10 @@
       <div class="clip win"><video src="videos/megascans-use.mp4" poster="videos/megascans-use.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Drag and drop</h3>
-        <p>Drag an asset from the Asset Browser into the 3D viewport. It becomes an ordinary object that you can move, edit, or scatter.</p>
-        <p>Its material is already configured with the available colour, roughness, normal, and displacement textures. Inspect the connections in the Shader Editor, or use Material Preview or Rendered shading to view the result.</p>
-        <p>Assets are appended rather than linked, so editing an imported object does not change the library copy.</p>
-        <p>To scatter an object, select it in a layer's <a href="scatter-setup.html#instances">Instances</a> section.</p>
+        <p>Drag an asset from the Asset Browser into the viewport. It becomes an ordinary object that you can move, edit, or scatter.</p>
+        <p>Its material is already set up with the textures that came with it, such as colour, roughness, normal, and displacement.</p>
+        <p>Assets are appended, not linked, so editing one in your scene does not change the library copy.</p>
+        <p>To scatter it, choose it in a layer's <a href="scatter-setup.html#instances">Instances</a> section.</p>
       </div>
     </article>
   </div>
@@ -207,9 +198,9 @@
     <article class="card text" id="models-plants-and-surfaces">
       <div>
         <h3>Models, plants and surfaces</h3>
-        <p>The installer reads the download's metadata to identify its asset type and select the matching catalog.</p>
-        <p><b>3D assets and 3D plants</b> become model assets. A download containing several variations becomes one asset containing all of them, with a description such as <code>Contains 3 variations.</code> Dragging it into a scene imports every variation, ready to use together in a scatter layer.</p>
-        <p><b>Surfaces, decals, imperfections, atlases, and brushes</b> contain textures rather than models and become material assets. Drag one onto an object to apply the material.</p>
+        <p>The installer detects each download's type and puts it in the matching catalog.</p>
+        <p><b>3D assets and 3D plants</b> become model assets. A download with several variations becomes one asset that holds them all. Dragging it into a scene brings in every variation, ready to use together in a scatter layer.</p>
+        <p><b>Surfaces, decals, imperfections, atlases, and brushes</b> have only textures, so they become material assets. Drag one onto an object to apply it.</p>
         <p>Supported model formats are FBX, OBJ, glTF, USD, Alembic, PLY, and STL. Supported texture formats are JPG, PNG, TIFF, EXR, TGA, BMP, WebP, and HDR.</p>
       </div>
     </article>
@@ -217,26 +208,26 @@
     <article class="card text" id="the-material">
       <div>
         <h3>The material</h3>
-        <p>Materials are assembled from textures identified by filename. Supported inputs include colour, ambient occlusion, roughness, gloss, metalness, specular, normal, bump, displacement, opacity, and translucency. Ambient occlusion is multiplied into the colour, and gloss maps are converted to roughness. The highest-resolution version of each texture is used.</p>
-        <p>Opacity maps configure cutout materials for assets such as leaves and grass. Displacement maps set the material to <code>Displacement and Bump</code>: in Cycles, displacement moves the surface when the mesh has sufficient geometry; otherwise, it contributes bump detail.</p>
+        <p>The material is built from the download's textures, recognised by filename. All the common maps are supported, including colour, roughness or gloss, normal, displacement, opacity, and translucency. The highest-resolution version of each texture is used.</p>
+        <p>Opacity maps give cutout materials for leaves and grass. With a displacement map, the material uses <code>Displacement and Bump</code>. In Cycles, the surface is displaced when the mesh has enough geometry; otherwise it adds bump detail.</p>
       </div>
     </article>
 
     <article class="card text" id="installing-the-same-asset-again">
       <div>
         <h3>Installing the same asset again</h3>
-        <p>Reinstalling an asset replaces its .blend file and its extracted copy in <code>SourceFiles</code>. Use this to change the included LODs or repair an asset.</p>
-        <p>Objects already imported into Blender scenes are separate copies and are not replaced by the reinstall.</p>
+        <p>Installing an asset again replaces its .blend file and its files in <code>SourceFiles</code>. Use this to change its LODs or to repair it.</p>
+        <p>Objects already in your scenes are separate copies, so they are not updated.</p>
       </div>
     </article>
 
     <article class="card text" id="megascans-install-problems">
       <div>
         <h3>When an install fails</h3>
-        <p><b>“Choose an Asset Library folder first.”</b> Set <code>Folder</code> in the Megascans preferences. See <a href="#location">Install location</a>.</p>
-        <p><b>“Select a Megascans ZIP, or browse into a Megascans folder.”</b> Select the zip files themselves, or open an extracted Megascans folder and click <code>Install Megascans</code> without selecting an individual file.</p>
-        <p><b>“No supported mesh or Megascans texture maps were found in that source.”</b> The selected source contains no recognized model or texture files. Check that it is a supported Megascans download.</p>
-        <p><b>“Installed 2 of 3 source(s). 1 failed; see System Console.”</b> One or more downloads failed during a batch installation. Open <code>Window &gt; Toggle System Console</code> to see the reason for each failure.</p>
+        <p><b>“Choose an Asset Library folder first.”</b> Set the <code>Folder</code> field in the Megascans preferences. See <a href="#location">Install location</a>.</p>
+        <p><b>“Select a Megascans ZIP, or browse into a Megascans folder.”</b> Select the .zip files themselves, or open an extracted Megascans folder and click the <code>Install Megascans</code> button without selecting a file.</p>
+        <p><b>“No supported mesh or Megascans texture maps were found in that source.”</b> No model or texture files were recognised. Check that it is a supported Megascans download.</p>
+        <p><b>“Installed 2 of 3 source(s). 1 failed; see System Console.”</b> Some downloads in a batch failed. Choose <code>Window &gt; Toggle System Console</code> from Blender's top menu to see why.</p>
       </div>
     </article>
   </div>

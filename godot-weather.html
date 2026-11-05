@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -102,8 +102,8 @@
 <section id="how">
   <div class="wrap">
     <h2>How the weather works</h2>
-    <p class="lead">SF Weather adds rain or snow around the camera and changes the surfaces of the scene to match: wet, darker ground and puddles in rain, settled snow in snowfall. Surface effects apply to the materials ScatterFlow brings over from Blender, so no material needs editing by hand.</p>
-    <p class="lead">With an <a href="godot-sky.html">SF Sky</a> in the scene, the sky responds to the weather: clouds thicken, the light dims, fog comes in, and thunderstorms add lightning. See <a href="godot-sky.html#weather-link">Weather Link</a> for how strongly the sky follows.</p>
+    <p class="lead">SF Weather adds rain or snow around the camera and changes the ground to match, with wet surfaces and puddles in rain and settled snow in snowfall. It works on the materials ScatterFlow brings over from Blender, so you don't need to edit any materials.</p>
+    <p class="lead">If the scene has an <a href="godot-sky.html">SF Sky</a>, the sky reacts to the weather too. See <a href="godot-sky.html#weather-link">Weather Link</a> to set how strongly it follows.</p>
   </div>
 </section>
 
@@ -115,8 +115,8 @@
       <div class="clip wide"><video src="videos/gd-weather-add.mp4" poster="videos/gd-weather-add.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Add Weather</h3>
-        <p>Click the rain-cloud icon at the top of the ScatterFlow Pro dock. An <code>SF Weather</code> node is added to the open scene and rain starts falling around the camera.</p>
-        <p>The dock shows a <code>Weather</code> section with the presets and settings. Choose <code>None</code> to stop the rain or snow; the SF Weather node is removed and the sky returns to its Sky Preset.</p>
+        <p>Click the rain-cloud icon at the top of the ScatterFlow Pro dock to add an <code>SF Weather</code> node to the open scene. Its presets and settings are in the dock's <code>Weather</code> section.</p>
+        <p>Click the <code>None</code> button to stop the rain or snow. This removes the SF Weather node and returns the sky to its Sky Preset.</p>
         <p>Only one SF Weather drives a scene's surfaces at a time.</p>
       </div>
     </article>
@@ -125,13 +125,8 @@
       <div class="clip wide"><video src="videos/gd-weather-presets.mp4" poster="videos/gd-weather-presets.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Weather presets</h3>
-        <p>Choose <code>None</code>, <code>Light Rain</code>, <code>Rain</code>, <code>Thunderstorm</code>, <code>Light Snow</code>, <code>Snow</code>, or <code>Blizzard</code>. Each preset sets the type of precipitation, its intensity and wind, and whether snow settles. Start with the closest preset, then refine it.</p>
-        <p><code>Light Rain</code>: light rain under a closing sky.<br>
-        <code>Rain</code>: steady rain under a low, dark cloud deck.<br>
-        <code>Thunderstorm</code>: heavy rain, strong wind, and lightning.<br>
-        <code>Light Snow</code>: light snowfall.<br>
-        <code>Snow</code>: steady snowfall with snow building up.<br>
-        <code>Blizzard</code>: heavy snow and wind, close to a white-out.</p>
+        <p>The rain preset buttons are <code>Light Rain</code>, <code>Rain</code>, and <code>Thunderstorm</code>, which adds lightning. The snow presets are <code>Light Snow</code>, <code>Snow</code>, and <code>Blizzard</code>, which is close to a white-out. <code>None</code> turns the weather off.</p>
+        <p>Each preset sets the type of precipitation, its intensity and wind, and whether snow settles. Pick the closest one, then adjust it.</p>
         <p>The settings below the presets change with the weather: rain settings while it rains, snow settings while it snows.</p>
       </div>
     </article>
@@ -147,11 +142,10 @@
       <div>
         <h3>Intensity, Wind, and Area</h3>
         <ul class="facts"><li><b>Intensity</b> 0.7, 0 to 1</li><li><b>Wind</b> 0.25, 0 to 1</li><li><b>Wind Direction</b> 0°, -180° to 180°</li><li><b>Area</b> 36 m, 8 to 200 m</li></ul>
-        <p><code>Intensity</code>: overall strength of the rain or snow. It scales the amount of falling precipitation, and in rain also how wet surfaces become and how often drops ring the puddles.</p>
-        <p><code>Wind</code>: how strongly the wind drives the precipitation. At 0, drops and flakes fall straight down; higher values slant them and carry them sideways.</p>
-        <p><code>Wind Direction</code>: the direction the wind carries the precipitation, in degrees. At 0°, it blows toward +X.</p>
-        <p><code>Area</code>: the size of the region around the camera where rain or snow falls. A smaller area concentrates the particles near the camera; a larger one fills more of a wide view at the same particle count.</p>
-        <p><code>Preview in Editor</code>: shows the falling rain or snow in the editor viewport. Disable it to work without the particles; wet surfaces, puddles, and snow cover remain visible, and the precipitation still falls in the running game.</p>
+        <p><code>Intensity</code> sets the overall strength of the rain or snow. In rain, it also sets how wet surfaces get and how often drops ring the puddles.</p>
+        <p><code>Wind</code> sets how much the wind slants the rain or snow. At 0, it falls straight down. <code>Wind Direction</code> sets which way it blows. At 0°, it blows toward +X.</p>
+        <p><code>Area</code> is the size of the region around the camera where rain or snow falls. A smaller area packs the particles close to the camera. A larger one fills more of a wide view with the same number of particles.</p>
+        <p><code>Preview in Editor</code> shows the falling rain or snow in the editor. Turn it off to work without the particles. Wet surfaces, puddles, and snow cover stay visible, and the rain or snow still falls in the running game.</p>
       </div>
     </article>
   </div>
@@ -166,12 +160,9 @@
       <div>
         <h3>Falling rain</h3>
         <ul class="facts"><li><b>Fall Speed</b> 9.5 m/s</li><li><b>Drop Length</b> 0.15 m</li><li><b>Drop Width</b> 0.009 m</li><li><b>Opacity</b> 0.42</li><li><b>Amount</b> 20,000 drops</li></ul>
-        <p>Use a dark background, such as a wall or a forest edge, to inspect the drops.</p>
-        <p><code>Fall Speed</code>: how quickly drops descend, up to 20 m/s. Lower values produce slower motion.<br>
-        <code>Drop Length</code> and <code>Drop Width</code>: the dimensions of each streak.<br>
-        <code>Opacity</code>: how visible the drops are.<br>
-        <code>Amount (drops)</code>: the number of drops around the camera at full intensity, from 1,000 to 100,000.<br>
-        <code>Color</code>: tints the drops. Their brightness also follows the light of the sky, so rain stays dim at night.</p>
+        <p>Drops are easiest to see against a dark background, such as a wall or a forest edge.</p>
+        <p><code>Fall Speed</code> sets how fast drops fall, up to 20 m/s. <code>Drop Length</code> and <code>Drop Width</code> set the size of each streak, and <code>Opacity</code> how visible they are.</p>
+        <p><code>Amount (drops)</code> is the number of drops around the camera at full intensity, from 1,000 to 100,000. <code>Color</code> tints the drops. Their brightness also follows the sky's light, so rain stays dim at night.</p>
       </div>
     </article>
 
@@ -180,7 +171,7 @@
       <div>
         <h3>Splashes</h3>
         <ul class="facts"><li><b>Default</b> on</li><li><b>Amount</b> 0.8, 0 to 1</li></ul>
-        <p><code>Splashes</code> adds small bursts where raindrops hit the ground. Disable it to remove the bursts while keeping the rain rings on puddles. <code>Amount</code> controls how many splashes appear.</p>
+        <p><code>Splashes</code> adds small bursts where raindrops hit the ground, and <code>Amount</code> sets how many. Turning it off keeps the rain rings on puddles.</p>
       </div>
     </article>
 
@@ -189,9 +180,8 @@
       <div>
         <h3>Wet Surfaces</h3>
         <ul class="facts"><li><b>Default</b> on</li><li><b>Wetness</b> 0.75, 0 to 1</li><li><b>Darkening</b> 0.4, 0 to 1</li></ul>
-        <p><code>Wet Surfaces</code>: makes ScatterFlow materials darker and glossier in the rain and fills puddles on flat ground. Disable it to keep the ground dry while rain continues to fall.</p>
-        <p><code>Wetness</code>: how wet surfaces become. At 0, they stay dry; at 1, they are fully soaked and glossy.</p>
-        <p><code>Darkening</code>: how much wet surfaces darken. At 0, wetness changes only the gloss; at 1, the surface takes on a strongly soaked appearance.</p>
+        <p><code>Wet Surfaces</code> makes ScatterFlow materials darker and glossier in the rain, and adds puddles on flat ground. Turn it off to keep the ground dry while it rains.</p>
+        <p><code>Wetness</code> sets how wet surfaces get, from dry to fully soaked. <code>Darkening</code> sets how much they darken. At 0, only the gloss changes.</p>
       </div>
     </article>
 
@@ -200,14 +190,12 @@
       <div>
         <h3>Puddles</h3>
         <ul class="facts"><li><b>Amount</b> 0.5</li><li><b>Waves</b> 0.07</li><li><b>Wave Size</b> 1</li><li><b>Wave Speed</b> 1</li><li><b>Rain Rings</b> 1</li></ul>
-        <p>Puddles are level, mirror-like water that reflects the sky and the scene. They fill the low spots of a material first, such as the gaps between paving stones, then grow and join as the amount rises. Each puddle has a damp, darker rim.</p>
-        <p><code>Amount</code>: how much of the flat ground the puddles cover. At 0, no puddles form.</p>
-        <p><code>Waves</code>: strength of the wind-driven waves on the puddles, up to 2. At 0, the water is glass-still.<br>
-        <code>Wave Size</code>: the size of the waves. 2 makes them twice as large.<br>
-        <code>Wave Speed</code>: how fast the waves travel. At 0, they stop.</p>
-        <p><code>Rain Rings</code>: the expanding rings where drops hit the puddles, up to 2. At 0, the rings are disabled. Light rain produces fewer rings than heavy rain.</p>
+        <p>Puddles are flat, mirror-like water. They fill the low spots of a material first, such as the gaps between paving stones, and grow and join as you raise the amount.</p>
+        <p><code>Amount</code> sets how much of the flat ground they cover. At 0, there are no puddles.</p>
+        <p><code>Waves</code>, <code>Wave Size</code>, and <code>Wave Speed</code> set the strength, size, and speed of the wind ripples on the puddles. With Waves at 0, the water is still.</p>
+        <p><code>Rain Rings</code> sets the rings where drops hit the puddles. At 0, there are none. Light rain makes fewer rings than heavy rain.</p>
         <div class="note"><strong>Reflections need screen-space reflections.</strong>
-        Puddles reflect the scene when the environment has screen-space reflections (SSR) enabled. Without them, puddles reflect only the sky.</div>
+        Puddles reflect the scene only when the environment has screen-space reflections (SSR) turned on. Otherwise they reflect just the sky.</div>
       </div>
     </article>
   </div>
@@ -222,13 +210,10 @@
       <div>
         <h3>Falling snow</h3>
         <ul class="facts"><li><b>Fall Speed</b> 1.1 m/s</li><li><b>Flake Size</b> 0.016 m</li><li><b>Drift</b> 0.6</li><li><b>Opacity</b> 0.9</li><li><b>Amount</b> 20,000 flakes</li></ul>
-        <p><code>Fall Speed</code>: how quickly flakes fall, up to 5 m/s. Higher values give faster, heavier-looking snowfall.<br>
-        <code>Flake Size</code>: the size of each flake.<br>
-        <code>Drift</code>: the side-to-side swirl of the flakes as they fall, up to 3. At 0, they fall straight down.<br>
-        <code>Opacity</code>: how visible the flakes are.<br>
-        <code>Amount (flakes)</code>: the number of flakes around the camera at full intensity, from 1,000 to 100,000.<br>
-        <code>Color</code>: tints the flakes.</p>
-        <p>In strong wind, fast flakes are drawn as short streaks along their motion, and flakes that leave the area around the camera re-enter on the opposite side, so the snowfall stays full in a blizzard.</p>
+        <p><code>Fall Speed</code> sets how fast flakes fall, up to 5 m/s. Faster snow looks heavier. <code>Flake Size</code> sets the size of each flake, and <code>Opacity</code> how visible they are.</p>
+        <p><code>Drift</code> sets how much the flakes swirl from side to side. At 0, they fall straight down.</p>
+        <p><code>Amount (flakes)</code> is the number of flakes around the camera at full intensity, from 1,000 to 100,000. <code>Color</code> tints the flakes.</p>
+        <p>In strong wind, fast flakes are drawn as short streaks, and the snowfall stays full around the camera even in a blizzard.</p>
       </div>
     </article>
 
@@ -237,12 +222,9 @@
       <div>
         <h3>Snow Cover</h3>
         <ul class="facts"><li><b>Amount</b> 0.8</li><li><b>Max Coverage</b> 1</li><li><b>Patch Size</b> 1</li><li><b>Edge Detail</b> 2</li></ul>
-        <p><code>Snow Cover</code>: settles snow on upward-facing ScatterFlow surfaces. The snow presets enable it. Disable it to show falling snow without accumulation.</p>
-        <p><code>Amount</code>: how much snow has settled, from a light dusting to full cover.</p>
-        <p><code>Max Coverage</code>: the largest share of the ground that snow can cover. Lower values leave bare patches; 1 allows full coverage.</p>
-        <p><code>Patch Size</code>: the size of the snow patches, from 0.2 to 5. 2 makes them twice as large.</p>
-        <p><code>Edge Detail</code>: how ragged the edges of the snow are, up to 3. At 0, the outlines are smooth.</p>
-        <p>Use partial coverage, such as Max Coverage 0.35, to see the effect of Patch Size and Edge Detail.</p>
+        <p><code>Snow Cover</code> settles snow on upward-facing ScatterFlow surfaces. The snow presets turn it on. Turn it off for falling snow that does not settle.</p>
+        <p><code>Amount</code> sets how much snow has settled, from a light dusting to full cover. <code>Max Coverage</code> limits how much of the ground snow can cover. Lower values leave bare patches.</p>
+        <p><code>Patch Size</code> sets the size of the snow patches, and <code>Edge Detail</code> how ragged their edges are. At 0, the edges are smooth. Both are easiest to see with a lower Max Coverage.</p>
       </div>
     </article>
 
@@ -251,7 +233,7 @@
       <div>
         <h3>Max Slope</h3>
         <ul class="facts"><li><b>Default</b> 60°</li><li><b>Range</b> 5° to 85°</li></ul>
-        <p>Sets the steepest surface that holds snow. Lower values clear the snow from steep hillsides while keeping it on flatter ground.</p>
+        <p>Sets the steepest surface that holds snow. Lower it to clear snow from steep slopes and keep it on flatter ground.</p>
       </div>
     </article>
   </div>

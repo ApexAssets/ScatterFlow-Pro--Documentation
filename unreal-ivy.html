@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group" open>
@@ -93,14 +93,14 @@
 <section id="ivy">
   <div class="wrap">
     <h2>Ivy</h2>
-    <p class="lead">Generate climbing ivy over walls, rocks, trees, or ground surfaces. Adjust growth, leaves, and flowers from the panel, and use blockers to keep selected areas clear.</p>
+    <p class="lead">Grow climbing ivy over walls, rocks, trees, or the ground. Adjust the growth, leaves, and flowers from the panel, and use blockers to keep areas clear.</p>
 
     <article class="card" id="grow-ivy">
       <div class="clip wide"><video src="videos/ue-ivy-add.mp4" poster="videos/ue-ivy-add.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Grow ivy</h3>
-        <p>Point the viewport at a surface and click the ivy icon. An ivy actor is created at the targeted location, grows across the surface, and is selected for editing.</p>
-        <p>Target meshes need collision for the ivy to climb them. Move the ivy actor to change its starting location and rotate it to change its direction.</p>
+        <p>Point the viewport at a surface and click the ivy icon. The ivy grows from that spot.</p>
+        <p>Ivy can only climb meshes that have collision. Move the ivy actor to change where it starts, and rotate it to change its direction.</p>
       </div>
     </article>
 
@@ -108,8 +108,8 @@
       <div class="clip wide"><video src="videos/ue-ivy-buttons.mp4" poster="videos/ue-ivy-buttons.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Add Ivy and Remove Ivy</h3>
-        <p><code>Add Ivy</code>: creates another plant where the viewport is looking. Reposition the view before clicking to choose a new location.</p>
-        <p><code>Remove Ivy</code>: deletes the selected ivy. Use Ctrl+Z to undo the deletion.</p>
+        <p>The <code>Add Ivy</code> button adds another plant where the viewport is looking.</p>
+        <p>The <code>Remove Ivy</code> button deletes the selected ivy. Press Ctrl+Z to undo it.</p>
       </div>
     </article>
 
@@ -117,8 +117,8 @@
       <div class="clip wide"><video src="videos/ue-ivy-presets.mp4" poster="videos/ue-ivy-presets.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Presets and New Seed</h3>
-        <p><code>Light</code>, <code>Overgrown</code>, and <code>Hanging</code> configure growth, leaves, and flowers. Presets preserve the plant's position, seed, and mesh choices.</p>
-        <p><code>New Seed</code>: generates a different arrangement with the current settings.</p>
+        <p>The <code>Light</code>, <code>Overgrown</code>, and <code>Hanging</code> preset buttons set the growth, leaves, and flowers in one step. The plant keeps its position, seed, and meshes.</p>
+        <p>The <code>New Seed</code> button gives a different arrangement with the same settings.</p>
       </div>
     </article>
 
@@ -126,13 +126,13 @@
       <div class="clip wide"><video src="videos/ue-ivy-growth.mp4" poster="videos/ue-ivy-growth.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Growth</h3>
-        <p><code>Growth</code>: controls how much of the plant is visible from its root outward. Adjust it to reveal the growth progressively.<br>
-        <code>Vine Length</code>: the reach of each main vine.<br>
-        <code>Main Vines</code>: the number of vines starting at the root.<br>
-        <code>Branching</code>: side branches per metre, controlling overall coverage density.<br>
-        <code>Climb</code>: growth direction. At 1, growth is directed upward; at 0, it spreads in all directions; negative values direct it downward.<br>
-        <code>Wander</code>: variation in the vine paths, from straight at 0 to tangled at 1.<br>
-        <code>Vine Depth</code>: the distance vines sit above the surface, allowing later growth to overlap earlier vines.</p>
+        <p><code>Growth</code> sets how much of the plant has grown, from the root outward.<br>
+        <code>Vine Length</code> sets how far each main vine reaches.<br>
+        <code>Main Vines</code> is the number of vines that start at the root.<br>
+        <code>Branching</code> is the number of side branches per metre, which sets how densely the ivy covers the surface.<br>
+        <code>Climb</code> sets the direction. 1 grows upward, 0 spreads in all directions, and negative values grow downward.<br>
+        <code>Wander</code> varies the vine paths, from straight at 0 to tangled at 1.<br>
+        <code>Vine Depth</code> sets how far the vines sit above the surface, so later growth can lie over earlier vines.</p>
       </div>
     </article>
 
@@ -140,10 +140,10 @@
       <div class="clip wide"><video src="videos/ue-ivy-leaves.mp4" poster="videos/ue-ivy-leaves.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Leaves</h3>
-        <p><code>Density</code>: leaves per metre of vine.<br>
-        <code>Scale</code>: leaf size.<br>
-        <code>Tilt</code>: how far leaf tips lift away from the surface.<br>
-        <code>Leaf Depth</code>: layered spacing away from the surface for a fuller appearance.</p>
+        <p><code>Density</code> is the number of leaves per metre of vine.<br>
+        <code>Scale</code> sets the leaf size.<br>
+        <code>Tilt</code> sets how far the leaf tips lift off the surface.<br>
+        <code>Leaf Depth</code> layers the leaves away from the surface for a fuller look.</p>
       </div>
     </article>
 
@@ -151,9 +151,9 @@
       <div class="clip wide"><video src="videos/ue-ivy-leaf-mesh.mp4" poster="videos/ue-ivy-leaf-mesh.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Your own leaf mesh</h3>
-        <p>Use <code>Leaf Mesh</code> to replace the generated leaf with a custom mesh. Its stem should be at the origin, with the leaf pointing along +X and facing +Z.</p>
-        <p>Assigning a mesh reveals the next slot, up to four meshes. The weight beside each slot controls its contribution to the mix. The arrow and folder buttons work as they do in a scatter layer's Meshes section.</p>
-        <p>Adjust <code>Scale</code> after assigning a custom mesh. A value of 1 uses its original size, so larger source meshes may need a substantial reduction.</p>
+        <p>Use the <code>Leaf Mesh</code> slot to replace the built-in leaf with your own mesh. Put its stem at the origin, with the leaf pointing along +X and facing +Z.</p>
+        <p>You can mix up to four meshes, and a new slot appears each time you fill one. The weight beside each slot sets how much of the mix it makes up. The arrow and folder buttons work as they do in a scatter layer's Meshes section.</p>
+        <p>Check <code>Scale</code> after assigning your own mesh. At 1, the mesh keeps its original size, so a large mesh may need a much lower value.</p>
       </div>
     </article>
 
@@ -161,13 +161,13 @@
       <div class="clip wide"><video src="videos/ue-ivy-flowers.mp4" poster="videos/ue-ivy-flowers.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Flowers</h3>
-        <p>Enable <code>Flowers</code> to display its controls and add flowers along the vines.</p>
-        <p><code>Flower Mesh</code>: a custom flower mesh, centred at the origin and facing +Z. Assignment works like Leaf Mesh.<br>
-        <code>Density</code>: flowers per metre in flowering regions.<br>
-        <code>Scale</code> and <code>Scale Variation</code>: overall size and variation between flowers.<br>
-        <code>Coverage</code>: the proportion of the vine that produces flowers.<br>
-        <code>Tilt Random</code>: random variation in how far flowers lean away from the surface.<br>
-        <code>Offset</code>: the distance flowers sit above the surface.</p>
+        <p>Turn on <code>Flowers</code> to add flowers along the vines and show their settings.</p>
+        <p>The <code>Flower Mesh</code> slot takes your own flower mesh, centred at the origin and facing +Z. It works like Leaf Mesh.<br>
+        <code>Density</code> is the number of flowers per metre where the vine flowers.<br>
+        <code>Scale</code> and <code>Scale Variation</code> set the flower size and how much it varies.<br>
+        <code>Coverage</code> sets how much of the vine has flowers.<br>
+        <code>Tilt Random</code> varies how far the flowers lean away from the surface.<br>
+        <code>Offset</code> sets how far the flowers sit above the surface.</p>
       </div>
     </article>
 
@@ -175,8 +175,8 @@
       <div class="clip wide"><video src="videos/ue-ivy-wind.mp4" poster="videos/ue-ivy-wind.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Wind</h3>
-        <p><code>Wind Strength</code>: the response of leaves and flowers to the level's wind. At 0, they remain still.<br>
-        <code>Wind Speed</code>: movement speed relative to the level's wind.</p>
+        <p><code>Wind Strength</code> sets how much the leaves and flowers move in the level's wind. At 0, they stay still.<br>
+        <code>Wind Speed</code> sets how fast they move, compared with the level's wind.</p>
       </div>
     </article>
 
@@ -184,14 +184,14 @@
       <div class="clip wide"><video src="videos/ue-ivy-blockers.mp4" poster="videos/ue-ivy-blockers.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Keeping ivy off windows and signs</h3>
-        <p><code>Add Blocker</code> places an exclusion box where the viewport is looking. Resize it over a window, doorway, or other area to keep clear. Nearby ivy regenerates to respond to the blocker.</p>
-        <p>Select a blocker to display <code>Selected Blockers</code> and choose its behaviour:<br>
-        <code>Grow Around</code>: vines turn around the blocker.<br>
-        <code>Cut Out</code>: growth is calculated normally, then everything inside the blocker is removed for a clean opening.<br>
-        <code>No Leaves</code>: vines can pass through, but leaves and flowers are removed inside the region.<br>
-        <code>Box</code> or <code>Round</code>: uses the full box or an oval region within it, suitable for rounded windows and arches.<br>
-        <code>Padding</code>: adds clearance around the blocker.</p>
-        <p><code>Block Selected</code>: creates fitted blockers for selected actors. Select the actors together with the ivy, then click the button. The blockers follow their actors when moved.</p>
+        <p>The <code>Add Blocker</code> button places a box where the viewport is looking. Resize it over a window, doorway, or anything else you want kept clear, and the nearby ivy updates to match.</p>
+        <p>Select a blocker to show the <code>Selected Blockers</code> section, where buttons choose how it works:<br>
+        <code>Grow Around</code> makes the vines grow around the blocker.<br>
+        <code>Cut Out</code> grows the ivy as normal, then removes everything inside the box for a clean opening.<br>
+        <code>No Leaves</code> lets vines pass through, but removes leaves and flowers inside.<br>
+        <code>Box</code> or <code>Round</code> uses the whole box or an oval inside it. Round suits rounded windows and arches.<br>
+        <code>Padding</code> adds extra space around the blocker.</p>
+        <p>The <code>Block Selected</code> button makes fitted blockers for other actors. Select those actors together with the ivy, then click it. The blockers follow their actors when you move them.</p>
       </div>
     </article>
 
@@ -199,12 +199,12 @@
       <div class="clip wide"><video src="videos/ue-ivy-more.mp4" poster="videos/ue-ivy-more.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>More Settings</h3>
-        <p>Expand the controls at the bottom of the Ivy section for additional detail.</p>
-        <p><b>Growth:</b> <code>Branch Depth</code> controls repeated branching, <code>Gravity</code> pulls growth downward, <code>Spacing</code> separates vines, and <code>Hang Length</code> limits unsupported hanging growth.</p>
-        <p><b>Vines:</b> <code>Thickness</code> sets the root thickness, while <code>Tip Thickness</code> sets the size at the ends.</p>
-        <p><b>Leaves:</b> disable <code>Leaves</code> for bare vines. Additional controls include <code>Scale Variation</code>, <code>Young Leaf Scale</code> for smaller tip leaves, <code>Rotation Random</code>, <code>Droop</code>, <code>Tilt Random</code>, <code>Spread</code>, and <code>Colour Variation</code>.</p>
-        <p><code>Add Wind To My Leaf Materials</code>: adds ScatterFlow wind to the materials of custom leaf and flower meshes.</p>
-        <p><code>Use Blockers</code>: determines whether this ivy responds to Ivy Blockers.</p>
+        <p>Expand the controls at the bottom of the Ivy section for finer control.</p>
+        <p><b>Growth:</b> <code>Branch Depth</code> sets how many times branches split again, <code>Gravity</code> pulls growth downward, <code>Spacing</code> keeps vines apart, and <code>Hang Length</code> limits how far ivy can hang without support.</p>
+        <p><b>Vines:</b> <code>Thickness</code> sets the thickness at the root, and <code>Tip Thickness</code> at the ends.</p>
+        <p><b>Leaves:</b> turn off <code>Leaves</code> for bare vines. You can also vary the leaves with <code>Scale Variation</code>, <code>Young Leaf Scale</code> (smaller leaves at the tips), <code>Rotation Random</code>, <code>Droop</code>, <code>Tilt Random</code>, <code>Spread</code>, and <code>Colour Variation</code>.</p>
+        <p>The <code>Add Wind To My Leaf Materials</code> button adds ScatterFlow wind to the materials of your own leaf and flower meshes.</p>
+        <p>The <code>Use Blockers</code> checkbox sets whether this ivy responds to Ivy Blockers.</p>
       </div>
     </article>
   </div>

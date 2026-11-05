@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group" open>
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html" class="active" aria-current="page">Export</a>
   </details>
   <details class="side-group">
@@ -106,13 +106,11 @@
 <section id="how">
   <div class="wrap">
     <h2>How it works</h2>
-    <p class="lead">ScatterFlow connects Blender directly to an open Unreal Engine or Godot project. Once connected, you can export supported scene content without manually exporting files and importing them in the engine.</p>
-    <p class="lead">The export handles two main types of content:</p>
-    <p class="lead"><b>Objects</b>, such as rocks, buildings, and terrain meshes, arrive with their materials.</p>
-    <p class="lead"><b>Scatter layers</b> arrive as editable ScatterFlow layers rather than thousands of separate objects. You can continue adjusting them in the engine.</p>
-    <p class="lead">Re-exporting updates existing content rather than creating duplicates. ScatterFlow tracks what has already been sent and updates changed content.</p>
+    <p class="lead">ScatterFlow connects Blender to an open Unreal Engine or Godot project, so you can send your scene straight to the engine without exporting and importing files.</p>
+    <p class="lead"><b>Objects</b> such as rocks, buildings, and terrain arrive with their materials. <b>Scatter layers</b> arrive as editable ScatterFlow layers, not thousands of separate objects, so you can keep adjusting them in the engine.</p>
+    <p class="lead">Exporting again updates what you sent before instead of making duplicates.</p>
     <div class="note"><strong>Install the engine plugin first.</strong>
-        The destination project must be open with its ScatterFlow plugin available. This page covers Blender's export controls; see the Unreal and Godot guides for engine-side setup.</div>
+        The project must be open in the engine with the ScatterFlow plugin installed. This page covers Blender's side; see the Unreal and Godot guides for setting up the engine.</div>
   </div>
 </section>
 
@@ -124,16 +122,11 @@
       <div class="clip"><video src="videos/export-connect.mp4" poster="videos/export-connect.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Pick the engine and click Connect</h3>
-        <p><b>1.</b> Open the project in the engine with the ScatterFlow plugin enabled. In Unreal, click <code>ScatterFlow</code> in the main toolbar beside the Play controls. In Godot, open the <code>ScatterFlow Pro</code> dock.</p>
-        <p><b>2.</b> Select <code>Unreal</code> or <code>Godot</code> at the top of Blender's Export tab.</p>
-        <p><b>3.</b> Click <code>Connect</code>.</p>
-        <p>The status indicator shows the connection state:</p>
-        <p>Red, <code>Not Connected</code>: Blender has not connected to the engine.<br>
-        Orange, <code>Connecting…</code>: a connection is being established.<br>
-        Green, <code>Connected to Unreal</code>: the connection is ready for export.</p>
+        <p>First open your project in the engine with the ScatterFlow plugin enabled. In Unreal, click <code>ScatterFlow</code> in the main toolbar. In Godot, open the <code>ScatterFlow Pro</code> dock.</p>
+        <p>Then click the <code>Unreal</code> or <code>Godot</code> button at the top of Blender's Export tab and click <code>Connect</code>. The status light is green when you are connected, orange while connecting, and red when not connected.</p>
         <p>Click <code>Disconnect</code> before switching to another engine.</p>
         <div class="note"><strong>Connection remains red?</strong>
-        Check that the engine plugin is running. Then compare <code>Link URL</code> in Blender's ScatterFlow preferences under <code>Export</code> with the address shown in the engine's ScatterFlow panel.</div>
+        Check that the engine plugin is running. Then make sure the <code>Link URL</code> field in ScatterFlow's <code>Export</code> preferences matches the address shown in the engine's ScatterFlow panel.</div>
       </div>
     </article>
   </div>
@@ -147,12 +140,10 @@
       <div class="clip"><video src="videos/export-queue.mp4" poster="videos/export-queue.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Tick what you want to export</h3>
-        <p>The two checkboxes under <code>Export</code> determine which content the export includes.</p>
-        <p><code>Selected Objects</code>: exports objects selected in the viewport. The accompanying count distinguishes new objects, such as “2 new,” from “tracked” objects that have been sent before and can be updated.</p>
-        <p><code>Scatter System</code>: exports enabled scatter layers. The count reports the number selected, such as “3 of 3.”</p>
-        <p>Use the checkboxes in <code>Scatter Layers</code> to choose individual layers. <code>All</code> enables every layer; <code>None</code> disables them all.</p>
+        <p>The two checkboxes under <code>Export</code> choose what is sent. <code>Selected Objects</code> sends the objects selected in the viewport. Its count shows which are new and which were sent before and will be updated.</p>
+        <p><code>Scatter System</code> sends the layers ticked in the <code>Scatter Layers</code> list. The <code>All</code> and <code>None</code> buttons tick or untick every layer.</p>
         <div class="note"><strong>Excluding a layer does not delete it from the engine.</strong>
-        It simply skips that layer's update. Exclude unchanged layers to reduce export work.</div>
+        It just skips that layer's update, so untick layers you have not changed to make the export quicker.</div>
       </div>
     </article>
   </div>
@@ -166,9 +157,8 @@
       <div class="clip"><video src="videos/export-run.mp4" poster="videos/export-run.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Click Export to Unreal</h3>
-        <p>Click <code>Export to Unreal</code> or <code>Export to Godot</code>. The button displays <code>Exporting…</code> until the operation finishes.</p>
-        <p>Selected objects and enabled scatter layers can be sent in the same export. For example, export two manually placed boulders together with three scatter layers.</p>
-        <p>Continue editing in Blender and export again to update the engine. Previously exported objects are updated in place rather than duplicated.</p>
+        <p>Click <code>Export to Unreal</code> or <code>Export to Godot</code>. Objects and scatter layers can be sent in the same export.</p>
+        <p>Keep working in Blender and export again whenever you want to update the engine. Anything you sent before is updated in place, not duplicated.</p>
       </div>
     </article>
   </div>
@@ -177,20 +167,20 @@
 <section id="settings">
   <div class="wrap">
     <h2>Export settings</h2>
-    <p class="lead">Click <code>Settings</code> beside the Export title to access optional export controls. The defaults provide a starting setup for most scenes.</p>
+    <p class="lead">Click <code>Settings</code> beside the Export title for optional controls. The defaults suit most scenes.</p>
 
     <article class="card" id="what-is-sent-along">
       <div class="clip"><video src="videos/export-settings.mp4" poster="videos/export-settings.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>What is sent along</h3>
         <p><b>For objects</b></p>
-        <p><code>Materials</code>: includes the object's materials. Disable it when you intend to build the materials in the engine yourself.</p>
-        <p><code>Collision</code>: adds collision so characters can stand on surfaces and are blocked by solid objects.</p>
-        <p><code>Nanite</code> (Unreal only): enables Unreal's Nanite for exported objects, useful for detailed meshes.</p>
+        <p>The <code>Materials</code> checkbox sends the object's materials. Turn it off if you will build the materials in the engine yourself.</p>
+        <p>The <code>Collision</code> checkbox adds collision, so characters can stand on surfaces and are blocked by solid objects.</p>
+        <p><code>Nanite</code> (Unreal only) turns on Unreal's Nanite, which suits detailed meshes.</p>
         <p><b>For scatter layers</b></p>
-        <p><code>Emitter</code>: includes the terrain used by the layers. Disable it when the terrain is already in the engine and only the layers need updating.</p>
-        <p><code>Nanite</code> (Unreal only): enables Nanite for the terrain and scattered assets.</p>
-        <p><code>PCG Mode</code>: sets the layer's initial behaviour in the engine. <code>Exact Mode</code> preserves Blender's instance positions. <code>Procedural Mode</code> lets the engine regenerate the scatter so you can adjust density and distribution there. You can change modes later in the engine.</p>
+        <p>The <code>Emitter</code> checkbox sends the terrain the layers sit on. Turn it off when the terrain is already in the engine and only the layers need updating.</p>
+        <p><code>Nanite</code> (Unreal only) turns on Nanite for the terrain and the scattered assets.</p>
+        <p>The <code>PCG Mode</code> menu sets how a layer starts out in the engine. <code>Exact Mode</code> keeps the instance positions from Blender. <code>Procedural Mode</code> lets the engine regenerate the scatter, so you can adjust density and distribution there. You can switch modes later in the engine.</p>
       </div>
     </article>
   </div>
@@ -199,35 +189,34 @@
 <section id="sent">
   <div class="wrap">
     <h2>What is sent, and what is not</h2>
-    <p class="lead">Export supports the content listed below. Other parts of the environment need to be recreated or configured in the destination engine.</p>
+    <p class="lead">Export sends the content listed below. Anything else needs to be set up in the engine.</p>
 
     <article class="card text" id="sent-to-the-engine">
       <div>
         <h3>Sent to the engine</h3>
-        <p><b>Selected mesh objects</b>, with materials and optional collision. Materials are baked when required, as described under Texture Baking. Previously exported objects update in place.</p>
-        <p><b>Lights</b>, except sun lamps. <b>Collection instances</b>, represented in Blender by an Empty that instances a collection, arrive with the collection's meshes and share one mesh per source object.</p>
-        <p><b>ScatterFlow scatter layers</b>, including their instances. Layers above 1,000,000 instances, or 500,000 for Godot, use a stream file that the engine loads around the camera.</p>
-        <p><b>Ivy</b> and <b>water bodies</b> created with ScatterFlow.</p>
-        <p>Blender objects configured to be visible only in shadows, with Camera off and Shadow on under Object Properties &gt; Visibility, remain shadow-only in the engine. Objects disabled for rendering arrive hidden.</p>
+        <p><b>Selected mesh objects</b>, with their materials and optional collision. Materials are baked when needed (see Texture Baking).</p>
+        <p><b>Lights</b>, except sun lamps. <b>Collection instances</b> arrive with the collection's meshes.</p>
+        <p><b>ScatterFlow scatter layers</b>, with their instances. Very large layers, over 1,000,000 instances or 500,000 for Godot, are streamed in around the camera.</p>
+        <p><b>Ivy</b> and <b>water bodies</b> made with ScatterFlow.</p>
+        <p>Objects set to show only in shadows (Camera off, Shadow on, under Object Properties &gt; Visibility) stay shadow-only in the engine. Objects turned off for rendering arrive hidden.</p>
       </div>
     </article>
 
     <article class="card text" id="not-sent-set-these-up-in-the-engine">
       <div>
         <h3>Not sent: set these up in the engine</h3>
-        <p><b>The World:</b> sky, HDRI, sky light, exposure, and view transform. Configure these in the engine, or use ScatterFlow Sky in Unreal.</p>
-        <p><b>Sun lamps</b> and <b>fog boxes:</b> use the engine's sun and fog setup.</p>
-        <p><b>Weather:</b> enable rain and snow through the engine's ScatterFlow controls.</p>
-        <p><b>Rivers:</b> water bodies are supported, but river systems are not exported.</p>
+        <p><b>The World:</b> sky, HDRI, sky light, exposure, and view transform. Set these up in the engine, or use ScatterFlow Sky in Unreal.</p>
+        <p><b>Sun lamps</b> and <b>fog boxes:</b> use the engine's own sun and fog.</p>
+        <p><b>Weather:</b> turn on rain and snow with the engine's ScatterFlow controls.</p>
+        <p><b>Rivers:</b> water bodies are sent, but river systems are not.</p>
       </div>
     </article>
 
     <article class="card text" id="not-sent-other-scattering">
       <div>
         <h3>Not sent: other scattering</h3>
-        <p>Only ScatterFlow layers are transferred as scatter systems. Particle systems, other Geometry Nodes setups, and instances from other scattering tools are excluded.</p>
-        <p>Convert them to real objects or bring them into ScatterFlow first. For GScatter environments, use the import workflow described under <a href="biomes.html#gscatter">Biomes</a>.</p>
-        <p>OpenVDB volume objects are also excluded and are reported in the export log.</p>
+        <p>Only ScatterFlow layers are sent as scatter. Particle systems, other Geometry Nodes setups, and instances from other scatter tools are left out. Convert them to real objects or bring them into ScatterFlow first. GScatter environments can be imported as <a href="biomes.html#gscatter">Biomes</a>.</p>
+        <p>OpenVDB volumes are also left out, and the export log lists them.</p>
       </div>
     </article>
 
@@ -242,15 +231,15 @@
       <div class="clip"><video src="videos/export-baking.mp4" poster="videos/export-baking.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>When your materials need converting</h3>
-        <p>Blender material node setups do not always translate directly to the engine's material setup. ScatterFlow converts unsupported combinations, such as procedural textures, colour ramps, or mixed shaders, into image textures before export. This process is called baking.</p>
-        <p>Expand <code>Texture Baking</code> below the Export button. Its header shows the current behaviour: <code>Auto</code>, <code>Bake All</code>, or <code>Off</code>.</p>
-        <p><code>Bake on Export if not PBR</code>: bakes only materials that require conversion. This is enabled by default and suits most scenes.</p>
-        <p><code>Bake All</code>: bakes every material, including image-based materials. Use it when a transferred material differs from its Blender appearance.</p>
-        <p><code>Resolution</code>: sets baked texture size. <code>Source</code> matches the source images. Select 2K or 4K for higher resolution, with larger output files.</p>
-        <p><code>Samples</code>: increase this if baked textures appear grainy.</p>
-        <p><code>Timeout per Pass (min)</code>: limits the time allowed for one bake pass, such as Base Color on one object. If it exceeds the limit, the object is exported without baking. See <a href="#bake-problems">When a bake is skipped or fails</a>.</p>
+        <p>Some Blender materials, such as those with procedural textures, colour ramps, or mixed shaders, cannot be rebuilt in the engine as they are. ScatterFlow turns them into image textures during export. This is called baking.</p>
+        <p>The settings are in the <code>Texture Baking</code> section, below the Export button. Its header shows which mode is active: <code>Auto</code>, <code>Bake All</code>, or <code>Off</code>.</p>
+        <p>The <code>Bake on Export if not PBR</code> toggle bakes only the materials that need it. It is on by default and suits most scenes.</p>
+        <p>The <code>Bake All</code> toggle bakes every material, including image-based ones. Use it when a material looks different in the engine than in Blender.</p>
+        <p>The <code>Resolution</code> buttons set the size of baked textures. <code>Source</code> matches the material's own images. 2K and 4K are sharper but make larger files.</p>
+        <p>Raise <code>Samples</code> if baked textures look grainy.</p>
+        <p><code>Timeout per Pass (min)</code> limits how long one bake pass may take. If a pass runs over, the object is exported without baking. See <a href="#bake-problems">When a bake is skipped or fails</a>.</p>
         <div class="note"><strong>Initial exports can take longer.</strong>
-        Baking runs during export. Later exports reuse cached images when the relevant inputs have not changed.</div>
+        Baking happens during export. Later exports reuse the baked images unless something has changed.</div>
       </div>
     </article>
   </div>
@@ -259,52 +248,51 @@
 <section id="bake-how">
   <div class="wrap">
     <h2>How baking works</h2>
-    <p class="lead">This section explains how ScatterFlow decides what to bake, stores the results, and handles material features that cannot be preserved in a static texture.</p>
+    <p class="lead">This section explains what gets baked, where the results are kept, and what a baked texture cannot hold.</p>
 
     <article class="card text" id="which-materials-are-baked">
       <div>
         <h3>Which materials are baked</h3>
-        <p>A material consisting of image textures connected to a Principled BSDF can be transferred without baking. The engine rebuilds its supported material inputs from those textures.</p>
-        <p>Baking is used when the material cannot be reconstructed that way, including setups with:</p>
-        <p>procedural textures such as Noise, Voronoi, Musgrave, Wave, or Brick; Color Ramps; Mix Shaders; shaders other than Principled BSDF, such as Diffuse, Glossy, or Translucent; or node groups that modify their inputs.</p>
-        <p>Two kinds of setup can bypass baking despite including additional nodes:</p>
-        <p><b>Simple image adjustments</b>, including Mapping-node tiling or offset, colour tinting, brightness or contrast changes, and roughness remapping. The texture and supported adjustments are transferred for the engine to apply.</p>
-        <p><b>Inactive operations</b>, such as a Mix at factor 0, a Bump at strength 0, muted nodes, or groups with zero influence. ScatterFlow follows the active result through these nodes and exports the underlying textures.</p>
+        <p>Materials made of image textures plugged into a Principled BSDF are sent without baking. The engine rebuilds them from those textures.</p>
+        <p>Other materials are baked. This includes procedural textures, Color Ramps, Mix Shaders, shaders other than Principled BSDF, and node groups that change their inputs.</p>
+        <p>Two kinds of extra nodes do not cause a bake:</p>
+        <p><b>Simple image adjustments</b>, such as tiling, offset, tint, brightness, contrast, or roughness changes. The engine applies these itself.</p>
+        <p><b>Inactive operations</b>, such as a Mix at factor 0, a Bump at strength 0, muted nodes, or groups with no influence. ScatterFlow looks past them to the textures underneath.</p>
       </div>
     </article>
 
     <article class="card text" id="what-happens-during-a-bake">
       <div>
         <h3>What happens during a bake</h3>
-        <p>ScatterFlow uses Cycles to bake material channels into separate images. Channels include Base Color, Roughness, Metallic, Specular, Opacity, and Normal, plus Translucency and Emission when present. Bump and normal-map inputs are combined into the baked normal map.</p>
-        <p>Baking uses a temporary copy of the object with its modifiers applied, in a separate background Blender process. Your active Blender session remains usable, and the scene's scatter is not loaded into the bake process. A failure in that process does not close the active session. The viewport progress card shows the current object and pass; press <code>Esc</code> to cancel.</p>
-        <p>The bake uses the GPU configured in Blender's Preferences &gt; System, or the CPU when no GPU is configured. You can select the device under ScatterFlow's Preferences &gt; Export &gt; Texture Baking &gt; <code>Device</code>. The panel reports when no GPU is set up.</p>
+        <p>Each material channel, such as Base Color, Roughness, and Normal, is baked into its own image. Bump and normal maps are combined into the baked normal map.</p>
+        <p>Baking runs in the background, so you can keep working in Blender, and a failed bake will not close your session. A progress card in the viewport shows how far it has got. Press <code>Esc</code> to cancel.</p>
+        <p>Baking uses the GPU set in Blender's Preferences &gt; System, or the CPU if no GPU is set. You can also choose the device with the <code>Device</code> buttons under Texture Baking in ScatterFlow's Export preferences.</p>
       </div>
     </article>
 
     <article class="card text" id="re-exports-reuse-the-bakes">
       <div>
         <h3>Re-exports reuse the bakes</h3>
-        <p>Images are cached in <code>_BakeCache</code> inside the export's Sync Folder, which is next to the .blend file by default. Re-exports reuse them unless the material, mesh UVs, or bake settings have changed.</p>
-        <p>Materials that depend only on UVs, including image mixes, ramps, colour adjustments, and normal maps, can share one bake across objects. For example, tree variants using the same UV-based leaf material reuse that material's baked textures.</p>
-        <p>Delete <code>_BakeCache</code> before exporting to force a complete rebake.</p>
+        <p>Baked images are saved in a <code>_BakeCache</code> folder in the export's Sync Folder, which is next to your .blend file by default. Later exports reuse them unless the material, the UVs, or the bake settings change.</p>
+        <p>Objects that share a UV-based material, such as tree variants with the same leaves, also share one bake.</p>
+        <p>To force a full rebake, delete <code>_BakeCache</code> before exporting.</p>
       </div>
     </article>
 
     <article class="card text" id="ground-materials-that-blend-two-textures">
       <div>
         <h3>Ground materials that blend two textures</h3>
-        <p>A terrain material may blend two tiling texture sets, such as grass and dirt, using a mask. Baking the whole terrain into one image can lose detail; for example, a 2K texture stretched across 100 m provides limited surface resolution.</p>
-        <p>ScatterFlow instead bakes each texture set as a tile and exports the blend mask separately. The engine tiles and blends the results. This requires each set to use one Mapping node without rotation, the first UV map, and no dependence on position or normals.</p>
+        <p>Terrain materials often blend two tiling textures, such as grass and dirt, with a mask. Baking all of that into one image would lose detail across a large terrain.</p>
+        <p>Instead, ScatterFlow bakes each texture as a tile and sends the mask separately, and the engine blends them. For this to work, each texture set must use one Mapping node with no rotation, the first UV map, and nothing based on position or normals.</p>
       </div>
     </article>
 
     <article class="card text" id="uv-maps">
       <div>
         <h3>UV maps</h3>
-        <p>Baking uses the object's <b>first UV map</b>, matching the map used by the engine.</p>
-        <p>Coordinates outside the 0–1 range are wrapped back into that range for baking, matching repeated textures such as tiled bark or planks.</p>
-        <p>UDIM materials are baked into a single image, causing their tiles to overlap. The export log warns when this occurs.</p>
+        <p>Baking uses the object's <b>first UV map</b>, the same one the engine uses.</p>
+        <p>UVs outside the 0–1 range are wrapped, so repeating textures such as tiled bark or planks bake correctly.</p>
+        <p>UDIM materials are baked into one image, so their tiles overlap. The export log warns you when this happens.</p>
       </div>
     </article>
 
@@ -314,38 +302,38 @@
 <section id="bake-nodes">
   <div class="wrap">
     <h2>Complicated materials and node groups</h2>
-    <p class="lead">Nested groups are supported, but some material effects depend on information that cannot be stored in a static image. The following sections describe the resulting limitations.</p>
+    <p class="lead">Node groups are fine, but some material effects cannot be stored in a baked image.</p>
 
     <article class="card text" id="node-groups-nested-groups-and-layered-shaders">
       <div>
         <h3>Node groups, nested groups and layered shaders</h3>
-        <p>The bake follows connections through node groups and nested groups. You do not need to ungroup a material before exporting.</p>
-        <p>Layered materials, such as rock, moss, and dirt blended with masks, are baked using their combined result. Material Outputs inside groups, including those used by some vegetation assets, are also detected.</p>
+        <p>Baking works through node groups and nested groups, so there is no need to ungroup a material before exporting.</p>
+        <p>Layered materials, such as rock, moss, and dirt blended with masks, are baked as their combined result. Material Outputs inside groups are found too.</p>
       </div>
     </article>
 
     <article class="card text" id="nodes-that-depend-on-the-camera-or-the-lighting">
       <div>
         <h3>Nodes that depend on the camera or the lighting</h3>
-        <p><code>Fresnel</code>, <code>Layer Weight</code>, <code>Light Path</code>, <code>Camera Data</code>, and <code>Ambient Occlusion</code> can depend on the view or lighting. A bake captures a fixed result, so these baked effects do not continue responding to the camera in the engine.</p>
-        <p>Glass transparency driven by Fresnel or Layer Weight is a supported exception: ScatterFlow rebuilds it using the engine's Fresnel behaviour instead of baking the transparency effect.</p>
+        <p><code>Fresnel</code>, <code>Layer Weight</code>, <code>Light Path</code>, <code>Camera Data</code>, and <code>Ambient Occlusion</code> can change with the view or lighting. A bake freezes them, so they no longer react to the camera in the engine.</p>
+        <p>The exception is glass transparency driven by Fresnel or Layer Weight. ScatterFlow rebuilds this in the engine instead of baking it.</p>
       </div>
     </article>
 
     <article class="card text" id="variation-per-copy-or-over-time">
       <div>
         <h3>Variation per copy or over time</h3>
-        <p><b>Per-object variation:</b> values from <code>Object Info</code>, such as Random or Location, or <code>Particle Info</code> can produce different colours for each copy in Blender. A baked image is shared by copies of the mesh, so this variation is not retained in the shared texture. Use separate mesh variants or the engine's per-instance variation controls.</p>
-        <p><b>Animation:</b> time- or frame-driven material values are baked at the current frame. The resulting texture does not preserve the animation.</p>
+        <p><b>Per-object variation:</b> <code>Object Info</code> (such as Random or Location) and <code>Particle Info</code> can give each copy its own colour in Blender. Copies share one baked image, so this variation is lost. Use separate mesh variants, or the engine's per-instance variation controls.</p>
+        <p><b>Animation:</b> animated material values are baked at the current frame, so the animation is lost.</p>
       </div>
     </article>
 
     <article class="card text" id="displacement-volumes-and-weather">
       <div>
         <h3>Displacement, volumes and weather</h3>
-        <p><b>Displacement:</b> Material Output displacement does not deform the exported engine mesh. Procedural displacement is baked into the normal map as apparent surface detail rather than geometry. An image height map connected to Material Output does not trigger baking by itself.</p>
-        <p><b>Volume shaders:</b> not baked. Configure fog and other volume effects in the engine.</p>
-        <p><b>Rain ripples and wetness:</b> ScatterFlow weather additions are excluded from material baking. The engine's weather system provides these effects live rather than fixing one animated state into a texture.</p>
+        <p><b>Displacement:</b> material displacement does not change the shape of the exported mesh. Procedural displacement is baked into the normal map as surface detail instead. An image height map on its own does not cause a bake.</p>
+        <p><b>Volume shaders:</b> not baked. Set up fog and other volume effects in the engine.</p>
+        <p><b>Rain ripples and wetness:</b> ScatterFlow's weather effects are left out of the bake. The engine's weather system adds them live.</p>
       </div>
     </article>
 
@@ -355,64 +343,64 @@
 <section id="bake-problems">
   <div class="wrap">
     <h2>When a bake is skipped or fails</h2>
-    <p class="lead">A bake failure does not stop the export. The affected material is sent with its available textures and values instead.</p>
-    <p class="lead">After export, the status bar summarizes the result, for example <code>12 material(s) baked, 1 mesh(es) skipped: Rock_03 (see Info log)</code>. The <code>Info</code> editor lists skipped objects and their reasons. For detailed bake output, open <code>Window &gt; Toggle System Console</code>.</p>
+    <p class="lead">A failed bake does not stop the export. The material is sent with whatever textures and values it has.</p>
+    <p class="lead">After exporting, the status bar sums up the result. The <code>Info</code> editor lists any skipped objects and why. For full bake details, open <code>Window &gt; Toggle System Console</code>.</p>
 
     <article class="card text" id="no-uv-map">
       <div>
         <h3>"no UV map"</h3>
-        <p>The object has no UV map for the baked image. Its procedural materials are exported without baking.</p>
-        <p><b>Fix:</b> select the object, enter Edit Mode with <code>Tab</code>, select all geometry, and use <code>UV &gt; Smart UV Project</code>. Export again.</p>
+        <p>The object has no UV map to bake onto, so its procedural materials are sent without baking.</p>
+        <p><b>Fix:</b> unwrap the object in Edit Mode, for example by choosing <code>UV &gt; Smart UV Project</code> from the menu, then export again.</p>
       </div>
     </article>
 
     <article class="card text" id="invalid-nan-infinite-coordinates">
       <div>
         <h3>"invalid (NaN / infinite) coordinates"</h3>
-        <p>The first UV map contains invalid values, potentially from an import or modifier.</p>
-        <p><b>Fix:</b> unwrap the object again with <code>UV &gt; Smart UV Project</code> or <code>Unwrap</code>. If a modifier creates the UVs, apply it and inspect the result in the UV Editor.</p>
+        <p>The first UV map has broken values, often from an import or a modifier.</p>
+        <p><b>Fix:</b> unwrap the object again with <code>UV &gt; Smart UV Project</code> or <code>Unwrap</code>. If a modifier creates the UVs, apply it and check the result in the UV Editor.</p>
       </div>
     </article>
 
     <article class="card text" id="bake-timed-out">
       <div>
         <h3>"bake timed out"</h3>
-        <p>A pass exceeded <code>Timeout per Pass</code>. Baking stops for that object, and it is exported without the baked result.</p>
-        <p><b>Fix:</b> increase <code>Timeout per Pass</code> when more processing time is needed. Dense meshes, 4K output, high Samples, and CPU baking can all increase bake time.</p>
+        <p>A bake pass took longer than <code>Timeout per Pass</code>, so the object was sent without baking.</p>
+        <p><b>Fix:</b> raise <code>Timeout per Pass</code>. Dense meshes, 4K output, high Samples, and CPU baking all make bakes take longer.</p>
       </div>
     </article>
 
     <article class="card text" id="bakes-are-very-slow">
       <div>
         <h3>Bakes are very slow</h3>
-        <p><b>GPU not configured:</b> check <code>Edit &gt; Preferences &gt; System &gt; Cycles Render Devices</code>. Configure a GPU rather than relying on CPU baking when appropriate for your setup.</p>
-        <p><b>Bake settings:</b> <code>Samples</code> 4 is sufficient for most materials in this workflow. <code>Source</code> resolution preserves the size of existing textures. A 4K bake can take approximately four times as long as a 2K bake.</p>
-        <p><b>First export:</b> materials that require baking have no cached results yet. Subsequent exports bake only changed content.</p>
+        <p><b>GPU not configured:</b> check <code>Edit &gt; Preferences &gt; System &gt; Cycles Render Devices</code>, and bake on a GPU rather than the CPU where you can.</p>
+        <p><b>Bake settings:</b> <code>Samples</code> 4 is enough for most materials. <code>Source</code> resolution keeps your textures at their existing size. A 4K bake takes about four times as long as 2K.</p>
+        <p><b>First export:</b> nothing has been baked yet. Later exports only bake what has changed.</p>
       </div>
     </article>
 
     <article class="card text" id="pink-or-magenta-textures">
       <div>
         <h3>Pink or magenta textures</h3>
-        <p>An image used by the material is missing, often after moving a scene between computers. ScatterFlow searches beside the .blend file and in its <code>textures</code> folder, and checks for another loaded copy.</p>
-        <p><b>Fix:</b> use <code>File &gt; External Data &gt; Find Missing Files</code>, select the folder containing the textures, and export again.</p>
+        <p>The material is missing an image, often after moving a scene to another computer. ScatterFlow looks for it next to the .blend file and in a <code>textures</code> folder there.</p>
+        <p><b>Fix:</b> choose <code>File &gt; External Data &gt; Find Missing Files</code> from the menu, pick the folder with the textures, and export again.</p>
       </div>
     </article>
 
     <article class="card text" id="grainy-blurry-or-different-from-blender">
       <div>
         <h3>Grainy, blurry or different from Blender</h3>
-        <p><b>Grainy:</b> increase <code>Samples</code>.</p>
-        <p><b>Blurry:</b> increase <code>Resolution</code>. <code>Source</code> uses the largest image in the material, or 1K for fully procedural materials.</p>
-        <p><b>Different appearance:</b> enable <code>Bake All</code> to bake rather than reconstruct the material from its textures. If differences remain, check the limitations under Complicated materials and node groups.</p>
+        <p><b>Grainy:</b> raise <code>Samples</code>.</p>
+        <p><b>Blurry:</b> raise <code>Resolution</code>. <code>Source</code> uses the largest image in the material, or 1K for fully procedural materials.</p>
+        <p><b>Different appearance:</b> turn on <code>Bake All</code>, so the material is baked instead of rebuilt from its textures. If it still looks different, see the limits under Complicated materials and node groups.</p>
       </div>
     </article>
 
     <article class="card text" id="an-object-is-not-baked-at-all">
       <div>
         <h3>An object is not baked at all</h3>
-        <p>Only mesh objects are baked. Curves, text, and other object types are exported without baking their materials.</p>
-        <p><b>Fix:</b> convert the object with <code>Object &gt; Convert &gt; Mesh</code>. Use a copy when you need to preserve the editable original.</p>
+        <p>Only mesh objects are baked. Curves, text, and other object types are sent without baking.</p>
+        <p><b>Fix:</b> convert the object by choosing <code>Object &gt; Convert &gt; Mesh</code> from the menu. Work on a copy if you want to keep the editable original.</p>
       </div>
     </article>
 
@@ -427,33 +415,29 @@
       <div class="clip"><video src="videos/export-preview.mp4" poster="videos/export-preview.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Walk through your scene</h3>
-        <p>Player Preview lets you inspect the Blender scene from a player's viewpoint before exporting. It does not require a running engine or connection.</p>
-        <p><b>1.</b> Position the viewport at the starting location.</p>
-        <p><b>2.</b> Click <code>Preview</code> under <code>Player Preview</code>.</p>
-        <p><b>3.</b> Navigate using the controls shown on the shortcut card:</p>
+        <p>Player Preview lets you walk through your Blender scene from a player's view before exporting. It does not need the engine or a connection.</p>
+        <p>Place the viewport where you want to start, then click the <code>Preview</code> button in the <code>Player Preview</code> section. A shortcut card lists the controls:</p>
         <p><code>W A S D</code> moves, the mouse looks around, <code>Shift</code> runs, <code>Space</code> jumps, and <code>Ctrl</code> crouches.<br>
-        <code>V</code> cycles between first-person, third-person, and top-down views.<br>
-        The mouse wheel adjusts camera distance in third-person and top-down views.<br>
+        <code>V</code> switches between first-person, third-person, and top-down views.<br>
+        The mouse wheel sets the camera distance in third-person and top-down views.<br>
         Hold the right mouse button to zoom.<br>
-        <code>H</code> hides the shortcut card. <code>Esc</code> ends the preview and restores the previous viewport.</p>
-        <p>Use the different views to inspect placement, scene scale, and how the environment reads while moving through it.</p>
-        <p>Open <code>Settings</code> below Preview to choose the starting camera and location, use the current viewport or 3D Cursor, enable full screen, adjust movement speeds and mouse sensitivity, or enable collision with scattered objects.</p>
+        <code>H</code> hides the shortcut card. <code>Esc</code> ends the preview and returns to your previous view.</p>
+        <p>The <code>Settings</code> section below Preview sets the starting camera and position (such as the current view or the 3D Cursor), full screen, movement speed, mouse sensitivity, and collision with scattered objects.</p>
       </div>
     </article>
 
     <article class="card text" id="slow-viewport-slow-character">
       <div>
         <h3>Slow viewport, slow character</h3>
-        <p>Preview updates run up to 60 times per second and account for elapsed time, keeping movement speed consistent at rates such as 60 or 25 frames per second.</p>
-        <p>Each update accounts for at most one twentieth of a second. Below <b>20 frames per second</b>, movement slows: at 10 frames per second it runs at half speed, and at 5 it runs at a quarter speed. Improve viewport performance rather than trying to compensate with <code>Walk Speed</code>.</p>
+        <p>Movement speed stays the same whatever your frame rate, down to <b>20 frames per second</b>. Below that, the character slows down: at 10 frames per second it moves at half speed. Make the viewport faster rather than raising <code>Walk Speed</code>.</p>
         <p><b>What makes a scene slow to draw</b></p>
-        <p><b>Scatter density:</b> large instance counts. Reduce <code>Viewport Density</code> or use Nano; see <a href="optimization.html">Optimization</a>. These viewport changes preserve full render density.</p>
-        <p><b>Complex meshes:</b> detailed assets repeated many times. Use lighter meshes or proxies during editing.</p>
-        <p><b>Modifiers:</b> Subdivision Surface, Geometry Nodes, and other modifiers requiring recalculation.</p>
+        <p><b>Scatter density:</b> lower <code>Viewport Density</code> or use Nano; see <a href="optimization.html">Optimization</a>. Renders keep their full density.</p>
+        <p><b>Complex meshes:</b> detailed assets repeated many times. Use lighter meshes or proxies while editing.</p>
+        <p><b>Modifiers:</b> Subdivision Surface, Geometry Nodes, and other modifiers that recalculate.</p>
         <p><b>Animation:</b> armatures, drivers, simulations, animated objects, and wind.</p>
-        <p><b>Shading:</b> demanding materials, lights, or textures in Material Preview or Rendered shading.</p>
-        <p><b>Other applications:</b> an open game engine or another 3D application shares GPU resources.</p>
-        <p><b>Preview settings:</b> enable <code>Fullscreen Preview</code> and leave <code>Collide with Scattered Objects</code> disabled for scenes with large instance counts.</p>
+        <p><b>Shading:</b> heavy materials, lights, or textures in Material Preview or Rendered shading.</p>
+        <p><b>Other applications:</b> an open game engine or another 3D app shares the GPU.</p>
+        <p><b>Preview settings:</b> turn on <code>Fullscreen Preview</code>, and leave <code>Collide with Scattered Objects</code> off in dense scenes.</p>
       </div>
     </article>
   </div>

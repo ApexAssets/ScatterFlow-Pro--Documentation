@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -97,8 +97,8 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">Ecosystem settings let a layer respond to the instances of another layer. Configure them on the layer you want to control, then select the layer it should follow or avoid. For example, a bush layer can appear around the boulders in a rock layer.</p>
-    <p class="lead">The target layer keeps its own settings. When its arrangement changes, such as after changing its seed, the reacting layer updates to match.</p>
+    <p class="lead">Ecosystem lets one layer react to another layer's instances, such as bushes growing around the boulders of a rock layer. Set it up on the layer you want to control, and choose the layer it should follow or avoid.</p>
+    <p class="lead">The other layer is not changed. When its arrangement changes, for example after a new seed, the reacting layer follows.</p>
   </div>
 </section>
 
@@ -111,10 +111,10 @@
       <div>
         <h3>Scatter System and Distance</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Distance</b> 0 m</li></ul>
-        <p>Enable <code>Attraction</code> and select the target layer under <code>Scatter System</code>. Instances are kept only within <code>Distance</code> of the target layer's instances.</p>
-        <p>Lower Distance to concentrate the reacting layer into smaller patches, such as bushes close to each boulder.</p>
+        <p>Turn on <code>Attraction</code> and choose the layer to follow in the <code>Scatter System</code> field. Instances are kept only within <code>Distance</code> of that layer's instances.</p>
+        <p>A lower Distance gives smaller, tighter patches, such as bushes close to each boulder.</p>
         <div class="note"><strong>A Distance of 0 leaves the layer empty.</strong>
-        Attraction starts at 0, so increase Distance after enabling it to make instances visible.</div>
+        Distance starts at 0, so raise it after turning Attraction on.</div>
       </div>
     </article>
 
@@ -123,7 +123,7 @@
       <div>
         <h3>Smooth Transition</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Transition</b> 1 m</li></ul>
-        <p>Softens the outer boundary of each patch. Instances remain full size up to the Distance boundary, then shrink to zero over the next <code>Transition</code> metres.</p>
+        <p>Softens the outer edge of each patch. Instances stay full size up to Distance, then shrink to zero over the next <code>Transition</code> metres.</p>
       </div>
     </article>
   </div>
@@ -138,8 +138,8 @@
       <div>
         <h3>Scatter System and Distance</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Distance</b> 0 m</li></ul>
-        <p>Excludes instances within <code>Distance</code> of the target layer and keeps them elsewhere.</p>
-        <p>Use it to prevent grass from intersecting rocks or to clear small plants from the area around large trees.</p>
+        <p>Removes instances within <code>Distance</code> of the other layer and keeps them everywhere else.</p>
+        <p>Use it to keep grass out of rocks, or to clear small plants from around large trees.</p>
       </div>
     </article>
 
@@ -148,7 +148,7 @@
       <div>
         <h3>Smooth Transition</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Transition</b> 1 m</li></ul>
-        <p>Softens the boundary of the excluded area. Instances grow from zero size at the Distance boundary to full size <code>Transition</code> metres further away.</p>
+        <p>Softens the edge of the cleared area. Instances grow from zero size at Distance to full size <code>Transition</code> metres further out.</p>
       </div>
     </article>
   </div>
@@ -162,16 +162,16 @@
       <div class="clip"><video src="videos/ecosystem-ring.mp4" poster="videos/ecosystem-ring.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Attraction with Repulsion</h3>
-        <p>Attraction and Repulsion can be enabled together and can reference either the same layer or two different layers.</p>
-        <p>When both reference the same layer, use a smaller Repulsion Distance than Attraction Distance to create a band around each target instance. For example, Attraction at 6 m and Repulsion at 3.5 m keeps bushes near boulders without placing them directly beside them.</p>
-        <p>When they reference different layers, one rule attracts while the other excludes. Use this for relationships such as moss that appears near rocks but stays away from trees.</p>
+        <p>You can turn on Attraction and Repulsion together, pointing at the same layer or at two different ones.</p>
+        <p>On the same layer, set Repulsion's Distance smaller than Attraction's to get a ring around each instance. Bushes then stay near the boulders without sitting right beside them.</p>
+        <p>On different layers, one pulls the layer in and the other keeps it away. Use this for moss that grows near rocks but stays away from trees.</p>
       </div>
     </article>
 
     <article class="card text" id="group-ecosystem">
       <div>
         <h3>Group Ecosystem</h3>
-        <p>Select a group to access Group Ecosystem. Its settings apply to every layer in the group, allowing a complete planting to follow or avoid another layer together.</p>
+        <p>Select a group to see Group Ecosystem. Its settings apply to every layer in the group, so a whole planting can follow or avoid another layer together.</p>
       </div>
     </article>
   </div>

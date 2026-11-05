@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -97,26 +97,25 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">Dynamics controls movement over time. Play Blender's timeline to preview these effects.</p>
+    <p class="lead">Dynamics adds movement over time. Play Blender's timeline to preview it.</p>
   </div>
 </section>
 
 <section id="wind">
   <div class="wrap">
     <h2>Wind</h2>
-    <p class="lead">Adds swaying motion to a layer's instances. Wind is disabled on new layers.</p>
+    <p class="lead">Makes a layer's instances sway. Wind is off on new layers.</p>
 
     <article class="card" id="wind-type">
       <div class="clip"><video src="videos/wind-type.mp4" poster="videos/wind-type.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Wind Type</h3>
         <ul class="facts"><li><b>Default</b> No Wind</li></ul>
-        <p><code>Wind-Performance</code> has the lowest processing cost. It tilts and rocks each instance as a whole.</p>
-        <p><code>Wind-Semi-Realistic</code> adds waves of wind moving across the layer, providing a balance between motion detail and performance.</p>
-        <p><code>Wind-Realistic</code> bends plants along their height and adds finer flutter. It provides the most detailed motion and has the highest processing cost, indicated by a warning in the menu. Reserve it for layers that need close-up detail.</p>
-        <p>Select a type to display its settings.</p>
+        <p><code>Wind-Performance</code> is the fastest. It tilts and rocks each instance as a whole.</p>
+        <p><code>Wind-Semi-Realistic</code> adds waves of wind moving across the layer. It balances detail and speed.</p>
+        <p><code>Wind-Realistic</code> bends plants along their height and adds fine flutter. It gives the most detailed motion but is the slowest, so save it for layers seen up close.</p>
         <div class="note"><strong>Adjust Strength to the scale of your assets.</strong>
-        Wind moves instances by a distance in the scene, so a value that suits a 10 m tree may bend small plants too far. Lower Strength if plants bend excessively or collapse flat.</div>
+        Wind moves instances by a set distance in the scene, so a value that suits a large tree can bend small plants too far. Lower Strength if plants bend too much or lie flat.</div>
       </div>
     </article>
 
@@ -125,11 +124,9 @@
       <div>
         <h3>Main settings</h3>
         <ul class="facts"><li><b>Direction</b> 0&deg;</li><li><b>Strength</b> 2</li><li><b>Speed</b> 1</li><li><b>Scale</b> 2</li></ul>
-        <p><code>Direction</code> sets the compass direction the wind blows toward.</p>
-        <p><code>Strength</code> controls how far instances are pushed.</p>
-        <p><code>Speed</code> controls how quickly instances sway.</p>
-        <p><code>Scale</code> controls gust size. Lower values make larger areas move together; higher values create more variation between neighbouring instances.</p>
-        <p>Wind-Performance also includes <code>Smoothness</code> to soften the motion.</p>
+        <p><code>Direction</code> sets the compass direction the wind blows toward. <code>Strength</code> sets how far instances are pushed, and <code>Speed</code> how fast they sway.</p>
+        <p><code>Scale</code> sets the size of the gusts. Lower values make large areas move together. Higher values make neighbouring instances move more differently.</p>
+        <p>Wind-Performance also has <code>Smoothness</code>, which softens the motion.</p>
       </div>
     </article>
 
@@ -138,9 +135,9 @@
       <div>
         <h3>Wind-Realistic extras</h3>
         <ul class="facts"><li><b>Bending</b> 1</li><li><b>Minor Wind</b> on, 1</li></ul>
-        <p><code>Bending</code> controls how much a plant curves along its height rather than tilting as a rigid object.</p>
-        <p><code>Enable Minor Wind</code> adds finer motion on top of the main sway. Adjust <code>Minor Wind Strength</code> to control its intensity.</p>
-        <p>The <code>Advanced</code> panel contains <code>Height Falloff</code> and <code>Width Falloff</code>, which control the effect from base to tip and from centre to outer edges. A <code>Vertex Group</code> can limit the effect to part of the mesh.</p>
+        <p><code>Bending</code> sets how much a plant curves along its height instead of tilting stiffly.</p>
+        <p>The <code>Enable Minor Wind</code> checkbox adds finer motion on top of the main sway. <code>Minor Wind Strength</code> sets how strong it is.</p>
+        <p>In the <code>Advanced</code> panel, <code>Height Falloff</code> and <code>Width Falloff</code> control the effect from base to tip and from centre to edge. A <code>Vertex Group</code> can limit the effect to part of the mesh.</p>
       </div>
     </article>
 
@@ -149,9 +146,9 @@
       <div>
         <h3>Presets</h3>
         <ul class="facts"><li><b>Presets</b> Gentle Breeze, Windy, Storm</li></ul>
-        <p>Choose a <code>Preset</code> and click <code>Apply Preset</code> to set Strength, Speed, and Scale for the selected Wind Type. Use the result as a starting point, then refine it for your assets.</p>
-        <p>Gentle Breeze provides light swaying, Windy creates stronger continuous movement, and Storm produces pronounced leaning and gusts.</p>
-        <p>Preset values differ between Wind Types. Apply the preset again after changing the type.</p>
+        <p>Pick a preset from the <code>Preset</code> list and click the <code>Apply Preset</code> button to set Strength, Speed, and Scale for the current Wind Type. Use it as a starting point, then fine-tune it for your assets.</p>
+        <p>Gentle Breeze is a light sway, Windy is stronger, steady movement, and Storm gives heavy leaning and gusts.</p>
+        <p>Presets differ between Wind Types, so apply the preset again after changing the type.</p>
       </div>
     </article>
 
@@ -159,11 +156,11 @@
       <div class="clip"><video src="videos/wind-bake.mp4" poster="videos/wind-bake.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Wind Bake: before and after</h3>
-        <p>Wind is recalculated on every frame, which can slow playback on dense layers. <code>Bake Wind</code> stores the animation so Blender can play the cached result rather than calculate it again.</p>
-        <p>In the recorded test, approximately 7,000 trees using Wind-Realistic played a 48-frame sequence at about 3 frames per second before baking and 30 frames per second afterward. The bake took 16 seconds. These figures describe that test, not a guaranteed playback speed.</p>
-        <p>Choose <code>Animation</code> to bake the scene's full frame range, or <code>Still</code> to bake only the current frame. The button changes to <code>Baked</code> when complete. Click the bin icon to delete the bake.</p>
+        <p>Wind is calculated on every frame, which can slow playback on dense layers. The <code>Bake Wind</code> button stores the animation, so Blender only has to play it back.</p>
+        <p>In one test with thousands of trees, playback went from about 3 to 30 frames per second after baking. Your results depend on the scene.</p>
+        <p>Click the <code>Animation</code> button to bake the whole frame range, or <code>Still</code> for the current frame only. The bin icon deletes the bake.</p>
         <div class="note"><strong>Save first and bake after final adjustments.</strong>
-        Blender stores the bake beside the .blend file. Changes to wind settings, density, or the frame range require you to delete the existing bake and bake again.</div>
+        The bake is saved next to your .blend file. If you change the wind settings, density, or frame range, delete the bake and bake again.</div>
       </div>
     </article>
   </div>
@@ -172,19 +169,19 @@
 <section id="transition">
   <div class="wrap">
     <h2>Transition Effects</h2>
-    <p class="lead">Animate a layer appearing or disappearing over a frame range. Twenty presets are available, each using the same basic Animation controls.</p>
+    <p class="lead">Animate a layer appearing or disappearing over a range of frames. There are twenty presets, and they all share the same Animation settings.</p>
 
     <article class="card" id="preset">
       <div class="clip"><video src="videos/transition-presets.mp4" poster="videos/transition-presets.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Preset</h3>
         <ul class="facts"><li><b>Default</b> No Effect</li></ul>
-        <p>Choose an effect under <code>Preset</code> and play the timeline. Examples include:</p>
+        <p>Pick an effect from the <code>Preset</code> list and play the timeline. For example:</p>
         <p><code>Popup</code>: instances appear in a wave across the layer.<br>
-        <code>Radial</code>: the layer grows outward from its centre.<br>
-        <code>Vortex</code>: instances spin down into position.<br>
-        <code>Rain</code>: instances fall into position from above.</p>
-        <p>The remaining presets are Aurora Front, Ripple, Geyser, Popcorn, Corkscrew, Spinup, Jelly Pop, Card Cascade, Orbit Assemble, Shutters, Seedling Timelapse, Sun Chase, Verdant, Pop Bounce, Meteor, and Bloom.</p>
+        <code>Radial</code>: the layer grows out from its centre.<br>
+        <code>Vortex</code>: instances spin down into place.<br>
+        <code>Rain</code>: instances fall into place from above.</p>
+        <p>The other presets, such as Ripple, Geyser, and Bloom, work the same way.</p>
       </div>
     </article>
 
@@ -193,10 +190,10 @@
       <div>
         <h3>Animation settings</h3>
         <ul class="facts"><li><b>Start Frame</b> 1</li><li><b>End Frame</b> 60 to 90</li><li><b>Reverse</b> off</li><li><b>Seed</b> 0</li></ul>
-        <p><code>Start Frame</code> and <code>End Frame</code> define when the transition begins and when the layer is fully visible. Shorten the range to speed up the effect, or increase Start Frame to delay it.</p>
-        <p><code>Reverse</code> plays the transition backward, starting with the complete layer and animating it out.</p>
-        <p><code>Seed</code> changes the random order in which instances appear.</p>
-        <p>Each preset also includes an <code>Effect Settings</code> panel with its own controls, such as Edge Width for Radial or Spin and Drop Height for Vortex.</p>
+        <p><code>Start Frame</code> and <code>End Frame</code> set when the transition starts and when the layer is fully visible. A shorter range makes the effect faster, and a later Start Frame delays it.</p>
+        <p>Turn on <code>Reverse</code> to play the transition backward, so the full layer animates out.</p>
+        <p><code>Seed</code> changes the order in which instances appear.</p>
+        <p>Each preset also has an <code>Effect Settings</code> panel with its own controls, such as Edge Width for Radial.</p>
       </div>
     </article>
   </div>
@@ -205,23 +202,23 @@
 <section id="collision">
   <div class="wrap">
     <h2>Collision</h2>
-    <p class="lead">Flattens instances near an object, useful for grass reacting to a ball, foot, or wheel.</p>
+    <p class="lead">Flattens instances near an object, such as grass under a ball, foot, or wheel.</p>
 
     <article class="card" id="collision-object-and-distance">
       <div class="clip"><video src="videos/collision.mp4" poster="videos/collision.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Collision Object and Distance</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Min</b> 0</li><li><b>Max</b> 0.2</li></ul>
-        <p>Enable <code>Collision</code> and select a <code>Collision Object</code>. Nearby instances bend down and return to their original state when the object moves away.</p>
-        <p><code>Max</code> sets how far the effect reaches from the object. The default of 0.2 affects the immediate contact area. Increase it to flatten a wider area.</p>
-        <p><code>Min</code> defines the distance within which instances are completely flat. Between Min and Max, the flattening is partial.</p>
+        <p>Turn on <code>Collision</code> and pick an object in the <code>Collision Object</code> field. Instances near it bend down, then spring back when it moves away.</p>
+        <p><code>Max</code> sets how far the effect reaches from the object. The default only reaches the area right around it, so raise it to flatten a wider area.</p>
+        <p><code>Min</code> is the distance within which instances are completely flat. Between Min and Max, they are partly flattened.</p>
       </div>
     </article>
 
     <article class="card text" id="group-dynamics">
       <div>
         <h3>Group Dynamics</h3>
-        <p>Select a group to access Group Dynamics. Its settings apply to every layer in the group, allowing a complete planting to share the same motion settings.</p>
+        <p>Select a group to open Group Dynamics. Its settings apply to every layer in the group, so a whole planting moves the same way.</p>
       </div>
     </article>
   </div>

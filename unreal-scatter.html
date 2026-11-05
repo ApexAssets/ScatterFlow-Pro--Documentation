@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group" open>
@@ -100,16 +100,16 @@
 <section id="layers">
   <div class="wrap">
     <h2>Editing layers</h2>
-    <p class="lead">Modified settings display a round-arrow button labeled <b>Reset to the value from Blender</b>. Click it to restore that setting's imported value.</p>
+    <p class="lead">Settings you change in Unreal show a round-arrow button, <b>Reset to the value from Blender</b>. Click it to return that setting to its imported value.</p>
 
     <article class="card" id="mode-blender-exact-or-procedural">
       <div class="clip wide"><video src="videos/ue-mode.mp4" poster="videos/ue-mode.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Mode: Blender Exact or Procedural</h3>
-        <p>Use the two mode buttons to choose how the layer is placed.</p>
-        <p><code>Blender Exact</code> preserves the instance positions exported from Blender. Use it when placement must match the original, especially for manually arranged layers.</p>
-        <p><code>Procedural</code> regenerates the scatter in Unreal using its PCG system. It provides density, spacing, and mask controls, and lets the layer respond to changes in the ground.</p>
-        <p>The panel displays the settings available for the selected mode. You can switch back to Blender Exact to return to the imported placement.</p>
+        <p>The two mode buttons choose how the layer is placed.</p>
+        <p><code>Blender Exact</code> keeps the instance positions from Blender. Use it when placement must match the original, especially for layers you arranged by hand.</p>
+        <p><code>Procedural</code> rebuilds the scatter in Unreal with its PCG system. It adds density, spacing, and mask controls, and lets the layer follow changes to the ground.</p>
+        <p>The panel only shows the settings for the current mode. Switch back to Blender Exact at any time to return to the imported placement.</p>
       </div>
     </article>
 
@@ -117,9 +117,9 @@
       <div class="clip wide"><video src="videos/ue-exact-adjust.mp4" poster="videos/ue-exact-adjust.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Exact Adjustments</h3>
-        <p>These controls modify the imported instances without generating a new layout.</p>
-        <p><code>Z Offset (cm)</code>: moves every instance vertically. Positive values raise it; negative values embed it in the ground. Use it to correct floating bases or exposed roots.</p>
-        <p><code>Keep Ratio (thinning)</code>: sets the proportion retained. A value of 1 keeps every instance, while 0.5 keeps half at random. Use it to reduce density without regenerating positions.</p>
+        <p>These change the imported instances without creating a new layout.</p>
+        <p><code>Z Offset (cm)</code> moves every instance up or down. Use it to fix floating bases or exposed roots.</p>
+        <p><code>Keep Ratio (thinning)</code> sets how many instances are kept, chosen at random. At 1 every instance stays; at 0.5 half of them do. Use it to thin a layer without changing positions.</p>
       </div>
     </article>
 
@@ -127,9 +127,8 @@
       <div class="clip wide"><video src="videos/ue-exact-scale.mp4" poster="videos/ue-exact-scale.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Scale</h3>
-        <p>Expand <code>Scale</code> to access the size controls.</p>
-        <p><code>Scale Multiplier</code>: scales all instances relative to their Blender sizes. A value of 1 leaves them unchanged.</p>
-        <p><code>Random Scale Min</code> and <code>Random Scale Max</code>: add a random scale factor between the two values. Set both to 1 for no additional variation.</p>
+        <p><code>Scale Multiplier</code> scales all instances relative to their Blender size. At 1 they are unchanged.</p>
+        <p><code>Random Scale Min</code> and <code>Random Scale Max</code> add a random size factor between the two values. Set both to 1 for no extra variation.</p>
       </div>
     </article>
 
@@ -137,8 +136,8 @@
       <div class="clip wide"><video src="videos/ue-exact-rotation.mp4" poster="videos/ue-exact-rotation.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Rotation</h3>
-        <p><code>Rotation X / Y / Z (deg)</code>: rotates all instances by the specified angles. Use X or Y to lean a layer and Z to change its heading.</p>
-        <p><code>Random Spin (+/- deg)</code>: adds random rotation around each instance's up axis, within the specified angle in either direction.</p>
+        <p><code>Rotation X / Y / Z (deg)</code> rotates all instances. Use X or Y to lean the layer, and Z to turn it.</p>
+        <p><code>Random Spin (+/- deg)</code> adds a random turn around each instance's up axis, up to the angle you set in either direction.</p>
       </div>
     </article>
 
@@ -146,14 +145,11 @@
       <div class="clip wide"><video src="videos/ue-meshes-swap.mp4" poster="videos/ue-meshes-swap.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Meshes</h3>
-        <p>The <code>Meshes</code> section lists each source mesh, such as <code>Mesh 1</code> and <code>Mesh 2</code>, with its instance count.</p>
-        <p>Use the controls beside a mesh to replace it or locate its asset:</p>
-        <p><b>1.</b> Click the mesh name to open the asset picker. Search for and select a replacement.<br>
-        <b>2.</b> Select a mesh in the Content Browser or <code>Content Drawer</code>, then click the arrow beside the mesh name to assign it.<br>
-        <b>3.</b> Click the folder button to locate the current mesh in the Content Browser. This does not replace it.</p>
-        <p>Replacing a source mesh updates every instance that uses that slot.</p>
+        <p>The <code>Meshes</code> section lists the layer's source meshes and how many instances use each one.</p>
+        <p>To replace a mesh, click its name and pick a new asset. You can also select a mesh in the Content Browser or <code>Content Drawer</code>, then click the arrow beside the name. The folder button finds the current mesh in the Content Browser without replacing it.</p>
+        <p>Replacing a mesh updates every instance that uses it.</p>
         <div class="note"><strong>Re-exporting replaces the mesh list.</strong>
-        The next Blender export restores Blender's list. Make lasting source-mesh changes in Blender.</div>
+        The next export from Blender brings back Blender's list. Make lasting mesh changes in Blender.</div>
       </div>
     </article>
 
@@ -161,11 +157,9 @@
       <div class="clip wide"><video src="videos/ue-meshes-add.mp4" poster="videos/ue-meshes-add.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Adding and removing meshes</h3>
-        <p>In <code>Procedural</code> mode, you can add meshes to the layer:</p>
-        <p><code>Add Mesh</code>: opens the asset picker and adds the chosen mesh.<br>
-        <code>Add Selected from Content Browser</code>: adds all selected static meshes from the Content Browser or Content Drawer.</p>
-        <p><code>Weight</code>: controls how often a mesh is selected relative to others. For example, set a bush's weight to 3 and a rock's to 1 to use the bush three times as often.</p>
-        <p>Meshes added in Unreal have an x button for removal. Meshes imported from Blender cannot be removed here.</p>
+        <p>In <code>Procedural</code> mode you can add meshes to the layer. Pick one from the <code>Add Mesh</code> asset picker to add it. The <code>Add Selected from Content Browser</code> button adds every static mesh selected in the Content Browser or Content Drawer.</p>
+        <p><code>Weight</code> sets how often a mesh is used compared with the others. A mesh with a weight of 3 is used three times as often as one with a weight of 1.</p>
+        <p>Meshes added in Unreal can be removed with their x button. Meshes from Blender cannot be removed here.</p>
       </div>
     </article>
 
@@ -173,8 +167,8 @@
       <div class="clip wide"><video src="videos/ue-multi-edit.mp4" poster="videos/ue-multi-edit.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Editing several layers at once</h3>
-        <p>Ctrl+click instances or layer actors in the Outliner to select multiple layers. The panel reports the number selected, such as <code>Editing 2 layers</code>, and changes apply to all of them.</p>
-        <p>Use this to adjust the scale of trees and bushes together, then reset the modified settings when comparing results.</p>
+        <p>Ctrl+click instances, or layer actors in the Outliner, to select several layers. Your changes then apply to all of them.</p>
+        <p>This is useful for adjusting related layers together, such as trees and bushes.</p>
       </div>
     </article>
 
@@ -182,9 +176,9 @@
       <div class="clip wide"><video src="videos/ue-actions.mp4" poster="videos/ue-actions.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Advanced: Actions</h3>
-        <p><code>Regenerate</code>: recalculates placement using the current ground. Use it after sculpting a Landscape or changing a surface's collision.</p>
-        <p><code>Select in Level</code>: selects the layer actors in the level and Outliner.</p>
-        <p><code>Open PCG Graph</code>: opens the graph Unreal uses to generate the layer. This is intended for users who need to inspect or work with the underlying PCG setup.</p>
+        <p>The <code>Regenerate</code> button rebuilds the placement on the current ground. Use it after sculpting a Landscape or changing a surface's collision.</p>
+        <p>The <code>Select in Level</code> button selects the layer actors in the level and Outliner.</p>
+        <p>The <code>Open PCG Graph</code> button opens the graph Unreal uses to build the layer. Use it when you want to inspect or work with the PCG setup directly.</p>
       </div>
     </article>
   </div>
@@ -193,15 +187,14 @@
 <section id="procedural">
   <div class="wrap">
     <h2>Procedural settings</h2>
-    <p class="lead">These controls appear in <code>Procedural</code> mode. Changing a setting regenerates the layer and updates the viewport.</p>
+    <p class="lead">These controls are available in <code>Procedural</code> mode. The layer updates as soon as you change a setting.</p>
 
     <article class="card" id="surface-what-the-layer-grows-on">
       <div class="clip wide"><video src="videos/ue-surface.mp4" poster="videos/ue-surface.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Surface: what the layer grows on</h3>
-        <p><code>Terrain + Landscape</code> is the default. It restricts placement to the layer's imported terrain and Unreal Landscapes, leaving objects on top of the terrain clear.</p>
-        <p><code>Any Geometry</code> allows placement on geometry beneath the scatter points.</p>
-        <p>Use Any Geometry when assets should also cover surfaces such as roofs or boulders. Return to Terrain + Landscape to keep those surfaces excluded.</p>
+        <p>The <code>Terrain + Landscape</code> button is the default. The layer only grows on its imported terrain and Unreal Landscapes, so objects standing on the terrain stay clear.</p>
+        <p>Click <code>Any Geometry</code> to let the layer grow on any geometry below the scatter points. Use it when assets should also cover surfaces such as roofs or boulders.</p>
       </div>
     </article>
 
@@ -209,11 +202,8 @@
       <div class="clip wide"><video src="videos/ue-surface-actor.mp4" poster="videos/ue-surface-actor.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Use Selected Actor as Surface</h3>
-        <p>To add one specific object as a surface without allowing all geometry:</p>
-        <p><b>1.</b> Select the target object, such as a boulder.<br>
-        <b>2.</b> Ctrl+click an instance from the layer so both the object and layer are selected.<br>
-        <b>3.</b> Expand <code>Surface</code> and click <code>Use Selected Actor as Surface</code>.</p>
-        <p>The selected object receives instances while unrelated objects remain excluded.</p>
+        <p>Use this to let the layer grow on one specific object, without allowing all geometry.</p>
+        <p>Select the object, Ctrl+click an instance from the layer so both are selected, then click <code>Use Selected Actor as Surface</code> in the <code>Surface</code> section. Only that object receives instances; other objects stay excluded.</p>
       </div>
     </article>
 
@@ -221,7 +211,7 @@
       <div class="clip wide"><video src="videos/ue-surface-zoffset.mp4" poster="videos/ue-surface-zoffset.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Z Offset</h3>
-        <p><code>Z Offset (cm)</code> raises or lowers all instances. Use small positive values for bases that sit too low, or negative values to embed them slightly. Inspect the result from ground level to judge contact with the surface.</p>
+        <p><code>Z Offset (cm)</code> raises or lowers all instances. Use small positive values for bases that sit too low, or negative values to sink them slightly. Check the result from ground level.</p>
       </div>
     </article>
 
@@ -229,9 +219,9 @@
       <div class="clip wide"><video src="videos/ue-distribution.mp4" poster="videos/ue-distribution.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Density and Density Multiplier</h3>
-        <p>Use a top-down view to evaluate changes in coverage and spacing.</p>
-        <p><code>Density / m²</code>: the number of instances per square metre, initially taken from Blender. Increasing it from 0.03 to 0.15 multiplies the base density by five.</p>
-        <p><code>Density Multiplier</code>: scales the density without replacing the base value. Use it to compare denser or sparser versions of the layer.</p>
+        <p><code>Density / m²</code> is the number of instances per square metre. It starts at the value from Blender.</p>
+        <p><code>Density Multiplier</code> scales the density without changing that base value. Use it to try denser or sparser versions of the layer.</p>
+        <p>A top-down view makes coverage and spacing easier to judge.</p>
       </div>
     </article>
 
@@ -239,7 +229,7 @@
       <div class="clip wide"><video src="videos/ue-seed.mp4" poster="videos/ue-seed.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Seed</h3>
-        <p>Changes the random layout while retaining the other settings and instance count. Try different seeds to adjust the arrangement without rebuilding the setup.</p>
+        <p>Changes the random layout while keeping the other settings and the instance count. Try a few seeds to find an arrangement you like.</p>
       </div>
     </article>
 
@@ -247,8 +237,8 @@
       <div class="clip wide"><video src="videos/ue-min-distance.mp4" poster="videos/ue-min-distance.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Min Distance</h3>
-        <p><code>Min Distance (cm)</code> sets the minimum spacing between instances. Instances that are too close to one another are removed.</p>
-        <p>Increase it to reduce clustering and produce more even spacing. Higher values can reduce the final count even when Density remains unchanged.</p>
+        <p><code>Min Distance (cm)</code> sets the smallest gap between instances. Instances that are too close together are removed.</p>
+        <p>Raise it to reduce clumping and spread instances more evenly. Higher values can lower the final count, even when Density stays the same.</p>
       </div>
     </article>
 
@@ -256,8 +246,8 @@
       <div class="clip wide"><video src="videos/ue-proc-scale.mp4" poster="videos/ue-proc-scale.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Uniform and Non-Uniform Scale</h3>
-        <p><code>Uniform Scale</code>: adjusts the size of every instance.</p>
-        <p><code>Non-Uniform</code>: scales X, Y, and Z independently. Use Z to change height and X or Y to change width.</p>
+        <p><code>Uniform Scale</code> changes the size of every instance.</p>
+        <p><code>Non-Uniform</code> scales X, Y, and Z separately. Use Z to change height, and X or Y to change width.</p>
       </div>
     </article>
 
@@ -265,7 +255,7 @@
       <div class="clip wide"><video src="videos/ue-random-scale.mp4" poster="videos/ue-random-scale.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Random Scale</h3>
-        <p>Enable <code>Random Scale</code> to assign each instance a factor between <code>Min Scale</code> and <code>Max Scale</code>, multiplied by Uniform Scale. Wider ranges create stronger size variation; 0.4–2.0, for example, mixes substantially smaller and larger trees.</p>
+        <p>Turn on <code>Random Scale</code> to give each instance a size between <code>Min Scale</code> and <code>Max Scale</code>, multiplied by Uniform Scale. A wider range gives more variety in size.</p>
       </div>
     </article>
 
@@ -273,9 +263,8 @@
       <div class="clip wide"><video src="videos/ue-proc-rotation.mp4" poster="videos/ue-proc-rotation.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Align to Surface and tilt</h3>
-        <p>Use a hillside, such as a 30° slope, to inspect alignment clearly.</p>
-        <p><code>Align to Surface</code>: makes instances stand perpendicular to the ground beneath them. This suits rocks, grass, and ground cover. Leave it disabled for trees that should remain vertical on slopes.</p>
-        <p><code>Range X / Y / Z (deg)</code>: the X and Y controls add random tilt up to the specified angles. Values around 5–15° can break up uniformly upright placement.</p>
+        <p>Turn on <code>Align to Surface</code> to make instances stand at right angles to the ground below them. Use it for rocks, grass, and ground cover. Leave it off for trees that should stay upright on slopes.</p>
+        <p>The X and Y values in <code>Range X / Y / Z (deg)</code> add random tilt, up to the angle you set. Around 5–15° breaks up instances that look too evenly upright.</p>
       </div>
     </article>
 
@@ -283,8 +272,8 @@
       <div class="clip wide"><video src="videos/ue-random-rotation.mp4" poster="videos/ue-random-rotation.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Random Rotation</h3>
-        <p>Enable <code>Random Rotation</code> to vary instance orientation and reduce visible repetition. Disable it to preserve matching orientations.</p>
-        <p>The Z value in <code>Range X / Y / Z</code> limits the heading variation. At 360°, instances can face any direction. Lower values restrict the range; 0 removes the variation.</p>
+        <p>Turn on <code>Random Rotation</code> to vary which way instances face, which hides repetition. Turn it off to keep them facing the same way.</p>
+        <p>The Z value in <code>Range X / Y / Z</code> limits that variation. At 360° instances can face any direction, and at 0 they all face the same way.</p>
       </div>
     </article>
   </div>
@@ -293,16 +282,15 @@
 <section id="masking">
   <div class="wrap">
     <h2>Masking</h2>
-    <p class="lead">Masks restrict procedural placement to selected parts of the surface. Each has an <code>Enabled</code> control, and <code>Invert</code> reverses its affected region. Masks are available in Procedural mode.</p>
+    <p class="lead">Masks limit procedural placement to parts of the surface, and are available in Procedural mode. Each mask has an <code>Enabled</code> checkbox, and the <code>Invert</code> checkbox flips the area it affects.</p>
 
     <article class="card" id="slope">
       <div class="clip wide"><video src="videos/ue-mask-slope.mp4" poster="videos/ue-mask-slope.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Slope</h3>
-        <p>Use this mask to keep vegetation on flatter ground or restrict assets to steep surfaces.</p>
-        <p><code>Max Slope</code>: the steepest allowed surface angle, in degrees. Lowering it from 76 to 15 clears steep banks while retaining flatter terraces.</p>
-        <p><code>Falloff (deg)</code>: softens the transition at the slope boundary.</p>
-        <p><code>Invert</code>: reverses the mask to keep instances on steep ground instead of flat areas.</p>
+        <p>Use this mask to keep vegetation on flatter ground, or to keep assets on steep surfaces only.</p>
+        <p><code>Max Slope</code> is the steepest angle allowed, in degrees. Lower it to clear steep banks while keeping flatter ground. <code>Falloff (deg)</code> softens the edge of the mask.</p>
+        <p>Turn on <code>Invert</code> to keep instances on steep ground instead of flat areas.</p>
       </div>
     </article>
 
@@ -310,10 +298,9 @@
       <div class="clip wide"><video src="videos/ue-mask-elevation.mp4" poster="videos/ue-mask-elevation.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Elevation</h3>
-        <p>Use this mask for height-based boundaries such as a tree line.</p>
-        <p><code>Height (cm)</code>: the upper placement limit. On a 10 m hill, changing the limit between 1.5 m and 7 m substantially changes the covered area; enter the corresponding values in centimetres.</p>
-        <p><code>Falloff (cm)</code>: the height range over which the layer fades at the boundary.</p>
-        <p><code>Invert</code>: keeps instances above the height limit instead of below it.</p>
+        <p>Use this mask for height limits, such as a tree line.</p>
+        <p><code>Height (cm)</code> is the highest point the layer reaches, entered in centimetres. <code>Falloff (cm)</code> is the height range over which the layer fades out at that limit.</p>
+        <p>Turn on <code>Invert</code> to keep instances above the limit instead of below it.</p>
       </div>
     </article>
 
@@ -321,12 +308,9 @@
       <div class="clip wide"><video src="videos/ue-mask-noise.mp4" poster="videos/ue-mask-noise.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Noise</h3>
-        <p>Breaks the layer into irregular patches rather than uniform coverage.</p>
-        <p><code>Scale (lower = bigger patches)</code>: controls pattern size. Decrease it for broader patches.<br>
-        <code>Threshold Min</code> and <code>Threshold Max</code>: control coverage and the transition between patches and gaps. A wider interval creates softer boundaries.<br>
-        <code>Detail</code>: adds finer irregularity to patch edges.<br>
-        <code>Seed</code>: rearranges the pattern without changing its other settings.<br>
-        <code>Invert</code>: exchanges the populated areas and gaps.</p>
+        <p>Breaks the layer into irregular patches instead of even coverage.</p>
+        <p><code>Scale (lower = bigger patches)</code> sets the size of the patches. <code>Threshold Min</code> and <code>Threshold Max</code> set how much is covered and how soft the patch edges are. A wider gap between them gives softer edges.</p>
+        <p><code>Detail</code> adds finer variation to the patch edges. <code>Seed</code> rearranges the pattern without changing its other settings. Turn on <code>Invert</code> to swap the patches and the gaps.</p>
       </div>
     </article>
 
@@ -334,13 +318,10 @@
       <div class="clip wide"><video src="videos/ue-mask-geo.mp4" poster="videos/ue-mask-geo.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Geometry Proximity</h3>
-        <p>Restricts placement around target objects, such as keeping plants away from a house.</p>
-        <p><b>1.</b> Select the target object, then Ctrl+click an instance to include the layer in the selection.<br>
-        <b>2.</b> Click <code>Add Selected</code> under Geometry Proximity. The object is added to the list and the mask is enabled.<br>
-        <b>3.</b> Set <code>Distance (cm)</code> to define the affected area around the object.<br>
-        <b>4.</b> Set <code>Transition (cm)</code> to soften the boundary.<br>
-        <b>5.</b> Choose <code>Behaviour</code>: <code>Repel</code> excludes nearby instances, while <code>Attract</code> keeps instances only near the target.</p>
-        <p>Click an object's x to remove it. <code>Clear</code> removes all targets added in Unreal. Targets imported from Blender remain and are counted separately above the list.</p>
+        <p>Controls placement around chosen objects, such as keeping plants away from a house.</p>
+        <p>Select the object, Ctrl+click an instance to add the layer to the selection, then click <code>Add Selected</code> under Geometry Proximity. This also turns the mask on.</p>
+        <p><code>Distance (cm)</code> sets how far around the object the mask reaches, and <code>Transition (cm)</code> softens its edge. Under <code>Behaviour</code>, click <code>Repel</code> to clear instances near the object, or <code>Attract</code> to keep them only near it.</p>
+        <p>Click an object's x to remove it. The <code>Clear</code> button removes all objects added in Unreal. Objects that came from Blender stay, and are counted separately above the list.</p>
       </div>
     </article>
 
@@ -348,13 +329,10 @@
       <div class="clip wide"><video src="videos/ue-mask-curve.mp4" poster="videos/ue-mask-curve.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Curve Proximity</h3>
-        <p>Uses a spline to define a path, road, river margin, or other continuous region.</p>
-        <p><b>1.</b> Select the layer and click <code>Draw New Spline</code>. A short, selected spline appears where the viewport is looking.<br>
-        <b>2.</b> Shape the spline by moving its points. Alt+drag an endpoint to add more points.<br>
-        <b>3.</b> Select the layer again and set <code>Distance (cm)</code>. With Repel behaviour, this clears the specified distance on each side of the spline. At 0, nothing is cleared; 400 creates 4 m of clearance per side.<br>
-        <b>4.</b> Adjust <code>Transition (cm)</code> to soften the outer boundaries.<br>
-        <b>5.</b> Choose <code>Behaviour</code>: <code>Attract</code> keeps instances along the spline, while <code>Repel</code> clears them away from it.</p>
-        <p>To use an existing actor with a Spline component, select it together with the layer and click <code>Add Selected</code> under Curve Proximity. Editing the spline updates the scatter when you release the point.</p>
+        <p>Uses a spline to shape a path, road, riverbank, or other long region.</p>
+        <p>Select the layer and click <code>Draw New Spline</code>. A short spline appears where the viewport is looking. Move its points to shape it, and Alt+drag an endpoint to add more points.</p>
+        <p>Then select the layer again to set <code>Distance (cm)</code>, which is how far the mask reaches on each side of the spline. With Repel, 0 clears nothing. <code>Transition (cm)</code> softens the outer edges. Under <code>Behaviour</code>, click <code>Attract</code> to keep instances along the spline, or <code>Repel</code> to clear them away from it.</p>
+        <p>To use an existing actor with a Spline component, select it together with the layer and click <code>Add Selected</code> under Curve Proximity. When you edit the spline, the scatter updates as you release a point.</p>
       </div>
     </article>
   </div>

@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -99,8 +99,8 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">The Materials section controls compatible materials on the layer selected in the System List. It is located at the bottom of the Scatter tab.</p>
-    <p class="lead">Plants in the ScatterFlow content pack are configured for these controls. For your own assets, the available settings depend on what their materials support.</p>
+    <p class="lead">The Materials section, at the bottom of the Scatter tab, adjusts the materials on the layer selected in the System List.</p>
+    <p class="lead">Plants from the ScatterFlow content pack are set up for these controls. For your own assets, what you can change depends on their materials.</p>
   </div>
 </section>
 
@@ -112,9 +112,8 @@
       <div class="clip"><video src="videos/materials-seasons.mp4" poster="videos/materials-seasons.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Season Stage</h3>
-        <p>Moves the planting through Spring, Summer, Autumn, and Winter. The labels below the slider identify the seasons, while the header shows the current season and progress through it.</p>
-        <p>For example, the meadow transitions from fresh spring green through pale summer straw and autumn orange to winter brown.</p>
-        <p><code>Season Amount</code> controls the strength of the seasonal colour adjustment. At 0, plants retain their original colours.</p>
+        <p>Moves the planting through Spring, Summer, Autumn, and Winter. The header shows the current season and how far through it you are.</p>
+        <p><code>Season Amount</code> sets how strong the seasonal colour change is. At 0, plants keep their original colours.</p>
       </div>
     </article>
 
@@ -123,10 +122,10 @@
       <div>
         <h3>Season Settings</h3>
         <ul class="facts"><li><b>Seasons Blend</b> 0.5</li><li><b>Color Variation Blend</b> 5</li><li><b>Color Variation Seed</b> 0</li></ul>
-        <p>These controls vary the seasonal effect across the planting so every plant does not change colour together.</p>
-        <p><code>Seasons Blend</code> controls differences in seasonal progress between plants. Lower values produce a more uniform change; higher values let some plants appear further through the season than others.</p>
-        <p><code>Color Variation Blend</code> controls the size of areas that change together. <code>Color Variation Seed</code> rearranges those areas.</p>
-        <p><code>Leaf Randomness</code> adds variation between individual leaves. <code>Season Colors</code> sets the colours used for each season.</p>
+        <p>These settings stop every plant from changing colour at the same time.</p>
+        <p><code>Seasons Blend</code> sets how much the plants differ in seasonal progress. Lower values give a more even change. Higher values let some plants run ahead of others.</p>
+        <p><code>Color Variation Blend</code> sets the size of the areas that change together, and <code>Color Variation Seed</code> rearranges them.</p>
+        <p><code>Leaf Randomness</code> adds variation between individual leaves. The <code>Season Colors</code> colour ramp sets the colours for each season.</p>
       </div>
     </article>
   </div>
@@ -141,8 +140,8 @@
       <div>
         <h3>Leaf Snow Amount</h3>
         <ul class="facts"><li><b>Default</b> 0</li></ul>
-        <p>Controls snow coverage on leaves. At 0, no snow is applied; at 1, the leaves are white. A value around 0.3 produces a light dusting.</p>
-        <p>This setting is in the Seasons panel below Season Colors. Content pack trees also include <code>Trunk Snow Amount</code> for snow on their bark.</p>
+        <p>Sets how much snow covers the leaves, from none at 0 to fully white at 1. Around 0.3 gives a light dusting.</p>
+        <p>It is in the Seasons panel, below Season Colors. Content pack trees also have <code>Trunk Snow Amount</code> for snow on the bark.</p>
       </div>
     </article>
   </div>
@@ -157,9 +156,9 @@
       <div>
         <h3>Dry patches</h3>
         <ul class="facts"><li><b>Dry Mask</b> off</li><li><b>Spread</b> 0.6</li><li><b>Scale</b> 0.15</li><li><b>Position</b> 0</li></ul>
-        <p>Creates uneven areas of dry, yellow vegetation. Set <code>Dry Mask OFF/ON</code> to 1 to enable the effect.</p>
-        <p><code>Dryness Spread</code> controls how much of the planting is affected. <code>Dryness Scale</code> controls patch size, and <code>Dryness Position</code> moves the pattern across the surface.</p>
-        <p><code>Dry/Height Amount</code> and <code>Dryness Height</code> control how far the dry colouration extends up each plant. <code>Dryness Color</code> sets its colour.</p>
+        <p>Adds uneven patches of dry, yellow vegetation. Set <code>Dry Mask OFF/ON</code> to 1 to turn it on.</p>
+        <p><code>Dryness Spread</code> sets how much of the planting is affected, <code>Dryness Scale</code> sets the patch size, and <code>Dryness Position</code> moves the pattern.</p>
+        <p><code>Dry/Height Amount</code> and <code>Dryness Height</code> set how far up each plant the dryness reaches. <code>Dryness Color</code> sets its colour.</p>
       </div>
     </article>
   </div>
@@ -174,10 +173,10 @@
       <div>
         <h3>Mowing stripes</h3>
         <ul class="facts"><li><b>Stripe Scale</b> 0.23</li><li><b>Angle</b> 0&deg;</li><li><b>Distortion</b> 0</li></ul>
-        <p>Creates alternating light and dark bands for a mown lawn. Lawn biomes have the effect enabled by default. Use <code>Stripes ON/OFF</code> to toggle it and <code>Stripe Brightness</code> to adjust the contrast.</p>
-        <p><code>Stripe Scale</code> controls band width. <code>Angle</code> rotates the pattern, and <code>Position Offset</code> shifts it sideways.</p>
-        <p><code>Distortion</code> makes the boundaries less regular, useful for mowing patterns that should not look perfectly straight.</p>
-        <p><code>Stripe Spread Min</code> and <code>Max</code> control the sharpness of the transition between light and dark bands.</p>
+        <p>Adds light and dark bands, like a freshly mown lawn. It is on by default in lawn biomes. <code>Stripes ON/OFF</code> turns it on or off, and <code>Stripe Brightness</code> sets the contrast.</p>
+        <p><code>Stripe Scale</code> sets the width of the bands. <code>Angle</code> rotates them, and <code>Position Offset</code> slides them sideways.</p>
+        <p><code>Distortion</code> makes the edges less regular, for stripes that should not look perfectly straight.</p>
+        <p><code>Stripe Spread Min</code> and <code>Max</code> set how sharp the edge between light and dark bands is.</p>
       </div>
     </article>
   </div>
@@ -190,8 +189,8 @@
     <article class="card text" id="material-list-and-the-link-button">
       <div>
         <h3>Material List and the link button</h3>
-        <p>The list at the top shows the ScatterFlow materials used by the selected layer. Select a material to display its <code>Main</code>, <code>Translucency</code>, and <code>Wetness</code> settings. These control colour adjustments, light passing through leaves, and the appearance of a wet surface.</p>
-        <p>The link button beside the Materials heading applies the same adjustments to all listed materials. Unlink them to edit a material individually.</p>
+        <p>The list at the top shows the ScatterFlow materials on the selected layer. Select one to see its <code>Main</code>, <code>Translucency</code>, and <code>Wetness</code> settings. These control colour, light shining through leaves, and how wet the surface looks.</p>
+        <p>The link button next to the Materials heading applies your changes to all listed materials. Unlink to edit a material on its own.</p>
       </div>
     </article>
   </div>

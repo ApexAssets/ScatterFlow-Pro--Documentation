@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -98,9 +98,9 @@
       <div class="clip wide"><video src="videos/gd-play.mp4" poster="videos/gd-play.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Play from Editor Camera</h3>
-        <p>Position the 3D view at the intended starting location. Expand <code>Play</code> and click <code>▶ Play from Editor Camera</code>. ScatterFlow saves the scene and opens a game window with the character beneath the editor camera. No separate player or input setup is required.</p>
-        <p>The on-screen card lists the controls: <code>W A S D</code> to move, mouse to look, hold <code>Shift</code> to sprint, <code>Space</code> to jump, <code>C</code> to crouch, and <code>V</code> to switch between first- and third-person views. Hold the right mouse button to zoom, use the mouse wheel for camera distance, press <code>Esc</code> to release the mouse, and <code>H</code> to hide the card.</p>
-        <p>Press <code>F8</code> or use Godot's Stop button to end the preview.</p>
+        <p>Move the 3D view to where you want to start, then click <code>▶ Play from Editor Camera</code> in the <code>Play</code> section. ScatterFlow saves the scene and starts the game with the character under the editor camera. You do not need to set up a player or controls.</p>
+        <p>Use <code>W A S D</code> to move, the mouse to look, <code>Shift</code> to sprint, <code>Space</code> to jump, <code>C</code> to crouch, and <code>V</code> to switch between first and third person. Hold the right mouse button to zoom, and use the mouse wheel for camera distance. <code>Esc</code> releases the mouse, and <code>H</code> hides the on-screen controls.</p>
+        <p>Press <code>F8</code> or Godot's Stop button to stop.</p>
       </div>
     </article>
 
@@ -108,15 +108,15 @@
       <div class="clip wide"><video src="videos/gd-play-camera.mp4" poster="videos/gd-play-camera.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Camera settings</h3>
-        <p>Expand <code>Camera</code> under Play to configure the viewpoint before starting.</p>
-        <p><code>First Person</code> / <code>Third Person</code>: the initial view mode.<br>
-        <code>Third Person Distance</code>: how far the camera follows behind the character.<br>
-        <code>Side Offset</code>: shifts the camera sideways for an over-the-shoulder view.<br>
+        <p>Set up the view in the <code>Camera</code> section, under Play, before you start.</p>
+        <p><code>First Person</code> / <code>Third Person</code>: click one to pick the view you start in.<br>
+        <code>Third Person Distance</code>: how far behind the character the camera follows.<br>
+        <code>Side Offset</code>: moves the camera sideways for an over-the-shoulder view.<br>
         <code>Pivot Height Offset</code>: raises or lowers the point the camera follows.<br>
-        <code>Camera Switch Smoothness</code>: controls the transition when switching views with V.<br>
-        <code>Third Person Camera Collision</code>: moves the camera in front of obstructions instead of allowing it to pass through walls.<br>
-        <code>Field of View</code> and <code>Zoom Field of View</code>: the normal view angle and the angle used while holding the right mouse button.<br>
-        <code>Mouse Sensitivity</code>: the response to mouse movement.</p>
+        <code>Camera Switch Smoothness</code>: how smoothly the view changes when you press V.<br>
+        <code>Third Person Camera Collision</code>: when on, keeps the camera in front of walls and obstacles instead of passing through them.<br>
+        <code>Field of View</code> and <code>Zoom Field of View</code>: the normal view angle, and the one used while you zoom.<br>
+        <code>Mouse Sensitivity</code>: how strongly the view responds to the mouse.</p>
       </div>
     </article>
 
@@ -124,9 +124,10 @@
       <div class="clip wide"><video src="videos/gd-play-character.mp4" poster="videos/gd-play-character.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Movement and Character settings</h3>
-        <p><code>Movement</code>: configure <code>Walk Speed</code>, <code>Sprint Speed</code>, and <code>Crouch Speed</code> in metres per second, along with <code>Jump Speed</code> and <code>Gravity</code>. <code>Ground Response</code> and <code>Air Response</code> control movement responsiveness. Under Body, use <code>Player Radius</code>, <code>Standing Height</code>, <code>Standing Eye</code>, <code>Crouch Height</code>, <code>Crouch Eye</code>, and <code>Crouch Smoothness</code> to configure the character's dimensions and crouching behaviour.</p>
-        <p><code>Character</code>: <code>Character Scale</code> adjusts model size, and <code>Facing Offset</code> corrects its orientation. <code>Animation Speed</code> and <code>Turn Smoothness</code> control animation playback and turning.</p>
-        <p>Use repeated previews to judge movement speed and character scale against the environment after making adjustments.</p>
+        <p>The <code>Movement</code> section sets how the character moves: <code>Walk Speed</code>, <code>Sprint Speed</code>, and <code>Crouch Speed</code> in metres per second, plus <code>Jump Speed</code> and <code>Gravity</code>. <code>Ground Response</code> and <code>Air Response</code> set how responsive movement feels.</p>
+        <p>Under Body, <code>Player Radius</code>, <code>Standing Height</code>, <code>Standing Eye</code>, <code>Crouch Height</code>, <code>Crouch Eye</code>, and <code>Crouch Smoothness</code> set the character's size and how it crouches.</p>
+        <p>In the <code>Character</code> section, <code>Character Scale</code> sets the model's size, and <code>Facing Offset</code> fixes which way it faces. <code>Animation Speed</code> and <code>Turn Smoothness</code> control its animation and turning.</p>
+        <p>Play again after each change to check speed and size against your scene.</p>
       </div>
     </article>
   </div>

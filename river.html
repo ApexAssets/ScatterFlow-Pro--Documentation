@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -102,8 +102,8 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">The <code>River</code> tab creates a river from a stroke drawn on terrain. ScatterFlow shapes the riverbed in the terrain, adds animated water, and can scatter rocks or other assets along its banks.</p>
-    <p class="lead">The result remains editable. Change the course, width, water settings, or bank scatter as your scene develops.</p>
+    <p class="lead">The <code>River</code> tab turns a stroke drawn on terrain into a river. It carves the riverbed, adds animated water, and can scatter rocks or other assets along the banks.</p>
+    <p class="lead">Everything stays editable, so you can change the course, width, water, or bank scatter at any time.</p>
   </div>
 </section>
 
@@ -115,13 +115,10 @@
       <div class="clip"><video src="videos/river-draw.mp4" poster="videos/river-draw.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Draw River</h3>
-        <p><b>1.</b> Select the terrain.</p>
-        <p><b>2.</b> Click <code>Draw River</code> to activate the drawing tool.</p>
-        <p><b>3.</b> Draw the river's course across the terrain in one stroke.</p>
-        <p><b>4.</b> Press <code>Tab</code> to finish and generate the river.</p>
-        <p>The terrain's name appears beside <code>River System</code> at the top of the panel. Hover over the <code>i</code> for a summary of the workflow.</p>
+        <p>Select the terrain, click the <code>Draw River</code> button, and draw the river's course in one stroke. Press <code>Tab</code> to generate the river.</p>
+        <p>For a quick reminder of the workflow, hover over the <code>i</code> icon next to the <code>River System</code> heading.</p>
         <div class="note"><strong>Prepare the terrain first.</strong>
-        Apply its scale and rotation with <code>Ctrl + A</code> and provide enough geometry to shape the riverbed. A coarse terrain mesh produces rough banks and a less detailed channel.</div>
+        Press <code>Ctrl + A</code> to apply its scale and rotation. The terrain also needs enough geometry to carve the riverbed. A coarse mesh gives rough banks.</div>
       </div>
     </article>
 
@@ -129,7 +126,7 @@
       <div class="clip"><video src="videos/river-edit.mp4" poster="videos/river-edit.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Edit River</h3>
-        <p>Click <code>Edit River</code> to modify the strokes. Add another stroke to create a tributary, or select and delete strokes you no longer need. Press <code>Tab</code> to update the river.</p>
+        <p>Click the <code>Edit River</code> button to change the strokes. Add a stroke to make a tributary, or delete strokes you no longer need. Press <code>Tab</code> to update the river.</p>
       </div>
     </article>
 
@@ -137,12 +134,9 @@
       <div class="clip"><video src="videos/river-direction.mp4" poster="videos/river-direction.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Reverse the flow</h3>
-        <p>Water follows the direction of the drawn stroke, from its starting point to its endpoint. Reverse the stroke when the flow runs the wrong way; you do not need to redraw the river.</p>
-        <p><b>1.</b> Click <code>Edit River</code>.</p>
-        <p><b>2.</b> Select the stroke to reverse. Press <code>A</code> for all strokes, or hover over one and press <code>L</code> to select it.</p>
-        <p><b>3.</b> Right-click and choose <code>Switch Direction</code>, also available in the viewport header's <code>Segments</code> menu.</p>
-        <p><b>4.</b> Press <code>Tab</code> to apply the change. The river keeps its course and flows in the opposite direction.</p>
-        <p>Increase Flow Speed temporarily if you need to make the direction easier to inspect.</p>
+        <p>Water flows from the start of the stroke to its end. If it flows the wrong way, reverse the stroke instead of redrawing the river.</p>
+        <p>Click the <code>Edit River</code> button and select the stroke (<code>A</code> selects all, or hover over one and press <code>L</code>). Right-click and choose <code>Switch Direction</code>, which is also in the viewport header's <code>Segments</code> menu. Press <code>Tab</code> to apply it.</p>
+        <p>Raising Flow Speed for a moment makes the direction easier to see.</p>
       </div>
     </article>
   </div>
@@ -151,16 +145,15 @@
 <section id="size">
   <div class="wrap">
     <h2>Size</h2>
-    <p class="lead">Open <code>River Properties &gt; River &gt; Size</code>.</p>
+    <p class="lead">These settings are in the <code>River Properties &gt; River &gt; Size</code> panel.</p>
 
     <article class="card" id="river-width-river-height-and-terrain-falloff">
       <div class="clip"><video src="videos/river-size.mp4" poster="videos/river-size.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>River Width, River Height and Terrain Falloff</h3>
-        <p><code>River Width</code>: the width of the river.</p>
-        <p><code>River Height</code>: the water level within the riverbed. Raising it fills more of the channel and increases the area covered by water.</p>
-        <p><code>Terrain Falloff</code>: how far terrain reshaping extends from the river. Lower values create steeper banks; higher values produce a broader, gentler valley.</p>
-        <p><code>Control Curves</code>, at the top of the River panel, identifies the collection containing the drawn strokes.</p>
+        <p><code>River Width</code> sets how wide the river is. <code>River Height</code> sets the water level in the riverbed. Raise it to fill more of the channel.</p>
+        <p><code>Terrain Falloff</code> sets how far the terrain is reshaped around the river. Low values give steep banks, and high values give a wide, gentle valley.</p>
+        <p>The <code>Control Curves</code> field, at the top of the River panel, shows the collection that holds your strokes.</p>
       </div>
     </article>
   </div>
@@ -169,19 +162,17 @@
 <section id="water">
   <div class="wrap">
     <h2>Water</h2>
-    <p class="lead">These controls shape the animated water surface. Play the timeline to preview the result. Solid shading makes the surface geometry easier to inspect without the water material.</p>
+    <p class="lead">These settings control the moving water surface. Play the timeline to see them in action.</p>
 
     <article class="card" id="waves-and-flow">
       <div class="clip"><video src="videos/river-water.mp4" poster="videos/river-water.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Waves and flow</h3>
-        <p><code>Wave Strength</code>: wave height. For example, increasing it from 0.07 to 0.5 changes a calm stream into visibly rougher water.</p>
-        <p><code>Wave Speed</code>: how quickly the waves change.</p>
-        <p><code>Flow Speed</code>: how fast the water moves downstream.</p>
-        <p><code>Flow Strength</code>: the strength of the streaking along the flow direction.</p>
-        <p><code>Foam Spread</code>: how far <a href="#material">foam</a> extends from banks and objects in the water. See Foam.</p>
+        <p><code>Wave Strength</code> sets how high the waves are, from a calm stream to rough water. <code>Wave Speed</code> sets how quickly they change.</p>
+        <p><code>Flow Speed</code> sets how fast the water moves downstream. <code>Flow Strength</code> sets how strong the streaks along the flow are.</p>
+        <p><code>Foam Spread</code> sets how far <a href="#material">foam</a> reaches from the banks and from objects in the water.</p>
         <div class="note"><strong>Separate motion adjustments from material adjustments.</strong>
-        Use Solid shading to tune waves and ripples, then switch to Material Preview or Rendered shading to evaluate the water's appearance.</div>
+        Solid shading shows the surface shape clearly, so tune waves and ripples there. Then switch to Material Preview or Rendered shading to judge how the water looks.</div>
       </div>
     </article>
   </div>
@@ -195,12 +186,8 @@
       <div class="clip"><video src="videos/river-collision.mp4" poster="videos/river-collision.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Ripples around objects</h3>
-        <p>Add collision objects to create disturbances around rocks or other objects in the river.</p>
-        <p><b>1.</b> Put the objects in a collection, such as River Boulders.</p>
-        <p><b>2.</b> Expand <code>Extra Collision Objects</code> and select the collection in <code>Collider</code>.</p>
-        <p>The <code>Water</code> panel contains two controls for these disturbances:</p>
-        <p><code>Collision Ripples Strength</code>: how high the ripples are. Increase it for more pronounced ripples around collision objects.</p>
-        <p><code>Collision Ripples Falloff</code>: the distance the ripples extend from each object. Increasing it from 0.1 m to 1 m spreads the effect over a wider area.</p>
+        <p>Collision objects make the water ripple around rocks and other objects in the river. Put the objects in a collection, then choose it in the <code>Collider</code> field in the <code>Extra Collision Objects</code> panel.</p>
+        <p>Two settings in the <code>Water</code> panel control these ripples. <code>Collision Ripples Strength</code> sets how high they are. <code>Collision Ripples Falloff</code> sets how far they spread from each object.</p>
       </div>
     </article>
   </div>
@@ -214,18 +201,12 @@
       <div class="clip"><video src="videos/river-scatter.mp4" poster="videos/river-scatter.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Rocks along the river</h3>
-        <p>The river includes a separate scatter system for assets that should follow its course, such as rocks, pebbles, or reeds.</p>
-        <p><code>Scatter Collection</code>: the source objects. For example, use Temperate Rocks from the <a href="content-pack.html">content pack</a>.</p>
-        <p><code>Scatter Amount</code>: the number of instances placed.</p>
-        <p><code>Min Distance</code>: the minimum spacing between instances.</p>
-        <p><code>Scatter Width</code>: how far placement extends from the river. Lower values concentrate assets near the water; higher values spread them further up the banks.</p>
-        <p><code>Scatter Falloff</code>: how quickly coverage decreases toward the edge of the scatter band.</p>
-        <p><code>Seed</code>: a different arrangement with the same settings.</p>
-        <p><code>Scale</code>: <code>Uniform Scale</code> adjusts all instances, while <code>Scale Min</code> and <code>Scale Max</code> define random size variation.</p>
-        <p><code>Rotation</code>: <code>Align To Surface</code> follows the terrain slope, while <code>Rotation</code> and <code>Random Rotation</code> control orientation.</p>
-        <p><code>Offset</code>: shifts the scattered instances, for example to embed them slightly in the ground.</p>
+        <p>The river has its own scatter system for assets that follow its course, such as rocks, pebbles, or reeds.</p>
+        <p><code>Scatter Collection</code> sets the objects to scatter, such as rocks from the <a href="content-pack.html">content pack</a>. <code>Scatter Amount</code> sets how many are placed, and <code>Min Distance</code> sets the minimum space between them.</p>
+        <p><code>Scatter Width</code> sets how far from the river the assets spread. Low values keep them close to the water. <code>Scatter Falloff</code> sets how quickly they thin out toward the edge. <code>Seed</code> gives a different arrangement.</p>
+        <p>In the <code>Scale</code> panel, <code>Uniform Scale</code> sizes all instances, and <code>Scale Min</code> and <code>Scale Max</code> add random variation. In the <code>Rotation</code> panel, <code>Align To Surface</code> follows the slope, and <code>Rotation</code> and <code>Random Rotation</code> set the orientation. <code>Offset</code> shifts the instances, for example to sink them slightly into the ground.</p>
         <div class="note"><strong>Foam around scattered objects requires Realize All Instances.</strong>
-        Keep this enabled when you need that interaction. It increases processing cost, so use a modest Scatter Amount while editing a long river.</div>
+        Keep it on if you want that foam. It is slower, so keep Scatter Amount modest while you edit a long river.</div>
       </div>
     </article>
   </div>
@@ -234,16 +215,15 @@
 <section id="material">
   <div class="wrap">
     <h2>SF_River Material</h2>
-    <p class="lead">Open <code>SF_River Material</code> below River Properties to adjust the water's appearance. These changes are visible in Material Preview and Rendered shading.</p>
+    <p class="lead">The <code>SF_River Material</code> panel, below River Properties, controls how the water looks. Changes show in Material Preview and Rendered shading.</p>
 
     <article class="card" id="water-material">
       <div class="clip"><video src="videos/river-material.mp4" poster="videos/river-material.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Water Material</h3>
-        <p><code>Water Color</code>: the water tint. Use it to change the overall colour, such as from the pale default to blue.</p>
-        <p><code>Water Density</code>: how quickly colour builds through the water. Lower values produce lighter, clearer water; higher values produce a darker, deeper appearance.</p>
-        <p><code>Murkiness Color</code> and <code>Water Murkiness</code>: add a cloudy tint that obscures the bottom. A brown tint can create muddy water.</p>
-        <p><code>Wave Bump</code> adds fine surface detail with <code>Scale</code>, <code>Detail</code>, <code>Distance</code>, and <code>Strength</code>. <code>Depth</code> controls darkening in deeper areas.</p>
+        <p><code>Water Color</code> tints the water. <code>Water Density</code> sets how quickly the colour builds up. Low values give clear water, and high values give darker, deeper-looking water.</p>
+        <p><code>Murkiness Color</code> and <code>Water Murkiness</code> add a cloudy tint that hides the bottom. A brown tint gives muddy water.</p>
+        <p><code>Wave Bump</code> adds fine surface detail, set with <code>Scale</code>, <code>Detail</code>, <code>Distance</code>, and <code>Strength</code>. <code>Depth</code> darkens the deeper areas.</p>
       </div>
     </article>
 
@@ -251,10 +231,7 @@
       <div class="clip"><video src="videos/river-foam.mp4" poster="videos/river-foam.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Foam and Caustics</h3>
-        <p>Foam appears along the banks and around objects in the water.</p>
-        <p><code>Foam Color</code> and <code>Foam Amount</code>: its colour and coverage.</p>
-        <p><code>Foam Scale</code> and <code>Foam Detail</code>: the size and complexity of its pattern.</p>
-        <p><code>Foam Bump Strength</code> and <code>Foam Bump Distance</code>: the apparent surface depth of the foam.</p>
+        <p>Foam forms along the banks and around objects in the water. <code>Foam Color</code> and <code>Foam Amount</code> set its colour and coverage. <code>Foam Scale</code> and <code>Foam Detail</code> set the size and complexity of its pattern. <code>Foam Bump Strength</code> and <code>Foam Bump Distance</code> give it depth.</p>
         <p><code>Caustics</code> adds moving light patterns in shallow water. Adjust them with <code>Caustic Amount</code>, <code>Caustic Strength</code>, <code>Caustic Speed</code>, and <code>Caustic Scale</code>.</p>
       </div>
     </article>
@@ -264,16 +241,16 @@
 <section id="layers">
   <div class="wrap">
     <h2>Rivers and scatter layers</h2>
-    <p class="lead">River tools and ordinary scatter layers can use the same terrain. The layers follow the reshaped ground, but do not automatically avoid the water.</p>
+    <p class="lead">Scatter layers on the same terrain follow the reshaped ground. They do not avoid the water on their own.</p>
 
     <article class="card" id="scattering-on-a-terrain-with-a-river">
       <div class="clip"><video src="videos/river-scatter-problem.mp4" poster="videos/river-scatter-problem.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Scattering on a terrain with a river</h3>
-        <p>Use the terrain as the <code>Emitter</code> and <a href="layers.html">create layers</a> normally. Instances follow the riverbed and banks because the river modifies the terrain itself.</p>
-        <p>Without a mask, the layer also scatters inside the channel. Use Curve Proximity to keep vegetation out of the water.</p>
+        <p>Choose the terrain in the <code>Emitter</code> field and <a href="layers.html">create layers</a> as usual. Because the river reshapes the terrain itself, the instances follow the riverbed and banks.</p>
+        <p>Without a mask, plants also land in the channel. Use Curve Proximity to keep them out of the water.</p>
         <div class="note"><strong>Use the appropriate <a href="#scatter">scatter system</a>.</strong>
-        The river's Scatter System handles assets that belong in or near the water. Use ordinary scatter layers for the rest of the terrain.</div>
+        The river's Scatter System is for assets in or near the water. Use ordinary scatter layers for the rest of the terrain.</div>
       </div>
     </article>
 
@@ -281,14 +258,9 @@
       <div class="clip"><video src="videos/river-scatter-proximity.mp4" poster="videos/river-scatter-proximity.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Keep a layer out of the river with Curve Proximity</h3>
-        <p>The river's control curve can also define an exclusion area for scatter layers.</p>
-        <p><b>1.</b> Select the layer in the System List and expand <code>Proximity</code>.</p>
-        <p><b>2.</b> Enable <code>Curve Proximity</code> and keep <code>Type</code> set to <code>Single Curve</code>.</p>
-        <p><b>3.</b> Set <code>Curve</code> to <code>SF_River Curve</code>, located in the Outliner's <code>SF_RiverCurves</code> collection.</p>
-        <p><b>4.</b> Keep <code>Behaviour</code> set to <code>Avoid</code> and increase <code>Distance</code> until the channel is clear. Distance is measured from the river's centreline, so use at least half the river width. Add more clearance to keep plants off wet banks.</p>
-        <p><b>5.</b> Enable <code>Smooth Transition</code> and adjust <code>Transition</code> to create a gradual boundary along the water.</p>
-        <p>Repeat this for every layer that should avoid the river. Tributaries added with Edit River remain part of the same curve and are included automatically. For a second, separate river, use <code>Multiple Curves</code> and select a collection containing both curves.</p>
-        <p>See <a href="culling-proximity.html">Culling and Proximity</a> for more detail on these controls.</p>
+        <p>The river's curve can mark an area for scatter layers to avoid. In the layer's <code>Proximity</code> settings, turn on <code>Curve Proximity</code> with <code>Type</code> set to <code>Single Curve</code>. Set <code>Curve</code> to <code>SF_River Curve</code>, found in the <code>SF_RiverCurves</code> collection, and keep <code>Behaviour</code> on <code>Avoid</code>.</p>
+        <p>Raise <code>Distance</code> until the channel is clear. It is measured from the centre of the river, so use at least half the river width, plus a little more to keep plants off wet banks. Turn on <code>Smooth Transition</code> and adjust <code>Transition</code> to soften the edge along the water.</p>
+        <p>Do this for every layer that should avoid the river. Tributaries are part of the same curve, so they are included. For a second, separate river, set <code>Type</code> to <code>Multiple Curves</code> and choose a collection that holds both curves. See <a href="culling-proximity.html">Culling and Proximity</a> for more on these settings.</p>
       </div>
     </article>
   </div>
@@ -300,8 +272,8 @@
     <article class="card text" id="river-resolution-and-subdivide-level">
       <div>
         <h3>River Resolution and Subdivide Level</h3>
-        <p><code>River Resolution</code>: the detail of the generated river geometry. Lower it to reduce processing cost on long rivers.</p>
-        <p><code>Subdivide Level</code>: adds geometry to the terrain around the river, from 0 to 6. Increase it when banks appear blocky and you cannot add detail to the terrain mesh directly. Each additional level increases the processing cost substantially.</p>
+        <p><code>River Resolution</code> sets how detailed the river geometry is. Lower it to keep long rivers fast.</p>
+        <p><code>Subdivide Level</code> adds geometry to the terrain around the river, from 0 to 6. Raise it if the banks look blocky and you cannot add detail to the terrain itself. Each level makes the river much slower to process.</p>
       </div>
     </article>
   </div>

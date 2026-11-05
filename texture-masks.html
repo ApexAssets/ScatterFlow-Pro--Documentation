@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -99,22 +99,22 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">Texture masks apply a pattern across the scatter surface to control where instances appear and how they scale near boundaries. Each mask has its own checkbox, and multiple masks can be combined.</p>
+    <p class="lead">Texture masks use a pattern to control where instances appear and how they shrink near its edges. Each mask has its own checkbox, and you can combine several.</p>
   </div>
 </section>
 
 <section id="noise">
   <div class="wrap">
     <h2>Noise</h2>
-    <p class="lead">Creates irregular patches with gaps between them. Use it for vegetation that should form natural clusters rather than cover the surface uniformly.</p>
+    <p class="lead">Creates irregular patches with gaps between them. Use it for plants that should grow in natural clumps instead of an even carpet.</p>
 
     <article class="card" id="falloff-min-and-max">
       <div class="clip"><video src="videos/noise-falloff.mp4" poster="videos/noise-falloff.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Falloff: Min and Max</h3>
         <ul class="facts"><li><b>Min</b> 0.4</li><li><b>Max</b> 0.6</li></ul>
-        <p>The noise pattern has a value from 0 to 1 at each point. Instances are excluded below <code>Min</code>, reach full size above <code>Max</code>, and scale gradually between the two.</p>
-        <p>Raise both thresholds to reduce coverage, or lower them to fill more of the surface. Bring the values closer for sharper boundaries; separate them for a wider scale transition.</p>
+        <p>The noise has a value from 0 to 1 at each point. Instances are removed below <code>Min</code>, are full size above <code>Max</code>, and scale up gradually in between.</p>
+        <p>Raise both values for less coverage, or lower them to fill more of the surface. Move them closer together for sharp edges, or further apart for a softer fade.</p>
       </div>
     </article>
 
@@ -123,8 +123,8 @@
       <div>
         <h3>Seed and Scale</h3>
         <ul class="facts"><li><b>Seed</b> 0</li><li><b>Scale</b> 1.0</li></ul>
-        <p><code>Seed</code> changes the arrangement of patches while preserving the other pattern settings.</p>
-        <p><code>Scale</code> controls pattern frequency. Lower values create fewer, larger patches; higher values create more, smaller patches. Values around 0.1–0.3 are a useful starting point for a large terrain.</p>
+        <p><code>Seed</code> rearranges the patches without changing the other settings.</p>
+        <p><code>Scale</code> sets the size of the pattern. Lower values make fewer, larger patches. Higher values make more, smaller ones. On a large terrain, start with values around 0.1–0.3.</p>
       </div>
     </article>
 
@@ -133,9 +133,9 @@
       <div>
         <h3>Detail, Roughness, Lacunarity and Distortion</h3>
         <ul class="facts"><li><b>Detail</b> 2</li><li><b>Roughness</b> 0.5</li><li><b>Lacunarity</b> 2</li><li><b>Distortion</b> 0</li></ul>
-        <p><code>Detail</code> adds smaller-scale patterns to the main noise. At 0, patch boundaries are smooth and rounded. Higher values create more irregular edges.</p>
-        <p><code>Roughness</code> sets the strength of the finer patterns. <code>Lacunarity</code> controls how much smaller each successive pattern becomes. Both depend on Detail being above 0.</p>
-        <p><code>Distortion</code> warps the noise into swirls and elongated shapes.</p>
+        <p><code>Detail</code> adds smaller patterns on top of the main noise. At 0, the patch edges are smooth and rounded. Higher values make them more ragged.</p>
+        <p><code>Roughness</code> sets how strong the finer patterns are, and <code>Lacunarity</code> how much smaller each one gets. Both only work when Detail is above 0.</p>
+        <p><code>Distortion</code> warps the noise into swirls and stretched shapes.</p>
       </div>
     </article>
   </div>
@@ -144,14 +144,14 @@
 <section id="lines">
   <div class="wrap">
     <h2>Lines</h2>
-    <p class="lead">Creates parallel bands. Use it for crop rows, vineyards, ploughed fields, or planted borders.</p>
+    <p class="lead">Creates parallel rows. Use it for crops, vineyards, ploughed fields, or planted borders.</p>
 
     <article class="card" id="falloff-min-and-max-2">
       <div class="clip"><video src="videos/lines-falloff.mp4" poster="videos/lines-falloff.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Falloff: Min and Max</h3>
         <ul class="facts"><li><b>Min</b> 0.3</li><li><b>Max</b> 0.6</li></ul>
-        <p>These thresholds work as they do for Noise. Increasing <code>Min</code> narrows the planted bands and widens the gaps. <code>Max</code> controls the transition to full-size instances along their edges.</p>
+        <p>These work as they do for Noise. Raising <code>Min</code> makes the planted rows narrower and the gaps wider. <code>Max</code> sets how instances fade to full size along the row edges.</p>
       </div>
     </article>
 
@@ -160,8 +160,8 @@
       <div>
         <h3>Scale and Phase Offset</h3>
         <ul class="facts"><li><b>Scale</b> 0.6</li><li><b>Phase Offset</b> 0</li></ul>
-        <p><code>Scale</code> controls the number of rows. Lower values produce fewer, wider rows; higher values produce more, narrower rows.</p>
-        <p><code>Phase Offset</code> shifts the rows sideways without changing their spacing. Use it to align them with a fence, path, or another layer.</p>
+        <p><code>Scale</code> sets the number of rows. Lower values give fewer, wider rows. Higher values give more, narrower rows.</p>
+        <p><code>Phase Offset</code> slides the rows sideways without changing their spacing. Use it to line them up with a fence, path, or another layer.</p>
       </div>
     </article>
 
@@ -170,8 +170,8 @@
       <div>
         <h3>Distortion and its detail</h3>
         <ul class="facts"><li><b>Distortion</b> 0</li><li><b>Detail</b> 2</li><li><b>Detail Scale</b> 1</li><li><b>Detail Roughness</b> 0.5</li></ul>
-        <p><code>Distortion</code> bends the rows away from straight lines, creating less regular planting patterns.</p>
-        <p>The other settings shape this variation and have no effect when Distortion is 0. <code>Detail</code> adds finer variations, <code>Detail Scale</code> controls their size, and <code>Detail Roughness</code> controls the strength of the finest changes.</p>
+        <p><code>Distortion</code> bends the rows, so the planting looks less straight and regular.</p>
+        <p>The other settings shape that bending, and do nothing while Distortion is 0. <code>Detail</code> adds finer variation, <code>Detail Scale</code> sets its size, and <code>Detail Roughness</code> sets the strength of the finest changes.</p>
       </div>
     </article>
   </div>
@@ -180,15 +180,15 @@
 <section id="tiles">
   <div class="wrap">
     <h2>Tiles</h2>
-    <p class="lead">Creates a rectangular grid separated by gaps. Use it for planting beds, garden plots, paving, or other regularly spaced arrangements.</p>
+    <p class="lead">Creates a grid of rectangles with gaps between them. Use it for planting beds, garden plots, paving, or other regular layouts.</p>
 
     <article class="card" id="scale-and-gap-size">
       <div class="clip"><video src="videos/tiles-pattern.mp4" poster="videos/tiles-pattern.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Scale and Gap Size</h3>
         <ul class="facts"><li><b>Scale</b> 2.0</li><li><b>Gap Size</b> 0.05</li></ul>
-        <p><code>Scale</code> controls the number of tiles. Lower values create fewer, larger tiles; higher values create more, smaller tiles. The default of 2 produces very small tiles on most surfaces, so lower it first if the pattern is difficult to see.</p>
-        <p><code>Gap Size</code> sets the width of the empty strips between tiles, from nearly zero to 0.125.</p>
+        <p><code>Scale</code> sets the number of tiles. Lower values give fewer, larger tiles. Higher values give more, smaller ones. The default of 2 makes very small tiles on most surfaces, so lower it first if you cannot see the pattern.</p>
+        <p><code>Gap Size</code> sets the width of the empty strips between tiles, up to 0.125.</p>
       </div>
     </article>
 
@@ -197,7 +197,7 @@
       <div>
         <h3>Width and Height</h3>
         <ul class="facts"><li><b>Width</b> 0.5</li><li><b>Height</b> 0.5</li></ul>
-        <p>Set the proportions of each tile. Equal values produce squares. Increase <code>Width</code> for elongated beds, or decrease <code>Height</code> for narrow strips.</p>
+        <p>Set the shape of each tile. Equal values make squares. Raise <code>Width</code> for long beds, or lower <code>Height</code> for narrow strips.</p>
       </div>
     </article>
   </div>
@@ -206,17 +206,17 @@
 <section id="image">
   <div class="wrap">
     <h2>Image</h2>
-    <p class="lead">Uses an image as the mask. White areas retain instances, and black areas exclude them. Create a mask in an image editor or use a graphic, such as a logo, to define the scatter pattern.</p>
+    <p class="lead">Uses an image as the mask. White areas keep instances and black areas remove them. Paint your own mask in an image editor, or use a graphic such as a logo.</p>
 
     <article class="card" id="image-and-bounds">
       <div class="clip"><video src="videos/image-mask.mp4" poster="videos/image-mask.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Image and Bounds</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Bounds</b> Clip</li></ul>
-        <p>Enable <code>Image</code>, click the folder button, and choose an image file. The layer remains empty until an image is selected.</p>
-        <p><code>Bounds</code> controls what happens outside the image. <code>Clip</code> displays it once and leaves the rest of the surface empty. <code>Repeat</code> tiles it across the surface.</p>
+        <p>Turn on <code>Image</code> and choose an image file with the folder button. The layer stays empty until you pick an image.</p>
+        <p><code>Bounds</code> sets what happens outside the image. Set it to <code>Clip</code> to show the image once and leave the rest of the surface empty, or to <code>Repeat</code> to tile it across the surface.</p>
         <div class="note"><strong>Use small instances and sufficient density for detailed shapes.</strong>
-        Increase Density and reduce Uniform Scale if the image outline looks coarse.</div>
+        If the outline looks rough, raise Density and lower Uniform Scale.</div>
       </div>
     </article>
 
@@ -225,9 +225,9 @@
       <div>
         <h3>Min, Max, Sharpen and Invert</h3>
         <ul class="facts"><li><b>Min</b> 0</li><li><b>Max</b> 1</li><li><b>Sharpen</b> off</li><li><b>Invert</b> off</li></ul>
-        <p><code>Invert</code> reverses the mask, filling the areas that would otherwise be empty.</p>
-        <p><code>Min</code> and <code>Max</code> control grayscale transitions. Instances are excluded below Min, full size above Max, and scaled between them. <code>Sharpen</code> makes soft boundaries more distinct.</p>
-        <p>These three controls have little effect on a purely black-and-white image because it has no intermediate grayscale values. Use them with gradients, photographs, or softly painted masks.</p>
+        <p>Turn on <code>Invert</code> to reverse the mask, so instances fill the areas that would be empty.</p>
+        <p><code>Min</code> and <code>Max</code> control the grey areas. Instances are removed below Min, full size above Max, and scaled in between. Turn on <code>Sharpen</code> to make soft edges crisper.</p>
+        <p>These three settings do little on a pure black-and-white image, since it has no grey. Use them with gradients, photos, or softly painted masks.</p>
       </div>
     </article>
 
@@ -236,9 +236,9 @@
       <div>
         <h3>Location, Rotation and Scale</h3>
         <ul class="facts"><li><b>Scale</b> 1 / 1 / 1</li></ul>
-        <p><code>Location</code> moves the image across the surface in metres. <code>Rotation</code> changes its orientation; adjust Z to rotate it across the ground.</p>
-        <p><code>Scale</code> works in reverse: increasing the value makes the image smaller, while decreasing it makes the image larger. At 1, the image is approximately 10 m wide. Different X and Y values stretch the mask independently.</p>
-        <p>The image retains its original aspect ratio unless you stretch it with separate axis values.</p>
+        <p><code>Location</code> moves the image across the surface, in metres. <code>Rotation</code> turns it; use Z to rotate it across the ground.</p>
+        <p><code>Scale</code> works in reverse: a larger value makes the image smaller, and a smaller value makes it larger. At 1, the image is about 10 m wide.</p>
+        <p>The image keeps its proportions unless you give X and Y different values to stretch it.</p>
       </div>
     </article>
   </div>
@@ -247,15 +247,15 @@
 <section id="transform">
   <div class="wrap">
     <h2>Transform</h2>
-    <p class="lead">Noise, Lines, and Tiles each include transform controls for positioning and orienting their patterns.</p>
+    <p class="lead">Noise, Lines, and Tiles each have transform controls to move and turn their pattern.</p>
 
     <article class="card" id="location-rotation-and-scale-2">
       <div class="clip"><video src="videos/noise-transform.mp4" poster="videos/noise-transform.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Location, Rotation and Scale</h3>
-        <p><code>Location</code> moves the pattern across the surface. It shifts the mask, not the underlying instance positions.</p>
-        <p><code>Scale</code> stretches the pattern along individual axes. Stretching noise along X, for example, turns rounded patches into elongated bands.</p>
-        <p><code>Rotation</code> changes the pattern's orientation. Use Z to rotate it across the ground.</p>
+        <p><code>Location</code> moves the pattern across the surface. It moves the mask, not the instances themselves.</p>
+        <p><code>Scale</code> stretches the pattern along each axis. For example, stretching noise along X turns round patches into long bands.</p>
+        <p><code>Rotation</code> turns the pattern. Use Z to rotate it across the ground.</p>
       </div>
     </article>
 
@@ -263,7 +263,7 @@
       <div class="clip"><video src="videos/lines-transform.mp4" poster="videos/lines-transform.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>On Lines</h3>
-        <p>Use Rotation to set the direction of the rows. Location shifts their position, similarly to Phase Offset.</p>
+        <p>Use Rotation to set the direction of the rows. Location slides them, much like Phase Offset.</p>
       </div>
     </article>
 
@@ -271,14 +271,14 @@
       <div class="clip"><video src="videos/tiles-transform.mp4" poster="videos/tiles-transform.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>On Tiles</h3>
-        <p>Use Location to align the grid with the surface boundaries and Rotation to change its angle.</p>
+        <p>Use Location to line the grid up with the edges of the surface, and Rotation to change its angle.</p>
       </div>
     </article>
 
     <article class="card text" id="group-texture-masks">
       <div>
         <h3>Group Texture Masks</h3>
-        <p>Select a group to access Group Texture Masks. The same pattern is applied to every layer in the group, allowing them to share patches, rows, or a grid.</p>
+        <p>Select a group to open Group Texture Masks. The pattern applies to every layer in the group, so they all share the same patches, rows, or grid.</p>
       </div>
     </article>
   </div>

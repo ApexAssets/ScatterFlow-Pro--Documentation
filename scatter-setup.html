@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -97,26 +97,26 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">Surface, Instances, and Scattering are the first three sections below the System List. All three apply to the selected layer.</p>
+    <p class="lead">Surface, Instances, and Scattering are the first three sections below the System List. They all apply to the selected layer.</p>
   </div>
 </section>
 
 <section id="surface">
   <div class="wrap">
     <h2>Surface</h2>
-    <p class="lead">Choose the geometry that receives the layer's instances. This can be the emitter itself, another object, or a collection of objects.</p>
+    <p class="lead">Choose what the layer scatters on: the emitter itself, another object, or a collection of objects.</p>
 
     <article class="card" id="type">
       <div class="clip"><video src="videos/surface-type.mp4" poster="videos/surface-type.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Type</h3>
         <ul class="facts"><li><b>Default</b> Emitter Object</li></ul>
-        <p><code>Emitter Object</code> scatters on the current emitter. Its name appears below the setting as a read-only reference.</p>
-        <p><code>Single Surface</code> scatters on another object selected in the field below. Use it to place a layer on a specific surface, such as one boulder, without changing its emitter.</p>
-        <p><code>Multiple Surfaces</code> scatters on all objects in the selected collection. For example, select a collection of boulders to cover every rock while leaving the surrounding terrain clear.</p>
-        <p>The layer remains in its emitter's System List regardless of which surface it uses.</p>
+        <p>In the <code>Type</code> menu, <code>Emitter Object</code> scatters on the current emitter.</p>
+        <p><code>Single Surface</code> scatters on another object you choose. Use it to put a layer on one surface, such as a boulder, without changing its emitter.</p>
+        <p><code>Multiple Surfaces</code> scatters on every object in a collection. For example, choose a collection of boulders to cover the rocks and leave the terrain around them clear.</p>
+        <p>Whatever surface it uses, the layer stays in its emitter's System List.</p>
         <div class="note"><strong>Collection missing from the picker?</strong>
-        Multiple Surfaces lists collections directly beneath the Scene Collection. Move a nested collection to that level to make it available.</div>
+        Multiple Surfaces only lists collections directly under the Scene Collection. Move a nested collection up to that level to use it.</div>
       </div>
     </article>
   </div>
@@ -131,8 +131,8 @@
       <div class="clip"><video src="videos/instances-single.mp4" poster="videos/instances-single.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Single Instance</h3>
-        <p>Scatters one source object. Select it in the field below <code>Type</code>, or use the eyedropper.</p>
-        <p>Replacing the source object preserves the scatter positions. Use this to compare a tree, rock, or bush in the same layout without changing the distribution.</p>
+        <p>Scatters one object. Choose it in the field below <code>Type</code>, or pick it with the eyedropper.</p>
+        <p>Swapping the object keeps the same positions, so you can compare a tree, rock, or bush in the same layout.</p>
       </div>
     </article>
 
@@ -140,8 +140,8 @@
       <div class="clip"><video src="videos/instances-multiple.mp4" poster="videos/instances-multiple.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Multiple Instances</h3>
-        <p>Scatters a mix of objects from a collection. Set <code>Type</code> to Multiple Instances and select the collection; each scatter point uses one of its objects.</p>
-        <p>Add or remove objects in the collection to change the available mix. The layer updates automatically.</p>
+        <p>Set <code>Type</code> to Multiple Instances to scatter a mix of objects from a collection. Each point uses one of the collection's objects.</p>
+        <p>Add or remove objects in the collection to change the mix. The layer updates automatically.</p>
       </div>
     </article>
   </div>
@@ -150,18 +150,18 @@
 <section id="scattering">
   <div class="wrap">
     <h2>Scattering</h2>
-    <p class="lead">Control the placement method, instance density, and spacing.</p>
+    <p class="lead">Choose how instances are placed, how many there are, and how far apart they sit.</p>
 
     <article class="card" id="type-procedural-or-manual">
       <div class="clip"><video src="videos/scatter-type.mp4" poster="videos/scatter-type.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Type: Procedural or Manual</h3>
         <ul class="facts"><li><b>Default</b> Procedural</li></ul>
-        <p><code>Procedural</code> distributes instances across the surface according to settings such as Density and masks. Changing a setting updates the scatter automatically.</p>
-        <p><code>Manual</code> starts with an empty layer and lets you place instances with brushes. It replaces Density and the Factor buttons with a <code>Manual Mode</code> section containing <code>Start Placing</code>. See <a href="manual.html">Manual Mode</a> for the available brushes.</p>
-        <p>Use Procedural for coverage that should respond to changes in your setup. Use Manual for deliberate placement, such as a hero tree or a carefully arranged path edge. Both approaches can be combined by creating one layer of each with the same source objects.</p>
+        <p><code>Procedural</code> spreads instances across the surface based on settings such as Density and masks. It updates whenever you change a setting.</p>
+        <p><code>Manual</code> starts empty and lets you place instances with brushes. Click the <code>Start Placing</code> button in the <code>Manual Mode</code> section, which takes the place of Density and the Factor buttons. See <a href="manual.html">Manual Mode</a> for the brushes.</p>
+        <p>Use Procedural for coverage that follows changes to your setup, and Manual for deliberate placement, such as a hero tree or a path edge. To combine both, make one layer of each with the same objects.</p>
         <div class="note"><strong>Switching modes preserves manual placements.</strong>
-        Returning to Procedural restores the automatic scatter. Switching back to Manual restores your hand-placed instances.</div>
+        Going back to Procedural restores the automatic scatter, and switching to Manual again brings back your hand-placed instances.</div>
       </div>
     </article>
 
@@ -169,8 +169,8 @@
       <div class="clip"><video src="videos/scatter-density.mp4" poster="videos/scatter-density.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Density / m&sup2;</h3>
-        <p>Sets the number of instances per square metre of surface. A value of 1 on a 40 m × 40 m surface produces approximately 1,600 instances before masks remove any.</p>
-        <p>Use higher densities for small plants and lower densities for trees. Adjust Density to compare sparse and dense coverage.</p>
+        <p>Sets how many instances are placed per square metre of surface, before any masks remove some.</p>
+        <p>Use higher values for small plants and lower values for trees.</p>
       </div>
     </article>
 
@@ -179,8 +179,8 @@
       <div>
         <h3>Seed</h3>
         <ul class="facts"><li><b>Default</b> 0</li></ul>
-        <p>Changes the random arrangement without changing the number of instances.</p>
-        <p>Enter a value or click the dice button to choose a random seed. Different seeds help prevent separate layers from placing instances at matching positions.</p>
+        <p>Changes the random arrangement without changing how many instances there are.</p>
+        <p>Type a value, or click the dice for a random one. Give separate layers different seeds so they do not place instances in the same spots.</p>
       </div>
     </article>
 
@@ -189,8 +189,8 @@
       <div>
         <h3>Factor</h3>
         <ul class="facts"><li><b>Default</b> 2.00</li></ul>
-        <p>Controls the amount used by the four Density adjustment buttons: multiply, divide, add, and subtract.</p>
-        <p>With <code>Factor</code> set to 2, <code>*</code> doubles Density and <code>/</code> halves it. The <code>+</code> and <code>−</code> buttons add or subtract the Factor value itself. For sparse layers, use a smaller Factor, such as 0.1, before adding or subtracting.</p>
+        <p>Sets the step used by the four Density buttons: multiply, divide, add, and subtract.</p>
+        <p>With <code>Factor</code> at 2, <code>*</code> doubles Density and <code>/</code> halves it. <code>+</code> and <code>−</code> add or subtract the Factor itself, so use a small Factor, such as 0.1, on sparse layers.</p>
       </div>
     </article>
 
@@ -199,9 +199,9 @@
       <div>
         <h3>Limit Self-Collision</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Minimum Distance</b> 0 m</li></ul>
-        <p>Enforces minimum spacing between instances in the same layer. Enable the option and set <code>Minimum Distance</code> to the closest allowed spacing.</p>
-        <p>Instances that violate the spacing are removed. Increasing Minimum Distance therefore reduces the number of instances, and at larger values spacing becomes the limiting factor rather than Density.</p>
-        <p>This setting only checks the current layer. To control spacing between different layers, use Ecosystem.</p>
+        <p>Keeps instances in the same layer a minimum distance apart. Set <code>Minimum Distance</code> to the closest they may be.</p>
+        <p>Instances that are too close are removed, so a larger Minimum Distance means fewer instances. At large values, spacing rather than Density decides how many you get.</p>
+        <p>It only checks the current layer. To space out different layers, use Ecosystem.</p>
       </div>
     </article>
   </div>

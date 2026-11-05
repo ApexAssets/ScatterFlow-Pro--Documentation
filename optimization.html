@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -101,15 +101,15 @@
 <section id="viewport">
   <div class="wrap">
     <h2>Display in the viewport</h2>
-    <p class="lead">These settings simplify viewport display while you work with heavy layers.</p>
+    <p class="lead">These settings make heavy layers lighter to display while you work.</p>
 
     <article class="card" id="decrease-viewport-density">
       <div class="clip"><video src="videos/opt-viewport-density.mp4" poster="videos/opt-viewport-density.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Decrease Viewport Density</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Viewport Density</b> 10%</li></ul>
-        <p>Displays a percentage of the layer's instances in the viewport. At <code>Viewport Density</code> 10%, approximately one in ten instances is shown.</p>
-        <p>Use it for dense layers such as grass, where a reduced preview is enough to evaluate placement.</p>
+        <p>Shows only part of the layer's instances in the viewport. <code>Viewport Density</code> sets how many: at 10%, about one in ten is shown.</p>
+        <p>Use it on dense layers such as grass, where a thinner preview is enough to judge placement.</p>
       </div>
     </article>
 
@@ -118,12 +118,12 @@
       <div>
         <h3>Optimized Mesh</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Type</b> Bounding Box</li></ul>
-        <p>Replaces detailed viewport meshes with simpler representations. Choose the representation under <code>Type</code>.</p>
-        <p><code>Bounding Box</code>: displays a box matching each object's bounds.<br>
-        <code>Convex Hull</code>: displays a simplified shell that follows the object's outline more closely.<br>
-        <code>Proxy Object</code>: uses a chosen mesh, such as a cone, cube, or icosphere. Select it under <code>Proxy Object</code> and adjust its size with <code>Proxy Scale</code>.<br>
-        <code>Points</code>: represents each object as a point cloud. <code>Point Radius</code> controls point size, and <code>Point Density</code> controls the number of points.</p>
-        <p>Enable Bounding Box in the add-on preferences to start new layers with this optimization active.</p>
+        <p>Shows simple stand-ins instead of the full meshes in the viewport. Pick one from the <code>Type</code> list.</p>
+        <p><code>Bounding Box</code>: a box around each object.<br>
+        <code>Convex Hull</code>: a simple shell that follows the object's shape more closely.<br>
+        <code>Proxy Object</code>: a mesh of your choice, such as a cube or cone. Pick it in the <code>Proxy Object</code> field. <code>Proxy Scale</code> sets its size.<br>
+        <code>Points</code>: a cloud of points. <code>Point Radius</code> sets their size, and <code>Point Density</code> how many there are.</p>
+        <p>To start new layers with Bounding Box on, turn it on in the add-on preferences.</p>
       </div>
     </article>
   </div>
@@ -132,18 +132,18 @@
 <section id="camera">
   <div class="wrap">
     <h2>Camera Culling</h2>
-    <p class="lead">Excludes instances outside the scene camera's view. The retained region follows the camera as it moves or rotates.</p>
+    <p class="lead">Removes instances outside the scene camera's view. The kept area follows the camera as it moves and turns.</p>
 
     <article class="card" id="fov-and-clipping">
       <div class="clip"><video src="videos/opt-camera-culling.mp4" poster="videos/opt-camera-culling.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>FOV and Clipping</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Width / Height</b> 1.2</li><li><b>Clip Start</b> 5 m</li><li><b>Clip End</b> 100 m</li></ul>
-        <p>Enable <code>Camera Culling</code> to restrict the layer to the camera's view and clipping range.</p>
-        <p><code>Width</code> and <code>Height</code> adjust the retained region relative to the camera frame. A value of 1 matches the frame. The default of 1.2 adds a margin to help retain instances and shadows near its edges.</p>
-        <p><code>Clip End</code> excludes instances beyond the specified distance. <code>Clip Start</code> excludes instances closer than the specified distance.</p>
+        <p>Turn on <code>Camera Culling</code> to keep only the instances inside the camera's view and clipping range.</p>
+        <p><code>Width</code> and <code>Height</code> size the kept area relative to the camera frame. At 1, it matches the frame. The default of 1.2 adds a margin, so instances and shadows near the edges are kept.</p>
+        <p><code>Clip Start</code> removes instances closer than its distance, and <code>Clip End</code> removes those further away.</p>
         <div class="note"><strong>Camera Culling also affects renders.</strong>
-        Excluded instances are absent from the final render, not just the viewport. Use a generous margin, especially with a moving camera.</div>
+        Removed instances are missing from the final render too, not just the viewport. Use a generous margin, especially with a moving camera.</div>
       </div>
     </article>
 
@@ -152,8 +152,8 @@
       <div>
         <h3>Distance Culling</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Reduction Rate</b> 1.0</li><li><b>Seed</b> 0</li></ul>
-        <p>Reduces instance density with distance from the camera. This option is part of Camera Culling.</p>
-        <p><code>Reduction Rate</code> controls the amount of thinning. <code>Seed</code> changes which instances are excluded. The effect can be subtle and is most visible in distant areas of the layer.</p>
+        <p>Thins out instances the further they are from the camera. It is part of Camera Culling.</p>
+        <p><code>Reduction Rate</code> sets how much they are thinned, and <code>Seed</code> changes which ones are removed. The effect can be subtle and shows most in the distance.</p>
       </div>
     </article>
   </div>
@@ -168,10 +168,10 @@
       <div>
         <h3>Occlusion Culling</h3>
         <ul class="facts"><li><b>Default</b> off</li></ul>
-        <p>Excludes instances hidden behind other objects from the scene camera's viewpoint. Enable the option and select a <code>Collection</code> containing occluding objects, such as buildings, walls, rocks, or hills.</p>
-        <p>The excluded area updates as the occluding objects move. For example, moving a wall changes which trees behind it are culled.</p>
+        <p>Removes instances hidden behind other objects, as seen from the scene camera. Turn it on and pick a collection in the <code>Collection</code> field. It should hold the objects that block the view, such as buildings, walls, rocks, or hills.</p>
+        <p>The hidden area updates when those objects move.</p>
         <div class="note"><strong>Camera Culling may also be required.</strong>
-        In the documented tests, Occlusion Culling only affected the layer when Camera Culling was enabled. If it has no visible effect, enable Camera Culling as well.</div>
+        Occlusion Culling may only work while Camera Culling is on. If it has no effect, turn on Camera Culling as well.</div>
       </div>
     </article>
   </div>
@@ -180,16 +180,16 @@
 <section id="decimator">
   <div class="wrap">
     <h2>Decimator</h2>
-    <p class="lead">Reduces polygon counts on the source objects in a collection. Because instances share those source meshes, the reduction applies throughout the scatter.</p>
+    <p class="lead">Lowers the polygon count of the source objects in a collection. Every instance uses those source meshes, so the whole scatter gets lighter.</p>
 
     <article class="card" id="decimator-2">
       <div class="clip"><video src="videos/opt-decimator.mp4" poster="videos/opt-decimator.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Decimator</h3>
-        <p>Expand <code>Decimator</code>, select the source <code>Collection</code>, and click <code>Add To All</code> to add a Decimate modifier to each object.</p>
-        <p><code>Master Ratio</code> sets the proportion of geometry retained across the collection. A value of 1 keeps the original detail; 0.2 keeps one fifth. The <code>25%</code>, <code>50%</code>, and <code>75%</code> buttons provide preset ratios. Wireframe display can help you inspect the reduction.</p>
-        <p>The buttons beside Global Decimation control viewport visibility, render visibility, permanent application with the checkmark, and removal with the cross. To simplify editing without reducing final detail, enable the reduction in the viewport and disable it for renders.</p>
-        <p><code>Collection Objects</code> lists the source objects, their polygon counts, and individual Ratio controls. Use these to retain more detail on assets that need it.</p>
+        <p>In the <code>Decimator</code> section, pick the source collection in the <code>Collection</code> field and click the <code>Add To All</code> button. This adds a Decimate modifier to each object.</p>
+        <p><code>Master Ratio</code> sets how much geometry is kept across the collection. At 1, the original detail is kept; at 0.2, one fifth. The <code>25%</code>, <code>50%</code>, and <code>75%</code> buttons are quick presets.</p>
+        <p>The buttons next to Global Decimation turn the reduction on or off in the viewport and in renders, apply it permanently (checkmark), or remove it (cross). To keep editing fast without losing render detail, turn it on for the viewport and off for renders.</p>
+        <p>The <code>Collection Objects</code> list shows each source object with its polygon count and its own Ratio, so you can keep more detail on the assets that need it.</p>
       </div>
     </article>
   </div>
@@ -200,16 +200,14 @@
     <h2>ScatterFlow Nano</h2>
     <div class="beta"><strong>Beta</strong>
         ScatterFlow Nano and the ScatterFlow build of Blender are in beta. Keep backup copies of your .blend files before opening them in this build and while working with it.</div>
-    <p class="lead">Nano is available in the ScatterFlow build of Blender. It adjusts the viewport detail of scatter instances according to their size on screen, reducing the geometry drawn for dense scenes. It works on ScatterFlow layers in Solid shading (with or without textures), Material Preview, and EEVEE Rendered mode, and does not affect final renders.</p>
-    <p class="lead">The recorded comparison uses Desert_V2 on a 30 m square surface, with approximately 920,000 instances and 17 billion polygons.</p>
+    <p class="lead">Nano is part of the ScatterFlow build of Blender. It lowers the viewport detail of instances based on how large they are on screen, so dense scenes draw much faster. It works on ScatterFlow layers in Solid, Material Preview, and EEVEE Rendered mode, and does not affect final renders.</p>
 
     <article class="card" id="before-and-after">
       <div class="clip win"><video src="videos/nano-performance.mp4" poster="videos/nano-performance.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Before and after (Solid)</h3>
-        <p>The comparison shows the same scene with Nano disabled and enabled. Frame duration reflects the actual viewport redraw time, and the on-screen readout reports performance.</p>
-        <p>Without Nano, redraws took approximately 1.9 seconds, or about 0.5 frames per second. With Nano enabled using the button at the right end of the viewport header, redraws took approximately 55 milliseconds, or 18 frames per second: about 35 times faster in this test.</p>
-        <p>Performance depends on the scene and hardware. Treat these measurements as an example rather than an expected speedup for every project.</p>
+        <p>Turn Nano on with the button at the right end of the viewport header.</p>
+        <p>In a dense desert biome with close to a million instances, the viewport redrew about 35 times faster with Nano on. Results depend on your scene and hardware.</p>
       </div>
     </article>
 
@@ -217,9 +215,9 @@
       <div class="clip win"><video src="videos/nano-material.mp4" poster="videos/nano-material.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Material Preview</h3>
-        <p>Nano also draws scatter layers in Material Preview, with their full materials, including materials with displacement.</p>
-        <p>In the recorded test on the same desert, redraws took approximately 6.3 seconds without Nano and 178 milliseconds with it: from about 0.2 to 5.5 frames per second.</p>
-        <p>Material Preview with Nano also uses less memory: images keep only their copy on the graphics card once they are loaded there.</p>
+        <p>Nano also works in Material Preview, with full materials, including displacement.</p>
+        <p>In the same desert scene, the viewport went from about 0.2 to 5.5 frames per second.</p>
+        <p>It also uses less memory here, because images are kept only on the graphics card once loaded.</p>
       </div>
     </article>
 
@@ -227,7 +225,7 @@
       <div class="clip win"><video src="videos/nano-eevee.mp4" poster="videos/nano-eevee.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>EEVEE Rendered mode</h3>
-        <p>With EEVEE as the render engine, Nano also works in Rendered viewport shading, including shadows. In the recorded test, redraws took approximately 6.3 seconds without Nano and 144 milliseconds with it.</p>
+        <p>With EEVEE as the render engine, Nano also works in Rendered viewport shading, including shadows. In the same scene, redraws went from about 6.3 seconds to under a fifth of a second.</p>
         <p>Final renders, and Cycles in Rendered viewport shading, always use the full meshes.</p>
       </div>
     </article>
@@ -236,9 +234,9 @@
       <div class="clip win"><video src="videos/nano-panel.mp4" poster="videos/nano-panel.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>The Nano panel</h3>
-        <p>Click the arrow beside the Nano button to open its panel. The main button toggles Nano and displays <code>Nano: Activated</code> or <code>Nano: Deactivated</code>. Other settings are disabled while Nano is off. The enabled state is remembered between sessions.</p>
-        <p><code>Visualizer</code> displays diagnostic colours. <code>Clusters</code> shows the triangle groups used to draw each object, <code>Detail</code> shows the chosen detail levels, and <code>Instances</code> gives each instance a separate colour. Return it to <code>Off</code> for normal display.</p>
-        <p><code>Detail Level</code>, <code>Reduce Small Objects</code>, and the Visualizer work in Solid, Material Preview, and EEVEE Rendered mode. In Material Preview and Rendered mode, the Visualizer is shown while Viewport Overlays are on.</p>
+        <p>Click the arrow next to the Nano button to open its panel. The main button turns Nano on and off, and the other settings only work while it is on. Nano stays on or off between sessions.</p>
+        <p>The <code>Visualizer</code> setting shows diagnostic colours. <code>Clusters</code> shows the triangle groups each object is drawn with, <code>Detail</code> shows the detail levels in use, and <code>Instances</code> gives each instance its own colour. Set it back to <code>Off</code> for normal display.</p>
+        <p>In Material Preview and Rendered mode, the Visualizer only shows while Viewport Overlays are on.</p>
       </div>
     </article>
 
@@ -247,8 +245,8 @@
       <div>
         <h3>Detail Level</h3>
         <ul class="facts"><li><b>Default</b> 1 px</li><li><b>Range</b> 0.25 to 8 px</li></ul>
-        <p>Sets the maximum allowed difference from the full mesh, measured on screen in pixels. Lower values retain more detail. Higher values reduce detail and improve performance.</p>
-        <p>Higher values can remove fine details such as leaves, making branches more prominent. Use the Clusters visualizer to inspect how the detail changes.</p>
+        <p>Sets how far the drawn mesh may differ from the full mesh, in pixels on screen. Lower values keep more detail. Higher values are faster.</p>
+        <p>High values can remove fine details such as leaves, leaving the branches more visible. Use the Clusters visualizer to check the result.</p>
       </div>
     </article>
 
@@ -257,8 +255,8 @@
       <div>
         <h3>Reduce Small Objects</h3>
         <ul class="facts"><li><b>Default</b> 0 px</li><li><b>Range</b> 0 to 16 px</li></ul>
-        <p>Reduces the number of instances drawn below the specified screen size. Smaller instances are reduced more strongly. At 0, all instances are drawn.</p>
-        <p>Increase this value to reduce distant pebbles and small plants that contribute little visible detail.</p>
+        <p>Draws fewer of the instances that are smaller than this size on screen. The smaller they are, the more are skipped. At 0, every instance is drawn.</p>
+        <p>Raise it to thin out distant pebbles and small plants that add little visible detail.</p>
       </div>
     </article>
   </div>

@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group" open>
@@ -93,17 +93,17 @@
 <section id="sky">
   <div class="wrap">
     <h2>Sky</h2>
-    <p class="lead">ScatterFlow Sky combines the sun, moon, stars, volumetric clouds, fog, and exposure in one actor. It also responds to ScatterFlow weather, adjusting cloud cover and lighting for rain or snow.</p>
-    <p class="lead">Add the sky from the panel, then use its <code>Sky</code> section to configure the environment.</p>
+    <p class="lead">ScatterFlow Sky puts the sun, moon, stars, clouds, fog, and exposure in one actor. It also reacts to ScatterFlow weather, so rain and snow change the clouds and lighting.</p>
+    <p class="lead">Add the sky from the panel, then adjust it in the <code>Sky</code> section.</p>
 
     <article class="card" id="add-the-sky">
       <div class="clip wide"><video src="videos/ue-sky-add.mp4" poster="videos/ue-sky-add.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Add the sky</h3>
-        <p>Deselect any layer and click the sun icon beside <code>Select a layer to edit it</code>. On first use, ScatterFlow creates the required materials and textures. The sky is then added and its settings open.</p>
-        <p>Existing sun, sky light, atmosphere, clouds, fog, and sky dome actors are disabled to avoid overlapping sky systems. <code>Remove Sky</code> restores them.</p>
+        <p>Deselect any layer, then click the sun icon beside <code>Select a layer to edit it</code>. The first time, ScatterFlow creates the materials and textures it needs.</p>
+        <p>Any sun, sky light, atmosphere, cloud, fog, or sky dome actors already in the level are turned off, so two skies do not overlap. The <code>Remove Sky</code> button turns them back on.</p>
         <div class="note"><strong>Enable Realtime to preview cloud movement.</strong>
-        The setting is available in the viewport menu.</div>
+        You can find it in the viewport menu.</div>
       </div>
     </article>
 
@@ -111,8 +111,8 @@
       <div class="clip wide"><video src="videos/ue-sky-time.mp4" poster="videos/ue-sky-time.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Time of Day</h3>
-        <p><code>Time</code> sets the hour. Drag the value or enter a time such as <code>6:30 PM</code> or <code>18.5</code>.</p>
-        <p>Changing it updates the sun's position, sky colour, lighting, shadows, and cloud illumination. The sky transitions through dawn, daylight, sunset, twilight, and night, with the moon and stars visible after dark.</p>
+        <p><code>Time</code> sets the hour. Drag it, or type a time such as <code>6:30 PM</code> or <code>18.5</code>.</p>
+        <p>The sun, sky colour, lighting, shadows, and clouds all follow the time. The moon and stars come out after dark.</p>
       </div>
     </article>
 
@@ -120,8 +120,8 @@
       <div class="clip wide"><video src="videos/ue-sky-sun-direction.mp4" poster="videos/ue-sky-sun-direction.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Sun Direction</h3>
-        <p>Rotates the sun's path around the scene, changing where it rises and sets without changing the time of day. The moon and stars rotate with it.</p>
-        <p>Use it to choose the direction of the lighting and shadows independently of the time setting.</p>
+        <p>Turns the sun's path around the scene, so it rises and sets somewhere else. The time of day stays the same, and the moon and stars turn with it.</p>
+        <p>Use it to choose where the light and shadows come from.</p>
       </div>
     </article>
 
@@ -129,8 +129,7 @@
       <div class="clip wide"><video src="videos/ue-sky-latitude.mp4" poster="videos/ue-sky-latitude.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Latitude</h3>
-        <p>Sets the latitude used by the sky, affecting sun height, day length, and twilight. Adjust it to change the sun's path through the scene.</p>
-        <p>Watch the sun and shadows while adjusting Latitude to judge the change in lighting.</p>
+        <p>Sets the latitude of the scene. It changes how high the sun climbs, how long the day lasts, and how long twilight lasts.</p>
       </div>
     </article>
 
@@ -138,8 +137,8 @@
       <div class="clip wide"><video src="videos/ue-sky-animate.mp4" poster="videos/ue-sky-animate.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Animate While Playing and Day Length</h3>
-        <p><code>Animate While Playing</code>: advances time during gameplay. Disable it to keep the selected time fixed.</p>
-        <p><code>Day Length (min)</code>: the real-time duration of a complete day cycle. A value of 2 produces a fast cycle useful for previewing changes from afternoon to sunset.</p>
+        <p><code>Animate While Playing</code> moves the time forward during gameplay. Turn it off to keep the time fixed.</p>
+        <p><code>Day Length (min)</code> is how many real minutes a full day takes. A short day is handy for previewing the change from afternoon to sunset.</p>
       </div>
     </article>
 
@@ -147,7 +146,8 @@
       <div class="clip wide"><video src="videos/ue-sky-presets.mp4" poster="videos/ue-sky-presets.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Sky Presets</h3>
-        <p>Choose <code>Clear</code>, <code>Partly Cloudy</code>, <code>Cloudy</code>, <code>Overcast</code>, or <code>Foggy</code> to set clouds, lighting, and fog together. These presets describe dry conditions; configure precipitation on the <a href="unreal-weather.html">Weather</a> page.</p>
+        <p>Click a preset button, such as <code>Clear</code>, <code>Overcast</code>, or <code>Foggy</code>, to set the clouds, lighting, and fog in one step.</p>
+        <p>All of them are dry. For rain or snow, see <a href="unreal-weather.html">Weather</a>.</p>
       </div>
     </article>
 
@@ -155,8 +155,8 @@
       <div class="clip wide"><video src="videos/ue-sky-clouds.mp4" poster="videos/ue-sky-clouds.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Clouds: Density and Scale</h3>
-        <p><code>Density</code>: cloud thickness and opacity. Lower values allow more light through; higher values create denser clouds with darker interiors.</p>
-        <p><code>Scale</code>: cloud size. Lower values create smaller formations, while higher values create broader clouds.</p>
+        <p><code>Density</code> sets how thick the clouds are. Thin clouds let more light through, and thick clouds are darker inside.</p>
+        <p><code>Scale</code> sets the size of the clouds, from small formations to broad ones.</p>
       </div>
     </article>
 
@@ -164,7 +164,7 @@
       <div class="clip wide"><video src="videos/ue-sky-cloud-altitude.mp4" poster="videos/ue-sky-cloud-altitude.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Base Altitude</h3>
-        <p>Sets the height of the cloud layer's underside in kilometres. Lower clouds appear closer and occupy more of the view; higher clouds appear further away.</p>
+        <p>Sets the height of the cloud base, in kilometres. Low clouds look closer and fill more of the sky.</p>
       </div>
     </article>
 
@@ -172,7 +172,7 @@
       <div class="clip wide"><video src="videos/ue-sky-cloud-speed.mp4" poster="videos/ue-sky-cloud-speed.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Speed</h3>
-        <p>Sets cloud movement in metres per second. At 0, clouds stop drifting. They move in the direction of the level's wind.</p>
+        <p>Sets how fast the clouds drift, in metres per second. They move with the level's wind. Set it to 0 to stop them.</p>
       </div>
     </article>
 
@@ -180,7 +180,7 @@
       <div class="clip wide"><video src="videos/ue-sky-cloud-shadows.mp4" poster="videos/ue-sky-cloud-shadows.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Cloud Shadows</h3>
-        <p>Enables moving shadows from clouds on the terrain. Disable it to remove their influence on direct lighting below.</p>
+        <p>Casts moving cloud shadows on the ground. Turn it off if you do not want the clouds to dim the sunlight below.</p>
       </div>
     </article>
 
@@ -188,7 +188,8 @@
       <div class="clip wide"><video src="videos/ue-sky-sun-intensity.mp4" poster="videos/ue-sky-sun-intensity.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Sun Intensity</h3>
-        <p>Controls sunlight strength. Automatic exposure compensates for lighting changes, so increasing intensity does not necessarily brighten the entire image. It can instead produce stronger contrast and more pronounced shadows.</p>
+        <p>Sets how strong the sunlight is.</p>
+        <p>Automatic exposure adjusts for brightness, so a stronger sun does not always make the whole image brighter. It often gives more contrast and deeper shadows instead.</p>
       </div>
     </article>
 
@@ -196,7 +197,7 @@
       <div class="clip wide"><video src="videos/ue-sky-fog.mp4" poster="videos/ue-sky-fog.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Fog Density</h3>
-        <p>Controls distance haze. Higher values obscure distant objects first and progressively affect nearer areas. The fog colour follows the sky and sun.</p>
+        <p>Sets the amount of haze in the distance. Higher values hide far objects first, then nearer ones. The fog takes its colour from the sky and sun.</p>
       </div>
     </article>
 
@@ -204,8 +205,8 @@
       <div class="clip wide"><video src="videos/ue-sky-volumetric-fog.mp4" poster="videos/ue-sky-volumetric-fog.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Volumetric Fog</h3>
-        <p>Allows sunlight to illuminate the fog itself, creating visible light and depth in the atmosphere. It is especially apparent with a low sun shining through the haze.</p>
-        <p>This option is disabled by default because it adds rendering cost.</p>
+        <p>Lets sunlight light up the fog itself, which adds visible light and depth to the air. It stands out most with a low sun.</p>
+        <p>It is off by default because it adds rendering cost.</p>
       </div>
     </article>
 
@@ -213,8 +214,8 @@
       <div class="clip wide"><video src="videos/ue-sky-night.mp4" poster="videos/ue-sky-night.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Moon and Stars</h3>
-        <p><code>Moon Intensity (lux)</code>: moonlight strength. A value of 0 produces very dark nights; increase it to improve nighttime visibility.</p>
-        <p><code>Stars</code>: the brightness of the stars and Milky Way. They become visible after sunset and are obscured by clouds.</p>
+        <p><code>Moon Intensity (lux)</code> sets the strength of the moonlight. At 0, nights are very dark. Raise it to see more at night.</p>
+        <p><code>Stars</code> sets the brightness of the stars and Milky Way. They appear after sunset and are hidden by clouds.</p>
       </div>
     </article>
 
@@ -222,8 +223,8 @@
       <div class="clip wide"><video src="videos/ue-sky-select-remove.mp4" poster="videos/ue-sky-select-remove.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Select Sky and Remove Sky</h3>
-        <p><code>Select Sky</code>: selects the sky actor so you can access its full <code>Details</code> panel. Additional controls include day and night length, day of year, moon phase, cloud colours, and exposure.</p>
-        <p><code>Remove Sky</code>: deletes the ScatterFlow sky and restores the level's previous sky setup.</p>
+        <p>The <code>Select Sky</code> button selects the sky actor, so you can use its full <code>Details</code> panel. It has more settings there, such as day and night length, day of year, moon phase, cloud colours, and exposure.</p>
+        <p>The <code>Remove Sky</code> button deletes the ScatterFlow sky and brings back the level's previous sky.</p>
       </div>
     </article>
   </div>

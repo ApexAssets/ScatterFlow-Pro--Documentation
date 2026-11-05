@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -97,9 +97,8 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">The <code>Abiotic</code> section contains three masks that control placement using the shape of the terrain. Select a layer in the System List, enable a mask, and expand it to access its settings. Each layer has its own masks, and all three can be combined.</p>
-    <p class="lead">These masks hide instances by reducing their scale to zero. Smooth transitions therefore change instance size at the boundary rather than gradually reducing instance density.</p>
-    <p class="lead">The Abiotic section is located between Culling and Proximity in the Scatter tab.</p>
+    <p class="lead">The <code>Abiotic</code> section of the Scatter tab has three masks that place a layer by the shape of the terrain: its slope, its height, and the direction it faces. Each layer has its own masks, and you can combine all three.</p>
+    <p class="lead">These masks hide instances by shrinking them to zero. A smooth transition therefore makes instances smaller near the edge, rather than fewer.</p>
   </div>
 </section>
 
@@ -107,16 +106,15 @@
 <section id="slope">
   <div class="wrap">
     <h2>Slope Mask</h2>
-    <p class="lead">Restricts a layer to flatter ground, or to steeper ground when inverted. Use it to keep trees on terraces while leaving cliff faces clear.</p>
+    <p class="lead">Keeps a layer on flatter ground, or on steeper ground when inverted. Use it to keep trees on terraces and off cliff faces.</p>
 
     <article class="card" id="slope-2">
       <div class="clip"><video src="videos/slope-cutoff.mp4" poster="videos/slope-cutoff.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Slope</h3>
         <ul class="facts"><li><b>Default</b> 0.85</li><li><b>Range</b> 0 to 1</li></ul>
-        <p>Sets the minimum flatness required to keep an instance. A value of 1 represents level ground; 0 represents a vertical wall. The layer appears on surfaces flatter than the threshold.</p>
-        <p>Increase Slope to restrict placement to flatter terrain. Decrease it to allow steeper slopes.</p>
-        <p>As a guide, 0.85 allows slopes of approximately 32°, 0.7 allows 45°, and 0.5 allows 60°.</p>
+        <p>Sets how flat the ground must be for the layer to appear. 1 is level ground and 0 is a vertical wall.</p>
+        <p>Raise Slope to keep the layer on flatter ground. Lower it to allow steeper slopes. As a guide, 0.85 allows slopes up to about 32°, 0.7 about 45°, and 0.5 about 60°.</p>
       </div>
     </article>
 
@@ -125,10 +123,10 @@
       <div>
         <h3>Smooth Transition</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Transition</b> 0.5</li></ul>
-        <p>Blends instance size across the slope boundary. Instances have zero scale at the cutoff and reach full size where the surface is flatter by the <code>Transition</code> amount.</p>
-        <p>A small Transition creates a narrow band of smaller instances. A larger value extends that band further onto flat ground.</p>
+        <p>Fades instance size across the slope edge. Instances are zero size at the cutoff and reach full size on ground that is flatter by the <code>Transition</code> amount.</p>
+        <p>A small Transition gives a narrow band of smaller instances. A larger one spreads the band further onto flat ground.</p>
         <div class="note"><strong>Keep Slope + Transition at or below 1.</strong>
-        Surface flatness cannot exceed 1. With a higher total, instances cannot reach full size. At the defaults of 0.85 and 0.5, even level ground produces instances at 30% scale. A Transition of 0.05–0.15 is a useful starting range for most scenes.</div>
+        Ground cannot be flatter than 1, so with a higher total, instances never reach full size. At the defaults of 0.85 and 0.5, even level ground only reaches 30% scale. A Transition of 0.05–0.15 is a good place to start.</div>
       </div>
     </article>
 
@@ -137,8 +135,8 @@
       <div>
         <h3>Invert</h3>
         <ul class="facts"><li><b>Default</b> off</li></ul>
-        <p>Reverses the mask, keeping the layer on steep surfaces and excluding it from flat ground. With Invert enabled, decreasing <code>Slope</code> restricts placement to progressively steeper surfaces.</p>
-        <p>Use an inverted mask for rocks or scree on a cliff, alongside a plant layer using the same Slope value without inversion.</p>
+        <p>Reverses the mask, so the layer stays on steep ground and off flat ground. With Invert on, lowering <code>Slope</code> keeps the layer on steeper and steeper surfaces.</p>
+        <p>For example, use an inverted mask for rocks or scree on a cliff, next to a plant layer with the same Slope that is not inverted.</p>
       </div>
     </article>
   </div>
@@ -148,17 +146,17 @@
 <section id="elevation">
   <div class="wrap">
     <h2>Elevation Mask</h2>
-    <p class="lead">Restricts placement by height. Use it to create boundaries such as a mountain tree line.</p>
+    <p class="lead">Limits a layer by height. Use it for boundaries such as a mountain tree line.</p>
 
     <article class="card" id="height">
       <div class="clip"><video src="videos/elevation-height.mp4" poster="videos/elevation-height.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Height</h3>
         <ul class="facts"><li><b>Default</b> 5 m</li></ul>
-        <p>Sets the upper height limit when Smooth Transition is disabled. Instances above the cutoff are excluded.</p>
-        <p>Height is measured along the scene's Z axis in scene units. Account for the terrain's position when choosing a value, especially if it sits far above or below zero.</p>
+        <p>Sets the highest point the layer reaches. Without Smooth Transition, instances above it are removed.</p>
+        <p>Height is measured along the scene's Z axis, so check where your terrain sits, especially if it is far above or below zero.</p>
         <div class="note"><strong>Layer disappears after enabling the mask?</strong>
-        The default cutoff is 5 m. If the whole emitter is above that height, increase Height until the layer becomes visible.</div>
+        The default cutoff is 5 m. If your whole emitter is higher than that, raise Height until the layer shows.</div>
       </div>
     </article>
 
@@ -167,8 +165,8 @@
       <div>
         <h3>Smooth Transition</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Transition</b> 5</li></ul>
-        <p>Extends a scale fade above the cutoff. Instances remain full size up to <code>Height</code>, then shrink to zero over the next <code>Transition</code> metres.</p>
-        <p>For example, Height at 7 m and Transition at 5 fades instances between 7 m and 12 m. Use a shorter transition for a distinct tree line or a longer one for a more gradual boundary.</p>
+        <p>Fades instances out above the cutoff. They stay full size up to <code>Height</code>, then shrink to zero over the next <code>Transition</code> metres.</p>
+        <p>Use a short transition for a sharp tree line, or a long one for a gradual edge.</p>
       </div>
     </article>
 
@@ -177,8 +175,8 @@
       <div>
         <h3>Invert</h3>
         <ul class="facts"><li><b>Default</b> off</li></ul>
-        <p>Keeps instances above the cutoff instead of below it. <code>Height</code> becomes the layer's lower boundary.</p>
-        <p>Use it for high-altitude plants or rocks near a snow line. Two layers with the same Height and opposite Invert settings can divide a terrain into upper and lower regions.</p>
+        <p>Keeps instances above the cutoff instead of below it, so <code>Height</code> becomes the layer's lower limit.</p>
+        <p>Use it for high-altitude plants or rocks near a snow line. Two layers with the same Height, one inverted and one not, split a terrain into upper and lower areas.</p>
       </div>
     </article>
 
@@ -187,9 +185,9 @@
       <div>
         <h3>Randomize</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Amount</b> 55</li><li><b>Scale</b> 0.2</li></ul>
-        <p>Varies the height cutoff with noise so the boundary does not follow a uniform contour.</p>
-        <p><code>Amount</code> controls how far the cutoff can shift. At 0, it remains unchanged. The default of 55 suits large terrains; reduce it for smaller terrain where the variation would otherwise be too strong.</p>
-        <p><code>Scale</code> controls the frequency of the pattern. Lower values produce broad variations in the boundary; higher values produce smaller, more frequent changes.</p>
+        <p>Adds noise to the height cutoff, so the edge does not follow a flat line.</p>
+        <p><code>Amount</code> sets how far the cutoff can move. At 0 it does not move. The default of 55 suits large terrains; lower it on smaller terrain, where the effect can be too strong.</p>
+        <p><code>Scale</code> sets the size of the pattern. Lower values give broad changes along the edge; higher values give smaller, more frequent ones.</p>
       </div>
     </article>
   </div>
@@ -199,15 +197,15 @@
 <section id="angle">
   <div class="wrap">
     <h2>Angle Mask</h2>
-    <p class="lead">Restricts placement according to the direction a slope faces. Use it for effects such as moss on shaded hillsides or plants on slopes facing the sun.</p>
+    <p class="lead">Limits a layer by the direction a slope faces. Use it for moss on shaded hillsides, or plants on slopes that face the sun.</p>
 
     <article class="card" id="angle-2">
       <div class="clip"><video src="videos/angle-direction.mp4" poster="videos/angle-direction.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Angle</h3>
         <ul class="facts"><li><b>Default</b> 0&deg;</li></ul>
-        <p>Sets the compass direction the slope must face. Adjusting Angle through 360° changes the affected side of every hill.</p>
-        <p>Without Smooth Transition, instance size depends on how directly the slope faces that direction. Steep surfaces facing it directly produce the largest instances, with scale tapering toward the sides. Level ground has no facing direction and remains empty at the default Offset.</p>
+        <p>Sets the compass direction the slope must face, which decides the side of each hill the layer covers.</p>
+        <p>Without Smooth Transition, instances are largest on steep slopes that face that direction, and get smaller toward the sides. Level ground faces no direction, so it stays empty at the default Offset.</p>
       </div>
     </article>
 
@@ -216,8 +214,8 @@
       <div>
         <h3>Offset</h3>
         <ul class="facts"><li><b>Default</b> 0</li></ul>
-        <p>Adjusts the width of the affected region.</p>
-        <p>Positive values restrict placement to steeper surfaces facing the chosen angle. Negative values extend it around the hillside and allow instances onto level ground.</p>
+        <p>Widens or narrows the area the mask covers.</p>
+        <p>Positive values keep the layer on steeper slopes facing the chosen angle. Negative values spread it further around the hill and onto level ground.</p>
       </div>
     </article>
 
@@ -226,10 +224,10 @@
       <div>
         <h3>Smooth Transition</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Transition</b> 0.5</li></ul>
-        <p>Controls the blend from zero to full instance scale across the mask boundary.</p>
-        <p>Use a small <code>Transition</code> for full-size instances with a distinct edge. Larger values create a broader, softer region of reduced-scale instances.</p>
+        <p>Sets how gradually instances grow from zero to full size across the mask edge.</p>
+        <p>Use a small <code>Transition</code> for full-size instances with a clear edge. Larger values give a wider, softer band of smaller instances.</p>
         <div class="note"><strong>Enabling Smooth Transition slightly narrows the mask.</strong>
-        Decrease <code>Offset</code> to restore the previous coverage.</div>
+        Lower <code>Offset</code> to get the previous coverage back.</div>
       </div>
     </article>
   </div>

@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -106,8 +106,8 @@
 <section id="how">
   <div class="wrap">
     <h2>How the sky works</h2>
-    <p class="lead">SF Sky combines atmospheric colour, sun and moon lighting, 3D clouds, stars, fog, and exposure in one node. The sun and moon follow the configured time, location, and season, while the atmosphere transitions through daylight, sunset, twilight, and night.</p>
-    <p class="lead">While active, the sky creates its own environment and sun, moon, and lightning lights. The scene's existing <code>WorldEnvironment</code> and directional lights are temporarily disabled and restored when the sky is removed. Generated lights are not saved as permanent scene objects.</p>
+    <p class="lead">SF Sky handles the sky, sun, moon, clouds, stars, fog, and exposure in one node. The sun and moon move with the time, place, and season you set.</p>
+    <p class="lead">While the sky is active, it uses its own environment and lights. Your scene's <code>WorldEnvironment</code> and directional lights are switched off, and come back when you remove the sky. The sky's lights are not saved as permanent scene objects.</p>
   </div>
 </section>
 
@@ -119,8 +119,8 @@
       <div class="clip wide"><video src="videos/gd-sky-add.mp4" poster="videos/gd-sky-add.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Add Sky</h3>
-        <p>Click the sun icon at the top of the ScatterFlow Pro dock. An <code>SF Sky</code> node is added to the open scene, and the environment updates immediately.</p>
-        <p>A <code>Sky</code> section appears in the dock. Only one SF Sky can be added to a scene; clicking the icon again does not create a duplicate.</p>
+        <p>Click the sun icon at the top of the ScatterFlow Pro dock to add an <code>SF Sky</code> node to the open scene. Its settings are in the dock's <code>Sky</code> section.</p>
+        <p>A scene can have only one SF Sky.</p>
       </div>
     </article>
   </div>
@@ -135,9 +135,8 @@
       <div>
         <h3>Time</h3>
         <ul class="facts"><li><b>Default</b> 10:00 AM</li><li><b>Range</b> 0:00 to 24:00</li></ul>
-        <p>Sets the time of day. Drag the slider or enter a time directly. Accepted formats include <code>14:30</code>, <code>2:30 pm</code>, and <code>9am</code>.</p>
-        <p>Changing Time updates the sun's position, lighting, shadows, and sky colours. Moving from afternoon into night produces longer shadows, sunset colours, twilight, and stars.</p>
-        <p>Enable <code>Animate</code> to advance time during gameplay. <code>Day Length</code> sets the duration of a complete day in real minutes, with a default of 20. In the editor, time remains at the selected value.</p>
+        <p>Sets the time of day. You can drag the slider or type a time, such as <code>14:30</code>, <code>2:30 pm</code>, or <code>9am</code>. The sun, shadows, and sky colours follow it.</p>
+        <p>Turn on <code>Animate</code> to let time pass while the game runs. <code>Day Length</code> sets how many real minutes a full day takes. In the editor, the time stays where you set it.</p>
       </div>
     </article>
 
@@ -146,8 +145,8 @@
       <div>
         <h3>Sun Direction</h3>
         <ul class="facts"><li><b>Default</b> 0&deg;</li><li><b>Range</b> -180&deg; to 180&deg;</li></ul>
-        <p>Rotates the sun's full path around the scene. Use it to choose the direction of sunrise, sunset, and shadows without changing the time. The moon and stars rotate with it.</p>
-        <p>At 0°, sunrise is toward +X, treated as east. Adjust Sun Direction to place the lighting where the composition needs it.</p>
+        <p>Turns the sun's whole path around the scene. Use it to choose where the sun rises and sets, and which way shadows fall, without changing the time. The moon and stars turn with it.</p>
+        <p>At 0°, the sun rises toward +X, which counts as east.</p>
       </div>
     </article>
 
@@ -156,9 +155,8 @@
       <div>
         <h3>Latitude and Day of Year</h3>
         <ul class="facts"><li><b>Latitude</b> default 40&deg;, -89&deg; to 89&deg;</li><li><b>Day of Year</b> default 172, 1 to 365</li></ul>
-        <p><code>Latitude</code> sets the location north or south of the equator, affecting sun height and twilight duration. Negative values represent the southern hemisphere.</p>
-        <p><code>Day of Year</code> sets the season. Day 172 represents northern midsummer, while 355 represents northern midwinter.</p>
-        <p>Use Latitude and Day of Year together to adjust the sun's path and shadows for the location and season you want.</p>
+        <p><code>Latitude</code> sets how far north or south of the equator the scene is. It changes how high the sun climbs and how long twilight lasts. Negative values are in the southern hemisphere.</p>
+        <p><code>Day of Year</code> sets the season. Day 172 is midsummer in the northern hemisphere, and day 355 is midwinter.</p>
       </div>
     </article>
 
@@ -167,8 +165,8 @@
       <div>
         <h3>Moon Age</h3>
         <ul class="facts"><li><b>Default</b> 12 days</li><li><b>Range</b> 0 to 29.5 days</li></ul>
-        <p>Sets the number of days since the new moon. Around 7 days produces a half moon, and 15 produces a full moon. The sky uses a photographic moon texture with changing phases and nighttime illumination.</p>
-        <p>Changing Moon Age also changes the moon's position and rising time. For example, advancing from day 8 to day 16 at a fixed 10 PM view changes both its phase and location.</p>
+        <p>Sets the number of days since the new moon. About 7 days gives a half moon, and 15 a full moon.</p>
+        <p>Moon Age also changes where the moon is in the sky and when it rises.</p>
       </div>
     </article>
   </div>
@@ -182,13 +180,9 @@
       <div class="clip wide"><video src="videos/gd-sky-presets.mp4" poster="videos/gd-sky-presets.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Clear, Partly Cloudy, Cloudy, Overcast, Foggy</h3>
-        <p>Presets configure cloud coverage and fog together. <code>Partly Cloudy</code> is the default.</p>
-        <p><code>Clear</code>: no clouds or fog.<br>
-        <code>Partly Cloudy</code>: clouds covering part of the sky.<br>
-        <code>Cloudy</code>: larger and more extensive cloud formations.<br>
-        <code>Overcast</code>: a continuous grey cloud layer.<br>
-        <code>Foggy</code>: thick fog without clouds.</p>
-        <p>Applying a sky preset also stops active rain or snow in the Weather section. Refine the result with the controls below.</p>
+        <p>Each preset button sets the clouds and fog together. <code>Partly Cloudy</code> is the default.</p>
+        <p><code>Clear</code> has no clouds or fog. <code>Partly Cloudy</code>, <code>Cloudy</code>, and <code>Overcast</code> each add more cloud, up to a solid grey layer. <code>Foggy</code> has thick fog and no clouds.</p>
+        <p>Choosing a sky preset also stops any rain or snow. Fine-tune the result with the settings below.</p>
       </div>
     </article>
   </div>
@@ -202,13 +196,11 @@
       <div class="clip wide"><video src="videos/gd-sky-clouds.mp4" poster="videos/gd-sky-clouds.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>The Clouds panel</h3>
-        <p>Clouds are three-dimensional forms with rounded tops, flatter bases, and lighting from the sun. Start with a preset such as Cloudy, then refine their appearance and motion.</p>
-        <p><code>Density</code> (default 1, range 0.1–3): cloud thickness and opacity.</p>
-        <p><code>Scale</code> (default 1, range 0.3–4): overall cloud size. At 2, clouds are twice as wide and twice as tall.</p>
-        <p><code>Base Altitude</code> (default 1,500 m): the height of the cloud bases. Lower values place clouds closer to the scene; higher values make them appear more distant.</p>
-        <p><code>Thickness</code> (default 2,000 m): the vertical extent of the cloud layer above its base.</p>
-        <p><code>Speed</code> (default 8 m/s) and <code>Direction</code> (default 30°): cloud drift. <code>Change</code> (default 1, range 0–5) controls how quickly cloud shapes evolve; 0 preserves their shapes while they move.</p>
-        <p><code>Quality (steps)</code> (default 48, range 16–128): rendering detail. Lower values improve performance but can look grainy; higher values produce smoother clouds at a greater cost.</p>
+        <p>The clouds are 3D and lit by the sun. Start with a preset such as Cloudy, then adjust them here.</p>
+        <p><code>Density</code> sets how thick and opaque the clouds are. <code>Scale</code> sets their overall size.</p>
+        <p><code>Base Altitude</code> sets the height of the cloud bases. Lower clouds sit closer to the scene. <code>Thickness</code> sets how tall the cloud layer is above its base.</p>
+        <p><code>Speed</code> and <code>Direction</code> set how the clouds drift. <code>Change</code> sets how quickly their shapes evolve. At 0, they keep their shape as they move.</p>
+        <p><code>Quality (steps)</code> sets the rendering detail. Lower values are faster but can look grainy. Higher values are smoother but cost more.</p>
       </div>
     </article>
   </div>
@@ -222,14 +214,11 @@
       <div class="clip wide"><video src="videos/gd-sky-light.mp4" poster="videos/gd-sky-light.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>The Light panel</h3>
-        <p>These settings control the brightness, colour, and apparent size of the sky's light sources.</p>
-        <p><code>Sun Intensity</code> (default 2.6, range 0–10): sunlight strength. <code>Sun Color</code> tints the light.</p>
-        <p><code>Sun Size</code> (default 0.6°): the apparent diameter of the sun. For comparison, the real sun appears approximately 0.5° across.</p>
-        <p><code>Haze</code> (default 1, range 0.2–5): atmospheric haze. Increase it for a paler sky and softer distant visibility.</p>
-        <p><code>Sky Brightness</code> (default 1): the brightness of the sky dome and its contribution to scene lighting.</p>
-        <p><code>Shadows</code>: enables shadows from the sun and moon.</p>
-        <p><code>Moon Intensity</code> (default 0.18), <code>Moon Color</code>, and <code>Moon Size</code> (default 2.2°): moonlight strength, tint, and apparent size.</p>
-        <p><code>Stars</code> (default 1, range 0–4): star brightness. At 0, stars are hidden.</p>
+        <p>These settings control how bright, what colour, and how large the sun, moon, and stars are.</p>
+        <p><code>Sun Intensity</code> sets the strength of the sunlight, and <code>Sun Color</code> tints it. <code>Sun Size</code> sets how large the sun looks. The real sun is about 0.5° across.</p>
+        <p><code>Haze</code> adds atmospheric haze. Raise it for a paler sky and softer distances. <code>Sky Brightness</code> sets how bright the sky is and how much it lights the scene.</p>
+        <p>The <code>Shadows</code> checkbox turns on shadows from the sun and moon.</p>
+        <p><code>Moon Intensity</code>, <code>Moon Color</code>, and <code>Moon Size</code> set the strength, tint, and size of the moonlight. <code>Stars</code> sets how bright the stars are. At 0, they are hidden.</p>
       </div>
     </article>
   </div>
@@ -243,10 +232,9 @@
       <div class="clip wide"><video src="videos/gd-sky-fog.mp4" poster="videos/gd-sky-fog.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>The Fog &amp; Exposure panel</h3>
-        <p><code>Fog Density</code> (default 0.0006 per metre): the fog level in clear weather. Small values blend distant objects into the sky; increase it for thicker fog.</p>
-        <p><code>Weather Fog</code> (default 0.025): additional fog used by the Foggy preset and rain or snow conditions.</p>
-        <p><code>Auto Exposure</code> (enabled by default): adjusts exposure to the lighting conditions, including day, night, and storms. Disable it to use a fixed exposure controlled by <code>Exposure</code>.</p>
-        <p><code>Exposure</code> (default 0, range -4 to 4): an adjustment in stops, applied on top of automatic exposure when enabled. -1 halves brightness, while +1 doubles it.</p>
+        <p><code>Fog Density</code> sets the fog in clear weather. Small values blend distant objects into the sky. <code>Weather Fog</code> is the extra fog used by the Foggy preset and in rain or snow.</p>
+        <p><code>Auto Exposure</code> is on by default and adjusts the brightness for day, night, and storms. Turn it off to use a fixed exposure set by <code>Exposure</code>.</p>
+        <p><code>Exposure</code> adjusts brightness in stops, on top of Auto Exposure when it is on. -1 halves the brightness and +1 doubles it.</p>
       </div>
     </article>
   </div>
@@ -260,11 +248,9 @@
       <div class="clip wide"><video src="videos/gd-sky-weather.mp4" poster="videos/gd-sky-weather.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>The sky follows the weather</h3>
-        <p>Weather can change cloud cover, brightness, and fog. Thunderstorms also add lightning. Choose <code>None</code> in the <a href="godot-weather.html">Weather</a> section to return to the selected sky preset.</p>
-        <p><code>Follow Weather</code> (enabled by default): allows weather to change the sky. Disable it to keep the chosen sky conditions while precipitation continues.</p>
-        <p><code>Influence</code> (default 1, range 0–2): the strength of the sky's response to rain or snow.</p>
-        <p><code>Transition</code> (default 20 s): the time taken to reach new weather conditions during gameplay. Changes appear immediately in the editor.</p>
-        <p><code>Lightning / min</code> (default 8): flashes per minute during a full thunderstorm. Increase it for more frequent lightning.</p>
+        <p>Weather can change the clouds, brightness, and fog, and thunderstorms add lightning. Click the <code>None</code> button in the <a href="godot-weather.html">Weather</a> section to go back to your sky preset.</p>
+        <p><code>Follow Weather</code> is on by default. Turn it off to keep your sky as it is while rain or snow still falls. <code>Influence</code> sets how strongly the sky reacts to rain or snow.</p>
+        <p><code>Transition</code> sets how long the sky takes to change when the weather changes in the game. In the editor, changes are immediate. <code>Lightning / min</code> sets how often lightning flashes in a full thunderstorm.</p>
       </div>
     </article>
   </div>
@@ -278,8 +264,8 @@
       <div class="clip wide"><video src="videos/gd-sky-remove.mp4" poster="videos/gd-sky-remove.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Select Sky and Remove Sky</h3>
-        <p><code>Select Sky</code>: selects the SF Sky node in the Scene tree and exposes its settings in the Inspector.</p>
-        <p><code>Remove Sky</code>: deletes the sky and restores the scene's previous environment and lights. Deleting the SF Sky node directly has the same effect.</p>
+        <p>The <code>Select Sky</code> button selects the SF Sky node, so you can edit its settings in the Inspector.</p>
+        <p>The <code>Remove Sky</code> button deletes the sky and brings back the scene's previous environment and lights. Deleting the SF Sky node yourself does the same.</p>
       </div>
     </article>
   </div>

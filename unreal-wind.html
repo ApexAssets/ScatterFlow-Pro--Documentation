@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group" open>
@@ -98,15 +98,11 @@
       <div class="clip wide"><video src="videos/ue-wind.mp4" poster="videos/ue-wind.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Wind for the whole level</h3>
-        <p>Deselect any layer and expand <code>Wind</code> to configure the level-wide effect. This wind drives ScatterFlow plants, rain, snow, water waves, and ivy.</p>
-        <p><code>Enabled</code>: toggles wind.<br>
-        <code>Strength</code>: controls how far plants bend.<br>
-        <code>Speed</code>: controls how quickly they sway.<br>
-        <code>Direction (deg)</code>: sets the direction the wind blows toward.<br>
-        <code>Gustiness</code>: varies the wind in gusts rather than maintaining a steady effect.<br>
-        <code>Leaf Flutter</code>: adds faster, smaller leaf movement over the main sway.</p>
+        <p>With no layer selected, expand the <code>Wind</code> section to set wind for the whole level. It moves ScatterFlow plants, rain, snow, water waves, and ivy.</p>
+        <p>The <code>Enabled</code> checkbox turns wind on or off. <code>Strength</code> sets how far plants bend, and <code>Speed</code> how quickly they sway. <code>Direction (deg)</code> is the direction the wind blows toward.</p>
+        <p><code>Gustiness</code> makes the wind come in gusts instead of blowing steadily. <code>Leaf Flutter</code> adds small, quick leaf movement on top of the main sway.</p>
         <div class="note"><strong>Realtime viewport required.</strong>
-        Enable Realtime in the viewport to preview wind animation. It is enabled by default.</div>
+        Wind only animates in the viewport when Realtime is on. It is on by default.</div>
       </div>
     </article>
 
@@ -114,9 +110,9 @@
       <div class="clip wide"><video src="videos/ue-layer-wind.mp4" poster="videos/ue-layer-wind.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Wind for one layer</h3>
-        <p>Select a layer and expand its <code>Wind</code> section. These controls multiply the level-wide wind values for that layer.</p>
-        <p><code>Layer Wind Strength</code>: 0 disables motion for the layer, useful for rocks or rigid assets. A value of 2 doubles its response.</p>
-        <p><code>Layer Wind Speed</code>: adjusts the layer's motion speed relative to the level's wind.</p>
+        <p>Select a layer and expand its <code>Wind</code> section to change how that layer reacts. These values multiply the level's wind.</p>
+        <p><code>Layer Wind Strength</code> at 0 stops the layer moving, which suits rocks and other rigid assets. At 2 it moves twice as much.</p>
+        <p><code>Layer Wind Speed</code> makes the layer sway faster or slower than the level's wind.</p>
       </div>
     </article>
   </div>

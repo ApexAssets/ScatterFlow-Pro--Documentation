@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -99,8 +99,8 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">The <code>Decals</code> tab adds an image as a separate object on a surface. Use decals for road markings, signs, cracks, dirt, or other localized details.</p>
-    <p class="lead">Each decal remains editable after placement. You can move it, resize it, change its appearance, or hide it without modifying the underlying surface material.</p>
+    <p class="lead">The <code>Decals</code> tab places an image on a surface as its own object. Use decals for road markings, signs, cracks, dirt, and other small details.</p>
+    <p class="lead">Decals stay editable, and they never change the surface's own material.</p>
   </div>
 </section>
 
@@ -112,14 +112,11 @@
       <div class="clip win"><video src="videos/decal-add.mp4" poster="videos/decal-add.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Choose an image, then place it</h3>
-        <p><b>1.</b> Click <code>+</code> beside <code>Decal Objects</code> to open the file browser.</p>
-        <p><b>2.</b> Select an image and click <code>Add New Decal</code>. Supported formats are PNG, JPG, TIFF, EXR, TGA, and WebP. Images with transparent backgrounds provide clean outlines around the visible artwork.</p>
-        <p><b>3.</b> Move the cursor over the target surface. The preview arrow shows the placement position and orientation. Left-click to confirm the position.</p>
-        <p><b>4.</b> Move the mouse vertically to set the size, then left-click.</p>
-        <p><b>5.</b> Move the mouse horizontally to set the rotation, then left-click to finish.</p>
-        <p>The lower-left corner of the viewport shows the current step. Press <code>Esc</code> or right-click to cancel.</p>
+        <p>Click the <code>+</code> button beside the <code>Decal Objects</code> list, choose an image, and click the <code>Add New Decal</code> button. Supported formats are PNG, JPG, TIFF, EXR, TGA, and WebP. Images with a transparent background give clean edges.</p>
+        <p>You then place the decal in three clicks: its position on the surface, its size (move the mouse up or down), and its rotation (move it left or right). An arrow shows where it will go and which way it will face.</p>
+        <p>The current step is shown in the lower-left corner of the viewport. Press <code>Esc</code> or right-click to cancel.</p>
         <div class="note"><strong>Decals preserve the image's proportions.</strong>
-        A wide image produces a wide decal. The decal faces outward from the surface where it is placed, including walls, floors, and rocks.</div>
+        A wide image makes a wide decal. Decals face outward from whatever surface you place them on, including walls, floors, and rocks.</div>
       </div>
     </article>
   </div>
@@ -133,8 +130,8 @@
       <div class="clip win"><video src="videos/decal-pbr.mp4" poster="videos/decal-pbr.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>A decal with normal and roughness maps</h3>
-        <p>Select multiple texture maps for the same material with <code>Ctrl</code>-click in the file browser. ScatterFlow connects them to the decal automatically, allowing effects such as a rust stain with colour, normal, and roughness detail.</p>
-        <p>Map types are identified by their filename endings:</p>
+        <p>To give a decal normal, roughness, or other maps, <code>Ctrl</code>-click all the maps for that material in the file browser. ScatterFlow connects them for you, so a rust stain can have colour, bumps, and shine.</p>
+        <p>Each map is recognised by the end of its filename:</p>
         <p><code>_color</code>, <code>_albedo</code>, <code>_diffuse</code>, or <code>_basecolor</code>: colour.<br>
         <code>_n</code>, <code>_nrm</code>, or <code>_normal</code>: normal.<br>
         <code>_rough</code> or <code>_roughness</code>: roughness.<br>
@@ -156,9 +153,8 @@
       <div class="clip win"><video src="videos/decal-list.mp4" poster="videos/decal-list.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Select and hide</h3>
-        <p>The list contains every decal in the scene, named after its image. Select a row to display that decal's settings in <a href="#properties">Decal Properties</a>.</p>
-        <p><code>Arrow</code>: selects the decal in the viewport so you can move it with <code>G</code>.</p>
-        <p><code>Eye</code>: toggles visibility in both the viewport and renders.</p>
+        <p>The list shows every decal in the scene, named after its image. Select one to edit it in <a href="#properties">Decal Properties</a>.</p>
+        <p>The <code>Arrow</code> icon selects the decal in the viewport so you can move it with <code>G</code>. The <code>Eye</code> icon hides or shows it in both the viewport and renders.</p>
       </div>
     </article>
   </div>
@@ -172,10 +168,10 @@
       <div class="clip win"><video src="videos/decal-snap.mp4" poster="videos/decal-snap.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Slide decals over surfaces</h3>
-        <p>Click the magnet button below <code>+</code> to enable Surface Snap. While active, moving a decal with <code>G</code> keeps it attached to the surface under the cursor and aligns it to face outward.</p>
-        <p>Use it to move a decal between differently oriented surfaces, such as from the ground onto a wall, without manually adjusting its rotation.</p>
+        <p>The magnet button below the <code>+</code> button turns on Surface Snap. While it is on, a decal you move with <code>G</code> slides over the surface under your cursor and turns to face outward.</p>
+        <p>This lets you move a decal from the ground onto a wall without fixing its rotation by hand.</p>
         <div class="note"><strong>Surface Snap also affects other objects.</strong>
-        It enables Blender's face snapping. Click the magnet again when finished to avoid snapping other objects unintentionally.</div>
+        It turns on Blender's face snapping. Turn the magnet off when you are done, or other objects will snap too.</div>
       </div>
     </article>
   </div>
@@ -184,16 +180,16 @@
 <section id="properties">
   <div class="wrap">
     <h2>Decal Properties</h2>
-    <p class="lead">Select a decal and expand <code>Decal Properties</code>. Its target surface is shown at the top.</p>
+    <p class="lead">Select a decal and open the <code>Decal Properties</code> panel. The surface it sits on is shown at the top.</p>
 
     <article class="card" id="surface-settings">
       <div class="clip win"><video src="videos/decal-properties.mp4" poster="videos/decal-properties.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Surface settings</h3>
-        <p><code>Opacity</code>: how visible the decal is over the surface. Lower it for faded or worn markings.</p>
-        <p><code>Emission</code>: adds glow for details such as illuminated signs or screens.</p>
-        <p><code>Metallic</code> and <code>Roughness</code>: adjust the surface appearance. Low Roughness produces sharper reflections suitable for stickers or wet paint.</p>
-        <p><code>Alpha</code>: the transparency supplied by the image.</p>
+        <p><code>Opacity</code> sets how visible the decal is. Lower it for faded or worn markings.</p>
+        <p><code>Emission</code> makes the decal glow, for lit signs or screens.</p>
+        <p><code>Metallic</code> and <code>Roughness</code> set how the decal reflects light. Low Roughness gives sharp reflections, like a sticker or wet paint.</p>
+        <p><code>Alpha</code> is the transparency taken from the image.</p>
       </div>
     </article>
 
@@ -201,10 +197,10 @@
       <div class="clip win"><video src="videos/decal-adjust.mp4" poster="videos/decal-adjust.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Color Adjustment, Damage, Dirt and Blur</h3>
-        <p><code>Color Adjustment</code>: <code>Hue</code> shifts colours, with 0.5 leaving them unchanged. <code>Saturation</code> controls colour intensity, and <code>Value</code> controls brightness. Use these to recolor a decal without editing its source image.</p>
-        <p><code>Damage</code>: removes areas of the decal for a chipped or peeling appearance. <code>Damage Amount</code> is sensitive: values from 0.01 to 0.04 range from small chips to substantial removal. <code>Scale</code> controls chip size, while <code>Detail</code>, <code>Roughness</code>, and <code>Lacunarity</code> shape their edges. <code>Damage Position</code> shifts the pattern.</p>
-        <p><code>Dirt</code>: adds a grime tint. <code>Dirt Amount</code> and <code>Dirt Color</code> set its strength and colour, while <code>Wetness</code> and <code>Bump</code> control gloss and apparent surface depth. The effect can be subtle on small decals.</p>
-        <p><code>Blur</code>: softens the image. At 1, it becomes a diffuse patch, useful for faint stains or shadow-like details.</p>
+        <p><code>Color Adjustment</code> recolours the decal without editing the image. <code>Hue</code> shifts the colours, and 0.5 leaves them unchanged. <code>Saturation</code> sets how strong they are, and <code>Value</code> sets the brightness.</p>
+        <p><code>Damage</code> removes parts of the decal so it looks chipped or peeling. <code>Damage Amount</code> is very sensitive: values from 0.01 to 0.04 go from small chips to heavy damage. <code>Scale</code> sets the chip size, <code>Detail</code>, <code>Roughness</code>, and <code>Lacunarity</code> shape their edges, and <code>Damage Position</code> moves the pattern.</p>
+        <p><code>Dirt</code> adds grime. <code>Dirt Amount</code> and <code>Dirt Color</code> set its strength and colour, and <code>Wetness</code> and <code>Bump</code> add gloss and depth. It can be hard to see on small decals.</p>
+        <p><code>Blur</code> softens the image. At 1 it becomes a soft patch, useful for faint stains or shadows.</p>
       </div>
     </article>
   </div>

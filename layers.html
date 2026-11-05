@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -99,15 +99,15 @@
 <section id="emitter">
   <div class="wrap">
     <h2>Emitter</h2>
-    <p class="lead">An emitter is the object a scatter setup belongs to, usually a terrain. Select an emitter to access the layer list and the rest of the Scatter tab.</p>
+    <p class="lead">An emitter is the object a scatter setup belongs to, usually a terrain. Choose one to see its layers and the rest of the Scatter tab.</p>
 
     <article class="card" id="emitter-2">
       <div class="clip"><video src="videos/emitter.mp4" poster="videos/emitter.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Emitter</h3>
-        <p>Choose an object in the <code>Emitter</code> field, or use the eyedropper to select one in the viewport. The System List and layer settings appear below it.</p>
-        <p>Each emitter has its own layer list. Use separate emitters to organize scattering across multiple terrains, such as a meadow and a hill.</p>
-        <p>Switching emitters changes the list you are editing. Layers assigned to other emitters remain active in the scene.</p>
+        <p>Choose an object in the <code>Emitter</code> field, or pick one in the viewport with the eyedropper.</p>
+        <p>Each emitter has its own layer list. Use separate emitters to organize scattering across several terrains, such as a meadow and a hill.</p>
+        <p>Switching emitters only changes which list you are editing. Layers on other emitters stay active in the scene.</p>
       </div>
     </article>
   </div>
@@ -116,15 +116,15 @@
 <section id="layers">
   <div class="wrap">
     <h2>Scatter layers</h2>
-    <p class="lead">A layer defines one scatter setup: the objects to place, their density, and the masks and other settings that control them. The <code>System List</code> displays the current emitter's layers. Settings below the list apply to the selected layer.</p>
+    <p class="lead">A layer is one scatter setup: the objects it places, their density, and the masks and settings that control them. The <code>System List</code> shows the current emitter's layers, and the settings below it apply to the selected layer.</p>
 
     <article class="card" id="add-a-layer">
       <div class="clip"><video src="videos/layer-add.mp4" poster="videos/layer-add.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Add a layer</h3>
-        <p>Click <code>+</code> beside the System List. A new layer named ScatterSystem is created and selected. Choose its source objects in the Instances section.</p>
-        <p>Double-click the layer name to rename it. Use descriptive names such as Rocks to identify its contents.</p>
-        <p>New layers use the default density, scale, and rotation settings from the add-on preferences.</p>
+        <p>Click <code>+</code> beside the System List to add a layer, then choose its objects in the Instances section.</p>
+        <p>Double-click a layer's name to rename it. Clear names, such as Rocks, make the list easier to read.</p>
+        <p>New layers start with the density, scale, and rotation defaults from the add-on preferences.</p>
         <div class="note"><strong>Object Mode required.</strong>
         Switch Blender to Object Mode before adding a layer.</div>
       </div>
@@ -134,8 +134,8 @@
       <div class="clip"><video src="videos/layer-visibility.mp4" poster="videos/layer-visibility.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Show, hide and colour</h3>
-        <p>The monitor icon controls a layer's viewport visibility. The camera icon controls its render visibility. Hide heavy layers in the viewport while leaving them enabled for rendering to keep the scene easier to work with.</p>
-        <p>The colour swatch on the left is an organizational label. Change it to distinguish related layers; it does not affect their appearance in the scene.</p>
+        <p>The monitor icon shows or hides a layer in the viewport, and the camera icon does the same for renders. Hide heavy layers in the viewport but keep them on for rendering, so the scene stays easy to work with.</p>
+        <p>The colour swatch is only a label to help you tell layers apart. It does not change how they look in the scene.</p>
       </div>
     </article>
 
@@ -143,8 +143,8 @@
       <div class="clip"><video src="videos/layer-duplicate.mp4" poster="videos/layer-duplicate.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Duplicate Layer</h3>
-        <p>Select a layer, open the arrow menu below the list buttons, and choose <code>Duplicate Layer</code>. The copy retains all settings and receives the original name with _Copy appended.</p>
-        <p>The copied layer initially places instances at the same positions as the original. Change its Seed to create a different arrangement, or choose different source objects to reuse the layout with another asset.</p>
+        <p>Choose <code>Duplicate Layer</code> from the arrow menu below the list buttons to copy the selected layer with all its settings.</p>
+        <p>The copy places instances in the same spots as the original. Change its Seed for a new arrangement, or choose different objects to reuse the layout with another asset.</p>
       </div>
     </article>
 
@@ -152,7 +152,7 @@
       <div class="clip"><video src="videos/layer-delete.mp4" poster="videos/layer-delete.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Delete a layer</h3>
-        <p>Select a layer, click <code>−</code>, and confirm. This removes the layer and its scattered instances, but leaves the source objects unchanged.</p>
+        <p>Select a layer, click <code>−</code>, and confirm. This removes the layer and its instances, but not the original objects.</p>
       </div>
     </article>
 
@@ -160,17 +160,16 @@
       <div class="clip"><video src="videos/layer-reorder.mp4" poster="videos/layer-reorder.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Select and reorder</h3>
-        <p>Click a row to edit that layer. The settings below the System List update to match your selection.</p>
-        <p>Use the up and down arrows to reorder layers and keep related entries together.</p>
+        <p>Click a row to edit that layer. Use the up and down arrows to reorder layers and keep related ones together.</p>
       </div>
     </article>
 
     <article class="card text" id="refresh-list-and-auto-refresh">
       <div>
         <h3>Refresh List and Auto Refresh</h3>
-        <p>These options are available in the same arrow menu as Duplicate Layer.</p>
-        <p><code>Refresh List</code> synchronizes the System List with the current scene. Use it if the list still shows layers from a previous scene after switching scenes.</p>
-        <p><code>Auto Refresh</code> updates the list automatically when the scene changes.</p>
+        <p>Both are in the same arrow menu as Duplicate Layer.</p>
+        <p>Choose <code>Refresh List</code> from that menu to bring the System List up to date with the current scene. Use it if the list still shows layers from another scene after you switch.</p>
+        <p>Turn on <code>Auto Refresh</code> to do this automatically when the scene changes.</p>
       </div>
     </article>
   </div>
@@ -179,15 +178,14 @@
 <section id="groups">
   <div class="wrap">
     <h2>Groups</h2>
-    <p class="lead">A group organizes multiple layers in one folder. It also lets you hide, duplicate, or adjust those layers together.</p>
+    <p class="lead">A group is a folder for several layers. It lets you hide, duplicate, or adjust them together.</p>
 
     <article class="card" id="create-a-group-and-fill-it">
       <div class="clip"><video src="videos/group-create.mp4" poster="videos/group-create.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Create a group and fill it</h3>
-        <p>Click the folder button beside the System List to create an empty group. Double-click its name to rename it, for example Forest.</p>
-        <p>To add a layer, select it and click <code>+</code> on the group's row. The layer appears indented beneath the group.</p>
-        <p>Adding a layer to a group does not change its individual settings.</p>
+        <p>Click the folder button beside the System List to create an empty group, and double-click its name to rename it.</p>
+        <p>To add a layer, select it and click <code>+</code> on the group's row. Adding a layer to a group does not change its own settings.</p>
       </div>
     </article>
 
@@ -195,12 +193,12 @@
       <div class="clip"><video src="videos/group-controls.mp4" poster="videos/group-controls.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>The buttons on a group row</h3>
-        <p>The triangle expands or collapses the group's contents.</p>
-        <p>The eye shows or hides every layer in the group in both the viewport and renders.</p>
-        <p>The <code>−</code> on a grouped layer's row removes that layer from the group. The group remains even if it becomes empty.</p>
-        <p>The duplicate icon copies the group and all its layers.</p>
+        <p>The triangle opens or closes the group.</p>
+        <p>The eye shows or hides every layer in the group, in both the viewport and renders.</p>
+        <p>The <code>−</code> button on a grouped layer's row takes that layer out of the group. The group stays, even when it is empty.</p>
+        <p>The duplicate icon copies the group with all its layers.</p>
         <div class="note"><strong>Deleting a group preserves its layers.</strong>
-        Select the group and click the System List's <code>−</code> button. Only the folder is removed; its layers return to the top level of the list.</div>
+        Select the group and click the System List's <code>−</code> button. Only the folder is removed, and its layers move back to the top level of the list.</div>
       </div>
     </article>
 
@@ -210,15 +208,15 @@
 <section id="group-scattering">
   <div class="wrap">
     <h2>Group Scattering</h2>
-    <p class="lead">Select the group itself to display <code>Group Scattering</code> in place of the layer's Scattering section. These controls affect every layer in the group while preserving each layer's own Density and Seed values.</p>
+    <p class="lead">Select a group to see the <code>Group Scattering</code> section instead of the layer's Scattering section. Its controls affect every layer in the group, while each layer keeps its own Density and Seed.</p>
 
     <article class="card" id="density">
       <div class="clip"><video src="videos/group-density.mp4" poster="videos/group-density.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Density</h3>
         <ul class="facts"><li><b>Default</b> 100%</li></ul>
-        <p>Multiplies every layer's density by the same percentage. At 100%, densities are unchanged; 50% halves them, and 200% doubles them.</p>
-        <p>Use this to thin or fill out an entire biome while preserving the proportions of trees, bushes, rocks, and other layers. For example, 25% produces a sparse version of the group, while 250% makes it substantially denser.</p>
+        <p>Multiplies every layer's density by the same percentage. 100% leaves them unchanged, 50% halves them, and 200% doubles them.</p>
+        <p>Use it to thin out or fill in a whole biome while keeping the balance between trees, bushes, rocks, and other layers.</p>
       </div>
     </article>
 
@@ -227,8 +225,8 @@
       <div>
         <h3>Seed Offset</h3>
         <ul class="facts"><li><b>Default</b> 0</li></ul>
-        <p>Adds an offset to each layer's seed, changing the group's arrangement without replacing its individual seed values. Layers retain their different patterns.</p>
-        <p>Return the offset to 0 to restore the arrangement defined by the layers' own seeds.</p>
+        <p>Shifts every layer's seed by the same amount. This gives the group a new arrangement, while each layer keeps its own seed and its own pattern.</p>
+        <p>Set it back to 0 to return to the original arrangement.</p>
       </div>
     </article>
 
@@ -237,17 +235,17 @@
       <div>
         <h3>Type</h3>
         <ul class="facts"><li><b>Default</b> Procedural</li><li><b>Group Spread</b> 5.00</li></ul>
-        <p>Switches all layers in the group between Procedural and Manual scattering.</p>
-        <p>In Manual mode, <code>Start Placing</code> paints the group's layers together. Use it to place a mix of trees, bushes, and rocks with one stroke.</p>
-        <p><code>Group Spread</code> controls how far apart the layers place their instances around the brush. Lower values create a tighter band; higher values spread the layers further apart.</p>
-        <p>See <a href="manual.html">Manual Mode</a> for the individual brush controls.</p>
+        <p>Switches every layer in the group between Procedural and Manual.</p>
+        <p>In Manual, the <code>Start Placing</code> button paints all the group's layers at once, so you can place a mix of trees, bushes, and rocks in one stroke.</p>
+        <p><code>Group Spread</code> sets how far apart the layers place their instances around the brush. Lower values keep them close together; higher values spread them out.</p>
+        <p>See <a href="manual.html">Manual Mode</a> for the brush controls.</p>
       </div>
     </article>
 
     <article class="card text" id="other-group-sections">
       <div>
         <h3>Other group sections</h3>
-        <p>Selecting a group also displays group versions of other supported sections, including Group Surface and Group Scale. Their controls are covered on the corresponding feature pages.</p>
+        <p>Selecting a group also shows group versions of other sections, such as Group Surface and Group Scale. These are covered on their own feature pages.</p>
       </div>
     </article>
   </div>

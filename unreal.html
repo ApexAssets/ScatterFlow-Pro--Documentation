@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group" open>
@@ -103,47 +103,46 @@
 <section id="how">
   <div class="wrap">
     <h2>How it works</h2>
-    <p class="lead">The ScatterFlow plugin adds a panel to the Unreal Editor for scene transfer, scatter editing, and environment tools.</p>
-    <p class="lead"><b>Connect Blender and Unreal.</b> Export supported content from Blender's ScatterFlow Export tab directly into the open level, without manually importing files.</p>
-    <p class="lead"><b>Edit scatter layers in Unreal.</b> Each Blender scatter layer arrives as one ScatterFlow actor containing its instances. Select it to adjust density, scale, meshes, or procedural placement without returning to Blender.</p>
-    <p class="lead"><b>Add environment tools.</b> Configure foliage wind, a dynamic sky, weather, water, and ivy. Use Play to explore the level with a supplied character.</p>
+    <p class="lead">The ScatterFlow plugin adds a panel to the Unreal Editor. Use it to bring your Blender scene over, edit scatter layers, and add environment tools.</p>
+    <p class="lead"><b>Connect Blender and Unreal.</b> Send content from Blender's ScatterFlow Export tab straight into the open level. There is no need to import files by hand.</p>
+    <p class="lead"><b>Edit scatter layers in Unreal.</b> Each Blender scatter layer arrives as one ScatterFlow actor that holds its instances. Select it to change density, scale, meshes, or placement without going back to Blender.</p>
+    <p class="lead"><b>Add environment tools.</b> Add foliage wind, a dynamic sky, weather, water, and ivy. Use Play to walk around the level with a ready-made character.</p>
     <div class="note"><strong>Set up both sides of the connection.</strong>
-        <a href="#install">Install the plugin</a> in your Unreal project as described below. In Blender, use ScatterFlow's <a href="export.html">Export</a> tab; see Export.</div>
+        <a href="#install">Install the plugin</a> in your Unreal project, as described below. In Blender, use ScatterFlow's <a href="export.html">Export</a> tab.</div>
   </div>
 </section>
 
 <section id="install">
   <div class="wrap">
     <h2>Install the plugin</h2>
-    <p class="lead">The plugin requires Unreal Engine 5.8 on Windows, an Unreal project, and ScatterFlow for Blender. Install it separately in each project's <code>Plugins</code> folder.</p>
+    <p class="lead">The plugin needs Unreal Engine 5.8 on Windows and ScatterFlow for Blender. Install it into each project's <code>Plugins</code> folder separately.</p>
 
     <article class="card text" id="install-into-your-project">
       <div>
         <h3>Install into your project</h3>
-        <p><b>1.</b> Close the project in the Unreal Editor.</p>
-        <p><b>2.</b> Extract <code>ScatterFlow_UnrealPlugin_V1.0.zip</code>, which contains <code>ScatterFlowUnrealSync</code>. Use a short extraction path such as <code>C:\Temp</code> to avoid Windows path-length problems with long filenames.</p>
-        <p><b>3.</b> Open the project folder containing the <code>.uproject</code> file. Create a <code>Plugins</code> folder beside it if one does not exist.</p>
-        <p><b>4.</b> Move <code>ScatterFlowUnrealSync</code> into <code>Plugins</code>. Confirm that <code>Plugins\ScatterFlowUnrealSync\ScatterFlowUnrealSync.uplugin</code> exists. Avoid an extra nested ScatterFlowUnrealSync folder.</p>
-        <p><b>5.</b> Open the project. The plugin is precompiled for Unreal 5.8 on Windows. Its dependencies—PCG, WebSocket Networking, and Procedural Mesh Component—are enabled as part of the setup.</p>
-        <p><b>6.</b> Open <code>Edit &gt; Plugins</code>, search for ScatterFlow, and confirm that <code>ScatterFlow Unreal Sync</code> is enabled. It is marked <code>Beta</code>. If you enable it here, click <code>Restart Now</code>.</p>
-        <p><b>7.</b> Confirm that the <code>ScatterFlow</code> button appears in the main toolbar, then continue to <a href="#open">Step 1</a>.</p>
+        <p>Close the project in Unreal first, then:</p>
+        <p><b>1.</b> Extract <code>ScatterFlow_UnrealPlugin_V1.0.zip</code> to a short path, such as <code>C:\Temp</code>. Long paths can cause problems on Windows.</p>
+        <p><b>2.</b> In the project folder that holds the <code>.uproject</code> file, create a <code>Plugins</code> folder if there is not one already.</p>
+        <p><b>3.</b> Move the <code>ScatterFlowUnrealSync</code> folder into <code>Plugins</code>. The file <code>Plugins\ScatterFlowUnrealSync\ScatterFlowUnrealSync.uplugin</code> should exist, without an extra ScatterFlowUnrealSync folder in between.</p>
+        <p>Open the project. The plugin comes precompiled, and the plugins it depends on are turned on for you.</p>
+        <p>In <code>Edit &gt; Plugins</code>, check that <code>ScatterFlow Unreal Sync</code> is enabled. If you have to enable it, click <code>Restart Now</code>. Once it is running, the <code>ScatterFlow</code> button is in the main toolbar. Continue to <a href="#open">Step 1</a>.</p>
       </div>
     </article>
 
     <article class="card text" id="updating-the-unreal-plugin">
       <div>
         <h3>Updating to a new version</h3>
-        <p>Close Unreal, delete the existing <code>Plugins\ScatterFlowUnrealSync</code> folder, and replace it with the new version using steps 2–4. Remove the old folder first so obsolete files are not left behind.</p>
-        <p>Update the Blender add-on at the same time to keep both sides on the same release.</p>
+        <p>Close Unreal and delete the old <code>Plugins\ScatterFlowUnrealSync</code> folder, then install the new version with steps 1–3. Removing the old folder first makes sure no outdated files are left behind.</p>
+        <p>Update the Blender add-on at the same time, so both sides are on the same release.</p>
       </div>
     </article>
 
     <article class="card text" id="if-the-unreal-plugin-does-not-load">
       <div>
         <h3>If the plugin does not load</h3>
-        <p><b>Modules are missing or were built for another engine version.</b> This plugin build supports Unreal Engine 5.8. Other engine versions are not supported by this build.</p>
-        <p><b>The ScatterFlow toolbar button is missing.</b> Confirm that the plugin is enabled and that its folder is not nested an extra level deep.</p>
-        <p><b>Blender cannot connect.</b> Both applications must be open. Check that Blender's connection address matches the plugin's Link Settings; see <a href="#link">Step 2</a>.</p>
+        <p><b>Modules are missing or were built for another engine version.</b> This build of the plugin supports Unreal Engine 5.8 only.</p>
+        <p><b>The ScatterFlow toolbar button is missing.</b> Check that the plugin is enabled and that its folder is not nested one level too deep.</p>
+        <p><b>Blender cannot connect.</b> Both programs must be open. Check that Blender's connection address matches the plugin's Link Settings. See <a href="#link">Step 2</a>.</p>
       </div>
     </article>
   </div>
@@ -157,13 +156,9 @@
       <div class="clip wide"><video src="videos/ue-open.mp4" poster="videos/ue-open.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>The ScatterFlow button</h3>
-        <p>Click <code>ScatterFlow</code> in the main toolbar beside the Play controls to open the panel. It is also available from <code>Tools &gt; ScatterFlow Scatter</code>.</p>
-        <p>The panel opens in a floating window. Move and resize it to fit your workspace; it can remain open while you edit the level.</p>
-        <p>At the top of the panel:</p>
-        <p><code>Play</code> starts a walkthrough using the ScatterFlow character. See <a href="unreal-play.html">Play</a>.<br>
-        The connection status displays <code>Blender connected</code> with a green indicator when the link is active.<br>
-        <code>Link Settings</code> opens the Blender connection settings.<br>
-        The editing line identifies the active selection. With no layer selected, it reads <code>Select a layer to edit it</code> and displays the scene tools. The four icons add <a href="unreal-water.html">water</a>, <a href="unreal-ivy.html">ivy</a>, <a href="unreal-weather.html">weather</a>, or <a href="unreal-sky.html">sky</a>.</p>
+        <p>Click <code>ScatterFlow</code> in the main toolbar, next to the Play controls, to open the panel. It is also under <code>Tools &gt; ScatterFlow Scatter</code>. The panel is a floating window that can stay open while you work.</p>
+        <p>The top of the panel holds the <code>Play</code> button, which starts a walkthrough with the ScatterFlow character (see <a href="unreal-play.html">Play</a>). Next to it are the connection status and the <code>Link Settings</code> button, which opens the Blender connection settings.</p>
+        <p>When no layer is selected, the panel shows the scene tools. Its four icons add <a href="unreal-water.html">water</a>, <a href="unreal-ivy.html">ivy</a>, <a href="unreal-weather.html">weather</a>, or <a href="unreal-sky.html">sky</a>.</p>
         <div class="note"><strong>The panel follows your selection.</strong>
         Select a ScatterFlow layer to edit its settings. Click empty space to return to the scene tools.</div>
       </div>
@@ -174,21 +169,20 @@
 <section id="link">
   <div class="wrap">
     <h2>Step 2: Connect to Blender</h2>
-    <p class="lead">The plugin starts its connection service with Unreal. In Blender's Export tab, select <code>Unreal</code> and click <code>Connect</code>. When connected, the Unreal panel reports <code>Blender connected</code>.</p>
+    <p class="lead">The connection starts when Unreal opens. In Blender's Export tab, click the <code>Unreal</code> button, then click <code>Connect</code>. The panel's status shows when Blender is connected.</p>
 
     <article class="card" id="link-settings">
       <div class="clip wide"><video src="videos/ue-link-settings.mp4" poster="videos/ue-link-settings.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Link Settings</h3>
-        <p>Click <code>Link Settings</code> to view the connection controls. The defaults normally require no changes.</p>
-        <p>The status line shows the current state, such as <code>Connected — ready</code>. Its tag is <code>CONNECTED</code>, <code>LISTENING</code> while waiting for Blender, or <code>OFFLINE</code> when stopped.</p>
-        <p><code>Blender connection URL</code>: the address Blender connects to. It must match the Unreal <code>Link URL</code> in Blender's ScatterFlow preferences. Use <code>Copy URL</code> after changing the port to update Blender's address.</p>
-        <p><code>Port</code>: the connection's network port. Change it only when another application is using the same port. Stop the link first; this field is disabled while it is running.</p>
-        <p><code>Start with Unreal</code>: starts the connection service when the project opens. Leave it enabled for normal use.</p>
-        <p><code>Auto-import scatter exports from Blender</code>: also detects scatter exports saved to disk while the connection was inactive. Exports sent over an active connection arrive regardless of this option.</p>
-        <p><code>Live sync edits to Blender</code>: sends changes to linked objects back to Blender as you edit them in Unreal.</p>
-        <p><code>Mirror deletes to Blender</code>: also deletes the linked Blender object when you delete it in Unreal. This is disabled by default to avoid unintended deletion of Blender content.</p>
-        <p><code>Stop Live Link</code>: stops the connection service.</p>
+        <p>Click the <code>Link Settings</code> button to show the connection controls. The defaults work for most projects. The status line shows whether the link is connected, waiting for Blender, or offline.</p>
+        <p><code>Blender connection URL</code> is the address Blender connects to. It must match the Unreal <code>Link URL</code> in Blender's ScatterFlow preferences. If you change the port, click the <code>Copy URL</code> button to update the address in Blender.</p>
+        <p>Only change <code>Port</code> if another program is using the same one. Stop the link first, because the field is locked while the link is running.</p>
+        <p>The <code>Start with Unreal</code> checkbox starts the connection when the project opens. Leave it on for normal use.</p>
+        <p>Turn on <code>Auto-import scatter exports from Blender</code> to also pick up scatter exports that were saved while the connection was off. Exports sent over a live connection always arrive.</p>
+        <p>Turn on <code>Live sync edits to Blender</code> to send your changes to linked objects back to Blender as you make them.</p>
+        <p>The <code>Mirror deletes to Blender</code> checkbox also deletes the linked Blender object when you delete it in Unreal. It is off by default, so you do not delete Blender content by accident.</p>
+        <p>The <code>Stop Live Link</code> button stops the connection.</p>
       </div>
     </article>
 
@@ -196,9 +190,9 @@
       <div class="clip wide"><video src="videos/ue-link-options.mp4" poster="videos/ue-link-options.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Switching the options</h3>
-        <p>Click an option's checkbox to enable or disable it. Changes take effect immediately and are retained when you reopen the project.</p>
-        <div class="note"><strong>Enable deletion syncing deliberately.</strong>
-        Live sync is useful when refining placement in Unreal, but keep <code>Mirror deletes to Blender</code> disabled unless deletions should also affect the Blender scene.</div>
+        <p>Options take effect as soon as you change them, and they are kept when you reopen the project.</p>
+        <div class="note"><strong>Turn on deletion syncing only on purpose.</strong>
+        Live sync is useful when you refine placement in Unreal. Keep <code>Mirror deletes to Blender</code> off unless deleting in Unreal should also delete in Blender.</div>
       </div>
     </article>
 
@@ -206,9 +200,8 @@
       <div class="clip wide"><video src="videos/ue-link-restart.mp4" poster="videos/ue-link-restart.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Stopping and restarting the link</h3>
-        <p><code>Stop Live Link</code> closes the connection and changes the status to <code>Blender link offline</code>.</p>
-        <p><code>Start Live Link</code> opens the service again. The status changes to <code>Waiting for Blender</code> until a connection is established.</p>
-        <p>Blender does not reconnect automatically. Click <code>Connect</code> in its Export tab again to restore the link.</p>
+        <p>Click the <code>Stop Live Link</code> button to close the connection, and the <code>Start Live Link</code> button to open it again.</p>
+        <p>Blender does not reconnect on its own. Click <code>Connect</code> in its Export tab again to restore the link.</p>
       </div>
     </article>
   </div>
@@ -217,20 +210,19 @@
 <section id="receive">
   <div class="wrap">
     <h2>Step 3: Bring your scene over</h2>
-    <p class="lead">Once connected, click <code>Export to Unreal</code> in Blender. Supported content is added to the level currently open in Unreal. See <a href="export.html">Export</a> for selection and export options.</p>
+    <p class="lead">Once connected, click <code>Export to Unreal</code> in Blender. Supported content is added to the level that is open in Unreal. See <a href="export.html">Export</a> for what to export and how.</p>
 
     <article class="card" id="what-arrives">
       <div class="clip wide"><video src="videos/ue-receive.mp4" poster="videos/ue-receive.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>What arrives</h3>
-        <p>Unreal creates the incoming assets and places the exported scene content in the level.</p>
-        <p>The Outliner identifies the resulting actors. For a meadow with three scatter layers and two selected boulders, these include:</p>
-        <p><code>SF Terrain - Meadow</code>: the scatter terrain as a mesh with its material and collision.<br>
-        <code>SF Scatter - Trees</code>, <code>SF Scatter - Bushes</code>, and <code>SF Scatter - Rocks</code>: one actor per scatter layer, containing that layer's instances.<br>
-        <code>Boulder 1</code> and <code>Boulder 2</code>: the individually selected Blender objects.</p>
-        <p>Subsequent exports update the existing actors instead of adding duplicates.</p>
-        <div class="note"><strong>Layer settings can retain Unreal-side edits.</strong>
-        On re-export, settings changed in Blender replace their corresponding values; unchanged Blender settings leave Unreal adjustments intact. See <a href="unreal-scatter.html">Scatter Layers</a> for the separate behaviour of the mesh list.</div>
+        <p>Unreal creates the incoming assets and places your scene in the level. In the Outliner:</p>
+        <p>The scatter surface becomes a terrain mesh with its material and collision, such as <code>SF Terrain - Meadow</code>.<br>
+        Each scatter layer becomes one actor holding that layer's instances, such as <code>SF Scatter - Trees</code>.<br>
+        Objects you selected individually in Blender keep their own names.</p>
+        <p>Exporting again updates the existing actors instead of adding duplicates.</p>
+        <div class="note"><strong>Layer settings can keep your Unreal edits.</strong>
+        When you export again, settings you changed in Blender replace the Unreal values. Settings you did not change in Blender keep your Unreal adjustments. The mesh list works differently; see <a href="unreal-scatter.html">Scatter Layers</a>.</div>
       </div>
     </article>
 
@@ -238,9 +230,9 @@
       <div class="clip wide"><video src="videos/ue-select-layer.mp4" poster="videos/ue-select-layer.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Select a layer to edit it</h3>
-        <p>Click an instance in the viewport to select its entire layer. The panel displays that layer's controls, with a label such as <code>Editing Trees</code>.</p>
-        <p>Ctrl+click an instance from another layer to edit both together. The label changes to <code>Editing 2 layers</code>, and adjustments apply to both.</p>
-        <p>Click empty space to deselect and return to the scene tools.</p>
+        <p>Click an instance in the viewport to select its whole layer and show its controls in the panel.</p>
+        <p>Ctrl+click an instance from another layer to edit both layers together.</p>
+        <p>Click empty space to go back to the scene tools.</p>
       </div>
     </article>
   </div>
@@ -254,9 +246,8 @@
       <div class="clip wide"><video src="videos/ue-export-to-blender.mp4" poster="videos/ue-export-to-blender.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Send actors back to Blender</h3>
-        <p>Select actors in the level, expand <code>Export</code>, and click <code>Export to Blender</code>.</p>
-        <p>Actors originally exported from Blender update their existing Blender objects. Meshes created in Unreal arrive as new Blender meshes with their materials.</p>
-        <p>Use this to transfer an engine-created prop, such as a crate, into the Blender scene.</p>
+        <p>Select actors in the level, expand the <code>Export</code> section, then click <code>Export to Blender</code>.</p>
+        <p>Actors that came from Blender update their original Blender objects. Meshes made in Unreal arrive as new Blender meshes with their materials, so you can bring a prop built in Unreal into your Blender scene.</p>
       </div>
     </article>
 
@@ -264,8 +255,8 @@
       <div class="clip wide"><video src="videos/ue-live-sync.mp4" poster="videos/ue-live-sync.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Live sync</h3>
-        <p>Enable <code>Live sync edits to Blender</code> in Link Settings to send edits to linked actors immediately, without manually exporting each change.</p>
-        <p>For example, repositioning a linked crate in Unreal also updates its position in Blender.</p>
+        <p>Turn on <code>Live sync edits to Blender</code> in Link Settings to send edits to linked actors straight away, without exporting each change.</p>
+        <p>For example, moving a linked object in Unreal also moves it in Blender.</p>
       </div>
     </article>
   </div>

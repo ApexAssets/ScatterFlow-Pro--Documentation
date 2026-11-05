@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -93,18 +93,18 @@
 <section id="water">
   <div class="wrap">
     <h2>Water</h2>
-    <p class="lead">Add ponds, lakes, oceans, pools, or swamps using configurable water presets. ScatterFlow provides waves, depth-based colour, caustics, and foam where the water meets surfaces.</p>
-    <p class="lead">Shallow areas remain clearer, while colour builds with depth. Waves distort the view beneath the surface, low viewing angles emphasize reflections, and caustics add moving light patterns to shallow ground.</p>
+    <p class="lead">Add ponds, lakes, oceans, pools, or swamps from ready-made presets. The water comes with waves, caustics, and foam where it meets other surfaces.</p>
+    <p class="lead">Shallow water stays clear, and the colour builds with depth. Reflections are strongest when you look across the water at a low angle.</p>
 
     <article class="card" id="adding-water">
       <div class="clip wide"><video src="videos/gd-water-add.mp4" poster="videos/gd-water-add.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Adding water</h3>
-        <p>Point the 3D view at the target location and click the water-drop icon at the top of the dock. An <code>SF Water</code> node is created and selected, displaying its settings.</p>
-        <p>Set its height to the intended water level, then adjust <code>Size X</code> and <code>Size Y</code> in metres to cover the area. Terrain below that level becomes submerged, allowing a hill to form an island or a low area to become a lake.</p>
-        <p><code>Resolution</code>: the number of surface points per metre. Higher values produce smoother large waves but increase processing cost.</p>
+        <p>Aim the 3D view where you want the water and click the water-drop icon at the top of the dock. This adds an <code>SF Water</code> node there.</p>
+        <p>Set its height to the water level you want, and set the <code>Size X</code> and <code>Size Y</code> fields, in metres, to cover the area. Any terrain below the water level ends up under water, so a hill can become an island and a hollow a lake.</p>
+        <p><code>Resolution</code> sets how many surface points there are per metre. Higher values give smoother large waves but cost more performance.</p>
         <div class="note"><strong>Use Forward+ or Mobile.</strong>
-        ScatterFlow water relies on scene depth and does not display correctly with the Compatibility renderer.</div>
+        ScatterFlow water needs scene depth, so it does not display correctly with the Compatibility renderer.</div>
       </div>
     </article>
 
@@ -112,7 +112,8 @@
       <div class="clip wide"><video src="videos/gd-water-presets.mp4" poster="videos/gd-water-presets.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Presets</h3>
-        <p><code>Preset</code> includes <code>Lake</code>, <code>Pond</code>, <code>Ocean</code>, <code>Tropical</code>, <code>Pool</code>, <code>Swamp</code>, and <code>River</code>. These configure colour, clarity, waves, and caustics while preserving the water body's size and position. Start with the closest preset and refine it.</p>
+        <p>The <code>Preset</code> list offers <code>Lake</code>, <code>Pond</code>, <code>Ocean</code>, <code>Tropical</code>, <code>Pool</code>, <code>Swamp</code>, and <code>River</code>.</p>
+        <p>A preset sets the colour, clarity, waves, and caustics, but keeps the water's size and position. Pick the closest one, then adjust it.</p>
       </div>
     </article>
 
@@ -120,15 +121,12 @@
       <div class="clip wide"><video src="videos/gd-water-look.mp4" poster="videos/gd-water-look.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Look</h3>
-        <p><code>Water Color</code>: the colour reached in deeper water. Shallow regions remain clearer. Click the swatch to change the tint.</p>
-        <p><code>Turbidity</code> (0–1): cloudiness. At 0, water is clear; higher values scatter more light and obscure the bottom sooner.</p>
-        <p><code>Roughness</code> (0–1): reflection sharpness. Lower values produce sharper reflections; higher values soften them.</p>
-        <p><code>Caustics</code> (0–4): the moving sunlight pattern beneath shallow water.</p>
-        <p><code>Foam</code>: coverage along shorelines and objects intersecting the surface. <code>Foam Width</code> is measured in metres, with a default of 0.3. Increasing it to 1.2 m creates a wider shoreline band.</p>
-        <p><code>Clarity</code> (default 1, range 0.1–4): a visibility multiplier relative to the preset. At 2, visibility depth doubles; 0.5 reduces it.</p>
-        <p><code>Refraction</code> (default 1, range 0–3): distortion of the view beneath the waves. At 0, the bottom appears undistorted; higher values increase the movement in the image.</p>
-        <p><code>Whitecaps</code> (default 1, range 0–2): foam on steep wave crests. It is most apparent with rougher water, such as the Ocean preset. See <a href="#waves">Waves</a> for the wave controls.</p>
-        <p><code>Sun Through Waves</code> (default 1, range 0–3): the glow of sunlight through wave crests when viewed toward the sun.</p>
+        <p><code>Water Color</code> is the colour of deeper water. Shallow water stays clearer.</p>
+        <p><code>Turbidity</code> makes the water cloudier, so the bottom disappears sooner. <code>Clarity</code> scales how far you can see into the water compared with the preset. At 2, you see twice as deep.</p>
+        <p><code>Roughness</code> softens the reflections. Lower values make them sharper. <code>Refraction</code> sets how much the waves distort the view below the surface. At 0, there is no distortion.</p>
+        <p><code>Caustics</code> sets the moving sunlight pattern under shallow water.</p>
+        <p><code>Foam</code> sets how much foam forms along shorelines and around objects in the water. <code>Foam Width</code> sets how wide that band is, in metres.</p>
+        <p><code>Whitecaps</code> adds foam to steep wave crests, so it shows most on rough water such as the Ocean preset. See <a href="#waves">Waves</a> for the wave controls. <code>Sun Through Waves</code> sets the glow of sunlight through wave crests when you look toward the sun.</p>
       </div>
     </article>
 
@@ -136,10 +134,9 @@
       <div class="clip wide"><video src="videos/gd-water-waves.mp4" poster="videos/gd-water-waves.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Waves</h3>
-        <p><code>Wave Height</code> and <code>Wave Length</code>, in metres, define wave height and spacing. Short, tall waves create choppy water; long, low waves create a gentler swell.</p>
-        <p><code>Wave Speed</code>: the speed of wave travel.<br>
-        <code>Wave Direction</code>: the travel direction in degrees.</p>
-        <p>Inspect rough water from a low angle when adjusting Whitecaps. If large waves look angular, increase Resolution to smooth the surface, balancing the added detail against performance.</p>
+        <p><code>Wave Height</code> and <code>Wave Length</code> set how tall the waves are and how far apart, in metres. Short, tall waves give choppy water. Long, low waves give a gentle swell.</p>
+        <p><code>Wave Speed</code> and <code>Wave Direction</code> set how fast and which way the waves travel.</p>
+        <p>Whitecaps are easiest to judge on rough water from a low angle. If large waves look angular, raise Resolution, keeping an eye on performance.</p>
       </div>
     </article>
   </div>

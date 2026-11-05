@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -90,14 +90,15 @@
 <nav class="jump">
   <div class="wrap">
     <a href="#install">Install the add-on</a>
-    <a href="#content">Install the content</a>
+    <a href="#content">Install the content pack</a>
+    <a href="#biomes">Install the biomes</a>
     <a href="#preferences">Preferences</a>
   </div>
 </nav>
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">Start by installing the add-on, then use its Content Installer to add the plants, textures, and biomes. Most of this setup takes place in Blender's Preferences, available from <code>Edit &gt; Preferences</code>.</p>
+    <p class="lead">Install the add-on first, then the content pack, then the biomes. Everything is set up in Blender's Preferences.</p>
   </div>
 </section>
 
@@ -109,13 +110,10 @@
       <div class="clip win"><video src="videos/install-addon.mp4" poster="videos/install-addon.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Install from Disk</h3>
-        <p><b>1.</b> Open <code>Edit</code>, choose <code>Preferences...</code>, and select <code>Get Extensions</code>.</p>
-        <p><b>2.</b> Click the arrow in the upper-right corner and choose <code>Install from Disk...</code>.</p>
-        <p><b>3.</b> Select the downloaded ScatterFlow .zip file. Do not extract it first.</p>
-        <p><b>4.</b> Select <code>Add-ons</code>, search for ScatterFlow, and make sure its checkbox is enabled. Expand the entry to view its version and preferences.</p>
-        <p><b>5.</b> Close Preferences. In the 3D viewport, press <code>N</code> to open the sidebar, then select the <code>ScatterFlow Professional</code> tab.</p>
+        <p>In Preferences, open the <code>Get Extensions</code> page and choose <code>Install from Disk</code> from the arrow menu in its top-right corner. Pick the .zip file you downloaded.</p>
+        <p>Once it is installed, ScatterFlow is in the 3D viewport's sidebar. Press <code>N</code> to open it.</p>
         <div class="note"><strong>Requires Blender 5.2 or newer.</strong>
-        To use ScatterFlow Nano, use the ScatterFlow build of Blender. Extract its folder and launch blender.exe; no installation is required. This build is in beta, so keep backups of your .blend files. On Windows, the first launch may display “Windows protected your PC.” For the ScatterFlow build you downloaded, the launch options are More info, then Run anyway.</div>
+        ScatterFlow Nano needs the ScatterFlow build of Blender. It is in beta, so keep backups of your files. If Windows blocks it the first time, choose More info, then Run anyway.</div>
       </div>
     </article>
   </div>
@@ -123,34 +121,65 @@
 
 <section id="content">
   <div class="wrap">
-    <h2>Install the content</h2>
+    <h2>Install the content pack</h2>
+    <p class="lead">The content pack contains the models and textures that ScatterFlow uses.</p>
 
-    <article class="card" id="content-installer">
-      <div class="clip win"><video src="videos/install-content.mp4" poster="videos/install-content.jpg" muted loop playsinline preload="none"></video></div>
+    <article class="card" id="asset-libraries">
+      <div class="clip win"><video src="videos/install-assets.mp4" poster="videos/install-assets.jpg" muted loop playsinline preload="none"></video></div>
       <div>
-        <h3>Content Installer</h3>
-        <p>Plants, rocks, textures, and biomes are distributed separately from the add-on. Install them using the <code>Content Installer</code> at the top of ScatterFlow's preferences.</p>
-        <p><code>ScatterFlow_Pro_ContentPack.part1.rar</code> and <code>ScatterFlow_Pro_ContentPack.part2.rar</code> contain the plants, rocks, and textures. They form one archive split into two parts, approximately 5.5 GB in total.<br>
-        <code>ScatterFlow_ProBiomes.flow</code> contains the biomes, packed in one file.</p>
-        <p><b>1.</b> Download all three files into the same folder. Leave them compressed; the installer extracts them.</p>
-        <p><b>2.</b> Set <code>Content Library Folder</code> to the location where you want to store the installed content. Allow approximately 6 GB for the extracted files. The installer remains disabled until you select a folder.</p>
-        <p><b>3.</b> Click <code>Install Content Files</code> and select the downloads. For the two-part archive, select either part; the installer finds the other in the same folder. You can select the archive and the biome pack together. Supported content file formats are .zip, .rar, .flow, .gscatter, .paq, and .blend.</p>
-        <p><b>4.</b> Follow the installation progress in the status bar. Extracting the main archive can take several minutes. Blender remains usable during installation, and <code>Esc</code> cancels the operation.</p>
-        <p><b>5.</b> Check the installation list. Each entry changes from <code>Not installed</code> to a checkmark and <code>Installed</code> when ready. Once ScatterFlow Assets &amp; Textures and ScatterFlow Biomes are installed, the biomes appear in the <a href="biomes.html">Biome Browser</a>. See <a href="biomes.html#install">Installing biome packs</a>.</p>
-        <p>The same list also reports installed <a href="biomes.html#gscatter">GScatter</a> packs and compatibility asset libraries.</p>
-        <div class="note"><strong>RAR extraction requires 7-Zip or WinRAR.</strong>
-        Blender cannot extract .rar files directly. The installer uses either application if it is installed. If neither is available, it reports <code>Extracting multi-part .rar archives needs 7-Zip (free, 7-zip.org) or WinRAR.</code> Install 7-Zip from 7-zip.org, then run <code>Install Content Files</code> again.</div>
+        <h3>Asset Libraries</h3>
+        <p>Asset libraries are the folders ScatterFlow loads its models from.</p>
+        <p>Click the <code>Add asset library</code> button and pick a folder for the content pack. Then click the <code>Install asset libraries</code> button and choose the content pack.</p>
+        <div class="note"><strong>Needs 7-Zip or WinRAR.</strong>
+        The content pack is a .rar archive, which Blender cannot open on its own. If you have neither program, install 7-Zip (free) first.</div>
+      </div>
+    </article>
+
+    <article class="card text" id="managing-asset-libraries">
+      <div>
+        <h3>Managing asset libraries</h3>
+        <p>Other asset libraries are added the same way. If a library is already installed on your computer, just add its folder.</p>
+        <p>Removing a library from the list does not delete its files.</p>
+        <p>To browse these models in Blender's Asset Browser as well, see <a href="content-pack.html#library">Adding the library</a>.</p>
       </div>
     </article>
 
     <article class="card text" id="content-install-problems">
       <div>
         <h3>When the content does not install</h3>
-        <p><b>“The first part ScatterFlow_Pro_ContentPack.part1.rar is missing.”</b> or <b>“Part ... of the archive is missing.”</b> Keep both parts in the same folder with their original filenames. Download any missing part again.</p>
-        <p><b>“... could not be extracted”:</b> an archive part may be damaged or incomplete. Compare its size with the download page and download the affected part again.</p>
-        <p><b>Not enough disk space.</b> Extraction takes place inside the Content Library Folder and requires approximately 6 GB. Downloads stored on the same drive occupy another 5.5 GB until you delete them after installation.</p>
-        <p><b>Assets &amp; Textures still shows Not installed.</b> Run <code>Install Content Files</code> with the original downloads. Manually copying an extracted folder into the library does not register the content as installed.</p>
-        <p>Reinstalling the same files preserves existing content and adds missing files, making it useful for repairing an incomplete installation.</p>
+        <p><b>A part of the archive is missing.</b> Keep both parts of the content pack in the same folder.</p>
+        <p><b>The archive could not be extracted.</b> A download is probably incomplete. Download it again.</p>
+        <p><b>Not enough disk space.</b> The installed content pack needs about 6 GB.</p>
+        <p><b>“This is a biome pack.”</b> Install it from the <a href="#biomes">Biomes</a> section instead.</p>
+        <p>Running the install again repairs an incomplete install.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="biomes">
+  <div class="wrap">
+    <h2>Install the biomes</h2>
+    <p class="lead">Biomes are ready-made scatter setups. They use the models from the content pack, so install that first.</p>
+
+    <article class="card" id="biome-install-location">
+      <div class="clip win"><video src="videos/install-biomes.mp4" poster="videos/install-biomes.jpg" muted loop playsinline preload="none"></video></div>
+      <div>
+        <h3>Biomes</h3>
+        <p>Choose a folder for your biomes with the folder button in the Biomes section. Then click the <code>Install biome packs</code> button and choose the biome pack. The biomes then appear in the <a href="biomes.html">Biome Browser</a>.</p>
+        <p>The icon next to the folder shows whether your biomes have everything they need. If it shows a warning, hover over it to see what is missing.</p>
+        <div class="note"><strong>Updating a biome pack.</strong>
+        The installer does not overwrite existing files. To update a pack, delete its folder first, then install the new version.</div>
+      </div>
+    </article>
+
+    <article class="card text" id="biome-install-problems">
+      <div>
+        <h3>When the biomes do not appear</h3>
+        <p><b>The icon shows a warning.</b> Hover over it to see which asset library is missing, then add it under <a href="#content">Asset Libraries</a>.</p>
+        <p><b>“This is an asset library.”</b> Install it from the Asset Libraries section instead.</p>
+        <p><b>The Biome Browser is empty.</b> Make sure the biome folder is the one you installed into, then refresh the browser.</p>
+        <p>For GScatter environments and your own biomes, see <a href="biomes.html#install">Installing biome packs</a>.</p>
       </div>
     </article>
   </div>
@@ -159,34 +188,31 @@
 <section id="preferences">
   <div class="wrap">
     <h2>Preferences</h2>
-    <p class="lead">Expand <code>Settings</code> below the Content Installer to access the remaining preferences.</p>
+    <p class="lead">The rest of the preferences are in the <code>Settings</code> panel. Click its header to expand it.</p>
 
     <article class="card" id="defaults">
       <div class="clip win"><video src="videos/preferences.mp4" poster="videos/preferences.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Defaults</h3>
         <ul class="facts"><li><b>Density</b> 1</li><li><b>Scale</b> 1</li><li><b>Random Scale</b> on</li><li><b>Random Rotation</b> on</li><li><b>Align to Surface</b> off</li><li><b>Bounding Box</b> off</li></ul>
-        <p>These settings apply to new scatter layers only. Changing them does not affect existing layers.</p>
-        <p><code>Density</code> and <code>Scale</code> set the initial <a href="scatter-setup.html#scattering">Density</a> and <a href="scale-rotation.html#scale">Uniform Scale</a> values.</p>
-        <p><code>Random Scale</code>, <code>Random Rotation</code>, and <code>Align to Surface</code> determine whether those features are enabled when a layer is created.</p>
-        <p><code>Bounding Box</code> enables <a href="optimization.html#mesh">Optimized Mesh</a> for new layers, displaying instances as boxes in the viewport. Use it when setting up scenes with heavy assets.</p>
-        <p>Click <code>Save Preferences</code> in the lower-left corner if Blender is not configured to save preferences automatically.</p>
+        <p>These set how new scatter layers start: their <a href="scatter-setup.html#scattering">Density</a> and <a href="scale-rotation.html#scale">Scale</a>, and which features are turned on. Existing layers are not affected.</p>
+        <p>Turn on <code>Bounding Box</code> to show new layers as boxes in the viewport, which keeps heavy scenes fast. See <a href="optimization.html#mesh">Optimized Mesh</a>.</p>
+        <p>If Blender does not save preferences automatically, click the <code>Save Preferences</code> button in the lower-left corner.</p>
       </div>
     </article>
 
     <article class="card text" id="scene-detection-experimental">
       <div>
         <h3>Scene Detection (Experimental)</h3>
-        <p><code>Automatic Scene Switch Detection</code> refreshes the System List when you switch scenes. It is the same option as <code>Auto Refresh</code> in the <a href="layers.html#layers">layer menu</a>.</p>
-        <p>This feature is experimental. Enable it when you regularly work across multiple scenes and need the layer list to update automatically.</p>
+        <p>Refreshes the layer list when you switch scenes. It is experimental, so only turn it on if you work across several scenes.</p>
       </div>
     </article>
 
     <article class="card text" id="export-megascans-and-debug-logging">
       <div>
         <h3>Export, Megascans and Debug Logging</h3>
-        <p>The <code>Export</code> and <code>Megascans</code> panels contain settings for game engine export and Megascans installation. See the <a href="megascans.html">Megascans page</a> for the installation workflow.</p>
-        <p><code>Debug Logging</code> writes additional information to Blender's console. Leave it disabled unless support asks you to enable it.</p>
+        <p>The <code>Export</code> and <code>Megascans</code> panels hold the settings for <a href="export.html">game engine export</a> and <a href="megascans.html">Megascans</a>.</p>
+        <p>Leave the <code>Debug Logging</code> checkbox off unless support asks you to turn it on.</p>
       </div>
     </article>
   </div>

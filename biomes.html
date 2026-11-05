@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -101,31 +101,29 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">A biome combines multiple scatter layers with their assets, densities, and masks already configured. Importing a biome adds its layers to the current emitter as a group.</p>
-    <p class="lead">After importing, you can adjust each layer, modify the group, or combine layers from different biomes to build your own environment.</p>
+    <p class="lead">A biome is a ready-made set of scatter layers, with the assets, density, and masks already set up. Importing one adds its layers to your emitter as a group, which you can then adjust like any other layers.</p>
   </div>
 </section>
 
 <section id="install">
   <div class="wrap">
     <h2>Installing biome packs</h2>
-    <p class="lead">Biomes come as <code>.flow</code> files. A biome file holds the layers and their settings and refers to the plants and rocks in your installed asset libraries, so biome packs stay small. Install the assets first, then the biomes that use them.</p>
+    <p class="lead">Biome packs are installed once, from ScatterFlow's preferences. Install the content pack first, since the biomes use its models.</p>
 
     <article class="card" id="install-a-biome-pack">
-      <div class="clip win"><video src="videos/biome-install.mp4" poster="videos/biome-install.jpg" muted loop playsinline preload="none"></video></div>
+      <div class="clip win"><video src="videos/install-biomes.mp4" poster="videos/install-biomes.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Install a biome pack</h3>
-        <p><b>1.</b> Open <code>Edit &gt; Preferences &gt; Add-ons</code>, expand ScatterFlow, and find the <code>Content Installer</code>. <code>ScatterFlow Assets &amp; Textures</code> should already show <code>Installed</code>; see <a href="getting-started.html#content">Install the content</a>.</p>
-        <p><b>2.</b> Click <code>Install Content Files</code>, select <code>ScatterFlow_ProBiomes.flow</code>, and click <code>Install ScatterFlow / GScatter Content</code>. Leave the file as it is; the installer unpacks it.</p>
-        <p><b>3.</b> <code>ScatterFlow Biomes</code> changes to <code>Installed</code>. The 31 ScatterFlow biomes now appear in the <a href="#browser">Biome Browser</a>, grouped into Desert, Forest, Lawn, Meadow, Trash, Tropical, Wasteland, and Wetland.</p>
-        <p>The biomes are stored in <code>ScatterFlow_Pro\ScatterFlow_ProBiomes</code> inside your Content Library Folder. Reinstalling the pack adds missing biomes and keeps the ones already there.</p>
+        <p>In ScatterFlow's preferences, choose a folder in the <code>Biomes</code> section, then click the <code>Install biome packs</code> button and choose the pack. For the full setup, see <a href="getting-started.html#biomes">Install the biomes</a>.</p>
+        <p>Once installed, the biomes are listed in the <a href="#browser">Biome Browser</a>, sorted into categories.</p>
+        <p>To update a pack, delete its folder first, then install the new version.</p>
       </div>
     </article>
 
     <article class="card text" id="older-biomes">
       <div>
         <h3>Biomes from older versions</h3>
-        <p>Biomes exported with earlier versions of ScatterFlow are a .json file with a .blend file beside it. They still appear in the Biome Browser and import as before. New exports always use the .flow format.</p>
+        <p>Biomes saved with earlier versions of ScatterFlow still show up in the Biome Browser and import as before. New exports use the .flow format.</p>
       </div>
     </article>
   </div>
@@ -139,9 +137,9 @@
       <div class="clip win"><video src="videos/biome-browser.mp4" poster="videos/biome-browser.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Opening the browser</h3>
-        <p>Choose an emitter and click <code>Open Biome Browser</code>. Move the cursor over the editor you want to use; it highlights blue. Click to replace that editor with the browser, or press <code>Esc</code> or right-click to cancel.</p>
-        <p>A tall area beside the viewport keeps the browser, scene, and ScatterFlow controls accessible together. Allow enough width to view multiple previews comfortably.</p>
-        <p><code>Size</code> adjusts preview size from 3 to 14.</p>
+        <p>Choose an emitter, click the <code>Open Biome Browser</code> button, then click the editor you want to replace with the browser. The editor under your cursor is highlighted in blue. Press <code>Esc</code> or right-click to cancel.</p>
+        <p>A tall area next to the viewport works best, so you can see the browser and the ScatterFlow controls side by side.</p>
+        <p>The <code>Size</code> slider changes how large the previews are.</p>
       </div>
     </article>
 
@@ -149,7 +147,7 @@
       <div class="clip win"><video src="videos/biome-exit.mp4" poster="videos/biome-exit.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Closing it</h3>
-        <p>Click <code>Exit Biome Panel</code> or the red cross beside Size. The editor returns to its previous view.</p>
+        <p>Click the <code>Exit Biome Panel</code> button, or the red cross next to Size, to return the editor to its previous view.</p>
       </div>
     </article>
   </div>
@@ -163,10 +161,10 @@
       <div class="clip win"><video src="videos/biome-find.mp4" poster="videos/biome-find.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Search, Categories and Favorites</h3>
-        <p><code>Search</code> filters biomes by name as you type. For example, enter “meadow” to find matching biomes.</p>
-        <p>Under <code>Categories</code>, expand <code>ScatterFlow</code> to browse Desert, Forest, Lawn, Meadow, Trash, Tropical, Wasteland, and Wetland. Select a category to filter the results, or choose <code>ALL</code> to show everything. Other installed packs have their own folders.</p>
-        <p>Click a biome's star to mark it as a favourite, then select <code>Favorites</code> to view starred biomes. Favorites are saved between sessions.</p>
-        <p>The refresh arrows beside Size reload the biome folder. Use them after installing or exporting a biome.</p>
+        <p>Type in the <code>Search</code> box to filter biomes by name.</p>
+        <p>The <code>Categories</code> list sorts them by type, such as Forest or Meadow. Each installed pack has its own folder.</p>
+        <p>Click a biome's star to mark it, then pick <code>Favorites</code> to see only your starred biomes. Favorites are kept between sessions.</p>
+        <p>Use the refresh arrows after installing or exporting a biome.</p>
       </div>
     </article>
   </div>
@@ -180,9 +178,8 @@
       <div class="clip win"><video src="videos/biome-import.mp4" poster="videos/biome-import.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>A whole biome</h3>
-        <p>Click a biome's name to add all its layers to the current emitter. They arrive in a group named after the biome. For example, Forest Floor_V1 adds ten layers, including flowering plants, leaf litter, and fallen sticks.</p>
-        <p>Use the group's controls to hide, duplicate, or adjust the biome as a whole. Select individual layers for more specific changes, or select the group to use <a href="layers.html#group-scattering">Group Scattering</a>.</p>
-        <p>Importing the biome onto another emitter reuses its plants already present in the file.</p>
+        <p>Click a biome's name to add all of its layers to your emitter. They are grouped under the biome's name, so you can hide, duplicate, or adjust the whole biome at once, or change single layers. See <a href="layers.html#group-scattering">Group Scattering</a>.</p>
+        <p>Importing the same biome again reuses the plants already in your file.</p>
       </div>
     </article>
 
@@ -190,8 +187,8 @@
       <div class="clip win"><video src="videos/biome-layers.mp4" poster="videos/biome-layers.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Single layers</h3>
-        <p>Click the arrow beside a biome's name to display its <code>Individual Layers</code>, then click <code>+</code> beside the layer you want to import.</p>
-        <p>Individually imported layers are not grouped. Use this to take a particular plant from a biome or combine selected layers from several biomes.</p>
+        <p>To take just one layer, click the arrow next to a biome's name to show its <code>Individual Layers</code>, then click the <code>+</code> button next to the one you want.</p>
+        <p>Single layers are not grouped, which makes it easy to mix layers from different biomes.</p>
       </div>
     </article>
   </div>
@@ -205,12 +202,11 @@
       <div class="clip win"><video src="videos/biome-large.mp4" poster="videos/biome-large.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>The Large Biome Import prompt</h3>
-        <p>ScatterFlow estimates the number of instances before importing. If the estimate exceeds 100,000, it asks how to handle viewport density. For example, Dandelion Meadow produces approximately 115,000 instances on a 25 m square emitter.</p>
-        <p><code>Yes, use adaptive safety</code> imports the layers hidden in the viewport and enables <a href="optimization.html#viewport">Decrease Viewport Density</a> at the displayed percentage. Render density remains unchanged.</p>
-        <p><code>No, keep full viewport density</code> imports the biome without these viewport reductions. Use it when your system can handle the estimated instance count.</p>
-        <p>After an adaptive-safety import, enable the layers' visibility to view the biome. Adjust Viewport Density as needed to balance coverage and responsiveness.</p>
+        <p>When a biome would create more than 100,000 instances, ScatterFlow asks how to handle it in the viewport.</p>
+        <p>The <code>Yes, use adaptive safety</code> button imports the layers hidden and lowers their <a href="optimization.html#viewport">viewport density</a>. Renders are not affected. Turn the layers on when you are ready to see them.</p>
+        <p>The <code>No, keep full viewport density</code> button imports the biome as it is. Choose this if your computer can handle it.</p>
         <div class="note"><strong>Nothing visible after importing?</strong>
-        Adaptive safety starts layers hidden. Use each layer's monitor icon or the group's eye icon to show them. If the result looks too sparse, increase Viewport Density in Optimization.</div>
+        Adaptive safety starts the layers hidden. Turn them on with a layer's monitor icon or the group's eye icon. If they look too sparse, raise Viewport Density in Optimization.</div>
       </div>
     </article>
   </div>
@@ -225,36 +221,28 @@
       <div class="clip win"><video src="videos/biome-export.mp4" poster="videos/biome-export.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Export Biome</h3>
-        <p>Open the arrow menu below the System List buttons and choose <code>Export Biome</code>. The command is available when the emitter contains at least one layer. It exports every layer in that emitter's list, including its settings and groups.</p>
-        <p><code>Name</code> sets the biome's display name in the Biome Browser. It initially uses the scene name.</p>
-        <p><code>Category</code> determines its folder in the browser's Categories list.</p>
-        <p><code>Partner</code> can be left empty.</p>
-        <p><code>Export Path</code> sets the .flow file to write. Save it in a folder inside <code>ScatterFlow_ProBiomes</code> to make the biome available in the browser; the example saves <code>Forest Mix.flow</code> in a <code>My Biomes</code> folder there.</p>
-        <p><code>Preview Image</code> optionally supplies the browser thumbnail. It is copied beside the .flow file.</p>
-        <p>Click <code>OK</code> to export. The status bar confirms the number of layers and library assets, for example <code>Biome exported (10 layers, 9 library assets)</code>.</p>
-        <div class="note"><strong>Assets must come from an installed library.</strong>
-        The .flow file does not store models. It records where each plant, rock, and collection is found in the installed ScatterFlow assets. If a layer uses an object that is not in one of those libraries, the export stops with <code>Export stopped: N asset(s) are not in the asset library</code> and lists them. Add those objects to a library .blend, or replace them with library assets, then export again.</div>
-        <div class="note"><strong>Refresh after exporting.</strong>
-        Click the Biome Browser's refresh arrows to display the new biome.</div>
+        <p>Choose <code>Export Biome</code> from the arrow menu below the System List. It saves every layer on the emitter, with its settings and groups, as a .flow file.</p>
+        <p>In the export window, the <code>Name</code> and <code>Category</code> fields set how the biome is listed in the Biome Browser. The <code>Partner</code> field can be left empty. <code>Preview Image</code> is an optional picture for the thumbnail.</p>
+        <p>Save the file inside your biome folder so the Biome Browser can find it, then refresh the browser.</p>
+        <div class="note"><strong>Use assets from your asset libraries.</strong>
+        A biome file does not contain models; it points to them in your asset libraries. If a layer uses an object from somewhere else, the export stops and lists those objects. Replace them with library assets, or add them to a library, then export again.</div>
       </div>
     </article>
   </div>
 </section>
+
 <section id="gscatter">
   <div class="wrap">
     <h2>GScatter environments</h2>
-    <p class="lead">ScatterFlow can import Graswald GScatter environments (.gscatter files) as biomes without the GScatter add-on. Imported environments become ordinary ScatterFlow layers that you can edit with ScatterFlow's controls.</p>
-    <p class="lead">Download the environment, install its file once through the Content Installer, then import it from the Biome Browser whenever needed.</p>
+    <p class="lead">ScatterFlow can import GScatter environments (.gscatter files) as biomes, without the GScatter add-on. They become ordinary ScatterFlow layers that you can edit like any other.</p>
 
     <article class="card text" id="where-to-get-gscatter-environments">
       <div>
         <h3>Where to get GScatter environments</h3>
-        <p>GScatter environments are available from the Gscatter store at <a href="https://store.gscatter.com">store.gscatter.com</a>. Sign in with a Graswald account and download an environment. The download is a .gscatter file, such as <code>BeeMeadow_x441g_DryCloverField.gscatter</code>.</p>
-        <p>Each file includes the environment's scatter setup, plants, and textures. Files are often 250 MB–1 GB. Keep the original download to reinstall it or use it on another computer.</p>
-        <p>Environments from other stores use the same workflow when supplied as .gscatter files.</p>
-        <p>Check the licence supplied with each environment before using its assets commercially.</p>
-        <div class="note"><strong>The Biome Browser requires an environment, not a single plant.</strong>
-        A .gscatter file containing only a plant can install successfully but has no scatter layers to display as a biome.</div>
+        <p>GScatter environments are available from the GScatter store at <a href="https://store.gscatter.com">store.gscatter.com</a>. Keep your downloads so you can reinstall them later.</p>
+        <p>Check each environment's licence before using it commercially.</p>
+        <div class="note"><strong>Use environments, not single plants.</strong>
+        A .gscatter file with only a plant has no layers to import as a biome.</div>
       </div>
     </article>
 
@@ -262,12 +250,8 @@
       <div class="clip win"><video src="videos/gscatter-install.mp4" poster="videos/gscatter-install.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Installing a .gscatter file</h3>
-        <p><b>1.</b> Open <code>Edit &gt; Preferences &gt; Add-ons</code>, find ScatterFlow, and expand its preferences.</p>
-        <p><b>2.</b> Check <code>Content Library Folder</code> in the <code>Content Installer</code>. Use the same folder as your existing ScatterFlow content. If no folder is set, choose one with sufficient disk space; installation remains disabled until a location is selected.</p>
-        <p><b>3.</b> Click <code>Install Content Files</code>, select the .gscatter download, and click <code>Install ScatterFlow / GScatter Content</code>. You can select multiple files and combine .gscatter, .zip, .rar, and .blend files in one installation.</p>
-        <p><b>4.</b> Follow the status bar while installation runs. Large files are extracted in the background, leaving Blender usable. Press <code>Esc</code> to cancel. The completion message reports the result, for example <code>Installed 1 content file(s): 30 new file(s), 0 existing file(s) kept.</code></p>
-        <p><b>5.</b> Check the <code>GScatter</code> entry in the Content Installer. It reports the installed pack count, such as <code>1 pack(s)</code>.</p>
-        <p>Files are extracted into <code>ScatterFlow_Partners\GScatterPacks</code> within the Content Library Folder, in a subfolder named after the download. Reinstalling the same file keeps existing content and restores missing files.</p>
+        <p>Install .gscatter files the same way as biome packs, with the <code>Install biome packs</code> button. A biome folder needs to be set first; see <a href="getting-started.html#biomes">Install the biomes</a>.</p>
+        <p>Large files can take a moment to install. You can keep working in Blender in the meantime, and <code>Esc</code> cancels.</p>
       </div>
     </article>
 
@@ -275,34 +259,31 @@
       <div class="clip win"><video src="videos/gscatter-import.mp4" poster="videos/gscatter-import.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Importing a GScatter environment</h3>
-        <p>Choose an emitter and open the <a href="#browser">Biome Browser</a>. Select <code>GScatter</code> under <code>Categories</code> to display installed environments. They share one category without subcategories. Search and Favorites work as they do for other biomes.</p>
-        <p>Expand an environment's <code>Individual Layers</code> to import selected layers with <code>+</code>. Each original GScatter scatter system becomes one layer; Dry Clover Field, for example, contains six.</p>
-        <p>Click the environment's name to import the full setup. A progress window reports the layers being added, and the resulting layers are grouped under the environment's name.</p>
-        <p>Large imports use the same instance estimate and adaptive-safety prompt as <a href="#large">other biomes</a>.</p>
+        <p>Installed environments are listed under <code>GScatter</code> in the Biome Browser's categories. Import them like any other biome: click the name for the whole environment, or add single layers from its <code>Individual Layers</code> list.</p>
+        <p>Each GScatter scatter system becomes one ScatterFlow layer. Large environments get the same prompt as <a href="#large">other large biomes</a>.</p>
       </div>
     </article>
 
     <article class="card text" id="what-carries-over-from-gscatter">
       <div>
         <h3>What carries over, and what is approximated</h3>
-        <p>GScatter builds scatter systems from stacks of effects. ScatterFlow converts those effects to the closest available ScatterFlow settings. The result resembles the original environment but may not match it exactly.</p>
-        <p><b>Carried over:</b> plants and their variations, density, seed, base scale, random scale, random rotation, and surface alignment.</p>
-        <p><b>Approximated:</b> multiple GScatter noise masks are represented by one noise mask using the same detail and seed, with density reduced to account for the original masked areas. GScatter's percentage-based alignment becomes enabled surface alignment when the original value is at least halfway.</p>
-        <p><b>Not imported:</b> the GScatter terrain generator and effects without a ScatterFlow equivalent.</p>
-        <p>Once imported, the layers no longer depend on GScatter. Adjust them using ScatterFlow's density, masks, slope and height rules, and other controls.</p>
+        <p>ScatterFlow converts GScatter's effects to the closest ScatterFlow settings, so the result looks like the original but may not match it exactly.</p>
+        <p><b>Carried over:</b> plants, density, seed, scale, rotation, and surface alignment.</p>
+        <p><b>Approximated:</b> noise masks, since several GScatter masks become one.</p>
+        <p><b>Not imported:</b> the GScatter terrain generator, and effects that ScatterFlow has no equivalent for.</p>
+        <p>After importing, the layers no longer need GScatter.</p>
       </div>
     </article>
 
     <article class="card text" id="gscatter-troubleshooting">
       <div>
         <h3>When something goes wrong</h3>
-        <p><b>The Install button is disabled.</b> Choose a <code>Content Library Folder</code> first.</p>
-        <p><b>“GScatter package has no product.json content.”</b> The file may not be a GScatter package, or the download may be incomplete. Download it again and compare its size with the store listing.</p>
-        <p><b>“The selected archive is not ZIP-compatible.”</b> The file is damaged or incomplete. Download it again.</p>
-        <p><b>The environment is missing from the Biome Browser.</b> Refresh the browser and select the <code>GScatter</code> category. Check that the Content Installer reports at least one GScatter pack and that the file contains an environment rather than a single plant.</p>
-        <p><b>“N missing collection(s)” after importing.</b> Required plants were not found, so their layers were skipped. Reinstall the file to restore missing content. If the environment depends on another Graswald product, install that product's .gscatter file as well.</p>
-        <p><b>“Choose an OpenScatter emitter before importing the GScatter environment.”</b> Select an Emitter at the top of the ScatterFlow panel.</p>
-        <p><b>Import or viewport performance is slow.</b> GScatter environments can be dense. Try a smaller emitter, accept adaptive safety, or reduce density on the heaviest layers. See <a href="optimization.html">Optimization</a>.</p>
+        <p><b>Install biome packs is greyed out.</b> Set a biome folder first.</p>
+        <p><b>The file will not install.</b> The download is probably damaged or incomplete. Download it again.</p>
+        <p><b>The environment is not in the Biome Browser.</b> Refresh the browser and check the GScatter category. Make sure the file is an environment, not a single plant.</p>
+        <p><b>Some layers are missing after importing.</b> Their plants were not found. Install the file again. If the environment uses another GScatter product, install that one too.</p>
+        <p><b>Nothing happens when importing.</b> Choose an emitter at the top of the ScatterFlow panel first.</p>
+        <p><b>The scene is slow.</b> GScatter environments can be dense. Try a smaller emitter, accept adaptive safety, or lower the density of the heaviest layers. See <a href="optimization.html">Optimization</a>.</p>
       </div>
     </article>
   </div>

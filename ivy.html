@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -104,7 +104,7 @@
 
 <section id="intro">
   <div class="wrap">
-    <p class="lead">The <code>Ivy</code> tab creates climbing plants on objects such as walls, trunks, and rocks. Draw the main stems, and ScatterFlow generates vines, branches, leaves, and flowers along the surface. Use <code>Ivy Properties</code> to refine the result afterward.</p>
+    <p class="lead">The <code>Ivy</code> tab grows climbing plants on objects such as walls, trunks, and rocks. You draw the main stems, ScatterFlow adds the vines, branches, leaves, and flowers, and you fine-tune the result in the <code>Ivy Properties</code> panel.</p>
   </div>
 </section>
 
@@ -116,13 +116,10 @@
       <div class="clip win"><video src="videos/ivy-preset.mp4" poster="videos/ivy-preset.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Choose a preset</h3>
-        <p>Presets include a plant's leaves, flowers, and growth settings. The content pack provides options ranging from green climbers to flowering clematis.</p>
-        <p><b>1.</b> Open an Asset Browser and select <code>ScatterFlow_Pro_ContentPack</code>.</p>
-        <p><b>2.</b> Open <code>Ivy &gt; Presets</code>.</p>
-        <p><b>3.</b> Select the preset you want to use.</p>
-        <p><b>4.</b> Select the target wall, click <code>Add Ivy</code>, and draw the stems. The new ivy uses the selected preset's assets and settings.</p>
+        <p>A preset gives you a plant's leaves, flowers, and growth settings in one go. The content pack includes everything from green climbers to flowering clematis.</p>
+        <p>Select a preset in the Asset Browser, under <code>Ivy &gt; Presets</code> in the <code>ScatterFlow_Pro_ContentPack</code> library. Then select your target, click <code>Add Ivy</code>, and draw. The new ivy uses that preset.</p>
         <div class="note"><strong>A preset is optional.</strong>
-        Without one, Add Ivy creates bare stems until you assign leaves. Select a preset first to start with a complete plant. If presets are missing, see <a href="content-pack.html#library">Adding the library</a>.</div>
+        Without one, Add Ivy creates bare stems until you assign leaves. If presets are missing, see <a href="content-pack.html#library">Adding the library</a>.</div>
       </div>
     </article>
 
@@ -130,13 +127,10 @@
       <div class="clip"><video src="videos/ivy-add.mp4" poster="videos/ivy-add.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Add Ivy and draw</h3>
-        <p><b>1.</b> Select the target object. You can select multiple objects for the ivy to grow across.</p>
-        <p><b>2.</b> Position the 3D Cursor at the plant's starting point with <code>Shift + Right Click</code>.</p>
-        <p><b>3.</b> Click <code>Add Ivy</code> to activate the drawing tool.</p>
-        <p><b>4.</b> Draw the main stems on the surface. Each stroke creates one stem, and you can add multiple strokes.</p>
-        <p><b>5.</b> Press <code>Tab</code> to finish and generate the ivy.</p>
+        <p>Select the object to grow on. You can select several for the ivy to grow across. Place the 3D Cursor where the plant should start with <code>Shift + Right Click</code>, then click <code>Add Ivy</code>.</p>
+        <p>Draw the main stems on the surface. Each stroke is one stem. Press <code>Tab</code> to finish and generate the ivy.</p>
         <div class="note"><strong>Start with a few simple strokes.</strong>
-        The strokes define the main stems, not every vine. Branches and vines spread from them automatically, so dense drawing is often unnecessary.</div>
+        Your strokes are the main stems, not every vine. Branches and vines spread from them on their own, so you rarely need to draw much.</div>
       </div>
     </article>
 
@@ -144,7 +138,7 @@
       <div class="clip"><video src="videos/ivy-edit.mp4" poster="videos/ivy-edit.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Edit Ivy</h3>
-        <p>Select an entry in the Ivy List and click <code>Edit Ivy</code> to edit its strokes. Add stems to extend coverage, or select and delete unwanted strokes. Press <code>Tab</code> to regenerate the plant.</p>
+        <p>Select an ivy in the Ivy List and click <code>Edit Ivy</code> to change its strokes. Add stems to cover more, or delete the ones you don't want. Press <code>Tab</code> to regenerate the plant.</p>
       </div>
     </article>
 
@@ -152,7 +146,7 @@
       <div class="clip win"><video src="videos/ivy-swap.mp4" poster="videos/ivy-swap.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Swap the preset</h3>
-        <p>Select another preset in the Asset Browser, then click <code>Swap Preset</code>, the circular-arrow button between Leaf Visibility and Flower Visibility. The drawn stems stay in place, while leaves, flowers, and growth settings are replaced.</p>
+        <p>To change an ivy's preset, select a new one in the Asset Browser and click <code>Swap Preset</code>, the circular-arrow button between Leaf Visibility and Flower Visibility. Your stems stay; the leaves, flowers, and growth settings are replaced.</p>
         <p>To replace only the leaves or flowers, use the controls described under <a href="#sources">Changing leaves and flowers</a>.</p>
       </div>
     </article>
@@ -171,10 +165,10 @@
           <li><b>Type</b> Two buttons</li>
           <li><b>Default</b> Realistic Mode</li>
         </ul>
-        <p><code>Realistic Mode</code> generates stems along the surface from your strokes, with attached vines, branches, leaves, and flowers. Use it when the plant will be viewed closely.</p>
-        <p><code>Fast Mode</code> skips the stems and covers the target with leaves and flowers. It has a lower processing cost and suits distant surfaces or large areas.</p>
+        <p><code>Realistic Mode</code> grows stems along the surface from your strokes, with vines, branches, leaves, and flowers. Use it for plants seen up close.</p>
+        <p><code>Fast Mode</code> skips the stems and just covers the target with leaves and flowers. It is lighter, so it suits distant surfaces or large areas.</p>
         <div class="note"><strong>The available settings depend on the mode.</strong>
-        Switching modes changes Ivy Properties. Ivy Bake is available only in Realistic Mode.</div>
+        Each mode has its own settings in Ivy Properties. Ivy Bake only works in Realistic Mode.</div>
       </div>
     </article>
   </div>
@@ -188,12 +182,9 @@
       <div class="clip"><video src="videos/ivy-visibility.mp4" poster="videos/ivy-visibility.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Leaf Visibility, Flower Visibility and the list</h3>
-        <p><code>Leaf Visibility</code> and <code>Flower Visibility</code> toggle those parts of the selected ivy. Hide flowers for a non-flowering plant, or hide both leaves and flowers while shaping the stems.</p>
-        <p>The <code>Ivy List</code> contains one entry per ivy in the scene. Select an entry to edit it. Each row includes:</p>
-        <p><code>Eye</code>: toggles viewport visibility.<br>
-        <code>Camera</code>: toggles render visibility.<br>
-        <code>Bin</code>: deletes the ivy, including its stems and collections.</p>
-        <p>Hover over the <code>i</code> above the list for a brief workflow reminder.</p>
+        <p>The <code>Leaf Visibility</code> and <code>Flower Visibility</code> buttons show or hide those parts of the selected ivy. Hide flowers for a plant that doesn't flower, or hide both while you shape the stems.</p>
+        <p>The <code>Ivy List</code> has one entry for each ivy in the scene. Select one to edit it. In each row, the <code>Eye</code> icon toggles viewport visibility, the <code>Camera</code> icon toggles render visibility, and the <code>Bin</code> icon deletes the ivy along with its stems and collections.</p>
+        <p>Hover over the <code>i</code> icon above the list for a quick workflow reminder.</p>
       </div>
     </article>
   </div>
@@ -202,19 +193,16 @@
 <section id="sources">
   <div class="wrap">
     <h2>Changing leaves and flowers</h2>
-    <p class="lead">The two <code>+</code> buttons replace leaf or flower meshes without changing the drawn stems or growth settings. The left button, beside Leaf Visibility, changes the leaves. The right button, beside Flower Visibility, changes the flowers. Replacing one does not change the other.</p>
+    <p class="lead">The two <code>+</code> buttons swap the leaf or flower meshes without changing your stems or growth settings. The left one, beside Leaf Visibility, changes the leaves; the right one, beside Flower Visibility, changes the flowers.</p>
 
     <article class="card" id="leaves-and-flowers-from-the-content-pack">
       <div class="clip win"><video src="videos/ivy-sources.mp4" poster="videos/ivy-sources.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Leaves and flowers from the content pack</h3>
-        <p><b>1.</b> Select the ivy in the Ivy List.</p>
-        <p><b>2.</b> Open <code>Ivy &gt; Leafs</code> in the Asset Browser and select a leaf set.</p>
-        <p><b>3.</b> Click the left <code>+</code> to replace the leaves.</p>
-        <p><b>4.</b> Open <code>Ivy &gt; Flowers</code>, select a flower set, and click the right <code>+</code> to replace the flowers.</p>
-        <p>You can combine sets from different plants, such as Akebia leaves and Beaumontia flowers on a clematis setup.</p>
+        <p>Select the ivy in the Ivy List. Then pick a leaf set from <code>Ivy &gt; Leafs</code> in the Asset Browser and click the left <code>+</code>, or a flower set from <code>Ivy &gt; Flowers</code> and click the right <code>+</code>.</p>
+        <p>You can mix leaves and flowers from different plants.</p>
         <div class="note"><strong>Use the correct replacement button.</strong>
-        Either <code>+</code> accepts the selected asset. A leaf set can therefore be assigned as flowers, or a flower set as leaves.</div>
+        Either <code>+</code> accepts whatever asset is selected, so a leaf set can end up as flowers, or a flower set as leaves.</div>
       </div>
     </article>
 
@@ -222,16 +210,13 @@
       <div class="clip win"><video src="videos/ivy-custom-sources.mp4" poster="videos/ivy-custom-sources.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Your own leaves and flowers</h3>
-        <p>Place your leaf or flower objects in a collection. If the collection contains several objects, the ivy uses a mix of them.</p>
-        <p><b>1.</b> Clear the Asset Browser selection by clicking an empty area.</p>
-        <p><b>2.</b> Select your collection in the Outliner, or select an object within it.</p>
-        <p><b>3.</b> Click the left <code>+</code> for leaves or the right <code>+</code> for flowers.</p>
-        <p>For example, a My Leaves collection can contain multiple custom leaf shapes, while My Flowers supplies a separate flower mesh. Replacing these sources preserves the ivy's overall shape.</p>
-        <p>You can also assign a collection directly in <code>Ivy Properties</code>: use <code>Leaf Source</code> in the <a href="#leaves">Leafs</a> panel or <code>Flower Source</code> in the <a href="#flowers">Flowers</a> panel.</p>
+        <p>Put your leaf or flower objects in a collection. If it holds several objects, the ivy uses a mix of them.</p>
+        <p>Click an empty area of the Asset Browser to clear its selection. Then select your collection in the Outliner, or an object inside it, and click the left <code>+</code> for leaves or the right <code>+</code> for flowers. The ivy keeps its overall shape.</p>
+        <p>You can also set a collection directly in <code>Ivy Properties</code>, in the <code>Leaf Source</code> field of the <a href="#leaves">Leafs</a> panel or the <code>Flower Source</code> field of the <a href="#flowers">Flowers</a> panel.</p>
         <div class="note"><strong>Asset Browser selection takes priority.</strong>
-        If an asset remains selected there, the <code>+</code> button uses it instead of your selected collection. Clear the Asset Browser selection before assigning scene objects.</div>
+        If an asset is still selected there, the <code>+</code> button uses it instead of your collection. Clear the Asset Browser selection first.</div>
         <div class="note"><strong>Place origins at the attachment point.</strong>
-        Model each leaf or flower at its intended size, with its origin where it joins the stem. Use <code>Leaf Size</code>, <code>Flower Size</code>, and rotation settings to refine its placement on the vine.</div>
+        Model each leaf or flower at the size you want, with its origin where it meets the stem. Fine-tune it with <code>Leaf Size</code>, <code>Flower Size</code>, and the rotation settings.</div>
       </div>
     </article>
   </div>
@@ -239,20 +224,18 @@
 <section id="growth">
   <div class="wrap">
     <h2>Growth</h2>
-    <p class="lead">Expand <code>Ivy Properties</code> to access the selected plant's settings. The <code>ivy Growth</code> panel controls its stems and branching.</p>
+    <p class="lead">Expand the <code>Ivy Properties</code> panel to edit the selected plant. The <code>ivy Growth</code> panel controls its stems and branches.</p>
 
     <article class="card" id="vines-and-branches">
       <div class="clip"><video src="videos/ivy-growth.mp4" poster="videos/ivy-growth.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Vines and branches</h3>
-        <p><code>Vines Spread</code>: how far vines extend from the drawn stems. Increase it to cover more surface without adding strokes.</p>
-        <p><code>Branch Spread</code>: how far smaller branches extend from the vines.</p>
-        <p><code>Overall Vine Size</code>: the overall stem thickness.</p>
-        <p><code>Vines Surface Offset</code>: the distance between stems and the target surface.</p>
-        <p>Under <code>Vines</code>, use <code>Vine Density</code> for the number of vines, <code>Vine Size</code> for thickness, and <code>Vine Seed</code> for a different arrangement.</p>
-        <p>Under <code>Branches</code>, <code>Branch Density</code>, <code>Branch Size</code>, and <code>Branch Seed</code> provide equivalent controls for branches. Leaves and flowers grow on branches, so increasing branch density produces a fuller plant.</p>
+        <p><code>Vines Spread</code> sets how far vines reach from your stems. Raise it to cover more surface without drawing more. <code>Branch Spread</code> sets how far the smaller branches reach from the vines.</p>
+        <p><code>Overall Vine Size</code> sets the stem thickness. <code>Vines Surface Offset</code> sets the gap between the stems and the surface.</p>
+        <p>Under <code>Vines</code>, <code>Vine Density</code> sets the number of vines, <code>Vine Size</code> their thickness, and <code>Vine Seed</code> their arrangement.</p>
+        <p><code>Branches</code> has the same controls for branches: <code>Branch Density</code>, <code>Branch Size</code>, and <code>Branch Seed</code>. Leaves and flowers grow on branches, so more branches make a fuller plant.</p>
         <div class="note"><strong>Use seeds to try different growth patterns.</strong>
-        Changing a seed preserves the other settings while regenerating the arrangement. This is useful when a vine grows into an unwanted position.</div>
+        Changing a seed rearranges the growth but keeps your other settings. It helps when a vine grows somewhere you don't want.</div>
       </div>
     </article>
 
@@ -260,12 +243,9 @@
       <div class="clip"><video src="videos/ivy-fast.mp4" poster="videos/ivy-fast.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Growth in Fast Mode</h3>
-        <p><a href="#mode">Fast Mode</a> has no drawn stems to edit. Its <code>ivy Growth</code> panel instead provides:</p>
-        <p><code>Spread</code>: coverage distance across the target, in metres.</p>
-        <p><code>Density</code>: the amount of surface coverage.</p>
-        <p><code>Max Scale</code> and <code>Min Scale</code>: the random size range for the generated pieces.</p>
-        <p><code>Seed</code>: a different arrangement using the same settings.</p>
-        <p>The Leafs, Flowers, Wind, and Optimization panels are available in both modes.</p>
+        <p><a href="#mode">Fast Mode</a> has no stems to edit, so its <code>ivy Growth</code> panel is simpler.</p>
+        <p><code>Spread</code> sets how far the coverage reaches across the target, in metres. <code>Density</code> sets how much of the surface is covered. <code>Max Scale</code> and <code>Min Scale</code> set the size range of the pieces, and <code>Seed</code> gives a different arrangement.</p>
+        <p>The Leafs, Flowers, Wind, and Optimization panels work in both modes.</p>
       </div>
     </article>
   </div>
@@ -279,13 +259,9 @@
       <div class="clip"><video src="videos/ivy-leaves.mp4" poster="videos/ivy-leaves.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Leafs</h3>
-        <p>The <code>Leafs</code> checkbox toggles leaves, like Leaf Visibility. <code>Leaf Source</code> selects the collection used for their meshes.</p>
-        <p><code>Leaf Density</code>: the number of leaves along the stems.</p>
-        <p><code>Leaf Spacing</code>: the minimum gap between leaves.</p>
-        <p><code>Leaf Seed</code>: a different arrangement using the same leaf sources.</p>
-        <p><code>Leaf Size Min</code> and <code>Leaf Size Max</code>: the range of leaf sizes.</p>
-        <p><code>Leaf Rotation</code> and <code>Leaf Rotation2</code>: random rotation amounts.</p>
-        <p><code>Leaf Downward Tilt Min</code> and <code>Max</code>: the range of downward leaf tilt.</p>
+        <p>The <code>Leafs</code> checkbox turns leaves on or off, like Leaf Visibility. <code>Leaf Source</code> is the collection the leaves come from.</p>
+        <p><code>Leaf Density</code> sets how many leaves grow along the stems, and <code>Leaf Spacing</code> the minimum gap between them. <code>Leaf Seed</code> rearranges them.</p>
+        <p><code>Leaf Size Min</code> and <code>Leaf Size Max</code> set the size range. <code>Leaf Rotation</code> and <code>Leaf Rotation2</code> add random rotation, and <code>Leaf Downward Tilt Min</code> and <code>Max</code> set how far the leaves tilt down.</p>
       </div>
     </article>
   </div>
@@ -299,10 +275,10 @@
       <div class="clip"><video src="videos/ivy-flowers.mp4" poster="videos/ivy-flowers.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Flowers</h3>
-        <p>The <code>Flowers</code> panel follows the same pattern as Leafs: the <code>Flowers</code> checkbox enables them, <code>Flower Source</code> selects their collection, and <code>Flower Density</code>, <code>Flower Spacing</code>, <code>Flower Seed</code>, <code>Flower Size Min</code>, and <code>Max</code> control their placement and variation.</p>
-        <p>Under <code>Flower Rotation</code>, <code>Flowers Rotation</code> adds random rotation. <code>Flowers Min</code> and <code>Max Upward Tilt</code> control how far flowers face upward and away from the surface.</p>
+        <p>The <code>Flowers</code> panel works like Leafs. The <code>Flowers</code> checkbox turns them on, <code>Flower Source</code> sets their collection, and <code>Flower Density</code>, <code>Flower Spacing</code>, <code>Flower Seed</code>, <code>Flower Size Min</code>, and <code>Max</code> control how they are placed.</p>
+        <p>Under <code>Flower Rotation</code>, <code>Flowers Rotation</code> adds random rotation. <code>Flowers Min</code> and <code>Max Upward Tilt</code> set how far flowers turn up and away from the surface.</p>
         <div class="note"><strong>Adjust Flower Density gradually.</strong>
-        Presets use values around 0.01; a value of 0.05 can already produce dense flowering.</div>
+        Presets use around 0.01, and 0.05 can already be very dense.</div>
       </div>
     </article>
   </div>
@@ -316,12 +292,11 @@
       <div class="clip"><video src="videos/ivy-wind.mp4" poster="videos/ivy-wind.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Wind</h3>
-        <p>Enable <code>Wind</code> and play the timeline to preview leaf and flower movement.</p>
-        <p><code>Global/Wind Strength</code>: how far the leaves and flowers move.</p>
-        <p><code>Global/Wind Speed</code>: how quickly the leaves and flowers move.</p>
-        <p><code>Global/Wind Scale</code>: the gust size. Smaller values create variation between neighbouring leaves; larger values make broader areas move together.</p>
+        <p>Turn on <code>Wind</code> and play the timeline to see the leaves and flowers move.</p>
+        <p><code>Global/Wind Strength</code> sets how far they move, and <code>Global/Wind Speed</code> how fast.</p>
+        <p><code>Global/Wind Scale</code> sets the size of the gusts. Small values make neighbouring leaves move differently; large values move broad areas together.</p>
         <div class="note"><strong>Keep ivy wind subtle.</strong>
-        Use low strength to move the leaves without making the whole plant appear to sway away from the wall.</div>
+        Low strength moves the leaves without the whole plant seeming to sway away from the wall.</div>
       </div>
     </article>
   </div>
@@ -335,18 +310,18 @@
       <div class="clip"><video src="videos/ivy-optimization.mp4" poster="videos/ivy-optimization.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Viewport Density, levels and Advanced</h3>
-        <p><code>Viewport Density</code>: the proportion of leaves and flowers shown in the viewport, from 0 to 1. Lower it to keep a heavy scene responsive while editing.</p>
-        <p><code>Viewport Level</code> and <code>Render Level</code>: how many times growth expands from itself. Higher levels produce substantially more coverage and require more processing. Separate values let you work at viewport level 1 while rendering a more detailed plant.</p>
-        <p>Under <code>Advanced</code>, <code>Decimate Vines</code> and <code>Decimate Branches</code> simplify the stems, while <code>Vines Resolution</code> controls their roundness. Higher decimation values reduce processing cost but also change the growth pattern, so set them before refining the plant.</p>
+        <p><code>Viewport Density</code> sets how many of the leaves and flowers show in the viewport, from 0 to 1. Lower it to keep a heavy scene responsive while you work.</p>
+        <p><code>Viewport Level</code> and <code>Render Level</code> set how many times the growth expands on itself. Each level adds a lot more coverage and takes more processing. Keeping them separate lets you work at level 1 and render a fuller plant.</p>
+        <p>Under <code>Advanced</code>, <code>Decimate Vines</code> and <code>Decimate Branches</code> simplify the stems, and <code>Vines Resolution</code> sets how round they are. More decimation is lighter but also changes the growth pattern, so set it before you fine-tune the plant.</p>
         <div class="note"><strong>Increase levels one step at a time.</strong>
-        Level 3 can generate a very dense plant on a large wall.</div>
+        Level 3 can make a very dense plant on a large wall.</div>
       </div>
     </article>
 
     <article class="card text" id="misc-and-sources">
       <div>
         <h3>Misc and Sources</h3>
-        <p><code>Misc</code> contains finer controls for stem variation, including <code>Noise Scale</code>, <code>Noise Strength</code>, and <code>Branch Offset</code>. <code>Sources</code> identifies the drawn curve, target objects, and <code>Vines Material</code> used for the stems.</p>
+        <p><code>Misc</code> has finer controls for stem variation, such as <code>Noise Scale</code>, <code>Noise Strength</code>, and <code>Branch Offset</code>. <code>Sources</code> shows the drawn curve, the target objects, and the <code>Vines Material</code> used for the stems.</p>
       </div>
     </article>
   </div>
@@ -360,13 +335,11 @@
       <div class="clip"><video src="videos/ivy-bake.mp4" poster="videos/ivy-bake.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Bake Ivy</h3>
-        <p>Ivy updates when something it depends on changes. Baking stores the finished plant to improve playback in heavy scenes. The bake controls are at the bottom of Ivy Properties in Realistic Mode.</p>
-        <p><code>Still</code>: caches the current frame. Use it for ivy without animation.</p>
-        <p><code>Animation</code>: caches the full scene frame range, including wind.</p>
-        <p><code>Bake Ivy</code>: starts the bake.</p>
-        <p><code>Bin</code>: deletes the cache so the ivy can respond to edits again.</p>
+        <p>Ivy updates whenever something it depends on changes. Baking stores the finished plant so heavy scenes play back faster. The bake controls are at the bottom of Ivy Properties, in Realistic Mode.</p>
+        <p>Click the <code>Still</code> button to cache the current frame, for ivy that doesn't move, or the <code>Animation</code> button to cache the scene's whole frame range, including wind. Then click <code>Bake Ivy</code>.</p>
+        <p>The <code>Bin</code> button deletes the bake so the ivy responds to edits again.</p>
         <div class="note"><strong>Save before baking, and bake after final edits.</strong>
-        A baked ivy does not respond to setting changes until you delete its bake.</div>
+        A baked ivy ignores setting changes until you delete its bake.</div>
       </div>
     </article>
   </div>

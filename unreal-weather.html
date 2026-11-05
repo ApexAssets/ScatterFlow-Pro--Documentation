@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group" open>
@@ -93,15 +93,15 @@
 <section id="weather">
   <div class="wrap">
     <h2>Weather</h2>
-    <p class="lead">ScatterFlow Weather creates rain or snow around the camera and applies wetness, puddles, or snow cover across scene materials without configuring each material individually.</p>
-    <p class="lead">When ScatterFlow Sky is present, it responds to the weather: rain darkens the lighting and increases cloud cover, snow adds pale clouds and haze, and thunderstorms add lightning.</p>
+    <p class="lead">ScatterFlow Weather adds rain or snow around the camera. It also makes the scene wet, adds puddles, or covers it in snow, without you editing any materials.</p>
+    <p class="lead">If ScatterFlow Sky is in the level, it reacts to the weather. Rain brings darker light and more clouds, snow brings pale clouds and haze, and thunderstorms add lightning.</p>
 
     <article class="card" id="start-and-stop-the-weather">
       <div class="clip wide"><video src="videos/ue-weather-add.mp4" poster="videos/ue-weather-add.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Start and stop the weather</h3>
-        <p>Click the rain-cloud icon beside <code>Select a layer to edit it</code> to start rain. On first use, ScatterFlow builds the required weather assets.</p>
-        <p>Choose <code>None</code> in the <code>Weather</code> section to stop precipitation and return the sky to its Sky Preset.</p>
+        <p>Click the rain-cloud icon beside <code>Select a layer to edit it</code> to start rain. The first time, ScatterFlow builds the weather assets it needs.</p>
+        <p>To stop it, click the <code>None</code> button in the <code>Weather</code> section. The sky goes back to its Sky Preset.</p>
       </div>
     </article>
 
@@ -109,8 +109,8 @@
       <div class="clip wide"><video src="videos/ue-weather-presets.mp4" poster="videos/ue-weather-presets.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Weather Presets</h3>
-        <p>Choose <code>None</code>, <code>Light Rain</code>, <code>Rain</code>, <code>Thunderstorm</code>, <code>Light Snow</code>, <code>Snow</code>, or <code>Blizzard</code>. Each preset configures precipitation, surface effects, and sky conditions together. Start with the closest preset, then refine it.</p>
-        <p>The visible controls change with the selected weather: rain settings for rain and snow settings for snow.</p>
+        <p>Click a preset button, such as <code>Light Rain</code>, <code>Thunderstorm</code>, or <code>Blizzard</code>, to set the precipitation, surfaces, and sky in one step. Pick the closest one, then fine-tune it.</p>
+        <p>The settings shown depend on the weather: rain settings for rain, snow settings for snow.</p>
       </div>
     </article>
 
@@ -118,8 +118,8 @@
       <div class="clip wide"><video src="videos/ue-weather-influence.mp4" poster="videos/ue-weather-influence.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Weather Influence</h3>
-        <p>Controls how strongly the weather changes the sky. At 1, the normal weather response is applied. At 0, precipitation continues without changing the fair-weather sky. A value of 2 intensifies the sky response.</p>
-        <p>At 0, cloud coverage comes from <code>Fair Weather Clouds</code> in the Sky section's Clouds panel. This defines the dry-sky conditions before and after the weather.</p>
+        <p>Sets how much the weather changes the sky. 1 is the normal amount, and 2 makes it stronger. At 0, it still rains or snows, but the sky stays as it is in fair weather.</p>
+        <p>The fair-weather clouds come from the <code>Fair Weather Clouds</code> slider in the Sky section's Clouds panel. This is also the sky you see before and after the weather.</p>
       </div>
     </article>
 
@@ -127,8 +127,8 @@
       <div class="clip wide"><video src="videos/ue-weather-transition.mp4" poster="videos/ue-weather-transition.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Transition</h3>
-        <p><code>Transition (s)</code> sets how long a weather change takes during gameplay. In the editor, changes normally appear immediately.</p>
-        <p>For example, an 8-second transition gradually increases cloud cover and surface wetness when switching to Rain. Selecting None transitions back to dry conditions.</p>
+        <p><code>Transition (s)</code> sets how many seconds a weather change takes during gameplay. Clouds and wetness build up gradually, and switching to None dries the scene the same way.</p>
+        <p>In the editor, changes usually appear at once.</p>
       </div>
     </article>
 
@@ -136,12 +136,12 @@
       <div class="clip wide"><video src="videos/ue-weather-rain.mp4" poster="videos/ue-weather-rain.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Falling rain</h3>
-        <p>Use a dark background to inspect raindrop shape and visibility.</p>
-        <p><code>Opacity</code>: drop visibility.<br>
-        <code>Drop Width</code> and <code>Drop Length</code>: the dimensions of the rain streaks.<br>
-        <code>Fall Speed</code>: how quickly drops descend. Lower values produce slower motion.<br>
-        <code>Particle Count</code>: the number of drops around the camera at full intensity, up to 100,000.<br>
-        <code>Intensity</code>: overall rainfall strength, affecting both falling drops and surface wetness.</p>
+        <p><code>Opacity</code> sets how visible the drops are.<br>
+        <code>Drop Width</code> and <code>Drop Length</code> set the size of the rain streaks.<br>
+        <code>Fall Speed</code> sets how fast the drops fall.<br>
+        <code>Particle Count</code> is the number of drops around the camera at full intensity, up to 100,000.<br>
+        <code>Intensity</code> sets how heavy the rain is. It affects both the falling drops and how wet surfaces get.</p>
+        <p>The drops are easiest to judge against a dark background.</p>
       </div>
     </article>
 
@@ -149,7 +149,7 @@
       <div class="clip wide"><video src="videos/ue-weather-follow-wind.mp4" poster="videos/ue-weather-follow-wind.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Follow Wind</h3>
-        <p>Controls how strongly precipitation follows the level's <code>Wind</code>. At 0, rain and snow fall vertically regardless of wind. A value of 2 doubles the directional response.</p>
+        <p>Sets how much rain and snow are blown by the level's <code>Wind</code>. At 0, they fall straight down whatever the wind. At 2, the wind has twice the effect.</p>
       </div>
     </article>
 
@@ -157,7 +157,8 @@
       <div class="clip wide"><video src="videos/ue-weather-splashes.mp4" poster="videos/ue-weather-splashes.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Splashes</h3>
-        <p><code>Splashes</code> adds small crown-shaped impacts where raindrops hit the ground. Disabling it removes these impacts but leaves puddle ripple rings. <code>Splash Amount</code> controls their number.</p>
+        <p>Turn on the <code>Splashes</code> checkbox to add small splashes where raindrops hit the ground. <code>Splash Amount</code> sets how many there are.</p>
+        <p>Turning Splashes off keeps the ripple rings in puddles.</p>
       </div>
     </article>
 
@@ -165,8 +166,8 @@
       <div class="clip wide"><video src="videos/ue-weather-wet.mp4" poster="videos/ue-weather-wet.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Wet Surfaces and Darkening</h3>
-        <p><code>Wet Surfaces</code>: enables darker, glossier surfaces and puddles in flat areas without editing the underlying materials. Disable it to keep the ground dry while rain continues.</p>
-        <p><code>Darkening</code>: how much wet surfaces darken. At 0, wetness changes gloss without darkening; at 1, the surface has a strongly soaked appearance.</p>
+        <p><code>Wet Surfaces</code> makes surfaces darker and glossier and adds puddles on flat ground, without changing your materials. Turn it off to keep the ground dry while it rains.</p>
+        <p><code>Darkening</code> sets how much wet surfaces darken. At 0, they only get glossier. At 1, they look soaked.</p>
       </div>
     </article>
 
@@ -174,7 +175,7 @@
       <div class="clip wide"><video src="videos/ue-weather-puddles.mp4" poster="videos/ue-weather-puddles.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Puddles</h3>
-        <p><code>Puddles</code> controls water coverage on flat ground. At 0, no puddles appear. Increase it to create larger pools.</p>
+        <p><code>Puddles</code> sets how much flat ground is covered by water. At 0, there are no puddles. Higher values make larger pools.</p>
       </div>
     </article>
 
@@ -182,10 +183,10 @@
       <div class="clip wide"><video src="videos/ue-weather-puddle-waves.mp4" poster="videos/ue-weather-puddle-waves.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Puddle waves</h3>
-        <p>Puddle waves add wind-driven surface motion. To inspect them separately, temporarily disable falling rain and impact rings and view reflections at a low angle.</p>
-        <p><code>Puddle Waves</code>: wave strength. At 0, the surface remains still; higher values disturb the reflections.<br>
-        <code>Wave Scale</code>: the size of the waves, from smaller ripples to broader swells.<br>
-        <code>Wave Speed</code>: how quickly waves move. At 0, their motion stops.</p>
+        <p>Puddle waves add wind-driven movement to the water in puddles. They are easiest to see in reflections at a low angle, with falling rain and ripple rings turned off.</p>
+        <p><code>Puddle Waves</code> sets the wave strength. At 0, the surface is still.<br>
+        <code>Wave Scale</code> sets the wave size, from small ripples to broad swells.<br>
+        <code>Wave Speed</code> sets how fast the waves move. At 0, they stop.</p>
       </div>
     </article>
 
@@ -193,7 +194,7 @@
       <div class="clip wide"><video src="videos/ue-weather-puddle-ripples.mp4" poster="videos/ue-weather-puddle-ripples.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Puddle Ripples</h3>
-        <p>Controls the rings created by raindrop impacts. At 0, the rings are disabled. Increase it for a stronger effect. Disable puddle waves when you need to inspect the rings on their own.</p>
+        <p>Sets the strength of the rings from raindrops landing in puddles. At 0, there are no rings. To see the rings on their own, turn puddle waves off.</p>
       </div>
     </article>
 
@@ -201,10 +202,10 @@
       <div class="clip wide"><video src="videos/ue-weather-snow.mp4" poster="videos/ue-weather-snow.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Falling snow</h3>
-        <p><code>Flake Size</code>: the size of individual flakes.<br>
-        <code>Fall Speed</code>: how quickly snowflakes fall. Increase it for faster, heavier-looking snowfall.<br>
-        <code>Drift</code>: swirling motion during descent. At 0, flakes fall straight down.<br>
-        <code>Particle Count</code> and <code>Opacity</code>: the number and visibility of flakes.</p>
+        <p><code>Flake Size</code> sets the size of the flakes.<br>
+        <code>Fall Speed</code> sets how fast they fall. Faster snow looks heavier.<br>
+        <code>Drift</code> makes the flakes swirl as they fall. At 0, they fall straight down.<br>
+        <code>Particle Count</code> and <code>Opacity</code> set how many flakes there are and how visible they are.</p>
       </div>
     </article>
 
@@ -212,8 +213,8 @@
       <div class="clip wide"><video src="videos/ue-weather-snow-cover.mp4" poster="videos/ue-weather-snow-cover.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Snow Cover</h3>
-        <p><code>Snow Cover</code>: applies settled snow to upward-facing surfaces. Disable it to show falling snow without accumulation on the environment.</p>
-        <p><code>Max Coverage</code>: the proportion covered. Lower values leave patches; 1 creates full coverage.</p>
+        <p><code>Snow Cover</code> adds settled snow on upward-facing surfaces. Turn it off to have falling snow that does not build up.</p>
+        <p><code>Max Coverage</code> sets how much is covered. Lower values leave patches, and 1 covers everything.</p>
       </div>
     </article>
 
@@ -221,7 +222,7 @@
       <div class="clip wide"><video src="videos/ue-weather-snow-slope.mp4" poster="videos/ue-weather-snow-slope.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Max Slope</h3>
-        <p>Sets the steepest surface that can retain snow. Lower values remove snow from steep hillsides while preserving it on flatter areas.</p>
+        <p>Sets the steepest slope that can hold snow. Lower it to clear snow from steep hillsides and keep it on flatter ground.</p>
       </div>
     </article>
 
@@ -229,9 +230,9 @@
       <div class="clip wide"><video src="videos/ue-weather-snow-patches.mp4" poster="videos/ue-weather-snow-patches.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Snow patches</h3>
-        <p>Use partial coverage, such as Max Coverage 0.35, to expose the patch pattern.</p>
-        <p><code>Cover Noise Scale</code>: patch frequency. Lower values create broader drifts; higher values create smaller patches.<br>
-        <code>Cover Edge Detail</code>: boundary irregularity. At 0, edges are smooth; higher values add fine detail.</p>
+        <p>Patches only show when the snow does not cover everything, so lower Max Coverage first.</p>
+        <p><code>Cover Noise Scale</code> sets the size of the patches. Lower values give broad drifts, and higher values give small patches.<br>
+        <code>Cover Edge Detail</code> roughens the edges of the patches. At 0, they are smooth.</p>
       </div>
     </article>
 
@@ -239,8 +240,8 @@
       <div class="clip wide"><video src="videos/ue-weather-cover.mp4" poster="videos/ue-weather-cover.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Dry Under Cover</h3>
-        <p><code>Dry Under Cover</code>: excludes precipitation, wetness, and snow beneath roofs, bridges, and dense tree cover. Disable it to apply weather effects in those areas as well.</p>
-        <p><code>Cover Area</code>: the distance around the camera over which shelter is evaluated, in centimetres. Shelters beyond this range are not included.</p>
+        <p><code>Dry Under Cover</code> keeps rain, wetness, and snow out from under roofs, bridges, and dense trees. Turn it off to let the weather reach those areas too.</p>
+        <p><code>Cover Area</code> is how far around the camera shelter is checked, in centimetres. Shelter further away is ignored.</p>
       </div>
     </article>
 
@@ -248,7 +249,7 @@
       <div class="clip wide"><video src="videos/ue-weather-instant.mp4" poster="videos/ue-weather-instant.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Instant In Editor</h3>
-        <p>Enabled by default, this shows the completed weather state immediately in the editor. Disable it to preview the gradual changes used during gameplay, such as wet ground slowly becoming snow-covered.</p>
+        <p>On by default, it shows the finished weather straight away in the editor. Turn it off to preview the gradual changes you get in gameplay, such as wet ground slowly being covered by snow.</p>
       </div>
     </article>
 

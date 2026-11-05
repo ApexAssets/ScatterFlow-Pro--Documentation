@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -103,49 +103,46 @@
 <section id="how">
   <div class="wrap">
     <h2>How it works</h2>
-    <p class="lead">ScatterFlow Link adds the <code>ScatterFlow Pro</code> dock to the Godot editor for scene transfer, scatter editing, and environment tools.</p>
-    <p class="lead"><b>Connect Blender and Godot.</b> Export supported objects, materials, lights, and scatter layers from Blender directly into the open Godot scene, without manually importing files.</p>
-    <p class="lead"><b>Edit scatter layers in Godot.</b> Each Blender layer arrives as a ScatterFlow layer node beneath its terrain. Select it to adjust density, scale, meshes, or procedural placement without returning to Blender.</p>
-    <p class="lead"><b>Add environment tools.</b> Configure wind, water, ivy, sky, and weather. Use Play to explore the scene with the supplied character.</p>
+    <p class="lead">ScatterFlow Link adds a <code>ScatterFlow Pro</code> dock to the Godot editor. Use it to bring scenes over from Blender, edit scatter layers, and add environment tools.</p>
+    <p class="lead"><b>Connect Blender and Godot.</b> Send objects, materials, lights, and scatter layers from Blender straight into your open Godot scene. There are no files to import by hand.</p>
+    <p class="lead"><b>Edit scatter layers in Godot.</b> Each Blender layer becomes a layer node under its terrain. Select one to change its density, scale, meshes, or placement without going back to Blender.</p>
+    <p class="lead"><b>Add environment tools.</b> Add wind, water, ivy, sky, and weather. Use Play to walk through the scene with the supplied character.</p>
     <div class="note"><strong>Set up both sides of the connection.</strong>
-        <a href="#install">Install the plugin</a> in the Godot project as described below. In Blender, use ScatterFlow's <a href="export.html">Export</a> tab; see Export.</div>
+        <a href="#install">Install the plugin</a> in your Godot project, and use the <a href="export.html">Export</a> tab of ScatterFlow in Blender.</div>
   </div>
 </section>
 
 <section id="install">
   <div class="wrap">
     <h2>Install the plugin</h2>
-    <p class="lead">The plugin requires Godot 4.7, a Godot project, and ScatterFlow for Blender. Install it separately in each project's <code>addons</code> folder.</p>
+    <p class="lead">The plugin needs Godot 4.7, a Godot project, and ScatterFlow for Blender. Install it into each project you want to use it in.</p>
 
     <article class="card text" id="install-into-your-godot-project">
       <div>
         <h3>Install into your project</h3>
-        <p><b>1.</b> Extract <code>ScatterFlow_Godot Plugin_V1.0.zip</code>. It contains an <code>addons</code> folder with <code>scatterflow</code> inside.</p>
-        <p><b>2.</b> Copy <code>addons</code> into the project folder containing <code>project.godot</code>. If the project already has an addons folder, place scatterflow inside it beside your other add-ons. Confirm that <code>addons\scatterflow\plugin.cfg</code> exists directly within the project.</p>
-        <p><b>3.</b> Open the project in Godot and allow the plugin files to import.</p>
-        <p><b>4.</b> Open <code>Project &gt; Project Settings &gt; Plugins</code> and enable <code>ScatterFlow Link</code> using its <code>Enable</code> checkbox.</p>
-        <p><b>5.</b> Confirm that the <code>ScatterFlow Pro</code> dock appears beside the Inspector.</p>
-        <p><b>6.</b> The Output panel reports that ScatterFlow increased <code>Global Shader Variables &gt; Buffer Size</code>, a project setting needed for large scatter scenes. Apply the change by restarting once with <code>Project &gt; Reload Current Project</code>.</p>
-        <p><b>7.</b> Open a 3D scene and save it before exporting from Blender. The plugin needs a saved scene to receive content. Continue to <a href="#open">Step 1</a>.</p>
+        <p><b>1.</b> Extract the plugin .zip and copy its <code>addons</code> folder into your project folder, next to <code>project.godot</code>. If the project already has an addons folder, put <code>scatterflow</code> inside it with your other add-ons.</p>
+        <p><b>2.</b> Open the project in Godot and let it finish importing. Then enable <code>ScatterFlow Link</code> in the <code>Project &gt; Project Settings &gt; Plugins</code> tab. The <code>ScatterFlow Pro</code> dock appears next to the Inspector.</p>
+        <p><b>3.</b> Reload the project once from the <code>Project &gt; Reload Current Project</code> menu. ScatterFlow raises the <code>Global Shader Variables &gt; Buffer Size</code> project setting for large scatter scenes, and the change needs a reload.</p>
+        <p><b>4.</b> Open a 3D scene and save it. The plugin needs a saved scene to receive content from Blender. Then continue to <a href="#open">Step 1</a>.</p>
         <div class="note"><strong>Use Forward+ or Mobile for ScatterFlow water.</strong>
-        The water effect relies on scene depth and is not displayed correctly with the Compatibility renderer. New projects use Forward+ by default; check the active renderer in the editor's upper-right corner.</div>
+        The water does not display correctly with the Compatibility renderer. New projects use Forward+ by default. The active renderer is shown in the editor's upper-right corner.</div>
       </div>
     </article>
 
     <article class="card text" id="updating-the-godot-plugin">
       <div>
         <h3>Updating to a new version</h3>
-        <p>Close Godot, delete the project's <code>addons\scatterflow</code> folder, and replace it using steps 1–2. Reopen the project. ScatterFlow rebuilds materials once when required by the new version.</p>
-        <p>Update the Blender add-on at the same time to keep both sides on the same release.</p>
+        <p>Close Godot, delete the project's <code>addons\scatterflow</code> folder, and copy in the new one. When you reopen the project, ScatterFlow rebuilds its materials once if the new version needs it.</p>
+        <p>Update the Blender add-on at the same time, so both sides are on the same release.</p>
       </div>
     </article>
 
     <article class="card text" id="if-the-godot-plugin-does-not-load">
       <div>
         <h3>If the plugin does not load</h3>
-        <p><b>ScatterFlow Link is missing from the Plugins list.</b> Check that the path is <code>addons\scatterflow</code> directly inside the project, not <code>addons\addons\scatterflow</code> or an extra folder named after the download.</p>
-        <p><b>The dock does not appear.</b> Confirm that <code>Enable</code> is selected for the plugin, then reload the project.</p>
-        <p><b>Blender cannot connect.</b> Both applications must be open, and Blender's connection address must match Plugin Settings. See <a href="#link">Step 2</a>.</p>
+        <p><b>ScatterFlow Link is missing from the Plugins list.</b> The plugin must be at <code>addons\scatterflow</code> directly inside the project. Check for an extra folder, such as <code>addons\addons\scatterflow</code> or one named after the download.</p>
+        <p><b>The dock does not appear.</b> Make sure <code>Enable</code> is ticked for the plugin, then reload the project.</p>
+        <p><b>Blender cannot connect.</b> Both programs must be open, and Blender's connection address must match the one in Plugin Settings. See <a href="#link">Step 2</a>.</p>
       </div>
     </article>
   </div>
@@ -159,16 +156,15 @@
       <div class="clip wide"><video src="videos/gd-open.mp4" poster="videos/gd-open.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>The ScatterFlow Pro tab</h3>
-        <p>Click <code>ScatterFlow Pro</code> beside the <code>Inspector</code> to display the dock.</p>
-        <p>With no ScatterFlow node selected, the dock reads <code>Select a scatter layer to edit it.</code> and shows the scene tools. Click a section title to expand or collapse it.</p>
-        <p><code>Global Wind</code>: wind settings for ScatterFlow plants throughout the project.<br>
-        <code>Play</code>: starts a walkthrough with the ScatterFlow character.<br>
-        <code>Export</code>: sends selected nodes back to Blender.<br>
-        <code>Plugin Settings</code>: configures the Blender connection.</p>
-        <p>The four icons in the upper-right corner add <a href="godot-water.html">water</a>, <a href="godot-ivy.html">ivy</a>, <a href="godot-sky.html">sky</a>, or <a href="godot-weather.html">rain</a>. Water and ivy are placed where the 3D view is looking. See the Water, Ivy, Sky, Weather, <a href="godot-wind.html">Wind</a>, and <a href="godot-play.html">Play</a> pages for their workflows.</p>
-        <p><code>Sky</code> appears when the scene contains an SF Sky. <code>Weather</code> appears when rain or snow is active, or when a sky is present.</p>
+        <p>Open the dock from the <code>ScatterFlow Pro</code> tab next to the <code>Inspector</code>. When no ScatterFlow node is selected, it shows the scene tools in these sections.</p>
+        <p><code>Global Wind</code>: wind for ScatterFlow plants across the project.<br>
+        <code>Play</code>: walk through the scene with the ScatterFlow character.<br>
+        <code>Export</code>: send selected nodes back to Blender.<br>
+        <code>Plugin Settings</code>: the Blender connection.</p>
+        <p>The four icons at the top right add <a href="godot-water.html">water</a>, <a href="godot-ivy.html">ivy</a>, <a href="godot-sky.html">sky</a>, or <a href="godot-weather.html">rain</a>. Water and ivy are placed where the 3D view is looking. Each tool has its own page, including <a href="godot-wind.html">Wind</a> and <a href="godot-play.html">Play</a>.</p>
+        <p>The <code>Sky</code> section only appears when the scene has an SF Sky. <code>Weather</code> appears when there is a sky, or when rain or snow is on.</p>
         <div class="note"><strong>The dock follows your selection.</strong>
-        Select a ScatterFlow layer, water, or ivy node to show its controls. Click empty space or a non-ScatterFlow node to return to the scene tools.</div>
+        Select a ScatterFlow layer, water, or ivy node to see its controls. Click empty space or any other node to get back to the scene tools.</div>
       </div>
     </article>
   </div>
@@ -177,21 +173,21 @@
 <section id="link">
   <div class="wrap">
     <h2>Step 2: Connect to Blender</h2>
-    <p class="lead">The plugin starts its connection service with the Godot editor. In Blender's Export tab, select <code>Godot</code> and click <code>Connect</code>. The dock reports <code>Linked to Blender</code> when connected.</p>
+    <p class="lead">The connection starts by itself when you open the Godot editor. To link the two, click the <code>Godot</code> button in Blender's Export tab, then click <code>Connect</code>.</p>
 
     <article class="card" id="plugin-settings">
       <div class="clip wide"><video src="videos/gd-plugin-settings.mp4" poster="videos/gd-plugin-settings.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Plugin Settings</h3>
-        <p>Expand <code>Plugin Settings</code> at the bottom of the dock. It contains connection controls and options for linked objects.</p>
+        <p>The <code>Plugin Settings</code> section, at the bottom of the dock, holds the connection controls and the options for linked objects.</p>
         <p><b>Blender Link</b></p>
-        <p>The status shows a green indicator and <code>Linked to Blender</code> while connected. <code>Waiting for Blender</code> means the service is running but no Blender connection is active.</p>
-        <p>The displayed address must match Godot's <code>Link URL</code> in Blender under ScatterFlow preferences &gt; <code>Settings &gt; Export &gt; Godot</code>. The defaults match. Use <code>Copy</code> to transfer a changed address to Blender.</p>
-        <p><code>Port</code>: the network port, 18778 by default. Change it only when another program uses the same port. Click <code>Restart</code> afterward and update Blender's Link URL to use the new port.</p>
+        <p>A green <code>Linked to Blender</code> status means you are connected. <code>Waiting for Blender</code> means Godot is ready, but Blender has not connected yet.</p>
+        <p>The address shown here must match the Godot <code>Link URL</code> field in Blender's ScatterFlow preferences, under <code>Settings &gt; Export &gt; Godot</code>. The defaults already match. If you change the address, click the <code>Copy</code> button and paste it into Blender.</p>
+        <p><code>Port</code>: change it only if another program already uses it. Then click <code>Restart</code> and update the Link URL in Blender to match.</p>
         <p><b>Objects</b></p>
-        <p><code>Live Sync Edits to Blender</code>: sends position, rotation, and scale changes for linked nodes back to Blender. It also synchronizes edits to linked lights and cameras.</p>
-        <p><code>Deleting Here Deletes in Blender</code>: removes the linked Blender object when its Godot node is deleted. This is disabled by default to protect Blender content from unintended deletion.</p>
-        <p>The final status line reports the connection's most recent activity.</p>
+        <p><code>Live Sync Edits to Blender</code>: when this checkbox is on, it sends moves, rotations, and scale changes on linked nodes back to Blender, including linked lights and cameras.</p>
+        <p><code>Deleting Here Deletes in Blender</code>: when this checkbox is on, deleting a linked node in Godot also deletes its Blender object. It is off by default, so you do not lose Blender content by accident.</p>
+        <p>The last status line shows the connection's latest activity.</p>
       </div>
     </article>
 
@@ -199,10 +195,10 @@
       <div class="clip wide"><video src="videos/gd-link-restart.mp4" poster="videos/gd-link-restart.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Restarting the link</h3>
-        <p><code>Restart</code> closes and reopens the service on the displayed port. The existing Blender connection is dropped, and the status returns to <code>Waiting for Blender</code>.</p>
-        <p>Blender does not reconnect automatically. Click <code>Connect</code> in its Export tab again to restore the link.</p>
+        <p>Clicking <code>Restart</code> restarts the connection and drops the current link to Blender.</p>
+        <p>Blender does not reconnect on its own. Click <code>Connect</code> in its Export tab again.</p>
         <div class="note"><strong>Restart only when needed.</strong>
-        Use it after changing the port or when the connection stops responding. The service starts automatically with the editor during normal use.</div>
+        Use it after changing the port, or if the connection stops responding. Otherwise the connection starts by itself with the editor.</div>
       </div>
     </article>
   </div>
@@ -216,12 +212,11 @@
       <div class="clip wide"><video src="videos/gd-receive.mp4" poster="videos/gd-receive.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Exporting from Blender</h3>
-        <p>With the connection active, click <code>Export to Godot</code> in Blender's ScatterFlow Export tab. Godot builds the scene in two passes, each shown in a viewport progress card.</p>
-        <p><code>Importing from Blender</code>: imports objects, meshes, and materials beneath a node named after the Blender scene.</p>
-        <p><code>Importing Scatter System from Blender</code>: creates an <code>SF Terrain</code> node for each terrain, with collision, and adds its scatter layers beneath it.</p>
-        <p>When both progress cards reach 100%, save the Godot scene.</p>
+        <p>Once connected, click <code>Export to Godot</code> in Blender's ScatterFlow Export tab.</p>
+        <p>Godot builds the scene in two passes. First come the objects, meshes, and materials, under a node named after your Blender scene. Then each terrain becomes an <code>SF Terrain</code> node with collision, with its scatter layers under it.</p>
+        <p>Save the Godot scene when both passes have finished.</p>
         <div class="note"><strong>Re-export to update the scene.</strong>
-        Existing objects are updated in place instead of duplicated. Scatter layers are rebuilt using the new Blender result.</div>
+        Existing objects are updated instead of duplicated, and scatter layers are rebuilt from the new Blender result.</div>
       </div>
     </article>
   </div>
@@ -235,8 +230,8 @@
       <div class="clip wide"><video src="videos/gd-export.mp4" poster="videos/gd-export.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Sending nodes back to Blender</h3>
-        <p>Select the nodes to send, including meshes, lights, cameras, or empty nodes. Expand <code>Export</code> and click <code>Export to Blender</code>.</p>
-        <p>Linked nodes update their existing Blender objects. New nodes create Blender objects and become linked for subsequent exports and live edits.</p>
+        <p>Select the nodes you want to send, such as meshes, lights, cameras, or empty nodes. Then click <code>Export to Blender</code> in the <code>Export</code> section.</p>
+        <p>Linked nodes update their Blender objects. New nodes create new Blender objects and stay linked for later exports and live edits.</p>
       </div>
     </article>
 
@@ -244,8 +239,8 @@
       <div class="clip wide"><video src="videos/gd-live-sync.mp4" poster="videos/gd-live-sync.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Live sync and deleting</h3>
-        <p>Enable <code>Live Sync Edits to Blender</code> under Plugin Settings &gt; Objects to synchronize edits immediately. Moving a linked object in Godot also moves its Blender counterpart.</p>
-        <p>Enable <code>Deleting Here Deletes in Blender</code> only when deleting a Godot node should also remove its Blender object.</p>
+        <p>Turn on <code>Live Sync Edits to Blender</code> in Plugin Settings to send edits as you make them. Moving a linked object in Godot then moves it in Blender too.</p>
+        <p>Turn on <code>Deleting Here Deletes in Blender</code> only if deleting a node in Godot should also delete its Blender object.</p>
       </div>
     </article>
   </div>

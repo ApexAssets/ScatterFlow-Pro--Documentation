@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -98,17 +98,17 @@
 <section id="culling">
   <div class="wrap">
     <h2>Culling: Vertex Group</h2>
-    <p class="lead">Use a vertex group on the scatter surface to define where instances appear. The layer is kept in painted areas and excluded from unpainted areas.</p>
+    <p class="lead">Paint a vertex group on the scatter surface to choose where a layer appears. Instances stay in painted areas and are removed everywhere else.</p>
 
     <article class="card" id="vertex-group">
       <div class="clip"><video src="videos/culling-vertex-group.mp4" poster="videos/culling-vertex-group.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Vertex Group</h3>
         <ul class="facts"><li><b>Default</b> off</li></ul>
-        <p>Enable <code>Vertex Group</code> and select a group from the field. Use different groups to switch between layouts such as a winding strip or isolated groves.</p>
-        <p>The picker shows vertex groups from the surface the layer uses: its emitter or its Single Surface object.</p>
+        <p>Turn on <code>Vertex Group</code> and pick a group. You can keep several groups and switch between them to try different layouts.</p>
+        <p>The list shows the vertex groups on the layer's surface: its emitter, or its Single Surface object.</p>
         <div class="note"><strong>Mask detail depends on the surface mesh.</strong>
-        Weights are stored per vertex. A coarse mesh produces a less detailed boundary; subdivide the relevant area when you need finer control.</div>
+        Weights are stored per vertex, so a coarse mesh gives a rough edge. Subdivide the area when you need finer control.</div>
       </div>
     </article>
 
@@ -116,8 +116,8 @@
       <div class="clip"><video src="videos/culling-paint.mp4" poster="videos/culling-paint.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Painting the mask</h3>
-        <p>Select the surface object, then click the brush button at the end of the row to enter Weight Paint mode. Paint the areas where the layer should appear.</p>
-        <p>Click the button again to return to Object Mode and view the updated scatter.</p>
+        <p>Select the surface object and click the brush button at the end of the row to start weight painting. Paint where the layer should appear.</p>
+        <p>Click the button again to go back to Object Mode.</p>
       </div>
     </article>
 
@@ -126,8 +126,8 @@
       <div>
         <h3>Smooth Transition</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Transition</b> 1.0</li></ul>
-        <p>Without Smooth Transition, instances are either kept or excluded. With it enabled, instance scale follows the painted weight, creating smaller instances near the mask boundary.</p>
-        <p><code>Transition</code> sets the weight needed for full-size instances. Lower values reach full size in lightly painted areas; higher values require stronger weights.</p>
+        <p>Without Smooth Transition, instances are either kept or removed. With it on, instances get smaller where the paint is lighter, so the edge of the mask fades out.</p>
+        <p><code>Transition</code> sets how much paint an instance needs to reach full size. Lower values reach full size in lightly painted areas. Higher values need heavier paint.</p>
       </div>
     </article>
 
@@ -136,8 +136,8 @@
       <div>
         <h3>Invert</h3>
         <ul class="facts"><li><b>Default</b> off</li></ul>
-        <p>Reverses the mask so the layer appears outside the painted area. The arrow button beside the vertex group field performs the same action.</p>
-        <p>For example, paint a path once, use the mask normally for gravel or flowers, and invert it on a tree layer to keep trees off the path.</p>
+        <p>Reverses the mask, so the layer appears outside the painted area. The arrow button next to the vertex group field does the same.</p>
+        <p>This lets one mask serve several layers. For example, paint a path, use it as it is for gravel or flowers, and invert it on a tree layer to keep trees off the path.</p>
       </div>
     </article>
   </div>
@@ -146,15 +146,15 @@
 <section id="geometry">
   <div class="wrap">
     <h2>Geometry Proximity</h2>
-    <p class="lead">Use nearby objects to exclude a layer from an area or restrict it to that area. This is useful for clear space around boulders, vegetation near walls, or plants around tree stumps.</p>
+    <p class="lead">Use nearby objects to keep a layer away from them, or only close to them. For example, clear space around boulders, or grow plants along walls and around tree stumps.</p>
 
     <article class="card" id="object-and-distance">
       <div class="clip"><video src="videos/proximity-geometry-distance.mp4" poster="videos/proximity-geometry-distance.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Object and Distance</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Distance</b> 0 m</li></ul>
-        <p>Enable <code>Geometry Proximity</code>, choose an <code>Object</code>, and set <code>Distance</code>. With the default Avoid behaviour, instances within that distance are removed.</p>
-        <p>Distance is measured from the object's surface rather than its centre, so the cleared area follows its shape.</p>
+        <p>Turn on <code>Geometry Proximity</code>, pick an object in the <code>Object</code> field, and set a <code>Distance</code>. By default, instances within that distance are removed.</p>
+        <p>Distance is measured from the object's surface, not its centre, so the cleared area follows its shape.</p>
       </div>
     </article>
 
@@ -163,7 +163,7 @@
       <div>
         <h3>Smooth Transition</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Transition</b> 1 m</li></ul>
-        <p>Softens the boundary around the excluded area. Instances grow from zero size at the Distance boundary to full size <code>Transition</code> metres further away.</p>
+        <p>Softens the edge of the cleared area. Instances grow from nothing at the Distance edge to full size <code>Transition</code> metres further out.</p>
       </div>
     </article>
 
@@ -172,8 +172,8 @@
       <div>
         <h3>Behaviour</h3>
         <ul class="facts"><li><b>Default</b> Avoid</li></ul>
-        <p><code>Avoid</code> excludes instances within the specified Distance of the object.</p>
-        <p><code>Seek</code> keeps instances only within that Distance. Use it to concentrate vegetation around a target, such as weeds at the base of a wall or ferns around a stump.</p>
+        <p>Set Behaviour to <code>Avoid</code> to remove instances within the Distance of the object.</p>
+        <p>Set it to <code>Seek</code> to keep instances only within that Distance. Use it to gather plants around something, such as weeds at the foot of a wall or ferns around a stump.</p>
       </div>
     </article>
 
@@ -182,7 +182,7 @@
       <div>
         <h3>Type: Single Object or Multiple Objects</h3>
         <ul class="facts"><li><b>Default</b> Single Object</li></ul>
-        <p><code>Single Object</code> uses one target. <code>Multiple Objects</code> replaces the object field with a collection picker and applies the same settings to every object in that collection.</p>
+        <p>Set Type to <code>Single Object</code> to use one object. Set it to <code>Multiple Objects</code> to use a collection instead, which applies the same settings to every object in it.</p>
       </div>
     </article>
   </div>
@@ -191,14 +191,14 @@
 <section id="curve">
   <div class="wrap">
     <h2>Curve Proximity</h2>
-    <p class="lead">Use a curve to define a path, road, stream, fence line, or other continuous boundary. The scatter responds when you edit the curve.</p>
+    <p class="lead">Use a curve to shape a path, road, stream, fence line, or any other long boundary. The scatter updates as you edit the curve.</p>
 
     <article class="card" id="curve-and-distance">
       <div class="clip"><video src="videos/proximity-curve-distance.mp4" poster="videos/proximity-curve-distance.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Curve and Distance</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Distance</b> 1 m</li></ul>
-        <p>Enable <code>Curve Proximity</code> and select a <code>Curve</code>. With Avoid behaviour, <code>Distance</code> sets the clearance on each side, so use half your intended path width.</p>
+        <p>Turn on <code>Curve Proximity</code> and pick a curve in the <code>Curve</code> field. With Avoid, <code>Distance</code> is the clearance on each side of the curve, so set it to half the width of your path.</p>
       </div>
     </article>
 
@@ -207,7 +207,7 @@
       <div>
         <h3>Smooth Transition</h3>
         <ul class="facts"><li><b>Default</b> off</li><li><b>Transition</b> 2</li></ul>
-        <p>Creates a gradual boundary along the path. Instances increase to full size over the <code>Transition</code> distance rather than ending abruptly.</p>
+        <p>Fades the edge of the path. Instances grow to full size over the <code>Transition</code> distance instead of stopping abruptly.</p>
       </div>
     </article>
 
@@ -216,8 +216,8 @@
       <div>
         <h3>Infinite Z</h3>
         <ul class="facts"><li><b>Default</b> off</li></ul>
-        <p>By default, distance is measured in 3D. Moving a curve far enough above the terrain can reduce or remove its effect. This can close the cleared path even though the curve has not moved sideways.</p>
-        <p>Enable <code>Infinite Z</code> to ignore height and apply the curve's influence vertically to the terrain below. Use it to control a path on uneven terrain with a flat curve positioned above the ground.</p>
+        <p>Distance is normally measured in 3D. If the curve sits too far above the terrain, its effect weakens or disappears, and the path can close up.</p>
+        <p>Turn on <code>Infinite Z</code> to ignore height, so the curve affects the ground directly below it. This lets you shape a path on uneven terrain with a flat curve above the ground.</p>
       </div>
     </article>
 
@@ -226,7 +226,7 @@
       <div>
         <h3>Behaviour</h3>
         <ul class="facts"><li><b>Default</b> Avoid</li></ul>
-        <p><code>Avoid</code> clears instances along the curve. <code>Seek</code> keeps them only near the curve, useful for hedges, avenues of trees, or reeds beside a stream.</p>
+        <p>Set Behaviour to <code>Avoid</code> to clear instances along the curve. Set it to <code>Seek</code> to keep them only near the curve, which suits hedges, tree-lined avenues, or reeds along a stream.</p>
       </div>
     </article>
 
@@ -235,7 +235,7 @@
       <div>
         <h3>Type: Single Curve or Multiple Curves</h3>
         <ul class="facts"><li><b>Default</b> Single Curve</li></ul>
-        <p><code>Single Curve</code> uses one curve object. <code>Multiple Curves</code> uses a collection, allowing one set of proximity settings to control an entire path network.</p>
+        <p>Set Type to <code>Single Curve</code> to use one curve. Set it to <code>Multiple Curves</code> to use a collection, so one set of settings can control a whole network of paths.</p>
       </div>
     </article>
   </div>

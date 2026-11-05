@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -101,14 +101,14 @@
 <section id="layers">
   <div class="wrap">
     <h2>Editing scatter layers</h2>
-    <p class="lead">Each imported scatter layer is a node beneath its <code>SF Terrain</code> in the Scene tree. Use <b>Blender Exact</b> to preserve the imported placement, or <b>Procedural</b> to generate the layer in Godot using editable distribution settings.</p>
+    <p class="lead">Each imported scatter layer is a node under its <code>SF Terrain</code>. Use <b>Blender Exact</b> mode to keep the placement from Blender, or <b>Procedural</b> mode to regenerate the layer in Godot with editable settings.</p>
 
     <article class="card" id="selecting-a-layer">
       <div class="clip wide"><video src="videos/gd-select-layer.mp4" poster="videos/gd-select-layer.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Selecting a layer</h3>
-        <p>Select the layer in the Scene tree, such as <code>Field Trees</code> beneath <code>SF Terrain - Field</code>. The dock switches to its controls and displays a label such as <code>Editing Field Trees</code>.</p>
-        <p>Ctrl+click to select multiple layers. Setting changes apply to every selected layer.</p>
+        <p>Select a layer in the Scene tree to show its controls in the dock.</p>
+        <p>Ctrl+click to select several layers. Your changes then apply to all of them.</p>
       </div>
     </article>
 
@@ -116,21 +116,21 @@
       <div class="clip wide"><video src="videos/gd-mode.mp4" poster="videos/gd-mode.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Mode: Blender Exact or Procedural</h3>
-        <p>The <code>Mode</code> panel displays the instance count and active mode. Click <code>Blender Exact</code> or <code>Procedural</code> to switch.</p>
-        <p><code>Blender Exact</code> is the default. It preserves Blender's exported positions and provides adjustments for thinning, scale, rotation, and height. Use it when placement needs to match Blender.</p>
-        <p><code>Procedural</code> regenerates the layer in Godot and provides the full scatter and mask controls below. Its starting values approximate the Blender setup, so the initial appearance is similar rather than an exact match.</p>
-        <p>Each mode retains its settings when you switch, allowing you to compare them without losing adjustments.</p>
+        <p>The <code>Mode</code> panel shows the instance count. Click <code>Blender Exact</code> or <code>Procedural</code> to switch between the two modes.</p>
+        <p><code>Blender Exact</code> is the default. It keeps the positions from Blender and lets you thin, scale, rotate, and raise or lower them. Use it when placement needs to match Blender.</p>
+        <p><code>Procedural</code> regenerates the layer in Godot, with the full scatter and mask controls. It starts close to the Blender setup, but not as an exact match.</p>
+        <p>Each mode keeps its own settings, so you can switch back and forth to compare.</p>
       </div>
     </article>
 
-    <p class="lead"><b>Blender Exact settings.</b> The following four panels adjust imported instances without generating new positions.</p>
+    <p class="lead"><b>Blender Exact settings.</b> These four panels adjust the imported instances without creating new positions.</p>
 
     <article class="card" id="density-keep-ratio">
       <div class="clip wide"><video src="videos/gd-exact-density.mp4" poster="videos/gd-exact-density.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Density: Keep Ratio</h3>
-        <p><code>Keep Ratio</code> sets the proportion of imported instances retained. At 1, every instance remains; 0.5 keeps approximately half; 0 hides them all.</p>
-        <p>Thinning is consistent: reducing and restoring the value does not shuffle the layer's positions or randomly choose a new subset each time.</p>
+        <p><code>Keep Ratio</code> sets how many of the imported instances are kept. 1 keeps them all, 0.5 about half, and 0 hides them all.</p>
+        <p>Lowering it and raising it again brings back the same instances, so the layout does not shuffle.</p>
       </div>
     </article>
 
@@ -138,9 +138,8 @@
       <div class="clip wide"><video src="videos/gd-exact-scale.mp4" poster="videos/gd-exact-scale.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Scale</h3>
-        <p><code>Scale Multiplier</code> scales every instance relative to its imported size. A value of 1 preserves the Blender result.</p>
-        <p>Under <code>Random Scale</code>, <code>Min</code> and <code>Max</code> add random size variation on top of the multiplier. Set both to 1 for no additional variation.</p>
-        <p>For example, a range of 0.3–2.5 produces a much wider mix of small and large instances than the original sizes.</p>
+        <p><code>Scale Multiplier</code> scales every instance from its imported size. 1 keeps the Blender result.</p>
+        <p>Under <code>Random Scale</code>, <code>Min</code> and <code>Max</code> add random size variation on top. A wider range gives a stronger mix of sizes. Set both to 1 for no extra variation.</p>
       </div>
     </article>
 
@@ -148,9 +147,8 @@
       <div class="clip wide"><video src="videos/gd-exact-rotation.mp4" poster="videos/gd-exact-rotation.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Rotation</h3>
-        <p><code>Offset</code> <code>X</code>, <code>Y</code>, and <code>Z</code> rotate every instance by the specified angles. These ScatterFlow controls use Z as up, matching Blender. Use an X or Y offset to lean an entire layer.</p>
-        <p><code>Random Yaw</code> adds random rotation around the upright axis, up to the specified angle in either direction.</p>
-        <p>Combining a fixed tilt with Random Yaw varies the direction in which tilted instances face.</p>
+        <p><code>Offset</code> <code>X</code>, <code>Y</code>, and <code>Z</code> rotate every instance by a fixed angle. Use X or Y to lean the whole layer. These controls use Z as up, like Blender.</p>
+        <p><code>Random Yaw</code> adds random turning around the upright axis, up to the set angle either way. Combined with a tilt, it makes tilted instances face different directions.</p>
       </div>
     </article>
 
@@ -158,8 +156,8 @@
       <div class="clip wide"><video src="videos/gd-exact-location.mp4" poster="videos/gd-exact-location.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Location: Z Offset</h3>
-        <p><code>Z Offset</code> moves every instance vertically in metres. Positive values raise instances; negative values embed them in the ground.</p>
-        <p>Use it to correct floating bases, lift plants that sit too low, or make rocks appear embedded.</p>
+        <p><code>Z Offset</code> moves every instance up or down, in metres. Negative values sink them into the ground.</p>
+        <p>Use it to fix floating bases, lift plants that sit too low, or bury rocks slightly.</p>
       </div>
     </article>
   </div>
@@ -168,18 +166,17 @@
 <section id="procedural">
   <div class="wrap">
     <h2>Procedural settings</h2>
-    <p class="lead">Switch to <code>Procedural</code> to generate the layer in Godot. Changes update in the 3D view immediately. Click panel titles to expand the settings you need.</p>
+    <p class="lead">Click <code>Procedural</code> in the Mode panel to generate the layer in Godot. Your changes show in the 3D view right away.</p>
 
     <article class="card" id="surface-what-to-scatter-on">
       <div class="clip wide"><video src="videos/gd-surface.mp4" poster="videos/gd-surface.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Surface: what to scatter on</h3>
-        <p><code>Scatter On:</code> lists the target meshes. When the list is empty, the layer uses its own terrain.</p>
-        <p>To use other surfaces, select their meshes together with the layer in the Scene tree or 3D view, then click <code>Add Selected</code>. Keeping the layer selected leaves its controls visible. Use this to move coverage onto a roof, boulder, or another mesh.</p>
-        <p><code>Select</code> beside a target selects it in the scene. <code>✕</code> removes it from the target list. Clearing the list restores scattering on the layer's terrain.</p>
-        <p><code>Pick…</code> opens <code>Select a Node</code>. Filter by name, choose the node, and click <code>OK</code> to add it.</p>
+        <p><code>Scatter On:</code> lists the meshes the layer scatters on. When the list is empty, the layer uses its own terrain.</p>
+        <p>To scatter on other meshes, such as a roof or a boulder, select them together with the layer and click <code>Add Selected</code>. Keeping the layer selected keeps its controls in the dock. Or click <code>Pick…</code> to choose a node from a list.</p>
+        <p>Click <code>Select</code> beside a target to select it in the scene, or <code>✕</code> to remove it from the list. An empty list goes back to the layer's terrain.</p>
         <div class="note"><strong>Target surfaces require collision.</strong>
-        Imported terrains already include it. For your own meshes, add a <code>StaticBody3D</code> with a collision shape.</div>
+        Imported terrains already have it. For your own meshes, add a <code>StaticBody3D</code> with a collision shape.</div>
       </div>
     </article>
 
@@ -187,9 +184,9 @@
       <div class="clip wide"><video src="videos/gd-distribution.mp4" poster="videos/gd-distribution.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Scattering: Density / m² and Density Multiplier</h3>
-        <p><code>Density / m²</code>: the number of instances per square metre. A value of 0.03 is approximately one instance per 33 square metres. Grass and flowers often use values of 1 or higher.</p>
-        <p><code>Density Multiplier</code>: adjusts the overall density without replacing the base value imported from Blender.</p>
-        <p>Use a top-down view to compare coverage and identify crowded or sparse areas.</p>
+        <p><code>Density / m²</code>: how many instances per square metre. A value of 0.03 is about one instance per 33 square metres, while grass and flowers often use 1 or higher.</p>
+        <p><code>Density Multiplier</code>: scales the overall density while keeping the base value from Blender.</p>
+        <p>A top-down view makes crowded or sparse areas easier to spot.</p>
       </div>
     </article>
 
@@ -197,7 +194,7 @@
       <div class="clip wide"><video src="videos/gd-seed.mp4" poster="videos/gd-seed.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Seed</h3>
-        <p><code>Seed</code> selects a different random arrangement. With the same settings, the same seed reproduces the same layout. Change it to try new placements without changing density or other controls.</p>
+        <p><code>Seed</code> gives a different random arrangement without changing any other settings. The same seed always gives the same layout.</p>
       </div>
     </article>
 
@@ -205,8 +202,8 @@
       <div class="clip wide"><video src="videos/gd-min-distance.mp4" poster="videos/gd-min-distance.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Minimum Distance</h3>
-        <p><code>Minimum Distance</code> sets the minimum spacing between instances in metres. Instances that would be too close to another are excluded.</p>
-        <p>Increase it to reduce clustering. For example, changing it from 0 to 4 m spreads a dense tree layer into a more evenly spaced arrangement.</p>
+        <p><code>Minimum Distance</code> is the smallest gap allowed between instances, in metres. Instances that would be closer are left out.</p>
+        <p>Raise it to reduce clumping and spread instances more evenly.</p>
       </div>
     </article>
 
@@ -214,7 +211,7 @@
       <div class="clip wide"><video src="videos/gd-max-instances.mp4" poster="videos/gd-max-instances.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Max Instances</h3>
-        <p><code>Max Instances</code> caps the final instance count regardless of Density. Use it to limit very large or dense layers. For example, a value of 1000 allows no more than 1000 instances.</p>
+        <p><code>Max Instances</code> caps the number of instances, whatever the Density. Use it to keep very large or dense layers under control.</p>
       </div>
     </article>
 
@@ -222,8 +219,8 @@
       <div class="clip wide"><video src="videos/gd-proc-scale.mp4" poster="videos/gd-proc-scale.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Scale: Uniform and Non-Uniform</h3>
-        <p><code>Uniform Scale</code>: the overall instance size. A value of 1 uses the source mesh's size.</p>
-        <p><code>Non-Uniform Scale</code> <code>X</code>, <code>Y</code>, and <code>Z</code>: scales each axis independently. These controls use Z for height, so increase Z for taller instances and X or Y for greater width.</p>
+        <p><code>Uniform Scale</code>: the overall size. 1 uses the mesh's own size.</p>
+        <p><code>Non-Uniform Scale</code> <code>X</code>, <code>Y</code>, and <code>Z</code>: scale each axis on its own. Z is height, so raise Z for taller instances and X or Y for wider ones.</p>
       </div>
     </article>
 
@@ -231,7 +228,7 @@
       <div class="clip wide"><video src="videos/gd-random-scale.mp4" poster="videos/gd-random-scale.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Random Scale</h3>
-        <p>Enable <code>Random Scale</code> to assign each instance a factor between <code>Min</code> and <code>Max</code>. A wider range produces stronger size variation; for example, 0.4–2 creates a mix of much smaller and larger trees.</p>
+        <p>Turn on <code>Random Scale</code> to give each instance a size between <code>Min</code> and <code>Max</code>. A wider range gives more variation.</p>
       </div>
     </article>
 
@@ -239,8 +236,8 @@
       <div class="clip wide"><video src="videos/gd-proc-rotation.mp4" poster="videos/gd-proc-rotation.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Align to Surface</h3>
-        <p><code>Align to Surface</code> makes each instance stand perpendicular to the ground beneath it. Disable it to keep instances vertical on slopes.</p>
-        <p>Use surface alignment for rocks, grass, and ground cover. Keep it disabled for trees that should grow upright rather than lean with the terrain.</p>
+        <p><code>Align to Surface</code> tilts each instance to match the ground beneath it. Turn it off to keep instances upright on slopes.</p>
+        <p>Use it for rocks, grass, and ground cover. Leave it off for trees that should grow straight up.</p>
       </div>
     </article>
 
@@ -248,8 +245,8 @@
       <div class="clip wide"><video src="videos/gd-random-rotation.mp4" poster="videos/gd-random-rotation.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Random Rotation</h3>
-        <p><code>Random Rotation</code> varies instance orientation. <code>Amount</code> <code>X</code>, <code>Y</code>, and <code>Z</code> set the rotation ranges in degrees. The default varies headings around the upright axis to reduce repetition.</p>
-        <p>Add X or Y variation for random tilt. Toggle the setting to compare the varied result with the original orientations.</p>
+        <p>Turn on <code>Random Rotation</code> to vary how instances are turned, which reduces repetition. <code>Amount</code> <code>X</code>, <code>Y</code>, and <code>Z</code> set the range for each axis, in degrees.</p>
+        <p>By default only the heading around the upright axis varies. Add X or Y for random tilt.</p>
       </div>
     </article>
 
@@ -257,7 +254,7 @@
       <div class="clip wide"><video src="videos/gd-proc-zoffset.mp4" poster="videos/gd-proc-zoffset.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Z Offset</h3>
-        <p><code>Z Offset</code> in the Rotation panel moves instances by the specified distance in metres. With Align to Surface disabled, movement is vertical. With it enabled, the offset follows the surface-aligned upright direction.</p>
+        <p><code>Z Offset</code> in the Rotation panel moves instances by a set distance, in metres. With Align to Surface off, they move straight up or down. With it on, they move along the tilted upright direction.</p>
       </div>
     </article>
   </div>
@@ -266,15 +263,15 @@
 <section id="masking">
   <div class="wrap">
     <h2>Masking: where a layer may grow</h2>
-    <p class="lead">Masks restrict placement by slope, height, patterns, or proximity to objects and paths. Enable a mask with the checkbox in its title and expand the title to edit it. Multiple masks can be combined.</p>
+    <p class="lead">Masks limit where a layer grows, by slope, height, patterns, or distance to objects and paths. Turn a mask on with the checkbox in its title. You can combine several masks.</p>
 
     <article class="card" id="slope-mask-abiotic-panel">
       <div class="clip wide"><video src="videos/gd-mask-slope.mp4" poster="videos/gd-mask-slope.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Slope Mask (Abiotic panel)</h3>
-        <p><code>Max Angle</code>: the steepest allowed slope, in degrees. Lower it to clear steep faces and retain instances on flatter ground.</p>
-        <p><code>Smooth Transition</code>: softens the slope boundary. <code>Transition</code> sets the width of the fade in degrees.</p>
-        <p><code>Invert</code>: keeps instances on steep surfaces instead of flat areas.</p>
+        <p><code>Max Angle</code>: the steepest slope allowed, in degrees. Lower it to clear steep faces and keep instances on flatter ground.</p>
+        <p>Turn on <code>Smooth Transition</code> to soften the edge. <code>Transition</code> then sets how wide the fade is, in degrees.</p>
+        <p>Turn on <code>Invert</code> to keep instances on steep ground instead of flat ground.</p>
       </div>
     </article>
 
@@ -282,9 +279,9 @@
       <div class="clip wide"><video src="videos/gd-mask-elevation.mp4" poster="videos/gd-mask-elevation.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Elevation Mask (Abiotic panel)</h3>
-        <p><code>Height</code>: the upper placement limit in metres above the terrain's origin. Lower it to remove instances from the upper parts of a hill.</p>
-        <p><code>Smooth Transition</code> and <code>Transition</code>: soften the height boundary over the specified distance in metres.</p>
-        <p><code>Invert</code>: keeps instances above the height limit instead of below it.</p>
+        <p><code>Height</code>: the highest point instances can grow, in metres above the terrain's origin. Lower it to clear the tops of hills.</p>
+        <p>Turn on <code>Smooth Transition</code> to soften the height limit. <code>Transition</code> then sets the distance, in metres.</p>
+        <p>Turn on <code>Invert</code> to keep instances above the limit instead of below it.</p>
       </div>
     </article>
 
@@ -292,15 +289,15 @@
       <div class="clip wide"><video src="videos/gd-mask-noise.mp4" poster="videos/gd-mask-noise.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Noise Mask</h3>
-        <p>Breaks coverage into irregular patches, useful for vegetation that grows in clusters.</p>
-        <p><code>Scale</code>: pattern frequency. Lower values produce larger patches.<br>
-        <code>Detail</code>: adds finer patterns within the main pattern.<br>
-        <code>Roughness</code>: the strength of that finer detail.<br>
-        <code>Lacunarity</code>: the change in scale between successive detail levels.<br>
-        <code>Distortion</code>: warps the pattern into less rounded shapes.<br>
-        <code>Seed</code>: a different pattern using the same settings.</p>
-        <p><code>Min</code> and <code>Max</code> under Range control the transition between populated areas and gaps. Values close together give sharper boundaries; a wider interval produces softer transitions.</p>
-        <p><code>Invert</code>: exchanges the populated areas and gaps.</p>
+        <p>Breaks coverage into irregular patches, for plants that grow in clusters.</p>
+        <p><code>Scale</code>: the patch size. Lower values give larger patches.<br>
+        <code>Detail</code>: adds finer pattern inside the main one.<br>
+        <code>Roughness</code>: how strong that finer detail is.<br>
+        <code>Lacunarity</code>: how much the scale changes between detail levels.<br>
+        <code>Distortion</code>: warps the patches into less rounded shapes.<br>
+        <code>Seed</code>: a different pattern with the same settings.</p>
+        <p><code>Min</code> and <code>Max</code> under Range set how sharp the patch edges are. Close values give hard edges, and a wider gap gives softer ones.</p>
+        <p>Turn on <code>Invert</code> to swap the patches and the gaps.</p>
       </div>
     </article>
 
@@ -308,10 +305,9 @@
       <div class="clip wide"><video src="videos/gd-mask-geo.mp4" poster="videos/gd-mask-geo.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Geometry Proximity (Proximity panel)</h3>
-        <p>Controls placement near selected objects. Select the targets together with the layer and click <code>Add Selected</code> under <code>Objects</code>, or use <code>Pick…</code>.</p>
-        <p><code>Distance</code>: the affected distance from the objects, in metres.</p>
-        <p><code>Smooth Transition</code> and <code>Transition</code>: soften the boundary.</p>
-        <p><code>Behaviour</code>: <code>Repel</code> clears instances near the targets, while <code>Attract</code> keeps instances only near them. Use Repel for clearance around a house or Attract for plants along its walls.</p>
+        <p>Controls placement near chosen objects. Select them together with the layer and click <code>Add Selected</code> under <code>Objects</code>, or click <code>Pick…</code>.</p>
+        <p><code>Distance</code>: how far from the objects the mask reaches, in metres. Turn on <code>Smooth Transition</code> and set <code>Transition</code> to soften the edge.</p>
+        <p>In the <code>Behaviour</code> list, <code>Repel</code> clears instances near the objects, and <code>Attract</code> keeps them only near the objects. Use Repel to clear space around a house, or Attract for plants along its walls.</p>
       </div>
     </article>
 
@@ -319,11 +315,11 @@
       <div class="clip wide"><video src="videos/gd-mask-curve.mp4" poster="videos/gd-mask-curve.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Curve Proximity (Proximity panel)</h3>
-        <p>Uses a path to define a continuous region, such as a footpath or roadside planting. Add a <code>Path3D</code> through Add Node &gt; Path3D, draw its points in the 3D view, and select it together with the layer. Click <code>Add Selected</code> under <code>Curves</code>.</p>
-        <p><code>Distance</code>, <code>Smooth Transition</code>, <code>Transition</code>, and <code>Behaviour</code> work as they do for Geometry Proximity, with distance measured from the path.</p>
-        <p><code>Infinite Height</code> ignores the path's vertical distance and measures only sideways. Enable it to keep a consistent exclusion strip when a path is raised above the terrain. Without it, moving the path upward can narrow or remove its influence.</p>
+        <p>Uses a path to shape a region, such as a footpath or roadside planting. Add a <code>Path3D</code> node and draw its points in the 3D view. Then select it with the layer and click <code>Add Selected</code> under <code>Curves</code>.</p>
+        <p><code>Distance</code>, <code>Smooth Transition</code>, <code>Transition</code>, and <code>Behaviour</code> work as in Geometry Proximity, measured from the path.</p>
+        <p><code>Infinite Height</code> measures distance sideways only, ignoring height. Turn it on when the path sits above the terrain. Without it, raising the path can shrink or remove its effect.</p>
         <div class="note"><strong>Paths remain editable.</strong>
-        Move their points to update the layer's distribution.</div>
+        Moving their points updates the layer.</div>
       </div>
     </article>
   </div>
@@ -337,13 +333,13 @@
       <div class="clip wide"><video src="videos/gd-meshes.mp4" poster="videos/gd-meshes.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Choosing what the layer scatters</h3>
-        <p>The <code>Meshes</code> panel lists the layer's source meshes. Blender Exact displays each mesh's instance count. Procedural mode allows changes to the mesh list.</p>
-        <p><code>Weight</code>: how often a mesh is chosen relative to the others. Set it to 0 to exclude a mesh from placement.</p>
-        <p><code>+ Selected Nodes</code>: adds meshes from nodes selected in the Scene tree or 3D view, including material assignments on those nodes.</p>
-        <p><code>+ FileSystem</code>: adds selected mesh resources or model files from the FileSystem dock. Supported sources include <code>.glb</code>, <code>.gltf</code>, <code>.fbx</code>, <code>.obj</code>, and <code>.tscn</code> scenes.</p>
-        <p><code>✕</code>: removes a mesh from the layer.</p>
+        <p>The <code>Meshes</code> panel lists the meshes the layer scatters. In Blender Exact it shows how many instances each mesh has. You can change the list in Procedural mode.</p>
+        <p><code>Weight</code>: how often a mesh is picked compared with the others. 0 leaves it out.</p>
+        <p>Click <code>+ Selected Nodes</code> to add meshes from the selected nodes, with their materials.</p>
+        <p>Click <code>+ FileSystem</code> to add meshes or model files selected in the FileSystem dock, such as <code>.glb</code>, <code>.gltf</code>, <code>.fbx</code>, <code>.obj</code>, or <code>.tscn</code> scenes.</p>
+        <p>Click <code>✕</code> to remove a mesh from the layer.</p>
         <div class="note"><strong>Re-exporting replaces the mesh list.</strong>
-        A new export from Blender restores the source list from Blender.</div>
+        Exporting from Blender again brings back Blender's mesh list.</div>
       </div>
     </article>
   </div>

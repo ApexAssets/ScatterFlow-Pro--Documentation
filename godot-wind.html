@@ -51,7 +51,7 @@
     <a href="physics.html">Physics</a>
   </details>
   <details class="side-group">
-    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Game Engines</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
+    <summary><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="18" cy="13.5" r="1"/></svg><span>Sync</span><svg class="icon chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></summary>
     <a href="export.html">Export</a>
   </details>
   <details class="side-group">
@@ -93,17 +93,17 @@
 <section id="wind">
   <div class="wrap">
     <h2>Wind</h2>
-    <p class="lead">ScatterFlow wind combines <b>Global Wind</b> settings for the project with individual layer controls. Use the global settings for the overall motion, then adjust each layer's response.</p>
+    <p class="lead"><b>Global Wind</b> sets the wind for the whole project. Each layer then has its own controls for how it responds.</p>
 
     <article class="card" id="global-wind">
       <div class="clip wide"><video src="videos/gd-global-wind.mp4" poster="videos/gd-global-wind.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Global Wind</h3>
-        <p>Deselect the layer and expand <code>Global Wind</code>.</p>
-        <p><code>Enabled</code>: toggles wind throughout the project.</p>
-        <p><code>Strength</code>: controls how far plants bend.<br>
-        <code>Speed</code>: controls how quickly they sway.</p>
-        <p>Wind settings are stored in the project and also apply in the exported game.</p>
+        <p>The <code>Global Wind</code> section is in the dock when no layer is selected.</p>
+        <p>The <code>Enabled</code> checkbox turns wind on or off for the whole project.</p>
+        <p><code>Strength</code>: how far plants bend.<br>
+        <code>Speed</code>: how fast they sway.</p>
+        <p>Wind settings are saved in the project and also apply in your exported game.</p>
       </div>
     </article>
 
@@ -111,12 +111,12 @@
       <div class="clip wide"><video src="videos/gd-layer-wind.mp4" poster="videos/gd-layer-wind.jpg" muted loop playsinline preload="none"></video></div>
       <div>
         <h3>Layer Wind</h3>
-        <p>Select a layer and expand <code>Wind</code>. Adjust its response so different assets, such as stiff bushes and flexible grass, move differently under the same global wind.</p>
-        <p><code>Strength</code>: a multiplier on global strength. At 0, the layer remains still; 1 uses the global value; higher values increase bending.<br>
-        <code>Speed</code>: movement speed relative to global wind speed.<br>
-        <code>Gust</code>: varies the movement from a steady sway at 0 to gusting motion at 1.<br>
+        <p>Select a layer and open its <code>Wind</code> section to set how it responds. This lets stiff bushes and soft grass move differently in the same wind.</p>
+        <p><code>Strength</code>: multiplies the global strength. 0 keeps the layer still, 1 uses the global value, and higher values bend it more.<br>
+        <code>Speed</code>: how fast the layer moves compared with the global speed.<br>
+        <code>Gust</code>: from a steady sway at 0 to gusty movement at 1.<br>
         <code>Direction</code>: the direction the wind blows toward, in degrees (0&deg; is +X).<br>
-        <code>Leaf Flutter</code>: adds smaller, faster leaf movement over the main sway.</p>
+        <code>Leaf Flutter</code>: adds small, quick leaf movement on top of the main sway.</p>
       </div>
     </article>
   </div>
